@@ -5,43 +5,39 @@ import 'leaflet/dist/leaflet.css';
 // Función para obtener el icono según el tipo de lugar
 const getPlaceIcon = (type) => {
   const icons = {
-    temple: '🛕',
+    temple: '⛩️',
     bar: '🍺',
     restaurant: '🍽️',
-    viewpoint: '🌄',
-    museum: '🏛️',
-    reserve: '🐘',
+    viewpoint: '👁️',
+    museum: '🖼️',
+    reserve: '🦋',
     waterfall: '💧',
-    market: '🛍️',
-    hotel: '🏨',
-    spa: '💆',
+    market: '🏪',
+    hotel: '🛏️',
+    spa: '🧖',
     beach: '🏖️',
-    neighborhood: '🏙️'
+    neighborhood: '🚶',
+    experience: '✨'
   };
   return icons[type] || '📍';
 };
 
-// Iconos personalizados según categoría
-const createCustomIcon = (type) => {
+// Iconos personalizados según categoría y horario
+const createCustomIcon = (type, schedule) => {
   const emoji = getPlaceIcon(type);
   
-  // Colores según categoría
-  const colorMap = {
-    temple: '#FFD700',      // Dorado para templos
-    bar: '#9333EA',         // Morado para bares
-    restaurant: '#EF4444',  // Rojo para restaurantes
-    viewpoint: '#3B82F6',   // Azul para miradores
-    museum: '#8B4513',      // Marrón para museos
-    reserve: '#10B981',     // Verde para reservas
-    waterfall: '#06B6D4',   // Cyan para cascadas
-    market: '#F59E0B',      // Naranja para mercados
-    hotel: '#6366F1',       // Índigo para hoteles
-    spa: '#EC4899',         // Rosa para spas
-    beach: '#14B8A6',       // Turquesa para playas
-    neighborhood: '#8B5CF6' // Violeta para barrios
+  // Colores según horario/duración
+  const getColorBySchedule = (schedule) => {
+    const colors = {
+      'morning': '#87CEEB',      // Celeste para mañana
+      'evening': '#FFB347',      // Naranja para tarde
+      'night': '#2C3E50',        // Negro/gris oscuro para noche
+      'all-day': '#32CD32'       // Verde para todo el día
+    };
+    return colors[schedule] || '#10B981';
   };
   
-  const color = colorMap[type] || '#10b981';
+  const color = getColorBySchedule(schedule);
   
   return L.divIcon({
     className: 'custom-marker',
@@ -108,7 +104,7 @@ export default function Map({ places, onBoundsChange, center, zoom, selectedPlac
     markersRef.current = [];
 
     places.forEach(place => {
-      const icon = createCustomIcon(place.type);
+      const icon = createCustomIcon(place.type, place.schedule);
       const marker = L.marker([place.lat, place.lng], { icon }).addTo(mapInstanceRef.current);
 
       // Badges de disponibilidad
@@ -140,7 +136,6 @@ export default function Map({ places, onBoundsChange, center, zoom, selectedPlac
       const popupContent = `
         <div class="popup-card">
           <img src="${place.imageUrl}" alt="${place.name}" onerror="this.src='https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=600&h=400&fit=crop'" />
-          <div class="popup-icon">${getPlaceIcon(place.type)}</div>
           <div class="popup-content">
             <h3>${place.name}</h3>
             <div class="popup-badges">

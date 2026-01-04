@@ -39,18 +39,19 @@ export default function PlaceCard({ place, onDelete, compact = false }) {
 
   const getPlaceIcon = (type) => {
     const icons = {
-      temple: '🛕',
+      temple: '⛩️',
       bar: '🍺',
       restaurant: '🍽️',
-      viewpoint: '🌄',
-      museum: '🏛️',
-      reserve: '🐘',
+      viewpoint: '👁️',
+      museum: '🖼️',
+      reserve: '🦋',
       waterfall: '💧',
-      market: '🛍️',
-      hotel: '🏨',
-      spa: '💆',
+      market: '🏪',
+      hotel: '🛏️',
+      spa: '🧖',
       beach: '🏖️',
-      neighborhood: '🏙️'
+      neighborhood: '🚶',
+      experience: '✨'
     };
     return icons[type] || '📍';
   };
