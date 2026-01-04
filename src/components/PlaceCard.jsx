@@ -6,6 +6,55 @@ export default function PlaceCard({ place, onDelete, compact = false }) {
     }
   };
 
+  const getDaysBadge = () => {
+    if (place.daysOpen === 'weekend') {
+      return <span className="badge badge-warning">⚠️ Solo fines de semana</span>;
+    }
+    return <span className="badge badge-success">✓ Todos los días</span>;
+  };
+
+  const getScheduleBadge = () => {
+    const schedules = {
+      'morning': { icon: '🌅', text: 'Mañana', class: 'badge-morning' },
+      'evening': { icon: '🌆', text: 'Tarde', class: 'badge-evening' },
+      'night': { icon: '🌙', text: 'Noche', class: 'badge-night' },
+      'all-day': { icon: '⏰', text: 'Todo el día', class: 'badge-allday' }
+    };
+    const schedule = schedules[place.schedule];
+    if (!schedule) return null;
+    return <span className={`badge ${schedule.class}`}>{schedule.icon} {schedule.text}</span>;
+  };
+
+  const getDurationBadge = () => {
+    const durations = {
+      'hours': { icon: '⚡', text: 'Visita corta', class: 'badge-short' },
+      'half-day': { icon: '🕐', text: 'Medio día', class: 'badge-medium' },
+      'full-day': { icon: '📅', text: 'Día completo', class: 'badge-long' },
+      'accommodation': null
+    };
+    const duration = durations[place.visitDuration];
+    if (!duration) return null;
+    return <span className={`badge ${duration.class}`}>{duration.icon} {duration.text}</span>;
+  };
+
+  const getPlaceIcon = (type) => {
+    const icons = {
+      temple: '🛕',
+      bar: '🍺',
+      restaurant: '🍽️',
+      viewpoint: '🌄',
+      museum: '🏛️',
+      reserve: '🐘',
+      waterfall: '💧',
+      market: '🛍️',
+      hotel: '🏨',
+      spa: '💆',
+      beach: '🏖️',
+      neighborhood: '🏙️'
+    };
+    return icons[type] || '📍';
+  };
+
   return (
     <div className={`place-card ${compact ? 'compact' : ''}`}>
       <div className="card-image">
@@ -14,10 +63,10 @@ export default function PlaceCard({ place, onDelete, compact = false }) {
           alt={place.name}
           loading="lazy"
           onError={(e) => {
-            e.target.src = 'https://images.pexels.com/photos/460376/pexels-photo-460376.jpeg?auto=compress&cs=tinysrgb&w=600';
+            e.target.src = 'https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=600&h=400&fit=crop';
           }}
         />
-        <div className="card-icon">{place.icon}</div>
+        <div className="card-icon">{getPlaceIcon(place.type)}</div>
         <button className="delete-btn" onClick={handleDelete} title="Eliminar">
           🗑️
         </button>
@@ -25,6 +74,13 @@ export default function PlaceCard({ place, onDelete, compact = false }) {
       
       <div className="card-content">
         <h3>{place.name}</h3>
+        
+        <div className="card-badges">
+          {getDaysBadge()}
+          {getScheduleBadge()}
+          {getDurationBadge()}
+        </div>
+        
         <p className="description">{place.description}</p>
         
         <div className="info-grid">
