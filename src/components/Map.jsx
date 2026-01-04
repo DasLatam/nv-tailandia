@@ -2,15 +2,15 @@ import { useEffect, useRef, useState } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
-// Iconos personalizados
+// Iconos personalizados con emojis específicos
 const createCustomIcon = (color, emoji) => {
   return L.divIcon({
     className: 'custom-marker',
     html: `
       <div style="
         background-color: ${color};
-        width: 32px;
-        height: 32px;
+        width: 40px;
+        height: 40px;
         border-radius: 50% 50% 50% 0;
         transform: rotate(-45deg);
         border: 3px solid white;
@@ -19,20 +19,22 @@ const createCustomIcon = (color, emoji) => {
         align-items: center;
         justify-content: center;
       ">
-        <span style="transform: rotate(45deg); font-size: 16px;">${emoji}</span>
+        <span style="transform: rotate(45deg); font-size: 20px;">${emoji}</span>
       </div>
     `,
-    iconSize: [32, 32],
-    iconAnchor: [16, 32],
-    popupAnchor: [0, -32]
+    iconSize: [40, 40],
+    iconAnchor: [20, 40],
+    popupAnchor: [0, -40]
   });
 };
 
-const icons = {
-  hotel: createCustomIcon('#3b82f6', '🏨'),
-  bar: createCustomIcon('#a855f7', '🍹'),
-  attraction: createCustomIcon('#eab308', '⭐'),
-  default: createCustomIcon('#10b981', '📍')
+const getIconColor = (category) => {
+  const colors = {
+    hotel: '#3b82f6',
+    bar: '#a855f7',
+    attraction: '#eab308'
+  };
+  return colors[category] || '#10b981';
 };
 
 export default function Map({ places, onBoundsChange, center, zoom, selectedPlace }) {
@@ -83,13 +85,15 @@ export default function Map({ places, onBoundsChange, center, zoom, selectedPlac
 
     // Agregar nuevos marcadores
     places.forEach(place => {
-      const icon = icons[place.category] || icons.default;
+      const color = getIconColor(place.category);
+      const icon = createCustomIcon(color, place.icon || '📍');
       const marker = L.marker([place.lat, place.lng], { icon }).addTo(mapInstanceRef.current);
 
       // Popup con la misma información que la tarjeta
       const popupContent = `
         <div class="popup-card">
-          <img src="https://images.unsplash.com/${place.imageId}?w=300&h=180&fit=crop" alt="${place.name}" />
+          <img src="${place.imageUrl}" alt="${place.name}" onerror="this.src='https://images.pexels.com/photos/460376/pexels-photo-460376.jpeg?auto=compress&cs=tinysrgb&w=600'" />
+          <div class="popup-icon">${place.icon}</div>
           <div class="popup-content">
             <h3>${place.name}</h3>
             <p>${place.description}</p>
@@ -97,7 +101,7 @@ export default function Map({ places, onBoundsChange, center, zoom, selectedPlac
               <div class="popup-info-item">
                 <span>⏱️</span> ${place.visitTime}
               </div>
-              <div class="popup-info-item">
+              <div class="popup-info-item" title="${place.transportInfo}">
                 <span>🚇</span> ${place.transport}
               </div>
               <div class="popup-info-item">

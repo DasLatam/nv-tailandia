@@ -6,13 +6,15 @@ export const initialPlaces = [
     lng: 100.4915,
     category: "attraction",
     type: "temple",
+    icon: "🏯",
     description: "Majestuoso complejo real con templos dorados y arquitectura tailandesa tradicional",
     visitTime: "3-4 horas",
     transport: "BTS + Barco",
+    transportInfo: "BTS (Skytrain) hasta Saphan Taksin + Barco Express",
     dressCode: "Hombros y rodillas tapados",
     price: "500 THB",
     massage: false,
-    imageId: "tQAgNcHFVyU"
+    imageUrl: "https://images.pexels.com/photos/460376/pexels-photo-460376.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   {
     name: "Wat Pho",
@@ -20,13 +22,15 @@ export const initialPlaces = [
     lng: 100.4927,
     category: "attraction",
     type: "temple",
+    icon: "🛕",
     description: "Templo del Buda Reclinado, escuela tradicional de masajes tailandeses",
     visitTime: "2-3 horas",
     transport: "BTS + Barco",
+    transportInfo: "BTS (Skytrain) hasta Saphan Taksin + Barco Express",
     dressCode: "Hombros y rodillas tapados",
     price: "200 THB",
     massage: true,
-    imageId: "h7sGBpVaOgI"
+    imageUrl: "https://images.pexels.com/photos/1031659/pexels-photo-1031659.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   {
     name: "Wat Arun",
@@ -34,13 +38,15 @@ export const initialPlaces = [
     lng: 100.4887,
     category: "attraction",
     type: "temple",
+    icon: "⛩️",
     description: "Templo del Amanecer con impresionante torre decorada con porcelana",
     visitTime: "1-2 horas",
     transport: "Barco",
+    transportInfo: "Barco Express del río Chao Phraya",
     dressCode: "Hombros y rodillas tapados",
     price: "100 THB",
     massage: false,
-    imageId: "FovW70vMq0E"
+    imageUrl: "https://images.pexels.com/photos/2739664/pexels-photo-2739664.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   {
     name: "Chinatown",
@@ -48,13 +54,15 @@ export const initialPlaces = [
     lng: 100.5089,
     category: "attraction",
     type: "neighborhood",
+    icon: "🏮",
     description: "Barrio chino vibrante con comida callejera, mercados y templos",
     visitTime: "2-3 horas",
     transport: "MRT",
+    transportInfo: "MRT (Metro subterráneo) estación Wat Mangkon",
     dressCode: "Casual",
     price: "Gratis",
     massage: false,
-    imageId: "nWYUrBBLthg"
+    imageUrl: "https://images.pexels.com/photos/2187605/pexels-photo-2187605.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   {
     name: "Khao San Road",
@@ -62,13 +70,15 @@ export const initialPlaces = [
     lng: 100.4977,
     category: "bar",
     type: "nightlife",
+    icon: "🍻",
     description: "Calle mochilera legendaria con bares, restaurantes y vida nocturna",
     visitTime: "2-4 horas",
     transport: "Grab/Taxi",
+    transportInfo: "Grab (Uber tailandés) o Taxi",
     dressCode: "Casual",
     price: "Gratis",
     massage: true,
-    imageId: "TrhLCn1abMU"
+    imageUrl: "https://images.pexels.com/photos/2064123/pexels-photo-2064123.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   {
     name: "Tichuca Bar",
@@ -76,13 +86,15 @@ export const initialPlaces = [
     lng: 100.5344,
     category: "bar",
     type: "nightlife",
+    icon: "🍹",
     description: "Bar argentino con ambiente latino y buena música",
     visitTime: "2-3 horas",
     transport: "BTS",
+    transportInfo: "BTS (Skytrain) estación Nana o Asok",
     dressCode: "Smart Casual",
     price: "$$",
     massage: false,
-    imageId: "RygIdTavhkQ"
+    imageUrl: "https://images.pexels.com/photos/696218/pexels-photo-696218.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   {
     name: "Chatuchak Weekend Market",
@@ -90,13 +102,15 @@ export const initialPlaces = [
     lng: 100.5504,
     category: "attraction",
     type: "market",
+    icon: "🛍️",
     description: "Mercado de fin de semana más grande del mundo con 15,000 puestos",
     visitTime: "3-5 horas",
     transport: "BTS/MRT",
+    transportInfo: "BTS estación Mo Chit o MRT estación Chatuchak Park",
     dressCode: "Ropa ligera",
     price: "Gratis",
     massage: true,
-    imageId: "fT49QnPRJI8"
+    imageUrl: "https://images.pexels.com/photos/264507/pexels-photo-264507.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   {
     name: "Red Sky Bar",
@@ -104,13 +118,15 @@ export const initialPlaces = [
     lng: 100.5413,
     category: "bar",
     type: "rooftop",
+    icon: "🌃",
     description: "Bar en la azotea del piso 55 con vistas espectaculares de Bangkok",
     visitTime: "2-3 horas",
     transport: "BTS",
+    transportInfo: "BTS (Skytrain) estación Chit Lom",
     dressCode: "Smart Casual",
     price: "$$$",
     massage: false,
-    imageId: "bwki71ap-y8"
+    imageUrl: "https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   {
     name: "Zenniq Rooftop",
@@ -118,13 +134,15 @@ export const initialPlaces = [
     lng: 100.5310,
     category: "bar",
     type: "rooftop",
+    icon: "🏙️",
     description: "Rooftop bar moderno con piscina y vistas panorámicas",
     visitTime: "2-3 horas",
     transport: "BTS",
+    transportInfo: "BTS (Skytrain) estación Chong Nonsi",
     dressCode: "Smart Casual",
     price: "$$$",
     massage: false,
-    imageId: "4qfycgPC2cw"
+    imageUrl: "https://images.pexels.com/photos/1581384/pexels-photo-1581384.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   {
     name: "Josh Hotel Bangkok",
@@ -132,13 +150,15 @@ export const initialPlaces = [
     lng: 100.5359,
     category: "hotel",
     type: "accommodation",
+    icon: "🏨",
     description: "Hotel boutique con diseño moderno y ubicación céntrica",
     visitTime: "N/A",
     transport: "BTS",
+    transportInfo: "BTS (Skytrain) estación Nana",
     dressCode: "Casual",
     price: "$$",
     massage: false,
-    imageId: "DjlKxYFJlTc"
+    imageUrl: "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   {
     name: "Pullman Bangkok King Power",
@@ -146,13 +166,15 @@ export const initialPlaces = [
     lng: 100.5382,
     category: "hotel",
     type: "accommodation",
+    icon: "🏨",
     description: "Hotel de lujo con rooftop bar y vistas espectaculares",
     visitTime: "N/A",
     transport: "BTS",
+    transportInfo: "BTS (Skytrain) estación Victory Monument",
     dressCode: "Casual",
     price: "$$$",
     massage: true,
-    imageId: "1ddol8rgUH8"
+    imageUrl: "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   
   // Chiang Mai
@@ -162,13 +184,15 @@ export const initialPlaces = [
     lng: 98.9216,
     category: "attraction",
     type: "temple",
+    icon: "⛰️",
     description: "Templo sagrado en la montaña con vistas panorámicas de Chiang Mai",
     visitTime: "2-3 horas",
     transport: "Grab/Tour",
+    transportInfo: "Grab (taxi app) o tour organizado",
     dressCode: "Hombros y rodillas tapados",
     price: "50 THB",
     massage: false,
-    imageId: "ycW4Wy86sw4"
+    imageUrl: "https://images.pexels.com/photos/1031659/pexels-photo-1031659.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   {
     name: "Wat Chedi Luang",
@@ -176,13 +200,15 @@ export const initialPlaces = [
     lng: 98.9874,
     category: "attraction",
     type: "temple",
+    icon: "🏛️",
     description: "Antiguo templo con enorme chedi parcialmente en ruinas",
     visitTime: "1-2 horas",
     transport: "A pie/Grab",
+    transportInfo: "Caminando desde el centro o Grab",
     dressCode: "Hombros y rodillas tapados",
     price: "40 THB",
     massage: false,
-    imageId: "dC3d24FFjnY"
+    imageUrl: "https://images.pexels.com/photos/2739664/pexels-photo-2739664.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   {
     name: "Elephant Nature Park",
@@ -190,13 +216,15 @@ export const initialPlaces = [
     lng: 98.8667,
     category: "attraction",
     type: "nature",
+    icon: "🐘",
     description: "Santuario ético de elefantes rescatados en ambiente natural",
     visitTime: "Full day",
     transport: "Tour incluido",
+    transportInfo: "Transporte incluido en el tour desde tu hotel",
     dressCode: "Ropa cómoda",
     price: "2,500 THB",
     massage: false,
-    imageId: "iCbbpApTjv0"
+    imageUrl: "https://images.pexels.com/photos/133394/pexels-photo-133394.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   {
     name: "Anumat Spa",
@@ -204,13 +232,15 @@ export const initialPlaces = [
     lng: 98.9853,
     category: "attraction",
     type: "spa",
+    icon: "💆",
     description: "Spa tradicional tailandés con masajes y tratamientos auténticos",
     visitTime: "2-3 horas",
     transport: "A pie/Grab",
+    transportInfo: "Caminando o Grab desde el centro",
     dressCode: "Casual",
     price: "500-1,500 THB",
     massage: true,
-    imageId: "TIrXot28Znc"
+    imageUrl: "https://images.pexels.com/photos/3757952/pexels-photo-3757952.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   {
     name: "POR Thapae Gate",
@@ -218,13 +248,15 @@ export const initialPlaces = [
     lng: 98.9939,
     category: "hotel",
     type: "accommodation",
+    icon: "🏨",
     description: "Hotel boutique junto a la antigua puerta de la ciudad amurallada",
     visitTime: "N/A",
     transport: "A pie",
+    transportInfo: "Centro histórico - todo a pie",
     dressCode: "Casual",
     price: "$$",
     massage: true,
-    imageId: "sYVY_ZKwaxU"
+    imageUrl: "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   
   // Chiang Rai
@@ -234,13 +266,15 @@ export const initialPlaces = [
     lng: 99.7631,
     category: "attraction",
     type: "temple",
+    icon: "🤍",
     description: "Templo contemporáneo blanco con arte surrealista único",
     visitTime: "2-3 horas",
     transport: "Grab/Tour",
+    transportInfo: "Grab o tour desde Chiang Rai centro",
     dressCode: "Hombros y rodillas tapados",
     price: "100 THB",
     massage: false,
-    imageId: "TdpbAh7epwI"
+    imageUrl: "https://images.pexels.com/photos/3408354/pexels-photo-3408354.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   {
     name: "Templo Azul (Wat Rong Suea Ten)",
@@ -248,13 +282,15 @@ export const initialPlaces = [
     lng: 99.8281,
     category: "attraction",
     type: "temple",
+    icon: "💙",
     description: "Templo moderno con impresionante decoración azul y dorada",
     visitTime: "1-2 horas",
     transport: "Grab/Tour",
+    transportInfo: "Grab o tour desde Chiang Rai centro",
     dressCode: "Hombros y rodillas tapados",
     price: "Gratis",
     massage: false,
-    imageId: "j5kEQ1JLy5g"
+    imageUrl: "https://images.pexels.com/photos/3408359/pexels-photo-3408359.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   {
     name: "Baan Dam (Casa Negra)",
@@ -262,13 +298,15 @@ export const initialPlaces = [
     lng: 99.8758,
     category: "attraction",
     type: "museum",
+    icon: "🖤",
     description: "Museo de arte oscuro del artista Thawan Duchanee",
     visitTime: "1-2 horas",
     transport: "Grab/Tour",
+    transportInfo: "Grab o tour desde Chiang Rai centro",
     dressCode: "Casual",
     price: "80 THB",
     massage: false,
-    imageId: "qDSLeVSQ8j0"
+    imageUrl: "https://images.pexels.com/photos/1270765/pexels-photo-1270765.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   
   // Kanchanaburi
@@ -278,13 +316,15 @@ export const initialPlaces = [
     lng: 99.1436,
     category: "attraction",
     type: "nature",
+    icon: "💧",
     description: "Cascada de 7 niveles con piscinas naturales color esmeralda",
     visitTime: "4-6 horas",
     transport: "Tour/Rental car",
+    transportInfo: "Tour organizado o auto rentado",
     dressCode: "Traje de baño",
     price: "300 THB",
     massage: false,
-    imageId: "iXvq60aFbIw"
+    imageUrl: "https://images.pexels.com/photos/2166927/pexels-photo-2166927.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   {
     name: "Hellfire Pass Skywalk",
@@ -292,13 +332,15 @@ export const initialPlaces = [
     lng: 98.9147,
     category: "attraction",
     type: "historical",
+    icon: "🚂",
     description: "Memorial histórico de la Segunda Guerra Mundial con mirador",
     visitTime: "2-3 horas",
     transport: "Tour/Rental car",
+    transportInfo: "Tour organizado o auto rentado",
     dressCode: "Casual",
     price: "Gratis",
     massage: false,
-    imageId: "5OUMf1Mr5pU"
+    imageUrl: "https://images.pexels.com/photos/2166711/pexels-photo-2166711.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   {
     name: "FloatHouse River Kwai",
@@ -306,13 +348,15 @@ export const initialPlaces = [
     lng: 99.0806,
     category: "hotel",
     type: "accommodation",
+    icon: "🛶",
     description: "Hotel flotante eco-resort en el río Kwai",
     visitTime: "N/A",
     transport: "Transfer incluido",
+    transportInfo: "Transfer incluido desde Bangkok",
     dressCode: "Casual",
     price: "$$$",
     massage: true,
-    imageId: "QT_YE1vZvhc"
+    imageUrl: "https://images.pexels.com/photos/189296/pexels-photo-189296.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   {
     name: "Jungle Rafts Resort",
@@ -320,13 +364,15 @@ export const initialPlaces = [
     lng: 98.6503,
     category: "hotel",
     type: "accommodation",
+    icon: "🏕️",
     description: "Balsas flotantes tradicionales en la selva junto al río",
     visitTime: "N/A",
     transport: "Transfer incluido",
+    transportInfo: "Transfer incluido desde Bangkok",
     dressCode: "Casual",
     price: "$$",
     massage: false,
-    imageId: "7nrsVjvALnA"
+    imageUrl: "https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   
   // Ayutthaya
@@ -336,13 +382,15 @@ export const initialPlaces = [
     lng: 100.5770,
     category: "attraction",
     type: "historical",
+    icon: "🏺",
     description: "Antigua capital con ruinas de templos y palacios UNESCO",
     visitTime: "Full day",
     transport: "Tren/Tour",
+    transportInfo: "Tren desde Bangkok o tour organizado",
     dressCode: "Hombros y rodillas tapados",
     price: "220 THB",
     massage: false,
-    imageId: "LI4TbsG0F8s"
+    imageUrl: "https://images.pexels.com/photos/2166553/pexels-photo-2166553.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   
   // Mercados
@@ -352,13 +400,15 @@ export const initialPlaces = [
     lng: 99.9972,
     category: "attraction",
     type: "market",
+    icon: "🚆",
     description: "Mercado único sobre las vías del tren que se pliega al pasar",
     visitTime: "1-2 horas",
     transport: "Tour/Grab",
+    transportInfo: "Tour desde Bangkok o Grab",
     dressCode: "Casual",
     price: "Gratis",
     massage: false,
-    imageId: "kJEST1o04wY"
+    imageUrl: "https://images.pexels.com/photos/1010657/pexels-photo-1010657.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   {
     name: "Damnoen Saduak Floating Market",
@@ -366,13 +416,15 @@ export const initialPlaces = [
     lng: 99.9550,
     category: "attraction",
     type: "market",
+    icon: "🚣",
     description: "Mercado flotante tradicional con vendedores en botes",
     visitTime: "2-3 horas",
     transport: "Tour/Grab",
+    transportInfo: "Tour desde Bangkok o Grab",
     dressCode: "Casual",
     price: "Gratis",
     massage: false,
-    imageId: "4JhFm18GdOc"
+    imageUrl: "https://images.pexels.com/photos/5206108/pexels-photo-5206108.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   
   // Koh Samui
@@ -382,13 +434,15 @@ export const initialPlaces = [
     lng: 100.0638,
     category: "attraction",
     type: "temple",
+    icon: "🗿",
     description: "Estatua dorada de Buda de 12 metros con vistas al mar",
     visitTime: "1 hora",
     transport: "Scooter/Grab",
+    transportInfo: "Scooter rentado o Grab",
     dressCode: "Hombros y rodillas tapados",
     price: "Gratis",
     massage: false,
-    imageId: "1aGeKNlJIww"
+    imageUrl: "https://images.pexels.com/photos/1659438/pexels-photo-1659438.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   {
     name: "Wat Plai Laem",
@@ -396,13 +450,15 @@ export const initialPlaces = [
     lng: 100.0656,
     category: "attraction",
     type: "temple",
+    icon: "🙏",
     description: "Templo colorido con estatua de Guanyin de 18 brazos",
     visitTime: "1 hora",
     transport: "Scooter/Grab",
+    transportInfo: "Scooter rentado o Grab",
     dressCode: "Hombros y rodillas tapados",
     price: "Gratis",
     massage: false,
-    imageId: "g5jpH62pwv0"
+    imageUrl: "https://images.pexels.com/photos/3408354/pexels-photo-3408354.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   {
     name: "Lub d Koh Samui",
@@ -410,13 +466,15 @@ export const initialPlaces = [
     lng: 99.9908,
     category: "hotel",
     type: "accommodation",
+    icon: "🏖️",
     description: "Hostel boutique frente a la playa de Chaweng",
     visitTime: "N/A",
     transport: "Scooter",
+    transportInfo: "Scooter rentado",
     dressCode: "Beach casual",
     price: "$",
     massage: false,
-    imageId: "wy_L8W0yttk"
+    imageUrl: "https://images.pexels.com/photos/189296/pexels-photo-189296.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   {
     name: "Hathai Spa Samui",
@@ -424,13 +482,15 @@ export const initialPlaces = [
     lng: 99.9915,
     category: "attraction",
     type: "spa",
+    icon: "🌺",
     description: "Spa de lujo con tratamientos tradicionales tailandeses",
     visitTime: "2-3 horas",
     transport: "Scooter/Grab",
+    transportInfo: "Scooter rentado o Grab",
     dressCode: "Casual",
     price: "800-2,000 THB",
     massage: true,
-    imageId: "GcHJBbinyXI"
+    imageUrl: "https://images.pexels.com/photos/3757952/pexels-photo-3757952.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   
   // Krabi
@@ -440,13 +500,15 @@ export const initialPlaces = [
     lng: 98.8393,
     category: "attraction",
     type: "beach",
+    icon: "🏝️",
     description: "Playa paradisíaca rodeada de acantilados de piedra caliza",
     visitTime: "Full day",
     transport: "Longtail boat",
+    transportInfo: "Bote de cola larga desde Ao Nang",
     dressCode: "Beach wear",
     price: "100 THB (boat)",
     massage: true,
-    imageId: "y2MeW00BdBo"
+    imageUrl: "https://images.pexels.com/photos/1450353/pexels-photo-1450353.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   {
     name: "Phi Phi Islands",
@@ -454,13 +516,15 @@ export const initialPlaces = [
     lng: 98.7784,
     category: "attraction",
     type: "island",
+    icon: "⛵",
     description: "Islas icónicas con playas de arena blanca y aguas cristalinas",
     visitTime: "Full day",
     transport: "Ferry/Tour",
+    transportInfo: "Ferry desde Phuket o Krabi, o tour organizado",
     dressCode: "Beach wear",
     price: "400-1,000 THB",
     massage: false,
-    imageId: "VB8fCnpm9e4"
+    imageUrl: "https://images.pexels.com/photos/994605/pexels-photo-994605.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   
   // Phuket
@@ -470,13 +534,15 @@ export const initialPlaces = [
     lng: 98.3923,
     category: "attraction",
     type: "neighborhood",
+    icon: "🎨",
     description: "Casco antiguo con arquitectura sino-portuguesa colorida",
     visitTime: "2-3 horas",
     transport: "Grab/Scooter",
+    transportInfo: "Grab o scooter rentado",
     dressCode: "Casual",
     price: "Gratis",
     massage: false,
-    imageId: "xXJ6utyoSw0"
+    imageUrl: "https://images.pexels.com/photos/2187605/pexels-photo-2187605.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   {
     name: "Lub d Phuket Patong",
@@ -484,12 +550,14 @@ export const initialPlaces = [
     lng: 98.2968,
     category: "hotel",
     type: "accommodation",
+    icon: "🌊",
     description: "Hostel boutique moderno cerca de la playa de Patong",
     visitTime: "N/A",
     transport: "Grab/Scooter",
+    transportInfo: "Grab o scooter rentado",
     dressCode: "Beach casual",
     price: "$",
     massage: false,
-    imageId: "S6NdInxa2iI"
+    imageUrl: "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=600"
   }
 ];

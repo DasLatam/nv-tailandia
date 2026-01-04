@@ -10,10 +10,14 @@ export default function PlaceCard({ place, onDelete, compact = false }) {
     <div className={`place-card ${compact ? 'compact' : ''}`}>
       <div className="card-image">
         <img 
-          src={`https://images.unsplash.com/${place.imageId}?w=400&h=250&fit=crop`}
+          src={place.imageUrl}
           alt={place.name}
           loading="lazy"
+          onError={(e) => {
+            e.target.src = 'https://images.pexels.com/photos/460376/pexels-photo-460376.jpeg?auto=compress&cs=tinysrgb&w=600';
+          }}
         />
+        <div className="card-icon">{place.icon}</div>
         <button className="delete-btn" onClick={handleDelete} title="Eliminar">
           🗑️
         </button>
@@ -29,9 +33,10 @@ export default function PlaceCard({ place, onDelete, compact = false }) {
             <span className="text">{place.visitTime}</span>
           </div>
           
-          <div className="info-item">
+          <div className="info-item transport-item" title={place.transportInfo}>
             <span className="icon">🚇</span>
             <span className="text">{place.transport}</span>
+            <span className="info-tooltip">ℹ️</span>
           </div>
           
           <div className="info-item">

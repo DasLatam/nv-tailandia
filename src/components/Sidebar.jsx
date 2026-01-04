@@ -7,6 +7,14 @@ export default function Sidebar({ places, onSearch, onLocationFound, onReset, on
       <div className="sidebar-header">
         <h1>🇹🇭 NVT</h1>
         <p>Nuestro Viaje a Tailandia</p>
+        <a 
+          href="https://bahtcalc.vercel.app/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="baht-calculator-btn"
+        >
+          💱 Calculadora de Baht
+        </a>
       </div>
       
       <SearchBar 
