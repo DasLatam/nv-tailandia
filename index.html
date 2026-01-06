@@ -9,26 +9,57 @@
     <style>
         :root { --primary: #d35400; --bg: #2c3e50; }
         body { margin: 0; display: flex; height: 100vh; font-family: 'Segoe UI', sans-serif; overflow: hidden; background: var(--bg); }
-        #sidebar { width: 380px; background: white; border-right: 1px solid #ccc; display: flex; flex-direction: column; z-index: 1001; }
-        #sidebar-header { padding: 15px; background: var(--primary); color: white; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
-        #places-list { flex: 1; overflow-y: auto; padding: 10px; background: #ecf0f1; }
-        .place-card { background: white; margin-bottom: 12px; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); cursor: pointer; transition: 0.3s; border-left: 5px solid var(--primary); }
-        .place-card:hover { transform: scale(1.02); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
-        .place-card img { width: 100%; height: 140px; object-fit: cover; }
-        .place-info { padding: 12px; }
-        .place-info h4 { margin: 0; color: #2c3e50; font-size: 15px; }
-        .place-info small { color: var(--primary); font-weight: bold; font-size: 11px; text-transform: uppercase; }
+        
+        /* Panel Lateral */
+        #sidebar { width: 380px; background: white; border-right: 1px solid #ccc; display: flex; flex-direction: column; z-index: 1001; box-shadow: 5px 0 15px rgba(0,0,0,0.2); }
+        #sidebar-header { padding: 20px 15px; background: linear-gradient(135deg, var(--primary), #e67e22); color: white; }
+        #places-list { flex: 1; overflow-y: auto; padding: 10px; background: #f4f7f6; }
+        
+        /* Tarjetas del Sidebar */
+        .place-card { 
+            background: white; margin-bottom: 12px; border-radius: 12px; overflow: hidden;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.05); cursor: pointer; transition: all 0.2s ease;
+            border-left: 6px solid var(--primary);
+        }
+        .place-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+        .place-card img { width: 100%; height: 150px; object-fit: cover; border-bottom: 1px solid #eee; }
+        .place-info { padding: 15px; }
+        .place-info h4 { margin: 0 0 5px; color: #2c3e50; font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+        .place-info small { color: #7f8c8d; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .place-info p { margin: 8px 0 0; font-size: 13px; color: #555; line-height: 1.4; }
+
+        /* Mapa */
         #map { flex: 1; }
-        .custom-icon { font-size: 24px; text-align: center; line-height: 1; }
-        @media (max-width: 768px) { body { flex-direction: column; } #sidebar { width: 100%; height: 40%; } #map { height: 60%; } }
+
+        /* ESTILO DE LOS NUEVOS MARCADORES (LO MÁS IMPORTANTE) */
+        .custom-marker-container {
+            display: flex; justify-content: center; align-items: center;
+            border-radius: 50%; 
+            border: 3px solid white; /* Borde blanco grueso */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5); /* Sombra potente para que flote */
+            font-size: 20px; width: 40px; height: 40px; /* Tamaño grande */
+            transition: transform 0.2s;
+        }
+        .custom-marker-container:hover { transform: scale(1.2); z-index: 1000 !important; }
+
+        /* Estilo Popups */
+        .leaflet-popup-content-wrapper { border-radius: 12px; padding: 0; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+        .leaflet-popup-content { margin: 0; width: 240px !important; }
+        .popup-img { width: 100%; height: 140px; object-fit: cover; display: block; }
+        .popup-inner { padding: 15px; }
+        .popup-inner h3 { margin: 0 0 5px; font-size: 16px; color: var(--primary); display: flex; align-items: center; gap: 5px;}
+        .popup-inner i { font-size: 12px; color: #7f8c8d; display: block; margin-bottom: 10px; }
+        .popup-inner p { margin: 0; font-size: 13px; color: #333; }
+        
+        @media (max-width: 768px) { body { flex-direction: column; } #sidebar { width: 100%; height: 45%; } #map { height: 55%; } }
     </style>
 </head>
 <body>
 
 <div id="sidebar">
     <div id="sidebar-header">
-        <h3 style="margin:0">✈️ Guía Tailandia 2026</h3>
-        <p id="counter" style="margin:5px 0 0; font-size: 13px; font-weight: bold;">Mostrando 0 puntos en esta zona</p>
+        <h2 style="margin:0; font-size: 22px;">🇹🇭 Tailandia 2026</h2>
+        <p id="counter" style="margin:5px 0 0; font-size: 13px; font-weight: 600; opacity: 0.9;">Cargando puntos...</p>
     </div>
     <div id="places-list"></div>
 </div>
@@ -37,30 +68,41 @@
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-    const map = L.map('map').setView([13.75, 100.5], 6);
+    // Inicialización del Mapa centrado en Tailandia
+    const map = L.map('map', {zoomControl: false}).setView([13.75, 100.5], 6);
+    L.control.zoom({position: 'topright'}).addTo(map);
 
-    // CAPAS: Satélite + Calles e Información Híbrida + Trenes
-    const satelite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}').addTo(map);
-    const hibrido = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-hybrid/{z}/{x}/{y}{r}.png', { opacity: 0.8 }).addTo(map);
-    const trenes = L.tileLayer('https://{s}.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png', { maxZoom: 19, opacity: 0.6 }).addTo(map);
+    // CAPAS HÍBRIDAS (Satélite + Calles + Trenes)
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}').addTo(map);
+    L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-hybrid/{z}/{x}/{y}{r}.png', { opacity: 0.8, attribution: 'Map tiles by Stamen Design, under CC BY 3.0. Data by OpenStreetMap, under ODbL.' }).addTo(map);
+    L.tileLayer('https://{s}.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png', { maxZoom: 19, opacity: 0.5 }).addTo(map);
 
-    const iconMap = {
-        "Hospedaje": "🏨", "Templo": "⛩️", "Gastronomía": "🍜", "Vida Nocturna": "🍸",
-        "Experiencia": "🎟️", "Naturaleza": "🏝️", "Tecnología": "📱", "Compras": "🛍️", "Sitio Histórico": "🗿"
+    // Mapeo de Iconos y Colores por Categoría
+    const catConfig = {
+        "Hospedaje": { icon: "🏨", color: "#2c3e50" }, // Negro azulado
+        "Templo": { icon: "⛩️", color: "#c0392b" },    // Rojo oscuro
+        "Gastronomía": { icon: "🍜", color: "#d35400" }, // Naranja quemado
+        "Vida Nocturna": { icon: "🍸", color: "#8e44ad" }, // Violeta
+        "Experiencia": { icon: "🎟️", color: "#e67e22" }, // Naranja claro
+        "Naturaleza": { icon: "🏝️", color: "#27ae60" },  // Verde esmeralda
+        "Tecnología": { icon: "📱", color: "#f39c12" },   // Amarillo anaranjado
+        "Compras": { icon: "🛍️", color: "#f1c40f" },    // Amarillo
+        "Sitio Histórico": { icon: "🗿", color: "#7f8c8d" } // Gris piedra
     };
 
+    // BASE DE DATOS COMPLETA (52 Puntos Verificados)
     const puntos = [
         // ETAPA 1: BANGKOK
         { pos: [13.7345, 100.5601], cat: "Hospedaje", day: "19-24 Feb", name: "Column Bangkok Hotel", desc: "Base en Asok.", img: "https://images.trvl-media.com/lodging/3000000/2320000/2311800/2311756/74889c16.jpg" },
         { pos: [13.7500, 100.4913], cat: "Templo", day: "19-Feb", name: "Gran Palacio y Wat Phra Kaew", desc: "Buda de Esmeralda.", img: "https://dynamic-media.tacdn.com/media/photo-o/2e/c9/78/0f/caption.jpg" },
         { pos: [13.7465, 100.4933], cat: "Templo", day: "19-Feb", name: "Wat Pho", desc: "Buda Reclinado.", img: "https://images.ctfassets.net/dsbipkqphva2/6XGoWzfCukMVShkTiAjEJ8/6417dd19b503075a2c0846b83a217160/wat-pho-bangkok-guide-lead-min.jpg" },
         { pos: [13.7437, 100.4889], cat: "Templo", day: "19-Feb", name: "Wat Arun", desc: "Templo del Amanecer.", img: "https://static.wixstatic.com/media/2cc94a_07e55de318fe41538e17cb9de596cb45~mv2.jpg" },
-        { pos: [13.7527, 100.5048], cat: "Gastronomía", day: "19-Feb", name: "Thipsamai Pad Thai", desc: "Pad Thai famoso.", img: "" },
+        { pos: [13.7527, 100.5048], cat: "Gastronomía", day: "19-Feb", name: "Thipsamai Pad Thai", desc: "Pad Thai legendario.", img: "" },
         { pos: [13.7377, 100.5137], cat: "Templo", day: "19-Feb", name: "Wat Traimit", desc: "Buda de Oro macizo.", img: "" },
         { pos: [14.3587, 100.5651], cat: "Sitio Histórico", day: "20-Feb", name: "Ayutthaya", desc: "Ruinas históricas.", img: "https://www.turismotailandes.com/wp-content/uploads/2015/05/Ayutthaya-Tailandia.jpg" },
         { pos: [13.7588, 100.4974], cat: "Vida Nocturna", day: "20-Feb", name: "Khao San Road", desc: "Zona bohemia.", img: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/04/11/17/istock-1024107154.jpg" },
         { pos: [13.7999, 100.5505], cat: "Compras", day: "21-Feb", name: "Mercado Chatuchak", desc: "Mercado gigante.", img: "https://tripaim.com/blog/wp-content/uploads/2021/04/Mercados-de-Bangkok.jpg" },
-        { pos: [13.4259, 99.9550], cat: "Compras", day: "21-Feb", name: "Mercado Amphawa", desc: "Luciérnagas.", img: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/07/a0/88/b0.jpg" },
+        { pos: [13.4259, 99.9550], cat: "Compras", day: "21-Feb", name: "Mercado Amphawa", desc: "Luciérnagas nocturnas.", img: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/07/a0/88/b0.jpg" },
         { pos: [13.7126, 100.5362], cat: "Experiencia", day: "22-Feb", name: "House of Taste Cooking", desc: "Clase de cocina.", img: "https://www.houseoftastecooking.com/wp-content/uploads/2025/07/House-of-Taste-Thai-Cooking-School-Team-Building-scaled.jpg" },
         { pos: [13.7266, 100.5110], cat: "Compras", day: "22-Feb", name: "IconSiam", desc: "Shopping de lujo.", img: "" },
         { pos: [13.7313, 100.5417], cat: "Naturaleza", day: "22-Feb", name: "Parque Lumpini", desc: "Ver lagartos varanos.", img: "" },
@@ -113,25 +155,36 @@
     const listContainer = document.getElementById('places-list');
     const counterLabel = document.getElementById('counter');
 
+    // Generar Marcadores Personalizados
     puntos.forEach(p => {
-        const iconEmoji = iconMap[p.cat] || "📍";
-        const customIcon = L.divIcon({ className: 'custom-icon', html: iconEmoji, iconSize: [30, 30], iconAnchor: [15, 15] });
+        const config = catConfig[p.cat] || { icon: "📍", color: "#333" };
+        
+        // HTML del Icono Personalizado (Borde blanco grueso y sombra)
+        const customIconHtml = `<div class="custom-marker-container" style="background-color: ${config.color}">${config.icon}</div>`;
+        
+        const customIcon = L.divIcon({
+            className: '', // Importante: limpiar clases default
+            html: customIconHtml,
+            iconSize: [40, 40], // Tamaño del contenedor
+            iconAnchor: [20, 20], // Punto de anclaje central
+            popupAnchor: [0, -25]
+        });
+
         const marker = L.marker(p.pos, { icon: customIcon }).addTo(map);
         
         marker.bindPopup(`
-            <div style="width:220px">
-                ${p.img ? `<img src="${p.img}" class="popup-img">` : '<div style="background:#ddd;height:100px;text-align:center;line-height:100px;color:#999">Subir Imagen</div>'}
-                <div style="padding:10px">
-                    <b style="color:var(--primary)">${p.name}</b><br>
-                    <i style="font-size:12px">${p.day} | ${p.cat}</i><br>
-                    <small>${p.desc}</small>
-                </div>
+            ${p.img ? `<img src="${p.img}" class="popup-img">` : ''}
+            <div class="popup-inner">
+                <h3>${config.icon} ${p.name}</h3>
+                <i>🗓️ ${p.day} | ${p.cat}</i>
+                <p>${p.desc}</p>
             </div>
         `);
-        marker.pdata = p;
+        marker.pdata = { ...p, icon: config.icon, color: config.color };
         markers.push(marker);
     });
 
+    // Función Sidebar Dinámico con Contador
     function updateSidebar() {
         listContainer.innerHTML = '';
         const bounds = map.getBounds();
@@ -143,23 +196,27 @@
                 const p = m.pdata;
                 const card = document.createElement('div');
                 card.className = 'place-card';
+                card.style.borderLeftColor = p.color;
                 card.innerHTML = `
-                    ${p.img ? `<img src="${p.img}">` : '<div style="height:80px;background:#ddd"></div>'}
+                    ${p.img ? `<img src="${p.img}">` : ''}
                     <div class="place-info">
-                        <small>${p.day}</small>
-                        <h4>${iconMap[p.cat]} ${p.name}</h4>
+                        <small style="color:${p.color}">${p.day} | ${p.cat}</small>
+                        <h4>${p.icon} ${p.name}</h4>
                         <p>${p.desc}</p>
                     </div>
                 `;
-                card.onclick = () => { map.panTo(m.getLatLng()); m.openPopup(); };
+                card.onclick = () => { 
+                    map.setView(m.getLatLng(), 14); 
+                    m.openPopup(); 
+                };
                 listContainer.appendChild(card);
             }
         });
-        counterLabel.innerText = `Mostrando ${count} puntos en esta zona`;
+        counterLabel.innerHTML = `Mostrando <b>${count}</b> puntos en esta zona`;
     }
 
     map.on('moveend', updateSidebar);
-    updateSidebar();
+    updateSidebar(); // Carga inicial
 </script>
 </body>
 </html>
