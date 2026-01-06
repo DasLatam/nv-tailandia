@@ -3,40 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mapa Interactivo Tailandia 2026</title>
+    <title>Mapa Maestro Tailandia 2026</title>
+    <link rel="icon" href="https://fav.farm/✈️" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <style>
-        :root { --primary: #d35400; --bg: #f4f4f4; }
-        body { margin: 0; display: flex; height: 100vh; font-family: 'Segoe UI', sans-serif; overflow: hidden; }
+        :root { --primary: #d35400; --bg: #2c3e50; }
+        body { margin: 0; display: flex; height: 100vh; font-family: 'Segoe UI', sans-serif; overflow: hidden; background: var(--bg); }
         
         /* Panel Lateral */
         #sidebar { 
-            width: 350px; background: white; border-right: 1px solid #ccc; 
+            width: 380px; background: white; border-right: 1px solid #ccc; 
             display: flex; flex-direction: column; z-index: 1001; 
         }
-        #sidebar-header { padding: 15px; background: var(--primary); color: white; }
-        #places-list { flex: 1; overflow-y: auto; padding: 10px; background: var(--bg); }
+        #sidebar-header { padding: 15px; background: var(--primary); color: white; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        #places-list { flex: 1; overflow-y: auto; padding: 10px; background: #ecf0f1; }
+        
         .place-card { 
-            background: white; margin-bottom: 10px; border-radius: 8px; overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1); cursor: pointer; transition: 0.3s;
+            background: white; margin-bottom: 12px; border-radius: 10px; overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1); cursor: pointer; transition: 0.3s;
+            border-left: 5px solid transparent;
         }
-        .place-card:hover { transform: translateY(-3px); box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
-        .place-card img { width: 100%; height: 120px; object-fit: cover; }
-        .place-info { padding: 10px; }
-        .place-info h4 { margin: 0 0 5px; color: #2c3e50; font-size: 14px; }
-        .place-info small { color: #7f8c8d; font-size: 11px; display: block; margin-bottom: 5px; }
+        .place-card:hover { transform: scale(1.02); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .place-card img { width: 100%; height: 140px; object-fit: cover; background: #ddd; }
+        .place-info { padding: 12px; }
+        .place-info h4 { margin: 0 0 5px; color: #2c3e50; font-size: 15px; line-height: 1.2; }
+        .place-info small { color: #d35400; font-weight: bold; font-size: 11px; display: block; text-transform: uppercase; }
+        .place-info p { margin: 5px 0; font-size: 12px; color: #34495e; }
 
         /* Mapa */
         #map { flex: 1; }
 
-        /* Popups */
-        .popup-img { width: 100%; border-radius: 4px; margin-top: 5px; }
-        .popup-text { font-size: 13px; line-height: 1.4; }
+        /* Popups Estilo */
+        .leaflet-popup-content-wrapper { border-radius: 12px; padding: 0; overflow: hidden; }
+        .popup-img { width: 100%; height: 150px; object-fit: cover; display: block; }
+        .popup-inner { padding: 10px; }
         
         @media (max-width: 768px) {
             body { flex-direction: column; }
-            #sidebar { width: 100%; height: 30%; }
-            #map { height: 70%; }
+            #sidebar { width: 100%; height: 40%; }
+            #map { height: 60%; }
         }
     </style>
 </head>
@@ -44,8 +49,8 @@
 
 <div id="sidebar">
     <div id="sidebar-header">
-        <h3 style="margin:0">📍 Lugares Visibles</h3>
-        <p style="margin:5px 0 0; font-size: 12px; opacity: 0.8">Zoom o mueve el mapa para filtrar</p>
+        <h3 style="margin:0">✈️ Guía Tailandia 2026</h3>
+        <p style="margin:5px 0 0; font-size: 12px; opacity: 0.9">Mostrando puntos en esta zona</p>
     </div>
     <div id="places-list"></div>
 </div>
@@ -54,118 +59,130 @@
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
+    // Inicialización del Mapa
     const map = L.map('map').setView([13.75, 100.5], 6);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
-    // BASE DE DATOS DE PUNTOS
+    // CAPAS DE MAPA (Satélite + Híbrido)
+    const satelite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+        attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+    }).addTo(map);
+
+    const etiquetas = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-hybrid/{z}/{x}/{y}{r}.png', {
+        opacity: 0.7
+    }).addTo(map);
+
+    // BASE DE DATOS COMPLETA (51 Puntos)
     const puntos = [
-        // BANGKOK & ALREDEDORES
-        { 
-            pos: [13.7345, 100.5601], cat: "Hospedaje", day: "19-24 Feb", name: "Column Bangkok Hotel", time: "Base", 
-            price: "Reserva OK", img: "https://images.trvl-media.com/lodging/3000000/2320000/2311800/2311756/74889c16.jpg?impolicy=resizecrop&rw=1200&ra=fit",
-            desc: "Tu base en Bangkok.", longDesc: "Hotel en la zona de Asok, ideal para moverte en MRT y BTS.", color: "black"
-        },
-        { 
-            pos: [13.7500, 100.4913], cat: "Templo", day: "19-Feb", time: "08:30", name: "Gran Palacio y Wat Phra Kaew", 
-            price: "500 THB", img: "https://dynamic-media.tacdn.com/media/photo-o/2e/c9/78/0f/caption.jpg",
-            desc: "Residencia real histórica.", longDesc: "El complejo más sagrado de Tailandia. Alberga el Buda de Esmeralda. Vestimenta estricta.", color: "red"
-        },
-        { 
-            pos: [13.7465, 100.4933], cat: "Templo", day: "19-Feb", time: "11:30", name: "Wat Pho", 
-            price: "300 THB", img: "https://images.ctfassets.net/dsbipkqphva2/6XGoWzfCukMVShkTiAjEJ8/6417dd19b503075a2c0846b83a217160/wat-pho-bangkok-guide-lead-min.jpg",
-            desc: "Buda Reclinado gigante.", longDesc: "46 metros de largo cubierto en pan de oro. Cuna del masaje tailandés.", color: "red"
-        },
-        { 
-            pos: [13.7437, 100.4889], cat: "Templo", day: "19-Feb", time: "14:00", name: "Wat Arun", 
-            price: "200 THB", img: "https://static.wixstatic.com/media/2cc94a_07e55de318fe41538e17cb9de596cb45~mv2.jpg/v1/fill/w_1960,h_1088,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/shutterstock_2183013411.jpg",
-            desc: "Templo del Amanecer.", longDesc: "Icónica torre de estilo jemer decorada con porcelana.", color: "red" },
-        { 
-            pos: [13.7412, 100.5082], cat: "Gastronomía", day: "19-Feb", time: "19:00", name: "Chinatown (Yaowarat)", 
-            price: "Según consumo", img: "https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/62/2020/10/22045552/TH-Hero-Image4-1700x606-1.jpg",
-            desc: "Exploración gastronómica.", longDesc: "Vibrante distrito conocido por su increíble comida callejera al anochecer.", color: "orange"
-        },
-        { 
-            pos: [14.3587, 100.5651], cat: "Sitio Histórico", day: "20-Feb", time: "08:00", name: "Parque Historico Ayutthaya", 
-            price: "220 THB", img: "https://www.turismotailandes.com/wp-content/uploads/2015/05/Ayutthaya-Tailandia.jpg",
-            desc: "Antigua capital de Siam.", longDesc: "Patrimonio de la Humanidad. Mejor explorar en bicicleta o tuk-tuk.", color: "red"
-        },
-        { 
-            pos: [18.7877, 98.9931], cat: "Hospedaje", day: "24-28 Feb", time: "Base", name: "Vieng Thapae Resort", 
-            price: "Reserva OK", img: "https://r2imghtl.mmtcdn.com/hcms/image/upload/f_auto,q_auto,t_htl_view/v1/htl-imgs/201704281747192305-648615c0_z.jpg",
-            desc: "Tu base en Chiang Mai.", longDesc: "Ubicación premium cerca de Thapae Gate.", color: "black"
-        },
-        { 
-            pos: [18.7869, 98.9866], cat: "Templo", day: "24-Feb", time: "14:00", name: "Wat Chedi Luang", 
-            price: "40 THB", img: "https://images.squarespace-cdn.com/content/v1/5438e2c6e4b0b18459a8ca06/1593080023687-2WNKQ64LB63VEV4UMVZ4/GTJ-2020-0625-39.jpg",
-            desc: "Templo antiguo imponente.", longDesc: "Masivo chedi en ruinas que una vez albergó el Buda de Esmeralda.", color: "green"
-        },
-        { 
-            pos: [19.8242, 99.7631], cat: "Templo", day: "27-Feb", time: "09:00", name: "Wat Rong Khun (Templo Blanco)", 
-            price: "100 THB", img: "https://www.destinochiangmai-es.com/wp-content/uploads/2022/09/soleil-sur-le-temple-blanc.jpg",
-            desc: "Obra de arte moderna blanca.", longDesc: "Contemporáneo y surrealista. Diseñado por Chalermchai Kositpipat.", color: "green"
-        },
-        { 
-            pos: [7.7407, 98.7784], cat: "Naturaleza", day: "02-Mar", time: "07:30", name: "Islas Phi Phi", 
-            price: "2500 THB + 400 Parque", img: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/06/74/bd/77.jpg",
-            desc: "Maya Bay y snorkel.", longDesc: "Archipiélago icónico. Se visita en tour de día completo en lancha rápida.", color: "blue"
-        }
-        // ... (Aquí puedes seguir agregando el resto de los puntos con el mismo formato)
+        // --- ETAPA 1: BANGKOK ---
+        { pos: [13.7345, 100.5601], cat: "Hospedaje", day: "19-24 Feb", name: "Column Bangkok Hotel", time: "Base", price: "-", img: "", desc: "Base en Zona Asok.", color: "black" },
+        { pos: [13.7500, 100.4913], cat: "E1: Bangkok", day: "19-Feb", time: "08:30", name: "Gran Palacio y Wat Phra Kaew", price: "500 THB", img: "https://dynamic-media.tacdn.com/media/photo-o/2e/c9/78/0f/caption.jpg", desc: "Buda de Esmeralda y Palacio Real.", color: "red" },
+        { pos: [13.7465, 100.4933], cat: "E1: Bangkok", day: "19-Feb", time: "11:30", name: "Wat Pho", price: "300 THB", img: "https://images.ctfassets.net/dsbipkqphva2/6XGoWzfCukMVShkTiAjEJ8/6417dd19b503075a2c0846b83a217160/wat-pho-bangkok-guide-lead-min.jpg", desc: "Buda Reclinado gigante.", color: "red" },
+        { pos: [13.7437, 100.4889], cat: "E1: Bangkok", day: "19-Feb", time: "14:00", name: "Wat Arun", price: "200 THB", img: "https://static.wixstatic.com/media/2cc94a_07e55de318fe41538e17cb9de596cb45~mv2.jpg/v1/fill/w_1960,h_1088,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/shutterstock_2183013411.jpg", desc: "Templo del Amanecer.", color: "red" },
+        { pos: [13.7527, 100.5048], cat: "Gastronomía", day: "19-Feb", time: "19:00", name: "Thipsamai Pad Thai", price: "150-300 THB", img: "", desc: "Pad Thai legendario.", color: "orange" },
+        { pos: [13.7377, 100.5137], cat: "E1: Bangkok", day: "19-Feb", time: "17:30", name: "Wat Traimit", price: "40 THB", img: "", desc: "Buda de Oro macizo.", color: "red" },
+        { pos: [14.3587, 100.5651], cat: "E1: Bangkok", day: "20-Feb", time: "08:00", name: "Ayutthaya", price: "220 THB", img: "https://www.turismotailandes.com/wp-content/uploads/2015/05/Ayutthaya-Tailandia.jpg", desc: "Antigua Capital.", color: "red" },
+        { pos: [13.7588, 100.4974], cat: "E1: Bangkok", day: "20-Feb", time: "19:30", name: "Khao San Road", price: "-", img: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/04/11/17/istock-1024107154.jpg", desc: "Zona bohemia.", color: "red" },
+        { pos: [13.7999, 100.5505], cat: "E1: Bangkok", day: "21-Feb", time: "09:00", name: "Mercado Chatuchak", price: "-", img: "https://tripaim.com/blog/wp-content/uploads/2021/04/Mercados-de-Bangkok.jpg", desc: "Mercado gigante.", color: "red" },
+        { pos: [13.4259, 99.9550], cat: "E1: Bangkok", day: "21-Feb", time: "15:00", name: "Mercado Flotante Amphawa", price: "60 THB", img: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/07/a0/88/b0.jpg", desc: "Luciérnagas nocturnas.", color: "red" },
+        { pos: [13.7126, 100.5362], cat: "E1: Bangkok", day: "22-Feb", time: "09:00", name: "House of Taste Cooking", price: "2000 THB", img: "https://www.houseoftastecooking.com/wp-content/uploads/2025/07/House-of-Taste-Thai-Cooking-School-Team-Building-scaled.jpg", desc: "Clase de cocina.", color: "orange" },
+        { pos: [13.7266, 100.5110], cat: "E1: Bangkok", day: "22-Feb", time: "15:00", name: "IconSiam", price: "-", img: "", desc: "Shopping de lujo.", color: "red" },
+        { pos: [13.7313, 100.5417], cat: "E1: Bangkok", day: "16:30", name: "Parque Lumpini", price: "Gratis", img: "", desc: "Ver lagartos varanos.", color: "red" },
+        { pos: [13.7226, 100.5819], cat: "Vida Nocturna", day: "22-Feb", time: "20:00", name: "Tichuca Rooftop", price: "500+ THB", img: "https://www.therooftopguide.com/rooftop-bars-in-bangkok/Bilder/ticucha-rooftop-bar-600-1.jpg", desc: "Bar viral con luces.", color: "orange" },
+        { pos: [13.7479, 100.5385], cat: "Vida Nocturna", day: "22-Feb", time: "21:30", name: "Red Sky Rooftop", price: "500+ THB", img: "https://static.bangkokpost.com/media/content/20140522/631127.jpg", desc: "Vistas 360.", color: "orange" },
+        { pos: [13.7348, 100.2155], cat: "E1: Bangkok", day: "23-Feb", time: "09:00", name: "Wat Samphran", price: "Donación", img: "", desc: "Templo del Dragón.", color: "red" },
+        { pos: [14.5936, 100.3793], cat: "E1: Bangkok", day: "23-Feb", time: "12:00", name: "Wat Muang", price: "-", img: "", desc: "Buda más grande.", color: "red" },
+
+        // --- ETAPA 2: CHIANG MAI ---
+        { pos: [18.7877, 98.9931], cat: "Hospedaje", day: "24-28 Feb", name: "Vieng Thapae Resort", time: "Base", price: "-", img: "", desc: "Hospedaje en Old City.", color: "black" },
+        { pos: [18.7869, 98.9866], cat: "E2: Chiang Mai", day: "24-Feb", time: "14:00", name: "Wat Chedi Luang", price: "40 THB", img: "https://images.squarespace-cdn.com/content/v1/5438e2c6e4b0b18459a8ca06/1593080023687-2WNKQ64LB63VEV4UMVZ4/GTJ-2020-0625-39.jpg", desc: "Chedi histórico.", color: "green" },
+        { pos: [18.7885, 98.9824], cat: "E2: Chiang Mai", day: "24-Feb", time: "15:30", name: "Wat Phra Singh", price: "50 THB", img: "", desc: "Templo principal.", color: "green" },
+        { pos: [18.7958, 98.9826], cat: "E2: Chiang Mai", day: "24-Feb", time: "17:00", name: "Wat Lok Moli", price: "Gratis", img: "", desc: "Chedi de ladrillo.", color: "green" },
+        { pos: [18.5910, 98.4870], cat: "E2: Chiang Mai", day: "25-Feb", time: "09:00", name: "Doi Inthanon", price: "300 THB", img: "https://img1.oastatic.com/img2/77143442/834x417r/variant.jpg", desc: "Parque Nacional.", color: "green" },
+        { pos: [18.5527, 98.4801], cat: "E2: Chiang Mai", day: "25-Feb", time: "11:00", name: "Pagodas Reales", price: "-", img: "", desc: "Jardines y vistas.", color: "green" },
+        { pos: [20.1997, 99.8166], cat: "E2: Chiang Mai", day: "25-Feb", time: "15:00", name: "Cultivos de Té Chui Fong", price: "-", img: "", desc: "Plantaciones verdes.", color: "green" },
+        { pos: [19.1666, 98.8333], cat: "Experiencia", day: "26-Feb", time: "08:30", name: "Santuario de Elefantes", price: "3000+ THB", img: "https://media.tacdn.com/media/attractions-splice-spp-674x446/06/ef/16/64.jpg", desc: "Día ético con elefantes.", color: "green" },
+        { pos: [18.7852, 99.0003], cat: "Gastronomía", day: "26-Feb", time: "19:00", name: "Night Bazaar", price: "-", img: "", desc: "Cenas y artesanías.", color: "orange" },
+        { pos: [18.7915, 98.9912], cat: "E2: Chiang Mai", day: "26-Feb", time: "21:00", name: "Zoe in Yellow", price: "-", img: "", desc: "Fiesta y bares.", color: "green" },
+        { pos: [19.8242, 99.7631], cat: "E2: Chiang Mai", day: "27-Feb", time: "09:00", name: "Templo Blanco (Chiang Rai)", price: "100 THB", img: "https://www.destinochiangmai-es.com/wp-content/uploads/2022/09/soleil-sur-le-temple-blanc.jpg", desc: "Arte moderno blanco.", color: "green" },
+        { pos: [19.9231, 99.8407], cat: "E2: Chiang Mai", day: "27-Feb", time: "11:30", name: "Templo Azul (Chiang Rai)", price: "Gratis", img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/8f/c1/32/innenbereich.jpg", desc: "Color azul vibrante.", color: "green" },
+        { pos: [19.9920, 99.8604], cat: "E2: Chiang Mai", day: "27-Feb", time: "14:00", name: "Casa Negra (Baandam)", price: "80 THB", img: "https://www.destinochiangmai-es.com/wp-content/uploads/2024/04/museo-baan-dam.jpg", desc: "Museo de arte oscuro.", color: "green" },
+        { pos: [18.9103, 98.9324], cat: "E2: Chiang Mai", day: "28-Feb", time: "09:00", name: "Granja de Orquídeas", price: "-", img: "", desc: "Especies exóticas.", color: "green" },
+
+        // --- ETAPA 3: PHUKET ---
+        { pos: [7.8839, 98.3905], cat: "E3: Phuket", day: "28-Feb", time: "16:30", name: "Phuket Old Town", price: "-", img: "https://cdn-ilaahih.nitrocdn.com/eNIJKrVrLmGQXTjIClKuJlbXtyfBFxHI/assets/images/optimized/rev-0a32d0b/www.theprivateworld.com/wp-content/uploads/2022/09/Phuket-Old-Town-Featured-Image.jpg", desc: "Calles coloridas.", color: "blue" },
+        { pos: [7.9620, 98.2833], cat: "Experiencia", day: "28-Feb", time: "19:00", name: "Carnival Magic", price: "2100 THB", img: "", desc: "Show de luces.", color: "blue" },
+        { pos: [8.0175, 98.8404], cat: "Naturaleza", day: "01-Mar", time: "08:00", name: "4 Islas (Krabi)", price: "1200 THB", img: "", desc: "Tour de lancha.", color: "blue" },
+        { pos: [7.7407, 98.7784], cat: "Naturaleza", day: "02-Mar", time: "07:30", name: "Islas Phi Phi", price: "2000+ THB", img: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/06/74/bd/77.jpg", desc: "Maya Bay y snorkel.", color: "blue" },
+
+        // --- ETAPA 4: KOH SAMUI / KRABI ---
+        { pos: [9.5707, 100.0604], cat: "E4: Samui", day: "03-Mar", time: "15:00", name: "Big Buddha", price: "Gratis", img: "https://www.placesofjuma.com/wp-content/uploads/2023/10/Big-Buddha-Koh-Samui-3-scaled-761x507.jpg", desc: "Estatua dorada.", color: "purple" },
+        { pos: [9.5714, 100.0669], cat: "E4: Samui", day: "16:30", name: "Wat Plai Laem", price: "Gratis", img: "https://cdn.sanity.io/images/nxpteyfv/goguides/3589791410dd2104bc6a9a61606797d3e49bcf2c-1600x1066.jpg", desc: "Estatua 18 brazos.", color: "purple" },
+        { pos: [8.0269, 98.8286], cat: "Naturaleza", day: "04-Mar", time: "09:00", name: "Monkey Trail", desc: "Cuidado con los monos.", color: "purple" },
+        { pos: [8.0063, 98.8378], cat: "Naturaleza", day: "04-Mar", time: "10:30", name: "Railay Beach", img: "https://101lugaresincreibles.com/wp-content/uploads/2016/03/Railay-beach-tailandia-e1457107979409.jpg", desc: "Playa paradisíaca.", color: "purple" },
+        { pos: [8.0105, 98.8415], cat: "Experiencia", day: "04-Mar", time: "12:00", name: "Railay Viewpoint", img: "https://www.journeyera.com/wp-content/uploads/2016/10/AO-NANG-TO-RAILAY-BEACH-KRABI-1199.jpg", desc: "Vistas panorámicas.", color: "purple" },
+        { pos: [8.1226, 99.2789], cat: "Naturaleza", day: "04-Mar", time: "14:00", name: "Emerald Pool", price: "200 THB", img: "", desc: "Piscina natural.", color: "purple" },
+        { pos: [8.1274, 98.9252], cat: "E4: Samui", day: "04-Mar", time: "16:00", name: "Tiger Cave Temple", price: "Gratis", img: "", desc: "1.260 escalones.", color: "purple" },
+        { pos: [10.0956, 99.8404], cat: "Naturaleza", day: "05-Mar", time: "08:00", name: "Koh Tao", price: "1200+ THB", img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/03/67/74/b7/koh-nang-yuan.jpg", desc: "Buceo y snorkel.", color: "purple" },
+        { pos: [9.6192, 99.6738], cat: "Naturaleza", day: "06-Mar", time: "08:30", name: "Ang Thong", price: "1800+ THB", img: "https://fotografias.lasexta.com/clipping/cmsimages02/2021/09/22/09B064EF-11ED-4278-A758-3F5A1D05D877/97.jpg", desc: "Parque Marino.", color: "purple" },
+        { pos: [9.4755, 100.0658], cat: "E4: Samui", day: "07-Mar", time: "09:00", name: "Crystal Bay", desc: "Aguas transparentes.", color: "purple" },
+
+        // --- ETAPA 5: CIERRE ---
+        { pos: [13.7462, 100.5291], cat: "Tecnología", day: "08-Mar", name: "MBK Center", desc: "Tecno y souvenirs.", color: "orange" },
+        { pos: [13.7475, 100.5391], cat: "Tecnología", day: "09-Mar", name: "Apple Store CentralWorld", desc: "iPhones y MacBooks.", color: "orange" },
+        { pos: [13.7483, 100.5404], cat: "Compras", day: "09-Mar", name: "Big C Supercenter", desc: "Té tailandés y snacks.", color: "orange" }
     ];
 
     const markers = [];
     const listContainer = document.getElementById('places-list');
 
-    // Función para crear marcadores
+    // Cargar Marcadores
     puntos.forEach(p => {
         const marker = L.circleMarker(p.pos, {
-            radius: 10, fillOpacity: 0.8, color: 'white', weight: 2, fillColor: p.color
+            radius: 11, fillOpacity: 0.9, color: 'white', weight: 2, fillColor: p.color
         }).addTo(map);
 
         const popupContent = `
-            <div class="popup-text">
-                <img src="${p.img}" class="popup-img">
-                <b>${p.name}</b><br>
-                <i>${p.day} | ${p.time} | ${p.price}</i><br>
-                ${p.desc}<br>
-                <small>${p.longDesc}</small>
+            <div style="width:200px">
+                ${p.img ? `<img src="${p.img}" class="popup-img">` : '<div style="background:#ddd;height:100px;text-align:center;line-height:100px;color:#999">Subir Imagen</div>'}
+                <div class="popup-inner">
+                    <b>${p.name}</b><br>
+                    <i>${p.day} | ${p.time}</i><br>
+                    <small>${p.desc}</small>
+                </div>
             </div>
         `;
         marker.bindPopup(popupContent);
-        marker.pdata = p; // Guardar datos en el marcador
+        marker.pdata = p;
         markers.push(marker);
     });
 
-    // Función para actualizar el Sidebar
+    // Sidebar Dinámico
     function updateSidebar() {
         listContainer.innerHTML = '';
         const bounds = map.getBounds();
-
         markers.forEach(m => {
             if (bounds.contains(m.getLatLng())) {
                 const p = m.pdata;
                 const card = document.createElement('div');
                 card.className = 'place-card';
+                card.style.borderLeftColor = p.color;
                 card.innerHTML = `
-                    <img src="${p.img}">
+                    ${p.img ? `<img src="${p.img}">` : '<div style="height:100px;background:#ddd"></div>'}
                     <div class="place-info">
                         <small>${p.day} - ${p.time}</small>
                         <h4>${p.name}</h4>
-                        <p style="font-size:11px; margin:5px 0;">${p.desc}</p>
-                        <b style="font-size:12px; color:var(--primary)">${p.price}</b>
+                        <p>${p.desc}</p>
+                        <span style="font-size:11px; color:#d35400">${p.price || ''}</span>
                     </div>
                 `;
-                card.onclick = () => {
-                    map.setView(m.getLatLng(), 15);
-                    m.openPopup();
-                };
+                card.onclick = () => { map.panTo(m.getLatLng()); m.openPopup(); };
                 listContainer.appendChild(card);
             }
         });
     }
 
-    // Escuchar eventos de movimiento del mapa
     map.on('moveend', updateSidebar);
-    updateSidebar(); // Carga inicial
+    updateSidebar();
 </script>
 </body>
 </html>
