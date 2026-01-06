@@ -2,48 +2,85 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mapa Maestro Tailandia 2026 - 57 Puntos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>NVT - Nuestro Viaje a Tailandia</title>
+    
+    <meta property="og:title" content="NVT - Nuestro Viaje a Tailandia">
+    <meta property="og:description" content="Mapa interactivo y guía de viaje Tailandia 2026">
     <link rel="icon" href="https://fav.farm/✈️" />
+
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <style>
-        :root { --primary: #d35400; --bg: #2c3e50; }
-        body { margin: 0; display: flex; height: 100vh; font-family: 'Segoe UI', sans-serif; overflow: hidden; background: var(--bg); }
-        #sidebar { width: 380px; background: white; border-right: 1px solid #ccc; display: flex; flex-direction: column; z-index: 1001; box-shadow: 5px 0 15px rgba(0,0,0,0.2); }
-        #sidebar-header { padding: 20px 15px; background: linear-gradient(135deg, var(--primary), #e67e22); color: white; }
-        #places-list { flex: 1; overflow-y: auto; padding: 10px; background: #f4f7f6; }
-        .place-card { background: white; margin-bottom: 12px; border-radius: 12px; overflow: hidden; box-shadow: 0 3px 6px rgba(0,0,0,0.05); cursor: pointer; transition: 0.3s; border-left: 6px solid var(--primary); }
-        .place-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
-        .place-card img { width: 100%; height: 140px; object-fit: cover; }
-        .place-info { padding: 12px; }
-        .place-info h4 { margin: 0; color: #2c3e50; font-size: 15px; display: flex; align-items: center; gap: 8px; }
-        #map { flex: 1; }
-        .custom-marker { display: flex; justify-content: center; align-items: center; border-radius: 50%; border: 3px solid white; box-shadow: 0 4px 8px rgba(0,0,0,0.4); font-size: 20px; width: 42px; height: 42px; }
-        .leaflet-popup-content-wrapper { border-radius: 12px; padding: 0; overflow: hidden; }
-        .popup-img { width: 100%; height: 140px; object-fit: cover; }
-        @media (max-width: 768px) { body { flex-direction: column; } #sidebar { width: 100%; height: 40%; } #map { height: 60%; } }
+        :root { --primary: #d35400; --dark: #2c3e50; }
+        body { margin: 0; font-family: 'Segoe UI', sans-serif; height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+        
+        /* HEADER & COUNTER */
+        #header { background: var(--primary); color: white; padding: 15px; z-index: 1002; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        #header h1 { margin: 0; font-size: 18px; }
+        #counter { font-size: 12px; font-weight: bold; background: rgba(0,0,0,0.2); padding: 5px 10px; border-radius: 15px; }
+
+        /* MAPA */
+        #map { flex: 1; z-index: 1; }
+
+        /* SIDEBAR / LISTA (Cerrable en móvil) */
+        #sidebar { 
+            position: absolute; left: 0; bottom: 0; width: 100%; height: 40%; 
+            background: white; z-index: 1001; transition: 0.3s;
+            display: flex; flex-direction: column; border-top-left-radius: 20px; border-top-right-radius: 20px;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
+        }
+        #sidebar.hidden { transform: translateY(100%); }
+        #drag-handle { width: 40px; height: 5px; background: #ccc; border-radius: 5px; margin: 10px auto; cursor: pointer; }
+        #places-list { flex: 1; overflow-y: auto; padding: 10px; background: #f8f9fa; }
+
+        /* ESCRITORIO */
+        @media (min-width: 769px) {
+            body { flex-direction: row; }
+            #sidebar { position: relative; width: 380px; height: 100%; border-radius: 0; transform: none !important; }
+            #drag-handle { display: none; }
+        }
+
+        /* ESTILOS DE CARDS & MARKERS */
+        .place-card { background: white; margin-bottom: 10px; border-radius: 10px; display: flex; padding: 10px; gap: 10px; cursor: pointer; border-left: 5px solid var(--primary); box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .place-card img { width: 80px; height: 80px; object-fit: cover; border-radius: 5px; background: #ddd; }
+        .place-info h4 { margin: 0; font-size: 14px; }
+        .place-info small { color: var(--primary); font-size: 10px; font-weight: bold; }
+
+        .custom-marker { 
+            display: flex; justify-content: center; align-items: center; 
+            border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 10px rgba(0,0,0,0.5); 
+            font-size: 18px; width: 36px; height: 36px; color: white;
+        }
+
+        #toggle-btn { position: absolute; bottom: 20px; right: 20px; z-index: 1002; background: var(--primary); color: white; border: none; padding: 15px; border-radius: 50%; box-shadow: 0 5px 15px rgba(0,0,0,0.3); cursor: pointer; font-size: 20px; }
     </style>
 </head>
 <body>
+
+<div id="header">
+    <h1>🇹🇭 NVT</h1>
+    <span id="counter">Cargando...</span>
+</div>
+
 <div id="sidebar">
-    <div id="sidebar-header">
-        <h2 style="margin:0; font-size: 20px;">🇹🇭 Tailandia 2026</h2>
-        <p id="counter" style="margin:5px 0 0; font-size: 13px; font-weight: 600;">Calculando puntos...</p>
-    </div>
+    <div id="drag-handle" onclick="toggleSidebar()"></div>
     <div id="places-list"></div>
 </div>
+
+<button id="toggle-btn" onclick="toggleSidebar()">📍</button>
+
 <div id="map"></div>
+
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-    const map = L.map('map', {zoomControl: false}).setView([13.75, 100.5], 6);
-    L.control.zoom({position: 'topright'}).addTo(map);
-
+    const map = L.map('map', { zoomControl: false }).setView([13.75, 100.5], 6);
+    
+    // CAPAS HÍBRIDAS (Satélite + Calles)
     L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}').addTo(map);
-    L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-hybrid/{z}/{x}/{y}{r}.png', { opacity: 0.8 }).addTo(map);
-    L.tileLayer('https://{s}.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png', { opacity: 0.4 }).addTo(map);
+    L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-hybrid/{z}/{x}/{y}{r}.png', { opacity: 0.6 }).addTo(map);
 
     const catConfig = {
-        "Hospedaje": { icon: "🏨", color: "#2c3e50" },
+        "Hospedaje": { icon: "🏨", color: "#000000" },
         "Templo": { icon: "⛩️", color: "#c0392b" },
         "Gastronomía": { icon: "🍜", color: "#d35400" },
         "Vida Nocturna": { icon: "🍸", color: "#8e44ad" },
@@ -54,8 +91,8 @@
         "Sitio Histórico": { icon: "🗿", color: "#7f8c8d" }
     };
 
+    // BASE DE DATOS DE 57 PUNTOS
     const puntos = [
-        // ETAPA 1: BANGKOK (20 Puntos)
         { pos: [13.7345, 100.5601], cat: "Hospedaje", day: "19-Feb", name: "Column Bangkok Hotel", desc: "Base Bangkok.", img: "https://images.trvl-media.com/lodging/3000000/2320000/2311800/2311756/74889c16.jpg" },
         { pos: [13.7500, 100.4913], cat: "Templo", day: "19-Feb", name: "Gran Palacio", desc: "Buda Esmeralda.", img: "https://dynamic-media.tacdn.com/media/photo-o/2e/c9/78/0f/caption.jpg" },
         { pos: [13.7465, 100.4933], cat: "Templo", day: "19-Feb", name: "Wat Pho", desc: "Buda Reclinado.", img: "https://images.ctfassets.net/dsbipkqphva2/6XGoWzfCukMVShkTiAjEJ8/6417dd19b503075a2c0846b83a217160/wat-pho-bangkok-guide-lead-min.jpg" },
@@ -76,8 +113,6 @@
         { pos: [13.7479, 100.5385], cat: "Vida Nocturna", day: "22-Feb", name: "Red Sky Bar", desc: "Vistas 360.", img: "https://static.bangkokpost.com/media/content/20140522/631127.jpg" },
         { pos: [13.7348, 100.2155], cat: "Templo", day: "23-Feb", name: "Wat Samphran", desc: "Dragón Rosa.", img: "" },
         { pos: [14.5936, 100.3793], cat: "Templo", day: "23-Feb", name: "Wat Muang", desc: "Buda Gigante.", img: "" },
-
-        // ETAPA 2: CHIANG MAI (15 Puntos)
         { pos: [18.7877, 98.9931], cat: "Hospedaje", day: "24-Feb", name: "Vieng Thapae Resort", desc: "Base Chiang Mai.", img: "" },
         { pos: [18.7869, 98.9866], cat: "Templo", day: "24-Feb", name: "Wat Chedi Luang", desc: "Pirámide.", img: "https://images.squarespace-cdn.com/content/v1/5438e2c6e4b0b18459a8ca06/1593080023687-2WNKQ64LB63VEV4UMVZ4/GTJ-2020-0625-39.jpg" },
         { pos: [18.7885, 98.9824], cat: "Templo", day: "24-Feb", name: "Wat Phra Singh", desc: "Templo oro.", img: "" },
@@ -93,15 +128,11 @@
         { pos: [19.9231, 99.8407], cat: "Templo", day: "27-Feb", name: "Templo Azul", desc: "Vibrante.", img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/8f/c1/32/innenbereich.jpg" },
         { pos: [19.9920, 99.8604], cat: "Sitio Histórico", day: "27-Feb", name: "Casa Negra", desc: "Baandam.", img: "https://www.destinochiangmai-es.com/wp-content/uploads/2024/04/museo-baan-dam.jpg" },
         { pos: [18.9103, 98.9324], cat: "Naturaleza", day: "28-Feb", name: "Granja Orquídeas", desc: "Exótico.", img: "" },
-
-        // ETAPA 3: PHUKET (5 Puntos)
         { pos: [7.8839, 98.3905], cat: "Sitio Histórico", day: "28-Feb", name: "Phuket Old Town", desc: "Colores.", img: "https://cdn-ilaahih.nitrocdn.com/eNIJKrVrLmGQXTjIClKuJlbXtyfBFxHI/assets/images/optimized/rev-0a32d0b/www.theprivateworld.com/wp-content/uploads/2022/09/Phuket-Old-Town-Featured-Image.jpg" },
         { pos: [7.9620, 98.2833], cat: "Experiencia", day: "28-Feb", name: "Carnival Magic", desc: "Show luces.", img: "" },
         { pos: [8.1250, 98.5000], cat: "Naturaleza", day: "01-Mar", name: "Ao Phang Nga", desc: "James Bond.", img: "https://www.thainationalparks.com/img/poi/2021/05/23/397472/james-bond-island-w-900.jpg" },
         { pos: [8.0175, 98.8404], cat: "Naturaleza", day: "01-Mar", name: "4 Islas Krabi", desc: "Poda/Tup.", img: "" },
         { pos: [7.7407, 98.7784], cat: "Naturaleza", day: "02-Mar", name: "Islas Phi Phi", desc: "Maya Bay.", img: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/06/74/bd/77.jpg" },
-
-        // ETAPA 4: SAMUI/KRABI (12 Puntos)
         { pos: [9.5707, 100.0604], cat: "Templo", day: "03-Mar", name: "Big Buddha Samui", desc: "Dorado.", img: "https://www.placesofjuma.com/wp-content/uploads/2023/10/Big-Buddha-Koh-Samui-3-scaled-761x507.jpg" },
         { pos: [9.5714, 100.0669], cat: "Templo", day: "03-Mar", name: "Wat Plai Laem", desc: "18 brazos.", img: "https://cdn.sanity.io/images/nxpteyfv/goguides/3589791410dd2104bc6a9a61606797d3e49bcf2c-1600x1066.jpg" },
         { pos: [8.0269, 98.8286], cat: "Naturaleza", day: "04-Mar", name: "Monkey Trail", desc: "Monos.", img: "" },
@@ -114,8 +145,6 @@
         { pos: [10.0956, 99.8404], cat: "Naturaleza", day: "05-Mar", name: "Koh Tao", desc: "Snorkel.", img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/03/67/74/b7/koh-nang-yuan.jpg" },
         { pos: [9.6192, 99.6738], cat: "Naturaleza", day: "06-Mar", name: "Ang Thong", desc: "42 islas.", img: "https://fotografias.lasexta.com/clipping/cmsimages02/2021/09/22/09B064EF-11ED-4278-A758-3F5A1D05D877/97.jpg" },
         { pos: [9.4755, 100.0658], cat: "Naturaleza", day: "07-Mar", name: "Crystal Bay", desc: "Relajante.", img: "" },
-
-        // ETAPA 5: CIERRE (5 Puntos)
         { pos: [17.0180, 99.7040], cat: "Sitio Histórico", day: "Ext", name: "Sukhothai", desc: "Capital 1.", img: "https://www.voyagetips.com/wp-content/uploads/2019/04/parc-historique-de-Sukhothai.jpg" },
         { pos: [13.7462, 100.5291], cat: "Tecnología", day: "08-Mar", name: "MBK Center", desc: "Tech.", img: "" },
         { pos: [13.7475, 100.5391], cat: "Tecnología", day: "09-Mar", name: "Apple Store", desc: "iPhones.", img: "" },
@@ -126,18 +155,22 @@
     const markers = [];
     const listContainer = document.getElementById('places-list');
     const counterLabel = document.getElementById('counter');
+    const sidebar = document.getElementById('sidebar');
+
+    function toggleSidebar() { sidebar.classList.toggle('hidden'); }
 
     puntos.forEach(p => {
         const config = catConfig[p.cat] || { icon: "📍", color: "#333" };
         const iconHtml = `<div class="custom-marker" style="background-color: ${config.color}">${config.icon}</div>`;
-        const marker = L.marker(p.pos, { icon: L.divIcon({ className: '', html: iconHtml, iconSize: [42, 42], iconAnchor: [21, 21], popupAnchor: [0, -25] }) }).addTo(map);
+        const marker = L.marker(p.pos, { icon: L.divIcon({ className: '', html: iconHtml, iconSize: [36, 36], iconAnchor: [18, 18], popupAnchor: [0, -20] }) }).addTo(map);
         
         marker.bindPopup(`
-            ${p.img ? `<img src="${p.img}" class="popup-img">` : ''}
-            <div style="padding:15px">
-                <b style="color:${config.color}">${p.name}</b><br>
-                <i style="font-size:12px">${p.day} | ${p.cat}</i>
-                <p style="font-size:13px; margin:5px 0;">${p.desc}</p>
+            <div style="width:200px">
+                ${p.img ? `<img src="${p.img}" style="width:100%; height:120px; object-fit:cover; border-radius:10px 10px 0 0;">` : ''}
+                <div style="padding:10px">
+                    <b style="color:${config.color}">${p.name}</b><br>
+                    <small>${p.day} | ${p.cat}</small>
+                </div>
             </div>
         `);
         marker.pdata = { ...p, icon: config.icon, color: config.color };
@@ -156,17 +189,21 @@
                 card.className = 'place-card';
                 card.style.borderLeftColor = p.color;
                 card.innerHTML = `
-                    ${p.img ? `<img src="${p.img}">` : '<div style="height:100px;background:#ddd"></div>'}
+                    ${p.img ? `<img src="${p.img}">` : '<div style="width:80px; background:#eee"></div>'}
                     <div class="place-info">
-                        <small>${p.day} | ${p.cat}</small>
+                        <small style="color:${p.color}">${p.day} | ${p.cat}</small>
                         <h4>${p.icon} ${p.name}</h4>
                     </div>
                 `;
-                card.onclick = () => { map.setView(m.getLatLng(), 15); m.openPopup(); };
+                card.onclick = () => { 
+                    map.setView(m.getLatLng(), 15); 
+                    m.openPopup();
+                    if(window.innerWidth < 769) toggleSidebar(); 
+                };
                 listContainer.appendChild(card);
             }
         });
-        counterLabel.innerText = `Mostrando ${count} de 57 puntos en esta zona`;
+        counterLabel.innerText = `Mostrando ${count} de 57 puntos`;
     }
 
     map.on('moveend', updateSidebar);
