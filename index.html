@@ -1,27 +1,105 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✈️</text></svg>">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="theme-color" content="#667eea" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="description" content="Planifica tu viaje a Tailandia con mapas interactivos, lugares imperdibles y guía completa" />
-  <title>NVT - Nuestro Viaje a Tailandia ✈️</title>
-  
-  <!-- Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-    crossorigin=""/>
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itinerario Tailandia 2026 - Mapa Completo</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        #map { height: 100vh; width: 100%; }
+        body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .popup-content b { color: #2c3e50; font-size: 1.1em; }
+        .popup-content i { color: #7f8c8d; display: block; margin-bottom: 5px; }
+        .legend {
+            position: absolute; bottom: 30px; left: 10px; z-index: 1000;
+            background: white; padding: 10px; border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+    </style>
 </head>
 <body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
+    <div id="map"></div>
+    <div class="legend">
+        <b>Etapas:</b><br>
+        <span style="color:red">●</span> E1: Bangkok<br>
+        <span style="color:green">●</span> E2: Chiang Mai<br>
+        <span style="color:blue">●</span> E3: Phuket<br>
+        <span style="color:purple">●</span> E4: Samui/Krabi<br>
+        <span style="color:orange">●</span> E5: Compras Finales
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        const map = L.map('map').setView([13.75, 100.5], 6);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+        const puntos = [
+            // ETAPA 1: BANGKOK
+            { pos: [13.7500, 100.4913], stage: "E1", day: "19-Feb", time: "08:30", name: "Gran Palacio", desc: "Residencia real histórica y Buda de Esmeralda.", color: "red" },
+            { pos: [13.7465, 100.4933], stage: "E1", day: "19-Feb", time: "11:30", name: "Wat Pho", desc: "Buda Reclinado gigante y centro de masajes.", color: "red" },
+            { pos: [13.7437, 100.4889], stage: "E1", day: "19-Feb", time: "14:00", name: "Wat Arun", desc: "Templo del Amanecer con porcelana china.", color: "red" },
+            { pos: [13.7377, 100.5137], stage: "E1", day: "19-Feb", time: "17:30", name: "Wat Traimit", desc: "Buda de Oro macizo de 5.5 toneladas.", color: "red" },
+            { pos: [13.7412, 100.5082], stage: "E1", day: "19-Feb", time: "19:00", name: "Chinatown (Yaowarat)", desc: "Cena callejera y luces de neón.", color: "red" },
+            { pos: [14.3587, 100.5651], stage: "E1", day: "20-Feb", time: "08:00", name: "Ayutthaya", desc: "Ruinas de la antigua capital del reino.", color: "red" },
+            { pos: [13.7588, 100.4974], stage: "E1", day: "20-Feb", time: "19:30", name: "Khao San Road", desc: "Calle bohemia y masajes callejeros.", color: "red" },
+            { pos: [13.7999, 100.5505], stage: "E1", day: "21-Feb", time: "09:00", name: "Mercado Chatuchak", desc: "Mercado de fin de semana más grande.", color: "red" },
+            { pos: [13.4259, 99.9550], stage: "E1", day: "21-Feb", time: "15:00", name: "Mercado Amphawa", desc: "Mercado flotante y tour de luciérnagas.", color: "red" },
+            { pos: [13.7126, 100.5362], stage: "E1", day: "22-Feb", time: "09:00", name: "House of Taste", desc: "Clase de cocina tailandesa.", color: "red" },
+            { pos: [13.7266, 100.5110], stage: "E1", day: "22-Feb", time: "15:00", name: "IconSiam", desc: "Shopping de lujo y mercado interno.", color: "red" },
+            { pos: [13.7313, 100.5417], stage: "E1", day: "22-Feb", time: "16:30", name: "Parque Lumpini", desc: "Ver varanos (lagartos gigantes) libres.", color: "red" },
+            { pos: [13.7226, 100.5819], stage: "E1", day: "22-Feb", time: "20:00", name: "Rooftop Tichuca", desc: "Bar con árbol de luces LED.", color: "red" },
+            { pos: [13.7348, 100.2155], stage: "E1", day: "23-Feb", time: "09:00", name: "Wat Samphran", desc: "Templo del Dragón gigante.", color: "red" },
+            { pos: [14.5936, 100.3793], stage: "E1", day: "23-Feb", time: "12:00", name: "Wat Muang", desc: "El Buda más grande de Tailandia.", color: "red" },
+
+            // ETAPA 2: CHIANG MAI
+            { pos: [18.7877, 98.9931], stage: "E2", day: "24-Feb", time: "Check-in", name: "Vieng Thapae Resort", desc: "Base en el Casco Antiguo.", color: "green" },
+            { pos: [18.7869, 98.9866], stage: "E2", day: "24-Feb", time: "14:00", name: "Wat Chedi Luang", desc: "Pirámide antigua de piedra.", color: "green" },
+            { pos: [18.7885, 98.9824], stage: "E2", day: "24-Feb", time: "15:30", name: "Wat Phra Singh", desc: "Templo venerado con tallas doradas.", color: "green" },
+            { pos: [18.7958, 98.9826], stage: "E2", day: "24-Feb", time: "17:00", name: "Wat Lok Moli", desc: "Templo de ladrillo oscuro.", color: "green" },
+            { pos: [18.5910, 98.4870], stage: "E2", day: "25-Feb", time: "09:00", name: "Doi Inthanon", desc: "Punto más alto del país.", color: "green" },
+            { pos: [18.5527, 98.4801], stage: "E2", day: "25-Feb", time: "11:00", name: "Pagodas Reales", desc: "Templos rodeados de jardines.", color: "green" },
+            { pos: [20.1997, 99.8166], stage: "E2", day: "25-Feb", time: "15:00", name: "Cultivos de Té", desc: "Plantaciones Chui Fong.", color: "green" },
+            { pos: [19.1666, 98.8333], stage: "E2", day: "26-Feb", time: "08:30", name: "Santuario Elefantes", desc: "Interacción ética responsable.", color: "green" },
+            { pos: [18.7915, 98.9912], stage: "E2", day: "26-Feb", time: "21:00", name: "Zoe in Yellow", desc: "Epicentro de la fiesta nocturna.", color: "green" },
+            { pos: [19.8242, 99.7631], stage: "E2", day: "27-Feb", time: "09:00", name: "Templo Blanco", desc: "Wat Rong Khun, obra de arte.", color: "green" },
+            { pos: [19.9231, 99.8407], stage: "E2", day: "27-Feb", time: "11:30", name: "Templo Azul", desc: "Wat Rong Suea Ten.", color: "green" },
+            { pos: [19.9920, 99.8604], stage: "E2", day: "27-Feb", time: "14:00", name: "Casa Negra", desc: "Baandam Museum.", color: "green" },
+            { pos: [18.9103, 98.9324], stage: "E2", day: "28-Feb", time: "08:30", name: "Granja Orquídeas", desc: "Cientos de especies exóticas.", color: "green" },
+
+            // ETAPA 3: PHUKET
+            { pos: [7.8839, 98.3905], stage: "E3", day: "28-Feb", time: "16:30", name: "Phuket Old Town", desc: "Arquitectura sino-portuguesa.", color: "blue" },
+            { pos: [7.9620, 98.2833], stage: "E3", day: "28-Feb", time: "19:00", name: "Carnival Magic", desc: "Show de luces y desfile nocturno.", color: "blue" },
+            { pos: [8.0175, 98.8404], stage: "E3", day: "01-Mar", time: "08:00", name: "4 Islas (Krabi)", desc: "Poda, Chicken, Tup, Phra Nang.", color: "blue" },
+            { pos: [7.7407, 98.7784], stage: "E3", day: "02-Mar", time: "07:30", name: "Islas Phi Phi", desc: "Maya Bay y Pileh Lagoon.", color: "blue" },
+
+            // ETAPA 4: SAMUI / KRABI
+            { pos: [9.5707, 100.0604], stage: "E4", day: "03-Mar", time: "15:00", name: "Big Buddha", desc: "Estatua dorada gigante.", color: "purple" },
+            { pos: [9.5714, 100.0669], stage: "E4", day: "03-Mar", time: "16:30", name: "Wat Plai Laem", desc: "Estatua de 18 brazos en el lago.", color: "purple" },
+            { pos: [8.0269, 98.8286], stage: "E4", day: "04-Mar", time: "09:00", name: "Monkey Trail", desc: "Sendero costero con monos.", color: "purple" },
+            { pos: [8.1226, 99.2789], stage: "E4", day: "04-Mar", time: "14:00", name: "Emerald Pool", desc: "Piscina natural de agua esmeralda.", color: "purple" },
+            { pos: [8.1274, 98.9252], stage: "E4", day: "04-Mar", time: "16:00", name: "Tiger Cave Temple", desc: "1.260 escalones para vistas 360.", color: "purple" },
+            { pos: [10.0956, 99.8404], stage: "E4", day: "05-Mar", time: "08:00", name: "Koh Tao", desc: "El mejor snorkel del golfo.", color: "purple" },
+            { pos: [9.6192, 99.6738], stage: "E4", day: "06-Mar", time: "08:30", name: "Ang Thong", desc: "Parque Marino de 42 islas.", color: "purple" },
+            { pos: [9.4755, 100.0658], stage: "E4", day: "07-Mar", time: "09:00", name: "Crystal Bay", desc: "Playa tranquila de aguas claras.", color: "purple" },
+
+            // ETAPA 5: CIERRE
+            { pos: [13.7462, 100.5291], stage: "E5", day: "08-Mar", time: "10:00", name: "MBK Center", desc: "Tecnología y souvenirs.", color: "orange" },
+            { pos: [13.7475, 100.5391], stage: "E5", day: "09-Mar", time: "10:00", name: "Apple Store CentralWorld", desc: "Últimas compras tecnológicas.", color: "orange" }
+        ];
+
+        puntos.forEach(p => {
+            const marker = L.circleMarker(p.pos, {
+                radius: 8, fillOpacity: 0.8, color: 'white', weight: 2, fillColor: p.color
+            }).addTo(map);
+
+            marker.bindPopup(`
+                <div class="popup-content">
+                    <b>${p.name}</b><br>
+                    <i>${p.day} | ${p.time}</i>
+                    <p>${p.desc}</p>
+                    <small>Etapa: ${p.stage}</small>
+                </div>
+            `);
+        });
+    </script>
 </body>
 </html>
