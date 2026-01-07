@@ -7,35 +7,27 @@
     
     <link rel="icon" href="https://fav.farm/✈️" />
     <meta property="og:title" content="NVT - Nuestro Viaje a Tailandia">
-    <meta property="og:description" content="Mapa interactivo con 57 puntos, rutas de tren y guía detallada 2026.">
+    <meta property="og:description" content="Mapa interactivo definitivo con 56 puntos y guía detallada 2026.">
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <style>
         :root { --primary: #d35400; --dark: #2c3e50; --light: #f8f9fa; }
         body { margin: 0; font-family: 'Segoe UI', Roboto, sans-serif; height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
         
-        /* HEADER */
         #header { background: var(--primary); color: white; padding: 10px 15px; z-index: 1002; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
         #header h1 { margin: 0; font-size: 18px; letter-spacing: 1px; }
         #counter { font-size: 12px; font-weight: bold; background: rgba(0,0,0,0.2); padding: 4px 12px; border-radius: 20px; }
 
-        /* CONTENEDOR PRINCIPAL */
         #main-container { flex: 1; display: flex; position: relative; overflow: hidden; }
-
-        /* MAPA */
         #map { flex: 1; z-index: 1; background: #aad3df; }
 
-        /* SIDEBAR DINÁMICO */
         #sidebar { 
             position: absolute; left: 0; top: 0; height: 100%; width: 350px; 
             background: white; z-index: 1001; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex; flex-direction: column; box-shadow: 5px 0 15px rgba(0,0,0,0.2);
         }
-        
-        /* Estado Oculto */
         #sidebar.hidden { transform: translateX(-100%); }
 
-        /* Ajustes Móvil */
         @media (max-width: 768px) {
             #sidebar { width: 100%; height: 50%; top: auto; bottom: 0; border-radius: 20px 20px 0 0; }
             #sidebar.hidden { transform: translateY(100%); }
@@ -43,40 +35,21 @@
         }
 
         #places-list { flex: 1; overflow-y: auto; padding: 15px; background: var(--light); }
-
-        /* CARDS DE LUGARES */
-        .place-card { 
-            background: white; margin-bottom: 15px; border-radius: 12px; overflow: hidden;
-            display: flex; flex-direction: column; box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            cursor: pointer; border-left: 6px solid var(--primary); transition: 0.2s;
-        }
-        .place-card:hover { transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,0.1); }
-        .place-card img { width: 100%; height: 140px; object-fit: cover; background: #eee; }
+        .place-card { background: white; margin-bottom: 15px; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; border-left: 6px solid var(--primary); transition: 0.2s; }
+        .place-card img { width: 100%; height: 140px; object-fit: cover; }
         .card-content { padding: 12px; }
         .card-content h4 { margin: 0 0 5px; font-size: 15px; color: var(--dark); }
-        .card-content .meta { font-size: 11px; font-weight: bold; color: var(--primary); text-transform: uppercase; margin-bottom: 8px; display: block; }
-        .card-content p { margin: 0; font-size: 12.5px; color: #666; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+        .card-content p { margin: 0; font-size: 12.5px; color: #666; line-height: 1.4; }
 
-        /* BOTÓN FLOTANTE */
-        #toggle-btn { 
-            position: absolute; bottom: 25px; left: 20px; z-index: 1002; 
-            background: var(--dark); color: white; border: none; width: 50px; height: 50px;
-            border-radius: 50%; box-shadow: 0 4px 15px rgba(0,0,0,0.4); cursor: pointer;
-            font-size: 20px; display: flex; align-items: center; justify-content: center;
-        }
-        
-        .custom-marker { 
-            display: flex; justify-content: center; align-items: center; 
-            border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.5); 
-            width: 38px; height: 38px; color: white; font-size: 18px;
-        }
+        #toggle-btn { position: absolute; bottom: 25px; left: 20px; z-index: 1002; background: var(--dark); color: white; border: none; width: 50px; height: 50px; border-radius: 50%; box-shadow: 0 4px 15px rgba(0,0,0,0.4); cursor: pointer; font-size: 20px; display: flex; align-items: center; justify-content: center; }
+        .custom-marker { display: flex; justify-content: center; align-items: center; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.5); width: 38px; height: 38px; color: white; font-size: 18px; }
     </style>
 </head>
 <body>
 
 <div id="header">
-    <h1>🇹🇭 NVT - Nuestro Viaje</h1>
-    <span id="counter">Cargando puntos...</span>
+    <h1>🇹🇭 NVT - Itinerario Final</h1>
+    <span id="counter">Cargando...</span>
 </div>
 
 <div id="main-container">
@@ -88,9 +61,7 @@
         </div>
         <div id="places-list"></div>
     </div>
-
-    <button id="toggle-btn" onclick="toggleSidebar()" title="Mostrar/Ocultar Lista">📋</button>
-    
+    <button id="toggle-btn" onclick="toggleSidebar()">📋</button>
     <div id="map"></div>
 </div>
 
@@ -99,90 +70,82 @@
     const map = L.map('map', { zoomControl: false }).setView([13.75, 100.5], 6);
     L.control.zoom({ position: 'topright' }).addTo(map);
 
-    // CAPAS DE MAPA
     L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}').addTo(map);
     L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-hybrid/{z}/{x}/{y}{r}.png', { opacity: 0.8 }).addTo(map);
     L.tileLayer('https://{s}.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png', { opacity: 0.5 }).addTo(map);
 
     const catConfig = {
-        "Hospedaje": { icon: "🏨", color: "#000" },
-        "Templo": { icon: "⛩️", color: "#c0392b" },
-        "Gastronomía": { icon: "🍜", color: "#d35400" },
-        "Vida Nocturna": { icon: "🍸", color: "#8e44ad" },
-        "Experiencia": { icon: "🎟️", color: "#e67e22" },
-        "Naturaleza": { icon: "🏝️", color: "#27ae60" },
-        "Tecnología": { icon: "📱", color: "#2980b9" },
-        "Compras": { icon: "🛍️", color: "#f1c40f" },
+        "Hospedaje": { icon: "🏨", color: "#000" }, "Templo": { icon: "⛩️", color: "#c0392b" },
+        "Gastronomía": { icon: "🍜", color: "#d35400" }, "Vida Nocturna": { icon: "🍸", color: "#8e44ad" },
+        "Experiencia": { icon: "🎟️", color: "#e67e22" }, "Naturaleza": { icon: "🏝️", color: "#27ae60" },
+        "Tecnología": { icon: "📱", color: "#2980b9" }, "Compras": { icon: "🛍️", color: "#f1c40f" },
         "Sitio Histórico": { icon: "🗿", color: "#7f8c8d" }
     };
 
     const puntos = [
-        // ETAPA 1: BANGKOK
+        // BANGKOK
         { pos: [13.7345, 100.5601], cat: "Hospedaje", day: "19-Feb", name: "Column Bangkok Hotel", img: "https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/t_htl-dskt/tix-hotel/images-web/2024/07/19/efdcd96d-69e5-40b2-9f47-3aa7eefe4aac-1721330127034-b9850ff7911110a46079abb7510b1e6e.jpg", desc: "Base estratégica en Asok. Cerca de MRT y BTS." },
         { pos: [13.7500, 100.4913], cat: "Templo", day: "19-Feb", name: "Gran Palacio", img: "https://dynamic-media.tacdn.com/media/photo-o/2e/c9/78/0f/caption.jpg", desc: "Complejo sagrado real y Buda de Esmeralda." },
         { pos: [13.7465, 100.4933], cat: "Templo", day: "19-Feb", name: "Wat Pho", img: "https://images.ctfassets.net/dsbipkqphva2/6XGoWzfCukMVShkTiAjEJ8/6417dd19b503075a2c0846b83a217160/wat-pho-bangkok-guide-lead-min.jpg", desc: "Buda Reclinado gigante y cuna del masaje." },
         { pos: [13.7437, 100.4889], cat: "Templo", day: "19-Feb", name: "Wat Arun", img: "https://static.wixstatic.com/media/2cc94a_07e55de318fe41538e17cb9de596cb45~mv2.jpg", desc: "Templo del Amanecer junto al río Chao Phraya." },
         { pos: [13.7527, 100.5048], cat: "Gastronomía", day: "19-Feb", name: "Thipsamai Pad Thai", img: "https://cdn.coconuts.co/coconuts/wp-content/uploads/2018/06/thiphead.jpeg", desc: "El Pad Thai más famoso del mundo." },
-        { pos: [13.7377, 100.5137], cat: "Templo", day: "19-Feb", name: "Wat Traimit", img: "https://www.viajes-tailandia.es/cdn/th-public/wat_traimitr_withayaram_temple-MAX-w1000h600.jpg", desc: "Hogar del Buda de Oro macizo de 5.5 toneladas." },
+        { pos: [13.7377, 100.5137], cat: "Templo", day: "19-Feb", name: "Wat Traimit", img: "https://www.viajes-tailandia.es/cdn/th-public/wat_traimitr_withayaram_temple-MAX-w1000h600.jpg", desc: "Buda de Oro macizo de 5.5 toneladas." },
         { pos: [13.7412, 100.5082], cat: "Gastronomía", day: "19-Feb", name: "Chinatown Yaowarat", img: "https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/62/2020/10/22045552/TH-Hero-Image4-1700x606-1.jpg", desc: "Comida callejera y luces neón." },
-        { pos: [14.3587, 100.5651], cat: "Sitio Histórico", day: "20-Feb", name: "Ayutthaya", img: "https://www.turismotailandes.com/wp-content/uploads/2015/05/Ayutthaya-Tailandia.jpg", desc: "Ruinas de la antigua capital del Reino de Siam." },
-        { pos: [13.7588, 100.4974], cat: "Vida Nocturna", day: "20-Feb", name: "Khao San Road", img: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/04/11/17/istock-1024107154.jpg", desc: "Calle mítica mochilera, bares y masajes." },
+        { pos: [14.3587, 100.5651], cat: "Sitio Histórico", day: "20-Feb", name: "Ayutthaya", img: "https://www.turismotailandes.com/wp-content/uploads/2015/05/Ayutthaya-Tailandia.jpg", desc: "Antigua capital del Reino de Siam." },
+        { pos: [13.7588, 100.4974], cat: "Vida Nocturna", day: "20-Feb", name: "Khao San Road", img: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/04/11/17/istock-1024107154.jpg", desc: "Calle mítica mochilera y fiesta." },
         { pos: [13.7999, 100.5505], cat: "Compras", day: "21-Feb", name: "Mercado Chatuchak", img: "https://tripaim.com/blog/wp-content/uploads/2021/04/Mercados-de-Bangkok.jpg", desc: "Mercado gigante de fin de semana." },
         { pos: [13.4259, 99.9550], cat: "Compras", day: "21-Feb", name: "Mercado Amphawa", img: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/07/a0/88/b0.jpg", desc: "Mercado flotante local y luciérnagas." },
         { pos: [13.4497, 99.9600], cat: "Compras", day: "21-Feb", name: "Damnoen Saduak", img: "https://dynamic-media.tacdn.com/media/photo-o/2e/c9/a4/68/caption.jpg", desc: "Mercado flotante icónico." },
         { pos: [13.5073, 99.9990], cat: "Compras", day: "21-Feb", name: "Mercado Maeklong", img: "https://tuguiaentailandia.com/wp-content/uploads/2021/10/El-famoso-mercado-del-Tren-de-Tailandfia.jpeg", desc: "Mercado sobre las vías del tren." },
-        { pos: [13.7126, 100.5362], cat: "Experiencia", day: "22-Feb", name: "House of Taste", img: "https://www.houseoftastecooking.com/wp-content/uploads/2025/07/House-of-Taste-Thai-Cooking-School-Team-Building-scaled.jpg", desc: "Clase de cocina tailandesa profesional." },
+        { pos: [13.7126, 100.5362], cat: "Experiencia", day: "22-Feb", name: "House of Taste", img: "https://www.houseoftastecooking.com/wp-content/uploads/2025/07/House-of-Taste-Thai-Cooking-School-Team-Building-scaled.jpg", desc: "Clase de cocina profesional." },
         { pos: [13.7266, 100.5110], cat: "Compras", day: "22-Feb", name: "IconSiam", img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/24/58/07/d4/iconsiam.jpg", desc: "Lujo y cultura junto al río." },
-        { pos: [13.7313, 100.5417], cat: "Naturaleza", day: "22-Feb", name: "Parque Lumpini", img: "https://media.traveler.es/photos/61378796cfa50ebf3bf4f788/master/w_1600,c_limit/55036.jpg", desc: "Lagartos varanos y relax en el pulmón verde." },
-        { pos: [13.7226, 100.5819], cat: "Vida Nocturna", day: "22-Feb", name: "Tichuca Rooftop", img: "https://www.therooftopguide.com/rooftop-bars-in-bangkok/Bilder/ticucha-rooftop-bar-600-1.jpg", desc: "Bar viral con el árbol de luces LED." },
-        { pos: [13.7479, 100.5385], cat: "Vida Nocturna", day: "22-Feb", name: "Red Sky Bar", img: "https://static.bangkokpost.com/media/content/20140522/631127.jpg", desc: "Vistas panorámicas 360 del skyline." },
-        { pos: [13.7348, 100.2155], cat: "Templo", day: "23-Feb", name: "Wat Samphran", img: "https://thaiunikatravel.com/wp-content/uploads/2022/12/ceb1ireexhz41.jpg", desc: "El increíble Templo del Dragón Rosa." },
-        { pos: [14.5936, 100.3793], cat: "Templo", day: "23-Feb", name: "Wat Muang", img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2d/f3/21/2f/caption.jpg", desc: "El Buda sentado más alto de Tailandia." },
+        { pos: [13.7313, 100.5417], cat: "Naturaleza", day: "22-Feb", name: "Parque Lumpini", img: "https://media.traveler.es/photos/61378796cfa50ebf3bf4f788/master/w_1600,c_limit/55036.jpg", desc: "Lagartos varanos y relax." },
+        { pos: [13.7226, 100.5819], cat: "Vida Nocturna", day: "22-Feb", name: "Tichuca Rooftop", img: "https://www.therooftopguide.com/rooftop-bars-in-bangkok/Bilder/ticucha-rooftop-bar-600-1.jpg", desc: "Bar viral con árbol LED." },
+        { pos: [13.7479, 100.5385], cat: "Vida Nocturna", day: "22-Feb", name: "Red Sky Bar", img: "https://static.bangkokpost.com/media/content/20140522/631127.jpg", desc: "Vistas panorámicas 360." },
+        { pos: [13.7348, 100.2155], cat: "Templo", day: "23-Feb", name: "Wat Samphran", img: "https://thaiunikatravel.com/wp-content/uploads/2022/12/ceb1ireexhz41.jpg", desc: "El Templo del Dragón Rosa." },
+        { pos: [14.5936, 100.3793], cat: "Templo", day: "23-Feb", name: "Wat Muang", img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2d/f3/21/2f/caption.jpg", desc: "El Buda sentado más alto (92m)." },
 
-        // ETAPA 2: CHIANG MAI
-        { pos: [18.7877, 98.9931], cat: "Hospedaje", day: "24-Feb", name: "Vieng Thapae Resort", img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/c3/cd/4f/viang-thapae-resort.jpg", desc: "Base Chiang Mai. Cerca de la puerta Thapae." },
-        { pos: [18.7869, 98.9866], cat: "Templo", day: "24-Feb", name: "Wat Chedi Luang", img: "https://images.squarespace-cdn.com/content/v1/5438e2c6e4b0b18459a8ca06/1593080023687-2WNKQ64LB63VEV4UMVZ4/GTJ-2020-0625-39.jpg", desc: "Pirámide histórica del Reino Lanna." },
-        { pos: [18.7885, 98.9824], cat: "Templo", day: "24-Feb", name: "Wat Phra Singh", img: "https://disfrutadetailandia.com/wp-content/uploads/2019/10/Phra-Sing-1.jpg", desc: "Templo más sagrado del casco antiguo." },
-        { pos: [18.7958, 98.9826], cat: "Templo", day: "24-Feb", name: "Wat Lok Moli", img: "https://kenzly.b-cdn.net/wp-content/uploads/2024/06/Wat-Lok-Moli-3-scaled.jpg", desc: "Templo de ladrillo oscuro y madera." },
-        { pos: [18.8122, 98.9213], cat: "Templo", day: "24-Feb", name: "Wat Doi Suthep", img: "https://img1.oastatic.com/img2/77143442/834x417r/variant.jpg", desc: "Templo en la montaña con vistas de la ciudad." },
-        { pos: [18.5910, 98.4870], cat: "Naturaleza", day: "25-Feb", name: "Doi Inthanon", img: "https://detailandia.com/wp-content/uploads/2018/04/Doi-Inthanon-Chiang-Mai-e1539317089190.jpg", desc: "Pico más alto de Tailandia y bosques nubosos." },
-        { pos: [18.5527, 98.4801], cat: "Templo", day: "25-Feb", name: "Pagodas Reales", desc: "Jardines y pagodas dedicadas al Rey y la Reina." },
-        { pos: [20.1997, 99.8166], cat: "Naturaleza", day: "25-Feb", name: "Té Chui Fong", img: "https://olsentours.com/wp-content/uploads/2019/08/Choui-Fong-Tea-Plantation-2.jpg", desc: "Plantaciones de té en terraza (¡Nueva Foto!)." },
-        { pos: [19.1666, 98.8333], cat: "Experiencia", day: "26-Feb", name: "Elefantes Ético", img: "https://media.tacdn.com/media/attractions-splice-spp-674x446/06/ef/16/64.jpg", desc: "Santuario responsable. Sin monturas." },
-        { pos: [18.7852, 99.0003], cat: "Gastronomía", day: "26-Feb", name: "Night Bazaar CM", img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/a0/e4/96/kalare-night-bazaar.jpg", desc: "Cena local y artesanías del norte." },
-        { pos: [18.7915, 98.9912], cat: "Vida Nocturna", day: "26-Feb", name: "Zoe in Yellow", img: "https://www.pathismygoal.com/wp-content/uploads/2017/11/7af5c011af684903808f9f232c84e292-800x480.jpg", desc: "Epicentro de la fiesta nocturna en Chiang Mai." },
-        { pos: [19.8242, 99.7631], cat: "Templo", day: "27-Feb", name: "Templo Blanco", img: "https://www.destinochiangmai-es.com/wp-content/uploads/2022/09/soleil-sur-le-temple-blanc.jpg", desc: "Arte moderno surrealista de Chiang Rai." },
-        { pos: [19.9231, 99.8407], cat: "Templo", day: "27-Feb", name: "Templo Azul", img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/8f/c1/32/innenbereich.jpg", desc: "Templo contemporáneo azul eléctrico." },
-        { pos: [19.9920, 99.8604], cat: "Sitio Histórico", day: "27-Feb", name: "Casa Negra", img: "https://www.destinochiangmai-es.com/wp-content/uploads/2024/04/museo-baan-dam.jpg", desc: "Baan Dam Museum de arte oscuro." },
-        { pos: [18.9103, 98.9324], cat: "Naturaleza", day: "28-Feb", name: "Granja Orquídeas", img: "https://www.elblogdelatabla.com/wp-content/uploads/2022/03/festival-orquideas-kew-orchids2B8002Bpx.jpg", desc: "Especies exóticas y mariposas (¡Nueva Foto!)." },
+        // CHIANG MAI
+        { pos: [18.7877, 98.9931], cat: "Hospedaje", day: "24-Feb", name: "Vieng Thapae Resort", img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/c3/cd/4f/viang-thapae-resort.jpg", desc: "Base Chiang Mai." },
+        { pos: [18.7869, 98.9866], cat: "Templo", day: "24-Feb", name: "Wat Chedi Luang", img: "https://images.squarespace-cdn.com/content/v1/5438e2c6e4b0b18459a8ca06/1593080023687-2WNKQ64LB63VEV4UMVZ4/GTJ-2020-0625-39.jpg", desc: "Pirámide histórica Lanna." },
+        { pos: [18.7885, 98.9824], cat: "Templo", day: "24-Feb", name: "Wat Phra Singh", img: "https://disfrutadetailandia.com/wp-content/uploads/2019/10/Phra-Sing-1.jpg", desc: "Templo sagrado del casco antiguo." },
+        { pos: [18.7958, 98.9826], cat: "Templo", day: "24-Feb", name: "Wat Lok Moli", img: "https://kenzly.b-cdn.net/wp-content/uploads/2024/06/Wat-Lok-Moli-3-scaled.jpg", desc: "Templo de ladrillo oscuro." },
+        { pos: [18.8122, 98.9213], cat: "Templo", day: "24-Feb", name: "Wat Doi Suthep", img: "https://img1.oastatic.com/img2/77143442/834x417r/variant.jpg", desc: "Vistas de toda la ciudad." },
+        { pos: [18.5910, 98.4870], cat: "Naturaleza", day: "25-Feb", name: "Doi Inthanon y Pagodas", img: "https://detailandia.com/wp-content/uploads/2018/04/Doi-Inthanon-Chiang-Mai-e1539317089190.jpg", desc: "Punto más alto de Tailandia y las majestuosas Pagodas Reales." },
+        { pos: [20.1997, 99.8166], cat: "Naturaleza", day: "25-Feb", name: "Té Chui Fong", img: "https://olsentours.com/wp-content/uploads/2019/08/Choui-Fong-Tea-Plantation-2.jpg", desc: "Plantaciones de té." },
+        { pos: [19.1666, 98.8333], cat: "Experiencia", day: "26-Feb", name: "Elefantes Ético", img: "https://media.tacdn.com/media/attractions-splice-spp-674x446/06/ef/16/64.jpg", desc: "Santuario responsable." },
+        { pos: [18.7852, 99.0003], cat: "Gastronomía", day: "26-Feb", name: "Night Bazaar CM", img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/a0/e4/96/kalare-night-bazaar.jpg", desc: "Cena local y compras." },
+        { pos: [18.7915, 98.9912], cat: "Vida Nocturna", day: "26-Feb", name: "Zoe in Yellow", img: "https://www.pathismygoal.com/wp-content/uploads/2017/11/7af5c011af684903808f9f232c84e292-800x480.jpg", desc: "Fiesta en Chiang Mai." },
+        { pos: [19.8242, 99.7631], cat: "Templo", day: "27-Feb", name: "Templo Blanco", img: "https://www.destinochiangmai-es.com/wp-content/uploads/2022/09/soleil-sur-le-temple-blanc.jpg", desc: "Arte moderno en Chiang Rai." },
+        { pos: [19.9231, 99.8407], cat: "Templo", day: "27-Feb", name: "Templo Azul", img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/8f/c1/32/innenbereich.jpg", desc: "Buda de nácar." },
+        { pos: [19.9920, 99.8604], cat: "Sitio Histórico", day: "27-Feb", name: "Casa Negra", img: "https://www.destinochiangmai-es.com/wp-content/uploads/2024/04/museo-baan-dam.jpg", desc: "Museo Baandam." },
+        { pos: [18.9103, 98.9324], cat: "Naturaleza", day: "28-Feb", name: "Granja Orquídeas", img: "https://www.elblogdelatabla.com/wp-content/uploads/2022/03/festival-orquideas-kew-orchids2B8002Bpx.jpg", desc: "Especies y mariposas." },
 
-        // ETAPA 3: PHUKET
-        { pos: [7.8839, 98.3905], cat: "Sitio Histórico", day: "28-Feb", name: "Phuket Old Town", img: "https://cdn-ilaahih.nitrocdn.com/eNIJKrVrLmGQXTjIClKuJlbXtyfBFxHI/assets/images/optimized/rev-0a32d0b/www.theprivateworld.com/wp-content/uploads/2022/09/Phuket-Old-Town-Featured-Image.jpg", desc: "Casco antiguo sino-portugués colorista." },
-        { pos: [7.9620, 98.2833], cat: "Experiencia", day: "28-Feb", name: "Carnival Magic", img: "https://tours.co.th/wp-content/uploads/2022/09/carnival-magic-phuket-20.jpeg", desc: "Parque de luces y desfiles (¡Nueva Foto!)." },
-        { pos: [8.1250, 98.5000], cat: "Naturaleza", day: "01-Mar", name: "Ao Phang Nga", img: "https://www.thainationalparks.com/img/poi/2021/05/23/397472/james-bond-island-w-900.jpg", desc: "Bahía de formaciones kársticas e Isla James Bond." },
-        { pos: [8.0175, 98.8404], cat: "Naturaleza", day: "01-Mar", name: "4 Islas Krabi", img: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/0e/c3/d6/e2.jpg", desc: "Tour de lancha: Poda, Chicken y Tup (¡Nueva Foto!)." },
-        { pos: [7.7407, 98.7784], cat: "Naturaleza", day: "02-Mar", name: "Islas Phi Phi", img: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/06/74/bd/77.jpg", desc: "Maya Bay y Pileh Lagoon cristalina." },
+        // SUR
+        { pos: [7.8839, 98.3905], cat: "Sitio Histórico", day: "28-Feb", name: "Phuket Old Town", img: "https://cdn-ilaahih.nitrocdn.com/eNIJKrVrLmGQXTjIClKuJlbXtyfBFxHI/assets/images/optimized/rev-0a32d0b/www.theprivateworld.com/wp-content/uploads/2022/09/Phuket-Old-Town-Featured-Image.jpg", desc: "Casco sino-portugués." },
+        { pos: [7.9620, 98.2833], cat: "Experiencia", day: "28-Feb", name: "Carnival Magic", img: "https://tours.co.th/wp-content/uploads/2022/09/carnival-magic-phuket-20.jpeg", desc: "Show de luces." },
+        { pos: [8.1250, 98.5000], cat: "Naturaleza", day: "01-Mar", name: "Ao Phang Nga", img: "https://www.thainationalparks.com/img/poi/2021/05/23/397472/james-bond-island-w-900.jpg", desc: "James Bond Island." },
+        { pos: [8.0175, 98.8404], cat: "Naturaleza", day: "01-Mar", name: "4 Islas Krabi", img: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/0e/c3/d6/e2.jpg", desc: "Poda y Tup." },
+        { pos: [7.7407, 98.7784], cat: "Naturaleza", day: "02-Mar", name: "Islas Phi Phi", img: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/06/74/bd/77.jpg", desc: "Maya Bay." },
+        { pos: [9.5707, 100.0604], cat: "Templo", day: "03-Mar", name: "Big Buddha Samui", img: "https://www.placesofjuma.com/wp-content/uploads/2023/10/Big-Buddha-Koh-Samui-3-scaled-761x507.jpg", desc: "Estatua dorada." },
+        { pos: [9.5714, 100.0669], cat: "Templo", day: "03-Mar", name: "Wat Plai Laem", img: "https://cdn.sanity.io/images/nxpteyfv/goguides/3589791410dd2104bc6a9a61606797d3e49bcf2c-1600x1066.jpg", desc: "18 brazos." },
+        { pos: [8.0269, 98.8286], cat: "Naturaleza", day: "04-Mar", name: "Monkey Trail", img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/46/a1/3f/monkey-trail.jpg", desc: "Sendero con monos." },
+        { pos: [8.0063, 98.8378], cat: "Naturaleza", day: "04-Mar", name: "Railay Beach", img: "https://101lugaresincreibles.com/wp-content/uploads/2016/03/Railay-beach-tailandia-e1457107979409.jpg", desc: "Península paradisíaca." },
+        { pos: [8.0105, 98.8415], cat: "Experiencia", day: "04-Mar", name: "Railay Viewpoint", img: "https://www.journeyera.com/wp-content/uploads/2016/10/AO-NANG-TO-RAILAY-BEACH-KRABI-1199.jpg", desc: "Vistas de Railay." },
+        { pos: [8.1226, 99.2789], cat: "Naturaleza", day: "04-Mar", name: "Emerald Pool", img: "https://www.placesofjuma.com/wp-content/uploads/2019/01/Emrerald-Pool-Krabi-1-1-1024x683.jpg", desc: "Piscina en la selva." },
+        { pos: [8.1274, 98.9252], cat: "Templo", day: "04-Mar", name: "Tiger Cave", img: "https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/32/2025/01/10160753/470208396_995459725957451_3759444504129293167_n.jpg", desc: "1.260 escalones." },
+        { pos: [14.0680, 99.3000], cat: "Naturaleza", day: "Ext", name: "Erawan Falls", img: "https://viajeatailandia.com/wp-content/uploads/2014/08/Kanchananaburi-Cataratas-de-Erawan.jpg", desc: "Cascadas turquesas." },
+        { pos: [14.0200, 99.5300], cat: "Experiencia", day: "Ext", name: "Kanchanaburi Skywalk", img: "https://kanchanaburicarrental.com/wp-content/uploads/2024/11/Skywalk-Kanchanaburi-3.jpg", desc: "Pasarela cristal." },
+        { pos: [10.0956, 99.8404], cat: "Naturaleza", day: "05-Mar", name: "Koh Tao", img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/03/67/74/b7/koh-nang-yuan.jpg", desc: "Snorkel." },
+        { pos: [9.6192, 99.6738], cat: "Naturaleza", day: "06-Mar", name: "Ang Thong", img: "https://fotografias.lasexta.com/clipping/cmsimages02/2021/09/22/09B064EF-11ED-4278-A758-3F5A1D05D877/97.jpg", desc: "Parque Marino." },
+        { pos: [9.4755, 100.0658], cat: "Naturaleza", day: "07-Mar", name: "Crystal Bay", img: "https://sacavoyage.fr/wp-content/uploads/Crystal-Bay-Beach--2048x1536.jpg", desc: "Relax en Samui." },
 
-        // ETAPA 4: SAMUI/KRABI
-        { pos: [9.5707, 100.0604], cat: "Templo", day: "03-Mar", name: "Big Buddha Samui", img: "https://www.placesofjuma.com/wp-content/uploads/2023/10/Big-Buddha-Koh-Samui-3-scaled-761x507.jpg", desc: "Estatua dorada de 12m frente al mar." },
-        { pos: [9.5714, 100.0669], cat: "Templo", day: "03-Mar", name: "Wat Plai Laem", img: "https://cdn.sanity.io/images/nxpteyfv/goguides/3589791410dd2104bc6a9a61606797d3e49bcf2c-1600x1066.jpg", desc: "Guanyin de 18 brazos rodeada por un lago." },
-        { pos: [8.0269, 98.8286], cat: "Naturaleza", day: "04-Mar", name: "Monkey Trail", img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/46/a1/3f/monkey-trail.jpg", desc: "Sendero a Pai Plong con monos salvajes (¡Nueva Foto!)." },
-        { pos: [8.0063, 98.8378], cat: "Naturaleza", day: "04-Mar", name: "Railay Beach", img: "https://101lugaresincreibles.com/wp-content/uploads/2016/03/Railay-beach-tailandia-e1457107979409.jpg", desc: "Península aislada accesible solo por mar." },
-        { pos: [8.0105, 98.8415], cat: "Experiencia", day: "04-Mar", name: "Railay Viewpoint", img: "https://www.journeyera.com/wp-content/uploads/2016/10/AO-NANG-TO-RAILAY-BEACH-KRABI-1199.jpg", desc: "Caminata exigente para vistas 360 de Railay." },
-        { pos: [8.1226, 99.2789], cat: "Naturaleza", day: "04-Mar", name: "Emerald Pool", img: "https://www.placesofjuma.com/wp-content/uploads/2019/01/Emrerald-Pool-Krabi-1-1-1024x683.jpg", desc: "Piscina natural de agua esmeralda (¡Nueva Foto!)." },
-        { pos: [8.1274, 98.9252], cat: "Templo", day: "04-Mar", name: "Tiger Cave", img: "https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/32/2025/01/10160753/470208396_995459725957451_3759444504129293167_n.jpg", desc: "Sube los 1.260 escalones para vistas de Krabi (¡Nueva Foto!)." },
-        { pos: [14.0680, 99.3000], cat: "Naturaleza", day: "Ext", name: "Erawan Falls", img: "https://viajeatailandia.com/wp-content/uploads/2014/08/Kanchananaburi-Cataratas-de-Erawan.jpg", desc: "Siete niveles de cascadas color turquesa." },
-        { pos: [14.0200, 99.5300], cat: "Experiencia", day: "Ext", name: "Kanchanaburi Skywalk", img: "https://kanchanaburicarrental.com/wp-content/uploads/2024/11/Skywalk-Kanchanaburi-3.jpg", desc: "Pasarela de cristal sobre el río Kwai." },
-        { pos: [10.0956, 99.8404], cat: "Naturaleza", day: "05-Mar", name: "Koh Tao", img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/03/67/74/b7/koh-nang-yuan.jpg", desc: "El paraíso del snorkel y Koh Nang Yuan." },
-        { pos: [9.6192, 99.6738], cat: "Naturaleza", day: "06-Mar", name: "Ang Thong", img: "https://fotografias.lasexta.com/clipping/cmsimages02/2021/09/22/09B064EF-11ED-4278-A758-3F5A1D05D877/97.jpg", desc: "Parque Marino de 42 islas vírgenes." },
-        { pos: [9.4755, 100.0658], cat: "Naturaleza", day: "07-Mar", name: "Crystal Bay", img: "https://sacavoyage.fr/wp-content/uploads/Crystal-Bay-Beach--2048x1536.jpg", desc: "Bahía de arena blanca y relax en Samui (¡Nueva Foto!)." },
-
-        // ETAPA 5: CIERRE
-        { pos: [17.0180, 99.7040], cat: "Sitio Histórico", day: "Ext", name: "Sukhothai", img: "https://www.lavanguardia.com/files/image_990_484/uploads/2018/03/01/5fa438b1ab6d7.jpeg", desc: "Primera capital histórica del Reino de Siam." },
-        { pos: [13.7462, 100.5291], cat: "Tecnología", day: "08-Mar", name: "MBK Center", img: "https://j6m3f5v5.delivery.rocketcdn.me/wp-content/uploads/2021/01/mbk-shopping-mall-1.jpg", desc: "Souvenirs, accesorios y tecnología." },
-        { pos: [13.7475, 100.5391], cat: "Tecnología", day: "09-Mar", name: "Apple Store", img: "https://www.apple.com/newsroom/images/environments/stores/apple_nso-bangkok_ratchaprasong_07282020_Full-Bleed-Image.jpg.large_2x.jpg", desc: "Flagship Store Apple en CentralWorld." },
-        { pos: [13.7483, 100.5404], cat: "Compras", day: "09-Mar", name: "Big C Supercenter", img: "https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/63/2024/07/31063712/AU-7.png", desc: "Snacks tailandeses y regalos de último momento." },
-        { pos: [13.7444, 100.5399], cat: "Compras", day: "09-Mar", name: "CentralWorld", img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2c/dd/6b/7c/centralworld.jpg", desc: "Uno de los centros comerciales más grandes de Asia." }
+        // CIERRE
+        { pos: [17.0180, 99.7040], cat: "Sitio Histórico", day: "Ext", name: "Sukhothai", img: "https://www.lavanguardia.com/files/image_990_484/uploads/2018/03/01/5fa438b1ab6d7.jpeg", desc: "Primera capital." },
+        { pos: [13.7462, 100.5291], cat: "Tecnología", day: "08-Mar", name: "MBK Center", img: "https://j6m3f5v5.delivery.rocketcdn.me/wp-content/uploads/2021/01/mbk-shopping-mall-1.jpg", desc: "Tech y souvenirs." },
+        { pos: [13.7475, 100.5391], cat: "Tecnología", day: "09-Mar", name: "Apple Store", img: "https://www.apple.com/newsroom/images/environments/stores/apple_nso-bangkok_ratchaprasong_07282020_Full-Bleed-Image.jpg.large_2x.jpg", desc: "Flagship Apple." },
+        { pos: [13.7483, 100.5404], cat: "Compras", day: "09-Mar", name: "Big C Supercenter", img: "https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/63/2024/07/31063712/AU-7.png", desc: "Snacks y regalos." },
+        { pos: [13.7444, 100.5399], cat: "Compras", day: "09-Mar", name: "CentralWorld", img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2c/dd/6b/7c/centralworld.jpg", desc: "Shopping gigante." }
     ];
 
     const markers = [];
@@ -234,7 +197,7 @@
                 listContainer.appendChild(card);
             }
         });
-        counterLabel.innerText = `Mostrando ${count} de 57 puntos`;
+        counterLabel.innerText = `Mostrando ${count} de 56 puntos`;
     }
 
     map.on('moveend', updateSidebar);
