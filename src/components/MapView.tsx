@@ -6,6 +6,7 @@ import {
   MapContainer,
   TileLayer,
   Marker,
+  Popup,
   useMap,
   useMapEvents,
 } from "react-leaflet";
@@ -31,8 +32,6 @@ function FixLeafletIcons() {
   return null;
 }
 
-// ✅ Important for production: when map mounts after hydration (ClientOnly),
-// Leaflet can compute wrong size -> broken pan/zoom. invalidateSize fixes it.
 function InvalidateSizeOnMount() {
   const map = useMap();
   useEffect(() => {
@@ -63,7 +62,6 @@ function BoundsWatcher({
   const update = () => {
     const z = map.getZoom();
 
-    // Zoom país o más abierto -> sidebar muestra TODO
     if (z <= 6) {
       onVisibleIdsChange(null);
       return;
@@ -85,7 +83,6 @@ function BoundsWatcher({
 export default function MapView({ places, onPick, onVisibleIdsChange }: Props) {
   const center: [number, number] = [13.7563, 100.5018]; // Bangkok
 
-  // Filtramos por seguridad (lat/lng null rompe markers)
   const markers = useMemo(
     () => places.filter((p) => typeof p.lat === "number" && typeof p.lng === "number"),
     [places]
@@ -96,7 +93,6 @@ export default function MapView({ places, onPick, onVisibleIdsChange }: Props) {
       center={center}
       zoom={6}
       className="h-full w-full"
-      // ✅ Make interactions explicit
       scrollWheelZoom={true}
       doubleClickZoom={true}
       dragging={true}
@@ -112,15 +108,51 @@ export default function MapView({ places, onPick, onVisibleIdsChange }: Props) {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
 
-      {markers.map((p) => (
-        <Marker
-          key={p.id}
-          position={[p.lat as number, p.lng as number]}
-          eventHandlers={{
-            click: () => onPick(p), // Click -> abre Drawer
-          }}
-        />
-      ))}
+      {markers.map((p: any) => {
+        const thumb = p.thumb || p.image || "/placeholder.svg";
+        return (
+          <Marker
+            key={p.id}
+            position={[p.lat as number, p.lng as number]}
+            eventHandlers={{
+              click: () => onPick(p), // click abre drawer
+            }}
+          >
+            <Popup>
+              <div style={{ width: 280 }}>
+                <div style={{ fontWeight: 700, marginBottom: 4 }}>{p.name}</div>
+                <div style={{ fontSize: 12, opacity: 0.8 }}>
+                  {p.city} • {p.category} • {p.duration}
+                </div>
+
+                <img
+                  src={thumb}
+                  alt={p.name}
+                  style={{ width: "100%", height: 120, objectFit: "cover", borderRadius: 8, marginTop: 8, background: "#f3f4f6" }}
+                  loading="lazy"
+                  onError={(e) => (((e.currentTarget as HTMLImageElement).src = "/placeholder.svg"))}
+                />
+
+                <div style={{ marginTop: 8, fontSize: 13 }}>
+                  <div style={{ fontWeight: 600 }}>Resumen</div>
+                  <div style={{ marginTop: 2 }}>{p.short || "—"}</div>
+                </div>
+
+                <div style={{ marginTop: 8, fontSize: 13 }}>
+                  <div style={{ fontWeight: 600 }}>Detalle</div>
+                  <div style={{ marginTop: 2, maxHeight: 120, overflow: "auto", whiteSpace: "pre-line" }}>
+                    {p.long || "—"}
+                  </div>
+                </div>
+
+                <div style={{ marginTop: 10, fontSize: 12, opacity: 0.7 }}>
+                  Click en el punto o en la lista para ver el panel completo.
+                </div>
+              </div>
+            </Popup>
+          </Marker>
+        );
+      })}
     </MapContainer>
   );
 }

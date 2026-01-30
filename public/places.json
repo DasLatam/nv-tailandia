@@ -20,10 +20,12 @@
     "duration": "",
     "short": "Buda reclinado + patios y estupas",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Wat%20Pho%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/5/53/%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%9E%E0%B8%B8%E0%B8%97%E0%B8%98%E0%B9%84%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%AA%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%8A%E0%B8%95%E0%B8%B8%E0%B8%9E%E0%B8%99.jpg",
     "lat": 13.7463456,
     "lng": 100.4927381,
-    "geocodeLabel": "วัดพระเชตุพนวิมลมังคลารามราชวรมหาวิหาร, ถนนเจริญกรุง, ชุมชนท่าเตียน, แขวงพระบรมมหาราชวัง, เขตพระนคร, กรุงเทพมหานคร, 10200, ประเทศไทย"
+    "geocodeLabel": "วัดพระเชตุพนวิมลมังคลารามราชวรมหาวิหาร, ถนนเจริญกรุง, ชุมชนท่าเตียน, แขวงพระบรมมหาราชวัง, เขตพระนคร, กรุงเทพมหานคร, 10200, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%9E%E0%B8%B8%E0%B8%97%E0%B8%98%E0%B9%84%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%AA%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%8A%E0%B8%95%E0%B8%B8%E0%B8%9E%E0%B8%99.jpg/330px-%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%9E%E0%B8%B8%E0%B8%97%E0%B8%98%E0%B9%84%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%AA%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%8A%E0%B8%95%E0%B8%B8%E0%B8%9E%E0%B8%99.jpg",
+    "imageSource": "wikipedia:Wat Pho"
   },
   {
     "id": "bangkok__wat-arun",
@@ -33,10 +35,12 @@
     "duration": "",
     "short": "Ícono junto al río + mejores fotos",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Wat%20Arun%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2a/%E0%B9%80%E0%B8%88%E0%B8%94%E0%B8%B5%E0%B8%A2%E0%B9%8C%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%98%E0%B8%B2%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B8%87%E0%B8%9B%E0%B8%A3%E0%B8%B2%E0%B8%87%E0%B8%84%E0%B9%8C%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%AD%E0%B8%A3%E0%B8%B8%E0%B8%932.jpg",
     "lat": 13.7438976,
     "lng": 100.4885137,
-    "geocodeLabel": "วัดอรุณ, 158, ถนนวังเดิม, แขวงวัดอรุณ, เขตบางกอกใหญ่, กรุงเทพมหานคร, 10600, ประเทศไทย"
+    "geocodeLabel": "วัดอรุณ, 158, ถนนวังเดิม, แขวงวัดอรุณ, เขตบางกอกใหญ่, กรุงเทพมหานคร, 10600, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/%E0%B9%80%E0%B8%88%E0%B8%94%E0%B8%B5%E0%B8%A2%E0%B9%8C%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%98%E0%B8%B2%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B8%87%E0%B8%9B%E0%B8%A3%E0%B8%B2%E0%B8%87%E0%B8%84%E0%B9%8C%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%AD%E0%B8%A3%E0%B8%B8%E0%B8%932.jpg/330px-%E0%B9%80%E0%B8%88%E0%B8%94%E0%B8%B5%E0%B8%A2%E0%B9%8C%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%98%E0%B8%B2%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B8%87%E0%B8%9B%E0%B8%A3%E0%B8%B2%E0%B8%87%E0%B8%84%E0%B9%8C%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%AD%E0%B8%A3%E0%B8%B8%E0%B8%932.jpg",
+    "imageSource": "wikipedia:Wat Arun"
   },
   {
     "id": "bangkok__wat-paknam-bhasicharoen",
@@ -46,10 +50,12 @@
     "duration": "",
     "short": "Templo menos turístico + gran Buda",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Wat%20Paknam%20Bhasicharoen%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/10/%282023%29_%E0%B8%84%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B8%94%E0%B9%88%E0%B8%B2%E0%B8%99_%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3_%282%29.jpg",
     "lat": 13.7216718,
     "lng": 100.4704273,
-    "geocodeLabel": "วัดปากน้ำภาษีเจริญ, ซอยเทอดไท 28, แขวงตลาดพลู, เขตธนบุรี, กรุงเทพมหานคร, 10160, ประเทศไทย"
+    "geocodeLabel": "วัดปากน้ำภาษีเจริญ, ซอยเทอดไท 28, แขวงตลาดพลู, เขตธนบุรี, กรุงเทพมหานคร, 10160, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/%282023%29_%E0%B8%84%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B8%94%E0%B9%88%E0%B8%B2%E0%B8%99_%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3_%282%29.jpg/330px-%282023%29_%E0%B8%84%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B8%94%E0%B9%88%E0%B8%B2%E0%B8%99_%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3_%282%29.jpg",
+    "imageSource": "wikipedia:Wat Paknam Bhasicharoen"
   },
   {
     "id": "bangkok__wat-saket",
@@ -59,10 +65,12 @@
     "duration": "",
     "short": "Golden Mount con vista 360°",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Wat%20Saket%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/a4/%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%AA%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%81%E0%B8%A8-2.jpg",
     "lat": 13.7538418,
     "lng": 100.5066951,
-    "geocodeLabel": "วัดสระเกศราชวรมหาวิหาร, ซอยบรมบรรพต, บรมบรรพต, แขวงบ้านบาตร, เขตป้อมปราบศัตรูพ่าย, กรุงเทพมหานคร, 10100, ประเทศไทย"
+    "geocodeLabel": "วัดสระเกศราชวรมหาวิหาร, ซอยบรมบรรพต, บรมบรรพต, แขวงบ้านบาตร, เขตป้อมปราบศัตรูพ่าย, กรุงเทพมหานคร, 10100, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%AA%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%81%E0%B8%A8-2.jpg/330px-%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%AA%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%81%E0%B8%A8-2.jpg",
+    "imageSource": "wikipedia:Wat Saket"
   },
   {
     "id": "bangkok__wat-traimit",
@@ -72,10 +80,12 @@
     "duration": "",
     "short": "Buda de oro + entrada a Chinatown",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Wat%20Traimit%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/d1/0005387_-_Wat_Traimitr_Withayaram_002.jpg",
     "lat": 13.7379989,
     "lng": 100.5136529,
-    "geocodeLabel": "วัดไตรมิตรวิทยารามวรวิหาร, ถนนกลันตัน, ชุมชนโชฎึก, แขวงตลาดน้อย, เขตสัมพันธวงศ์, กรุงเทพมหานคร, 10100, ประเทศไทย"
+    "geocodeLabel": "วัดไตรมิตรวิทยารามวรวิหาร, ถนนกลันตัน, ชุมชนโชฎึก, แขวงตลาดน้อย, เขตสัมพันธวงศ์, กรุงเทพมหานคร, 10100, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/0005387_-_Wat_Traimitr_Withayaram_002.jpg/330px-0005387_-_Wat_Traimitr_Withayaram_002.jpg",
+    "imageSource": "wikipedia:Wat Traimit"
   },
   {
     "id": "nakhon-pathom-excursion-desde-bangkok__wat-samphran",
@@ -85,10 +95,12 @@
     "duration": "",
     "short": "Templo del “dragón” (muy Instagram)",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Wat%20Samphran%20Nakhon%20Pathom%20(excursi%C3%B3n%20desde%20Bangkok)%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Wat_Samphran_%282%29.jpg",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Wat_Samphran_%282%29.jpg/330px-Wat_Samphran_%282%29.jpg",
+    "imageSource": "wikipedia:Wat Sam Phran"
   },
   {
     "id": "bangkok__mahanakhon-skywalk",
@@ -137,10 +149,12 @@
     "duration": "",
     "short": "Cena/tragos “movie vibe”",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Sirocco%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Brosen_windrose.svg/960px-Brosen_windrose.svg.png",
     "lat": 13.7212917,
     "lng": 100.5168726,
-    "geocodeLabel": "Sirocco, 1055, ถนนศรีเวียง, แขวงสีลม, เขตบางรัก, กรุงเทพมหานคร, 10500, ประเทศไทย"
+    "geocodeLabel": "Sirocco, 1055, ถนนศรีเวียง, แขวงสีลม, เขตบางรัก, กรุงเทพมหานคร, 10500, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Brosen_windrose.svg/330px-Brosen_windrose.svg.png",
+    "imageSource": "wikipedia:Sirocco"
   },
   {
     "id": "bangkok__ojo-bangkok",
@@ -150,10 +164,12 @@
     "duration": "",
     "short": "Restaurante rooftop mexicano (76° piso)",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Ojo%20Bangkok%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/64/One_Bangkok_from_Witthayu_Junction_%282024-10-26%29_03.jpg",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/One_Bangkok_from_Witthayu_Junction_%282024-10-26%29_03.jpg/330px-One_Bangkok_from_Witthayu_Junction_%282024-10-26%29_03.jpg",
+    "imageSource": "wikipedia:One Bangkok"
   },
   {
     "id": "bangkok__chinatown-yaowarat-road",
@@ -176,10 +192,12 @@
     "duration": "",
     "short": "Mercado para comer + shopping",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Jodd%20Fairs%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/3e/JOb_Fair.jpg",
     "lat": 13.7681679,
     "lng": 100.5709179,
-    "geocodeLabel": "จ๊อดแฟร์ รัชดา, ถนนรัชดาภิเษก, แขวงดินแดง, เขตดินแดง, กรุงเทพมหานคร, 10400, ประเทศไทย"
+    "geocodeLabel": "จ๊อดแฟร์ รัชดา, ถนนรัชดาภิเษก, แขวงดินแดง, เขตดินแดง, กรุงเทพมหานคร, 10400, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/JOb_Fair.jpg/330px-JOb_Fair.jpg",
+    "imageSource": "wikipedia:Job fair"
   },
   {
     "id": "bangkok__iconsiam",
@@ -189,10 +207,12 @@
     "duration": "",
     "short": "Mall al río + zona gastronómica",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?ICONSIAM%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Magnolias_Waterfront_Residences_Iconsiam.jpg",
     "lat": 13.7268226,
     "lng": 100.510294,
-    "geocodeLabel": "ICONSIAM, 168;259;289;299, ถนนเจริญนคร, แขวงคลองต้นไทร, เขตคลองสาน, กรุงเทพมหานคร, 10600, ประเทศไทย"
+    "geocodeLabel": "ICONSIAM, 168;259;289;299, ถนนเจริญนคร, แขวงคลองต้นไทร, เขตคลองสาน, กรุงเทพมหานคร, 10600, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Magnolias_Waterfront_Residences_Iconsiam.jpg/330px-Magnolias_Waterfront_Residences_Iconsiam.jpg",
+    "imageSource": "wikipedia:Iconsiam"
   },
   {
     "id": "bangkok__khao-san-road",
@@ -202,10 +222,12 @@
     "duration": "",
     "short": "Backpacker vibe + bares",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Khao%20San%20Road%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/4b/2016_Bangkok%2C_Dystrykt_Phra_Nakhon%2C_Ulica_Khaosan_%2808%29.jpg",
     "lat": 13.7587665,
     "lng": 100.4975792,
-    "geocodeLabel": "Khao San Road, ถนนข้าวสาร, แขวงตลาดยอด, เขตพระนคร, กรุงเทพมหานคร, 10200, ประเทศไทย"
+    "geocodeLabel": "Khao San Road, ถนนข้าวสาร, แขวงตลาดยอด, เขตพระนคร, กรุงเทพมหานคร, 10200, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/2016_Bangkok%2C_Dystrykt_Phra_Nakhon%2C_Ulica_Khaosan_%2808%29.jpg/330px-2016_Bangkok%2C_Dystrykt_Phra_Nakhon%2C_Ulica_Khaosan_%2808%29.jpg",
+    "imageSource": "wikipedia:Khaosan Road"
   },
   {
     "id": "bangkok__lumphini-park",
@@ -215,10 +237,12 @@
     "duration": "",
     "short": "Parque para cortar el ritmo",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Lumphini%20Park%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Aerial_view_of_Lumphini_Park.jpg",
     "lat": 13.7306004,
     "lng": 100.5415377,
-    "geocodeLabel": "สวนลุมพินี, 192, เขตปทุมวัน, กรุงเทพมหานคร, 10330, ประเทศไทย"
+    "geocodeLabel": "สวนลุมพินี, 192, เขตปทุมวัน, กรุงเทพมหานคร, 10330, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Aerial_view_of_Lumphini_Park.jpg/330px-Aerial_view_of_Lumphini_Park.jpg",
+    "imageSource": "wikipedia:Lumphini Park"
   },
   {
     "id": "bangkok__pak-khlong-talat",
@@ -228,10 +252,12 @@
     "duration": "",
     "short": "Mercado de flores 24/7",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Pak%20Khlong%20Talat%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Flowermarket.jpg",
     "lat": 13.7417086,
     "lng": 100.4963295,
-    "geocodeLabel": "ปากคลองตลาด, ซอยท่ากลาง, บ้านหม้อ, แขวงวังบูรพาภิรมย์, เขตพระนคร, กรุงเทพมหานคร, 10200, ประเทศไทย"
+    "geocodeLabel": "ปากคลองตลาด, ซอยท่ากลาง, บ้านหม้อ, แขวงวังบูรพาภิรมย์, เขตพระนคร, กรุงเทพมหานคร, 10200, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Flowermarket.jpg/330px-Flowermarket.jpg",
+    "imageSource": "wikipedia:Pak Khlong Talat"
   },
   {
     "id": "bangkok__thecommons-thonglor",
@@ -254,10 +280,12 @@
     "duration": "",
     "short": "Barco por canal, rápido y local",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Khlong%20Saen%20Saep%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Khlong_San_Sab_Ferry.jpg",
     "lat": 13.8438717,
     "lng": 100.8038823,
-    "geocodeLabel": "คลองบ้านเกาะ, แขวงแสนแสบ, เขตมีนบุรี, กรุงเทพมหานคร, 10510, ประเทศไทย"
+    "geocodeLabel": "คลองบ้านเกาะ, แขวงแสนแสบ, เขตมีนบุรี, กรุงเทพมหานคร, 10510, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Khlong_San_Sab_Ferry.jpg/330px-Khlong_San_Sab_Ferry.jpg",
+    "imageSource": "wikipedia:Khlong Saen Saep"
   },
   {
     "id": "bangkok__khlong-ong-ang-walking-street",
@@ -293,10 +321,12 @@
     "duration": "",
     "short": "Restaurante en el Mahanakhon",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Ojo%20Bangkok%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/64/One_Bangkok_from_Witthayu_Junction_%282024-10-26%29_03.jpg",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/One_Bangkok_from_Witthayu_Junction_%282024-10-26%29_03.jpg/330px-One_Bangkok_from_Witthayu_Junction_%282024-10-26%29_03.jpg",
+    "imageSource": "wikipedia:One Bangkok"
   },
   {
     "id": "bangkok__arabica-empire-tower",
@@ -319,10 +349,12 @@
     "duration": "",
     "short": "Descripción",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Nombre%20Ciudad%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/en/e/ec/Poster-enda.jpg",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/en/e/ec/Poster-enda.jpg",
+    "imageSource": "wikipedia:En nombre del amor"
   },
   {
     "id": "chiang-mai__wat-phra-that-doi-suthep",
@@ -332,10 +364,12 @@
     "duration": "",
     "short": "Templo sagrado en la montaña",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Wat%20Phra%20That%20Doi%20Suthep%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/18/Wat_Phra_That_Doi_Suthep_-_Chiang_Mai.jpg",
     "lat": 18.8035942,
     "lng": 98.9202265,
-    "geocodeLabel": "วัดพระธาตุดอยสุเทพราชวรวิหาร, ถนนห้วยแก้ว, เทศบาลเมืองสุเทพ, อำเภอเมืองเชียงใหม่, จังหวัดเชียงใหม่, ประเทศไทย"
+    "geocodeLabel": "วัดพระธาตุดอยสุเทพราชวรวิหาร, ถนนห้วยแก้ว, เทศบาลเมืองสุเทพ, อำเภอเมืองเชียงใหม่, จังหวัดเชียงใหม่, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Wat_Phra_That_Doi_Suthep_-_Chiang_Mai.jpg/330px-Wat_Phra_That_Doi_Suthep_-_Chiang_Mai.jpg",
+    "imageSource": "wikipedia:Wat Phra That Doi Suthep"
   },
   {
     "id": "chiang-mai__wat-chedi-luang",
@@ -345,10 +379,12 @@
     "duration": "",
     "short": "Enorme estupa en ruinas",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Wat%20Chedi%20Luang%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e2/%E0%B9%80%E0%B8%88%E0%B8%94%E0%B8%B5%E0%B8%A2%E0%B9%8C%E0%B8%AB%E0%B8%A5%E0%B8%A7%E0%B8%87.jpg",
     "lat": 18.7871427,
     "lng": 98.986784,
-    "geocodeLabel": "วัดเจดีย์หลวงวรวิหาร, ถนนพระปกเกล้า, เทศบาลนครเชียงใหม่, ฟ้าฮ่าม, อำเภอเมืองเชียงใหม่, จังหวัดเชียงใหม่, 50200, ประเทศไทย"
+    "geocodeLabel": "วัดเจดีย์หลวงวรวิหาร, ถนนพระปกเกล้า, เทศบาลนครเชียงใหม่, ฟ้าฮ่าม, อำเภอเมืองเชียงใหม่, จังหวัดเชียงใหม่, 50200, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/%E0%B9%80%E0%B8%88%E0%B8%94%E0%B8%B5%E0%B8%A2%E0%B9%8C%E0%B8%AB%E0%B8%A5%E0%B8%A7%E0%B8%87.jpg/330px-%E0%B9%80%E0%B8%88%E0%B8%94%E0%B8%B5%E0%B8%A2%E0%B9%8C%E0%B8%AB%E0%B8%A5%E0%B8%A7%E0%B8%87.jpg",
+    "imageSource": "wikipedia:Wat Chedi Luang"
   },
   {
     "id": "chiang-mai__wat-phra-singh",
@@ -358,10 +394,12 @@
     "duration": "",
     "short": "Arquitectura Lanna clásica",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Wat%20Phra%20Singh%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Wat_Phra_Sing%2C_Chiang_Mai_%28I%29.jpg",
     "lat": 18.7882068,
     "lng": 98.9813773,
-    "geocodeLabel": "วัดพระสิงห์, ถนนราชมรรคา ซอย 9, เทศบาลนครเชียงใหม่, ฟ้าฮ่าม, อำเภอเมืองเชียงใหม่, จังหวัดเชียงใหม่, 50200, ประเทศไทย"
+    "geocodeLabel": "วัดพระสิงห์, ถนนราชมรรคา ซอย 9, เทศบาลนครเชียงใหม่, ฟ้าฮ่าม, อำเภอเมืองเชียงใหม่, จังหวัดเชียงใหม่, 50200, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Wat_Phra_Sing%2C_Chiang_Mai_%28I%29.jpg/330px-Wat_Phra_Sing%2C_Chiang_Mai_%28I%29.jpg",
+    "imageSource": "wikipedia:Wat Phra Singh"
   },
   {
     "id": "chiang-mai__dantewada-land-of-angels",
@@ -397,10 +435,12 @@
     "duration": "",
     "short": "Khao soi gourmet",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Khao-so-i%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Khao_Soi_Northern_Thai_food_%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%8B%E0%B8%AD%E0%B8%A2_%E0%B8%9C%E0%B8%B1%E0%B8%81%E0%B8%94%E0%B8%AD%E0%B8%87.jpg",
     "lat": 18.8091521,
     "lng": 99.0047472,
-    "geocodeLabel": "Khao-So-i, ถนนเจริญราษฎร์, ชุมชนฟ้าฮ่าม, เทศบาลนครเชียงใหม่, ฟ้าฮ่าม, อำเภอเมืองเชียงใหม่, จังหวัดเชียงใหม่, 50300, ประเทศไทย"
+    "geocodeLabel": "Khao-So-i, ถนนเจริญราษฎร์, ชุมชนฟ้าฮ่าม, เทศบาลนครเชียงใหม่, ฟ้าฮ่าม, อำเภอเมืองเชียงใหม่, จังหวัดเชียงใหม่, 50300, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Khao_Soi_Northern_Thai_food_%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%8B%E0%B8%AD%E0%B8%A2_%E0%B8%9C%E0%B8%B1%E0%B8%81%E0%B8%94%E0%B8%AD%E0%B8%87.jpg/330px-Khao_Soi_Northern_Thai_food_%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%8B%E0%B8%AD%E0%B8%A2_%E0%B8%9C%E0%B8%B1%E0%B8%81%E0%B8%94%E0%B8%AD%E0%B8%87.jpg",
+    "imageSource": "wikipedia:Khao soi"
   },
   {
     "id": "chiang-mai__night-bazaar",
@@ -410,10 +450,12 @@
     "duration": "",
     "short": "Mercado nocturno",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Night%20Bazaar%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Shilin_Night_Market_21%2C_Dec_06.JPG",
     "lat": 18.7867043,
     "lng": 99.0007492,
-    "geocodeLabel": "Night Bazaar, ถนนช้างคลาน, เทศบาลนครเชียงใหม่, ฟ้าฮ่าม, อำเภอเมืองเชียงใหม่, จังหวัดเชียงใหม่, 55520, ประเทศไทย"
+    "geocodeLabel": "Night Bazaar, ถนนช้างคลาน, เทศบาลนครเชียงใหม่, ฟ้าฮ่าม, อำเภอเมืองเชียงใหม่, จังหวัดเชียงใหม่, 55520, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Shilin_Night_Market_21%2C_Dec_06.JPG/330px-Shilin_Night_Market_21%2C_Dec_06.JPG",
+    "imageSource": "wikipedia:Night bazaar"
   },
   {
     "id": "chiang-mai__santuario-de-elefantes",
@@ -904,10 +946,12 @@
     "duration": "",
     "short": "Templo símbolo en la montaña",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Wat%20Phra%20That%20Doi%20Suthep%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/18/Wat_Phra_That_Doi_Suthep_-_Chiang_Mai.jpg",
     "lat": 18.8035942,
     "lng": 98.9202265,
-    "geocodeLabel": "วัดพระธาตุดอยสุเทพราชวรวิหาร, ถนนห้วยแก้ว, เทศบาลเมืองสุเทพ, อำเภอเมืองเชียงใหม่, จังหวัดเชียงใหม่, ประเทศไทย"
+    "geocodeLabel": "วัดพระธาตุดอยสุเทพราชวรวิหาร, ถนนห้วยแก้ว, เทศบาลเมืองสุเทพ, อำเภอเมืองเชียงใหม่, จังหวัดเชียงใหม่, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Wat_Phra_That_Doi_Suthep_-_Chiang_Mai.jpg/330px-Wat_Phra_That_Doi_Suthep_-_Chiang_Mai.jpg",
+    "imageSource": "wikipedia:Wat Phra That Doi Suthep"
   },
   {
     "id": "chiang-mai__wat-chedi-luang-2",
@@ -917,10 +961,12 @@
     "duration": "",
     "short": "Estupa monumental en el casco antiguo",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Wat%20Chedi%20Luang%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e2/%E0%B9%80%E0%B8%88%E0%B8%94%E0%B8%B5%E0%B8%A2%E0%B9%8C%E0%B8%AB%E0%B8%A5%E0%B8%A7%E0%B8%87.jpg",
     "lat": 18.7871427,
     "lng": 98.986784,
-    "geocodeLabel": "วัดเจดีย์หลวงวรวิหาร, ถนนพระปกเกล้า, เทศบาลนครเชียงใหม่, ฟ้าฮ่าม, อำเภอเมืองเชียงใหม่, จังหวัดเชียงใหม่, 50200, ประเทศไทย"
+    "geocodeLabel": "วัดเจดีย์หลวงวรวิหาร, ถนนพระปกเกล้า, เทศบาลนครเชียงใหม่, ฟ้าฮ่าม, อำเภอเมืองเชียงใหม่, จังหวัดเชียงใหม่, 50200, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/%E0%B9%80%E0%B8%88%E0%B8%94%E0%B8%B5%E0%B8%A2%E0%B9%8C%E0%B8%AB%E0%B8%A5%E0%B8%A7%E0%B8%87.jpg/330px-%E0%B9%80%E0%B8%88%E0%B8%94%E0%B8%B5%E0%B8%A2%E0%B9%8C%E0%B8%AB%E0%B8%A5%E0%B8%A7%E0%B8%87.jpg",
+    "imageSource": "wikipedia:Wat Chedi Luang"
   },
   {
     "id": "chiang-mai__wat-phra-singh-2",
@@ -930,10 +976,12 @@
     "duration": "",
     "short": "Templo elegante y activo",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Wat%20Phra%20Singh%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Wat_Phra_Sing%2C_Chiang_Mai_%28I%29.jpg",
     "lat": 18.7882068,
     "lng": 98.9813773,
-    "geocodeLabel": "วัดพระสิงห์, ถนนราชมรรคา ซอย 9, เทศบาลนครเชียงใหม่, ฟ้าฮ่าม, อำเภอเมืองเชียงใหม่, จังหวัดเชียงใหม่, 50200, ประเทศไทย"
+    "geocodeLabel": "วัดพระสิงห์, ถนนราชมรรคา ซอย 9, เทศบาลนครเชียงใหม่, ฟ้าฮ่าม, อำเภอเมืองเชียงใหม่, จังหวัดเชียงใหม่, 50200, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Wat_Phra_Sing%2C_Chiang_Mai_%28I%29.jpg/330px-Wat_Phra_Sing%2C_Chiang_Mai_%28I%29.jpg",
+    "imageSource": "wikipedia:Wat Phra Singh"
   },
   {
     "id": "chiang-mai__chiang-mai-old-city-a-pie",
