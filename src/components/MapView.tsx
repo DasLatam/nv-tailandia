@@ -2,8 +2,14 @@
 
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-import { MapContainer, TileLayer, Marker, useMapEvents } from "react-leaflet";
-import { useEffect } from "react";
+import {
+  MapContainer,
+  TileLayer,
+  Marker,
+  useMap,
+  useMapEvents,
+} from "react-leaflet";
+import { useEffect, useMemo } from "react";
 import type { Place } from "./MapPage";
 
 type Props = {
@@ -14,7 +20,6 @@ type Props = {
 
 function FixLeafletIcons() {
   useEffect(() => {
-    // Fix default marker icons in Next bundlers
     // @ts-ignore
     delete L.Icon.Default.prototype._getIconUrl;
     L.Icon.Default.mergeOptions({
@@ -23,6 +28,23 @@ function FixLeafletIcons() {
       shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
     });
   }, []);
+  return null;
+}
+
+// ✅ Important for production: when map mounts after hydration (ClientOnly),
+// Leaflet can compute wrong size -> broken pan/zoom. invalidateSize fixes it.
+function InvalidateSizeOnMount() {
+  const map = useMap();
+  useEffect(() => {
+    const t1 = setTimeout(() => map.invalidateSize(), 0);
+    const t2 = setTimeout(() => map.invalidateSize(), 250);
+    const t3 = setTimeout(() => map.invalidateSize(), 800);
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+      clearTimeout(t3);
+    };
+  }, [map]);
   return null;
 }
 
@@ -41,7 +63,7 @@ function BoundsWatcher({
   const update = () => {
     const z = map.getZoom();
 
-    // Zoom país o más abierto -> mostrar TODOS en sidebar
+    // Zoom país o más abierto -> sidebar muestra TODO
     if (z <= 6) {
       onVisibleIdsChange(null);
       return;
@@ -56,34 +78,46 @@ function BoundsWatcher({
     onVisibleIdsChange(ids);
   };
 
-  useEffect(() => {
-    update();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [places.length]);
-
+  useEffect(() => update(), [places.length]); // eslint-disable-line react-hooks/exhaustive-deps
   return null;
 }
 
 export default function MapView({ places, onPick, onVisibleIdsChange }: Props) {
-  // Centro general en Tailandia (Bangkok)
-  const center: [number, number] = [13.7563, 100.5018];
+  const center: [number, number] = [13.7563, 100.5018]; // Bangkok
+
+  // Filtramos por seguridad (lat/lng null rompe markers)
+  const markers = useMemo(
+    () => places.filter((p) => typeof p.lat === "number" && typeof p.lng === "number"),
+    [places]
+  );
 
   return (
-    <MapContainer center={center} zoom={6} className="h-full w-full">
+    <MapContainer
+      center={center}
+      zoom={6}
+      className="h-full w-full"
+      // ✅ Make interactions explicit
+      scrollWheelZoom={true}
+      doubleClickZoom={true}
+      dragging={true}
+      touchZoom={true}
+      zoomControl={true}
+    >
       <FixLeafletIcons />
-      <BoundsWatcher places={places} onVisibleIdsChange={onVisibleIdsChange} />
+      <InvalidateSizeOnMount />
+      <BoundsWatcher places={markers} onVisibleIdsChange={onVisibleIdsChange} />
 
       <TileLayer
         attribution="&copy; OpenStreetMap contributors"
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
 
-      {places.map((p) => (
+      {markers.map((p) => (
         <Marker
           key={p.id}
           position={[p.lat as number, p.lng as number]}
           eventHandlers={{
-            click: () => onPick(p), // Click -> abre el Drawer (detalle)
+            click: () => onPick(p), // Click -> abre Drawer
           }}
         />
       ))}

@@ -18,11 +18,11 @@ export default function Sidebar({
   onPick: (p: Place) => void;
 }) {
   return (
-    <aside className="w-[380px] border-r bg-white h-full flex flex-col">
+    <aside className="w-[380px] border-r bg-white h-full flex flex-col z-[900]">
       <div className="p-4 border-b sticky top-0 bg-white z-10">
         <div className="text-lg font-semibold">NV Tailandia</div>
         <div className="text-sm opacity-70">
-          Lista: {shown} / {total} (zoom in → solo visibles)
+          Lista: {shown} / {total} • Click abre detalle
         </div>
 
         <input
@@ -31,6 +31,10 @@ export default function Sidebar({
           placeholder="Buscar (templo, masaje, Phuket...)"
           className="mt-3 w-full rounded-md border px-3 py-2 text-sm"
         />
+
+        <div className="text-xs opacity-60 mt-2">
+          Zoom out: lista completa • Zoom in: solo puntos visibles
+        </div>
       </div>
 
       <div className="flex-1 overflow-auto">
