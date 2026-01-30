@@ -1,0 +1,1122 @@
+[
+  {
+    "id": "bangkok__grand-palace-bangkok-wat-phra-kaew",
+    "name": "Grand Palace (Bangkok) / Wat Phra Kaew",
+    "city": "Bangkok",
+    "category": "Templo / Histórico",
+    "short": "Complejo real + templo más sagrado",
+    "image": "https://source.unsplash.com/featured/?Grand%20Palace%20(Bangkok)%20%2F%20Wat%20Phra%20Kaew%20Bangkok%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "bangkok__wat-pho",
+    "name": "Wat Pho",
+    "city": "Bangkok",
+    "category": "Templo",
+    "short": "Buda reclinado + patios y estupas",
+    "image": "https://source.unsplash.com/featured/?Wat%20Pho%20Bangkok%20thailand",
+    "lat": 13.7463456,
+    "lng": 100.4927381
+  },
+  {
+    "id": "bangkok__wat-arun",
+    "name": "Wat Arun",
+    "city": "Bangkok",
+    "category": "Templo / Mirador",
+    "short": "Ícono junto al río + mejores fotos",
+    "image": "https://source.unsplash.com/featured/?Wat%20Arun%20Bangkok%20thailand",
+    "lat": 13.7438976,
+    "lng": 100.4885137
+  },
+  {
+    "id": "bangkok__wat-paknam-bhasicharoen",
+    "name": "Wat Paknam Bhasicharoen",
+    "city": "Bangkok",
+    "category": "Templo",
+    "short": "Templo menos turístico + gran Buda",
+    "image": "https://source.unsplash.com/featured/?Wat%20Paknam%20Bhasicharoen%20Bangkok%20thailand",
+    "lat": 13.7216718,
+    "lng": 100.4704273
+  },
+  {
+    "id": "bangkok__wat-saket",
+    "name": "Wat Saket",
+    "city": "Bangkok",
+    "category": "Templo / Mirador",
+    "short": "Golden Mount con vista 360°",
+    "image": "https://source.unsplash.com/featured/?Wat%20Saket%20Bangkok%20thailand",
+    "lat": 13.7538418,
+    "lng": 100.5066951
+  },
+  {
+    "id": "bangkok__wat-traimit",
+    "name": "Wat Traimit",
+    "city": "Bangkok",
+    "category": "Templo",
+    "short": "Buda de oro + entrada a Chinatown",
+    "image": "https://source.unsplash.com/featured/?Wat%20Traimit%20Bangkok%20thailand",
+    "lat": 13.7379989,
+    "lng": 100.5136529
+  },
+  {
+    "id": "nakhon-pathom-excursion-desde-bangkok__wat-samphran",
+    "name": "Wat Samphran",
+    "city": "Nakhon Pathom (excursión desde Bangkok)",
+    "category": "Templo / Excursión",
+    "short": "Templo del “dragón” (muy Instagram)",
+    "image": "https://source.unsplash.com/featured/?Wat%20Samphran%20Nakhon%20Pathom%20(excursi%C3%B3n%20desde%20Bangkok)%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "bangkok__mahanakhon-skywalk",
+    "name": "Mahanakhon SkyWalk",
+    "city": "Bangkok",
+    "category": "Mirador",
+    "short": "Vidrio + rooftop, ideal sunset",
+    "image": "https://source.unsplash.com/featured/?Mahanakhon%20SkyWalk%20Bangkok%20thailand",
+    "lat": 13.7231503,
+    "lng": 100.5280809
+  },
+  {
+    "id": "bangkok__tichuca-rooftop-bar",
+    "name": "Tichuca Rooftop Bar",
+    "city": "Bangkok",
+    "category": "Rooftop / Coctelería",
+    "short": "Rooftop “árbol” luminoso",
+    "image": "https://source.unsplash.com/featured/?Tichuca%20Rooftop%20Bar%20Bangkok%20thailand",
+    "lat": 13.7220802,
+    "lng": 100.5804417
+  },
+  {
+    "id": "bangkok__red-sky-bar",
+    "name": "Red Sky Bar",
+    "city": "Bangkok",
+    "category": "Rooftop / Coctelería",
+    "short": "Rooftop céntrico con vista 360",
+    "image": "https://source.unsplash.com/featured/?Red%20Sky%20Bar%20Bangkok%20thailand",
+    "lat": 13.7477432,
+    "lng": 100.5384744
+  },
+  {
+    "id": "bangkok__sirocco",
+    "name": "Sirocco",
+    "city": "Bangkok",
+    "category": "Rooftop / Cena",
+    "short": "Cena/tragos “movie vibe”",
+    "image": "https://source.unsplash.com/featured/?Sirocco%20Bangkok%20thailand",
+    "lat": 13.7212917,
+    "lng": 100.5168726
+  },
+  {
+    "id": "bangkok__ojo-bangkok",
+    "name": "Ojo Bangkok",
+    "city": "Bangkok",
+    "category": "Rooftop / Gastronomía",
+    "short": "Restaurante rooftop mexicano (76° piso)",
+    "image": "https://source.unsplash.com/featured/?Ojo%20Bangkok%20Bangkok%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "bangkok__chinatown-yaowarat-road",
+    "name": "Chinatown (Yaowarat Road)",
+    "city": "Bangkok",
+    "category": "Barrio / Gastronomía",
+    "short": "Street food + noche vibrante",
+    "image": "https://source.unsplash.com/featured/?Chinatown%20(Yaowarat%20Road)%20Bangkok%20thailand",
+    "lat": 13.74175,
+    "lng": 100.5107544
+  },
+  {
+    "id": "bangkok__jodd-fairs",
+    "name": "Jodd Fairs",
+    "city": "Bangkok",
+    "category": "Mercado nocturno",
+    "short": "Mercado para comer + shopping",
+    "image": "https://source.unsplash.com/featured/?Jodd%20Fairs%20Bangkok%20thailand",
+    "lat": 13.7681679,
+    "lng": 100.5709179
+  },
+  {
+    "id": "bangkok__iconsiam",
+    "name": "ICONSIAM",
+    "city": "Bangkok",
+    "category": "Shopping / Experiencia",
+    "short": "Mall al río + zona gastronómica",
+    "image": "https://source.unsplash.com/featured/?ICONSIAM%20Bangkok%20thailand",
+    "lat": 13.7268226,
+    "lng": 100.510294
+  },
+  {
+    "id": "bangkok__khao-san-road",
+    "name": "Khao San Road",
+    "city": "Bangkok",
+    "category": "Noche / Calle",
+    "short": "Backpacker vibe + bares",
+    "image": "https://source.unsplash.com/featured/?Khao%20San%20Road%20Bangkok%20thailand",
+    "lat": 13.7587665,
+    "lng": 100.4975792
+  },
+  {
+    "id": "bangkok__lumphini-park",
+    "name": "Lumphini Park",
+    "city": "Bangkok",
+    "category": "Parque",
+    "short": "Parque para cortar el ritmo",
+    "image": "https://source.unsplash.com/featured/?Lumphini%20Park%20Bangkok%20thailand",
+    "lat": 13.7306004,
+    "lng": 100.5415377
+  },
+  {
+    "id": "bangkok__pak-khlong-talat",
+    "name": "Pak Khlong Talat",
+    "city": "Bangkok",
+    "category": "Mercado",
+    "short": "Mercado de flores 24/7",
+    "image": "https://source.unsplash.com/featured/?Pak%20Khlong%20Talat%20Bangkok%20thailand",
+    "lat": 13.7417086,
+    "lng": 100.4963295
+  },
+  {
+    "id": "bangkok__thecommons-thonglor",
+    "name": "theCOMMONS Thonglor",
+    "city": "Bangkok",
+    "category": "Café / Food court",
+    "short": "Community mall “lindo” para comer",
+    "image": "https://source.unsplash.com/featured/?theCOMMONS%20Thonglor%20Bangkok%20thailand",
+    "lat": 13.7349518,
+    "lng": 100.5821642
+  },
+  {
+    "id": "bangkok__khlong-saen-saep",
+    "name": "Khlong Saen Saep",
+    "city": "Bangkok",
+    "category": "Transporte / Experiencia",
+    "short": "Barco por canal, rápido y local",
+    "image": "https://source.unsplash.com/featured/?Khlong%20Saen%20Saep%20Bangkok%20thailand",
+    "lat": 13.8438717,
+    "lng": 100.8038823
+  },
+  {
+    "id": "bangkok__khlong-ong-ang-walking-street",
+    "name": "Khlong Ong Ang Walking Street",
+    "city": "Bangkok",
+    "category": "Mercado / Paseo nocturno",
+    "short": "Canal modernizado + puestos + música",
+    "image": "https://source.unsplash.com/featured/?Khlong%20Ong%20Ang%20Walking%20Street%20Bangkok%20thailand",
+    "lat": 13.7430569,
+    "lng": 100.5018578
+  },
+  {
+    "id": "bangkok__arabica-bangkok-empire-tower",
+    "name": "% Arabica Bangkok Empire Tower",
+    "city": "Bangkok",
+    "category": "Café / Mirador",
+    "short": "Café con vista desde el piso 55",
+    "image": "https://source.unsplash.com/featured/?%25%20Arabica%20Bangkok%20Empire%20Tower%20Bangkok%20thailand",
+    "lat": 13.7204262,
+    "lng": 100.5299983
+  },
+  {
+    "id": "bangkok__ojo-bangkok",
+    "name": "Ojo Bangkok",
+    "city": "Bangkok",
+    "category": "Gastronomía",
+    "short": "Restaurante en el Mahanakhon",
+    "image": "https://source.unsplash.com/featured/?Ojo%20Bangkok%20Bangkok%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "bangkok__arabica-empire-tower",
+    "name": "Arabica Empire Tower",
+    "city": "Bangkok",
+    "category": "Gastronomía",
+    "short": "Café de especialidad",
+    "image": "https://source.unsplash.com/featured/?Arabica%20Empire%20Tower%20Bangkok%20thailand",
+    "lat": 13.7204262,
+    "lng": 100.5299983
+  },
+  {
+    "id": "ciudad__nombre",
+    "name": "Nombre",
+    "city": "Ciudad",
+    "category": "Categoría",
+    "short": "Descripción",
+    "image": "https://source.unsplash.com/featured/?Nombre%20Ciudad%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "chiang-mai__wat-phra-that-doi-suthep",
+    "name": "Wat Phra That Doi Suthep",
+    "city": "Chiang Mai",
+    "category": "Templo",
+    "short": "Templo sagrado en la montaña",
+    "image": "https://source.unsplash.com/featured/?Wat%20Phra%20That%20Doi%20Suthep%20Chiang%20Mai%20thailand",
+    "lat": 18.8035942,
+    "lng": 98.9202265
+  },
+  {
+    "id": "chiang-mai__wat-chedi-luang",
+    "name": "Wat Chedi Luang",
+    "city": "Chiang Mai",
+    "category": "Templo",
+    "short": "Enorme estupa en ruinas",
+    "image": "https://source.unsplash.com/featured/?Wat%20Chedi%20Luang%20Chiang%20Mai%20thailand",
+    "lat": 18.7871427,
+    "lng": 98.986784
+  },
+  {
+    "id": "chiang-mai__wat-phra-singh",
+    "name": "Wat Phra Singh",
+    "city": "Chiang Mai",
+    "category": "Templo",
+    "short": "Arquitectura Lanna clásica",
+    "image": "https://source.unsplash.com/featured/?Wat%20Phra%20Singh%20Chiang%20Mai%20thailand",
+    "lat": 18.7882068,
+    "lng": 98.9813773
+  },
+  {
+    "id": "chiang-mai__dantewada-land-of-angels",
+    "name": "Dantewada Land of Angels",
+    "city": "Chiang Mai",
+    "category": "Naturaleza",
+    "short": "Parque natural artificial",
+    "image": "https://source.unsplash.com/featured/?Dantewada%20Land%20of%20Angels%20Chiang%20Mai%20thailand",
+    "lat": 19.1232029,
+    "lng": 98.9432396
+  },
+  {
+    "id": "chiang-mai__khao-soi-maesai",
+    "name": "Khao Soi Maesai",
+    "city": "Chiang Mai",
+    "category": "Gastronomía",
+    "short": "Khao soi tradicional",
+    "image": "https://source.unsplash.com/featured/?Khao%20Soi%20Maesai%20Chiang%20Mai%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "chiang-mai__khao-so-i",
+    "name": "Khao-so-i",
+    "city": "Chiang Mai",
+    "category": "Gastronomía",
+    "short": "Khao soi gourmet",
+    "image": "https://source.unsplash.com/featured/?Khao-so-i%20Chiang%20Mai%20thailand",
+    "lat": 18.8091521,
+    "lng": 99.0047472
+  },
+  {
+    "id": "chiang-mai__night-bazaar",
+    "name": "Night Bazaar",
+    "city": "Chiang Mai",
+    "category": "Mercado",
+    "short": "Mercado nocturno",
+    "image": "https://source.unsplash.com/featured/?Night%20Bazaar%20Chiang%20Mai%20thailand",
+    "lat": 18.7867043,
+    "lng": 99.0007492
+  },
+  {
+    "id": "chiang-mai__santuario-de-elefantes",
+    "name": "Santuario de Elefantes",
+    "city": "Chiang Mai",
+    "category": "Experiencia",
+    "short": "Cuidado ético de elefantes",
+    "image": "https://source.unsplash.com/featured/?Santuario%20de%20Elefantes%20Chiang%20Mai%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "chiang-mai__zoe-in-yellow",
+    "name": "Zoe in Yellow",
+    "city": "Chiang Mai",
+    "category": "Vida Nocturna",
+    "short": "Epicentro de la fiesta",
+    "image": "https://source.unsplash.com/featured/?Zoe%20in%20Yellow%20Chiang%20Mai%20thailand",
+    "lat": 18.7908639,
+    "lng": 98.9905989
+  },
+  {
+    "id": "chiang-mai__vieng-thapae-resort",
+    "name": "Vieng Thapae Resort",
+    "city": "Chiang Mai",
+    "category": "Alojamiento",
+    "short": "Hotel boutique colonial",
+    "image": "https://source.unsplash.com/featured/?Vieng%20Thapae%20Resort%20Chiang%20Mai%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "chiang-rai__wat-rong-khun",
+    "name": "Wat Rong Khun",
+    "city": "Chiang Rai",
+    "category": "Templo",
+    "short": "El Templo Blanco",
+    "image": "https://source.unsplash.com/featured/?Wat%20Rong%20Khun%20Chiang%20Rai%20thailand",
+    "lat": 19.8238794,
+    "lng": 99.7628959
+  },
+  {
+    "id": "chiang-rai__wat-rong-suea-ten",
+    "name": "Wat Rong Suea Ten",
+    "city": "Chiang Rai",
+    "category": "Templo",
+    "short": "El Templo Azul",
+    "image": "https://source.unsplash.com/featured/?Wat%20Rong%20Suea%20Ten%20Chiang%20Rai%20thailand",
+    "lat": 19.9233569,
+    "lng": 99.8417552
+  },
+  {
+    "id": "chiang-rai__baandam-museum",
+    "name": "Baandam Museum",
+    "city": "Chiang Rai",
+    "category": "Cultura",
+    "short": "La Casa Negra",
+    "image": "https://source.unsplash.com/featured/?Baandam%20Museum%20Chiang%20Rai%20thailand",
+    "lat": 19.9911504,
+    "lng": 99.8611152
+  },
+  {
+    "id": "chiang-rai__lalitta-cafe",
+    "name": "Lalitta Café",
+    "city": "Chiang Rai",
+    "category": "Gastronomía",
+    "short": "Café jardín de hadas",
+    "image": "https://source.unsplash.com/featured/?Lalitta%20Caf%C3%A9%20Chiang%20Rai%20thailand",
+    "lat": 19.9424815,
+    "lng": 99.8112885
+  },
+  {
+    "id": "chiang-rai__choui-fong-tea",
+    "name": "Choui Fong Tea",
+    "city": "Chiang Rai",
+    "category": "Naturaleza",
+    "short": "Plantaciones de té",
+    "image": "https://source.unsplash.com/featured/?Choui%20Fong%20Tea%20Chiang%20Rai%20thailand",
+    "lat": 20.2002448,
+    "lng": 99.8185308
+  },
+  {
+    "id": "chiang-rai__mujeres-jirafa-karen",
+    "name": "Mujeres Jirafa (Karen)",
+    "city": "Chiang Rai",
+    "category": "Cultura",
+    "short": "Aldea étnica",
+    "image": "https://source.unsplash.com/featured/?Mujeres%20Jirafa%20(Karen)%20Chiang%20Rai%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "satun-mar-de-andaman__koh-lipe",
+    "name": "Koh Lipe",
+    "city": "Satun (Mar de Andamán)",
+    "category": "Naturaleza",
+    "short": "Las Maldivas de Tailandia",
+    "image": "https://source.unsplash.com/featured/?Koh%20Lipe%20Satun%20(Mar%20de%20Andam%C3%A1n)%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "mar-del-golfo__koh-tao",
+    "name": "Koh Tao",
+    "city": "Mar del Golfo",
+    "category": "Naturaleza",
+    "short": "Paraíso del buceo",
+    "image": "https://source.unsplash.com/featured/?Koh%20Tao%20Mar%20del%20Golfo%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "koh-tao__john-suwan-viewpoint",
+    "name": "John Suwan Viewpoint",
+    "city": "Koh Tao",
+    "category": "Naturaleza",
+    "short": "El mirador más famoso",
+    "image": "https://source.unsplash.com/featured/?John%20Suwan%20Viewpoint%20Koh%20Tao%20thailand",
+    "lat": 10.0601256,
+    "lng": 99.8294293
+  },
+  {
+    "id": "koh-samui__crystal-bay-silver-beach",
+    "name": "Crystal Bay (Silver Beach)",
+    "city": "Koh Samui",
+    "category": "Naturaleza",
+    "short": "Bahía de rocas gigantes",
+    "image": "https://source.unsplash.com/featured/?Crystal%20Bay%20(Silver%20Beach)%20Koh%20Samui%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "koh-samui__big-buddha-samui",
+    "name": "Big Buddha Samui",
+    "city": "Koh Samui",
+    "category": "Templo",
+    "short": "Estatua dorada de 12 metros",
+    "image": "https://source.unsplash.com/featured/?Big%20Buddha%20Samui%20Koh%20Samui%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "surat-thani__khao-sok",
+    "name": "Khao Sok",
+    "city": "Surat Thani",
+    "category": "Naturaleza",
+    "short": "Parque Nacional y Lago",
+    "image": "https://source.unsplash.com/featured/?Khao%20Sok%20Surat%20Thani%20thailand",
+    "lat": 9.0686898,
+    "lng": 98.5738024
+  },
+  {
+    "id": "krabi__railay-beach",
+    "name": "Railay Beach",
+    "city": "Krabi",
+    "category": "Naturaleza",
+    "short": "Playa entre acantilados",
+    "image": "https://source.unsplash.com/featured/?Railay%20Beach%20Krabi%20thailand",
+    "lat": 8.0114166,
+    "lng": 98.8379541
+  },
+  {
+    "id": "krabi__phi-phi-islands",
+    "name": "Phi Phi Islands",
+    "city": "Krabi",
+    "category": "Naturaleza",
+    "short": "Icono de Tailandia",
+    "image": "https://source.unsplash.com/featured/?Phi%20Phi%20Islands%20Krabi%20thailand",
+    "lat": 7.7522403,
+    "lng": 98.7766434
+  },
+  {
+    "id": "krabi__koh-lanta",
+    "name": "Koh Lanta",
+    "city": "Krabi",
+    "category": "Naturaleza",
+    "short": "Isla tranquila",
+    "image": "https://source.unsplash.com/featured/?Koh%20Lanta%20Krabi%20thailand",
+    "lat": 7.6823683,
+    "lng": 99.0900688
+  },
+  {
+    "id": "phuket__old-phuket-town",
+    "name": "Old Phuket Town",
+    "city": "Phuket",
+    "category": "Urbano",
+    "short": "Casco histórico colonial",
+    "image": "https://source.unsplash.com/featured/?Old%20Phuket%20Town%20Phuket%20thailand",
+    "lat": 7.8847774,
+    "lng": 98.3892206
+  },
+  {
+    "id": "phuket__lard-yai-market",
+    "name": "Lard Yai Market",
+    "city": "Phuket",
+    "category": "Mercado",
+    "short": "Mercado de domingo",
+    "image": "https://source.unsplash.com/featured/?Lard%20Yai%20Market%20Phuket%20thailand",
+    "lat": 7.8847833,
+    "lng": 98.3890437
+  },
+  {
+    "id": "phuket__ko-yao-yai",
+    "name": "Ko Yao Yai",
+    "city": "Phuket",
+    "category": "Naturaleza",
+    "short": "Isla virgen y auténtica",
+    "image": "https://source.unsplash.com/featured/?Ko%20Yao%20Yai%20Phuket%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "kanchanaburi__cataratas-erawan",
+    "name": "Cataratas Erawan",
+    "city": "Kanchanaburi",
+    "category": "Naturaleza",
+    "short": "7 niveles de cascadas",
+    "image": "https://source.unsplash.com/featured/?Cataratas%20Erawan%20Kanchanaburi%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "kanchanaburi__puente-sobre-el-rio-kwai",
+    "name": "Puente sobre el Río Kwai",
+    "city": "Kanchanaburi",
+    "category": "Histórico",
+    "short": "Monumento de la 2da Guerra",
+    "image": "https://source.unsplash.com/featured/?Puente%20sobre%20el%20R%C3%ADo%20Kwai%20Kanchanaburi%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "sukhothai__sukhothai-historical-park",
+    "name": "Sukhothai Historical Park",
+    "city": "Sukhothai",
+    "category": "Histórico",
+    "short": "Ruinas de la primera capital",
+    "image": "https://source.unsplash.com/featured/?Sukhothai%20Historical%20Park%20Sukhothai%20thailand",
+    "lat": 17.0203334,
+    "lng": 99.7038571
+  },
+  {
+    "id": "ayutthaya__p-historico-ayutthaya",
+    "name": "P. Histórico Ayutthaya",
+    "city": "Ayutthaya",
+    "category": "Histórico",
+    "short": "Ruinas de la antigua capital",
+    "image": "https://source.unsplash.com/featured/?P.%20Hist%C3%B3rico%20Ayutthaya%20Ayutthaya%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "ayutthaya__ayutthaya-historical-park",
+    "name": "Ayutthaya Historical Park",
+    "city": "Ayutthaya",
+    "category": "Histórico / UNESCO",
+    "short": "Ruinas de la antigua capital",
+    "image": "https://source.unsplash.com/featured/?Ayutthaya%20Historical%20Park%20Ayutthaya%20thailand",
+    "lat": 14.3535461,
+    "lng": 100.5622548
+  },
+  {
+    "id": "ayutthaya__wat-mahathat",
+    "name": "Wat Mahathat",
+    "city": "Ayutthaya",
+    "category": "Templo / Histórico",
+    "short": "Cabeza de Buda en raíces",
+    "image": "https://source.unsplash.com/featured/?Wat%20Mahathat%20Ayutthaya%20thailand",
+    "lat": 14.3563513,
+    "lng": 100.5685271
+  },
+  {
+    "id": "ayutthaya__wat-phra-si-sanphet",
+    "name": "Wat Phra Si Sanphet",
+    "city": "Ayutthaya",
+    "category": "Templo / Histórico",
+    "short": "Tres estupas reales",
+    "image": "https://source.unsplash.com/featured/?Wat%20Phra%20Si%20Sanphet%20Ayutthaya%20thailand",
+    "lat": 14.3559133,
+    "lng": 100.5585079
+  },
+  {
+    "id": "ayutthaya__wat-chaiwatthanaram",
+    "name": "Wat Chaiwatthanaram",
+    "city": "Ayutthaya",
+    "category": "Templo / Fotografía",
+    "short": "Templo al río, gran sunset",
+    "image": "https://source.unsplash.com/featured/?Wat%20Chaiwatthanaram%20Ayutthaya%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "ayutthaya__ayutthaya-en-bici",
+    "name": "Ayutthaya en bici",
+    "city": "Ayutthaya",
+    "category": "Experiencia",
+    "short": "Recorrido práctico y plano",
+    "image": "https://source.unsplash.com/featured/?Ayutthaya%20en%20bici%20Ayutthaya%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "ayutthaya__ayutthaya-boat-tour",
+    "name": "Ayutthaya Boat Tour",
+    "city": "Ayutthaya",
+    "category": "Experiencia",
+    "short": "Paseo fluvial por ruinas",
+    "image": "https://source.unsplash.com/featured/?Ayutthaya%20Boat%20Tour%20Ayutthaya%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "kanchanaburi__erawan-national-park-cataratas-erawan",
+    "name": "Erawan National Park (Cataratas Erawan)",
+    "city": "Kanchanaburi",
+    "category": "Naturaleza",
+    "short": "Cascadas de 7 niveles",
+    "image": "https://source.unsplash.com/featured/?Erawan%20National%20Park%20(Cataratas%20Erawan)%20Kanchanaburi%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "kanchanaburi__puente-sobre-el-rio-kwai",
+    "name": "Puente sobre el Río Kwai",
+    "city": "Kanchanaburi",
+    "category": "Histórico",
+    "short": "Ícono de la II Guerra",
+    "image": "https://source.unsplash.com/featured/?Puente%20sobre%20el%20R%C3%ADo%20Kwai%20Kanchanaburi%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "kanchanaburi__death-railway-tren-escenico",
+    "name": "Death Railway (tren escénico)",
+    "city": "Kanchanaburi",
+    "category": "Histórico / Experiencia",
+    "short": "Tramo ferroviario histórico",
+    "image": "https://source.unsplash.com/featured/?Death%20Railway%20(tren%20esc%C3%A9nico)%20Kanchanaburi%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "kanchanaburi__jeath-war-museum",
+    "name": "JEATH War Museum",
+    "city": "Kanchanaburi",
+    "category": "Museo / Histórico",
+    "short": "Contexto de la guerra",
+    "image": "https://source.unsplash.com/featured/?JEATH%20War%20Museum%20Kanchanaburi%20thailand",
+    "lat": 14.0163017,
+    "lng": 99.5305998
+  },
+  {
+    "id": "kanchanaburi__hellfire-pass-memorial",
+    "name": "Hellfire Pass Memorial",
+    "city": "Kanchanaburi",
+    "category": "Histórico / Memorial",
+    "short": "Sendero conmemorativo",
+    "image": "https://source.unsplash.com/featured/?Hellfire%20Pass%20Memorial%20Kanchanaburi%20thailand",
+    "lat": 14.3560337,
+    "lng": 98.9523444
+  },
+  {
+    "id": "kanchanaburi__river-kwai-cruise-opcional",
+    "name": "River Kwai Cruise (opcional)",
+    "city": "Kanchanaburi",
+    "category": "Experiencia",
+    "short": "Paseo relajado por el río",
+    "image": "https://source.unsplash.com/featured/?River%20Kwai%20Cruise%20(opcional)%20Kanchanaburi%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "chiang-mai__wat-phra-that-doi-suthep",
+    "name": "Wat Phra That Doi Suthep",
+    "city": "Chiang Mai",
+    "category": "Templo / Mirador",
+    "short": "Templo símbolo en la montaña",
+    "image": "https://source.unsplash.com/featured/?Wat%20Phra%20That%20Doi%20Suthep%20Chiang%20Mai%20thailand",
+    "lat": 18.8035942,
+    "lng": 98.9202265
+  },
+  {
+    "id": "chiang-mai__wat-chedi-luang",
+    "name": "Wat Chedi Luang",
+    "city": "Chiang Mai",
+    "category": "Templo / Histórico",
+    "short": "Estupa monumental en el casco antiguo",
+    "image": "https://source.unsplash.com/featured/?Wat%20Chedi%20Luang%20Chiang%20Mai%20thailand",
+    "lat": 18.7871427,
+    "lng": 98.986784
+  },
+  {
+    "id": "chiang-mai__wat-phra-singh",
+    "name": "Wat Phra Singh",
+    "city": "Chiang Mai",
+    "category": "Templo",
+    "short": "Templo elegante y activo",
+    "image": "https://source.unsplash.com/featured/?Wat%20Phra%20Singh%20Chiang%20Mai%20thailand",
+    "lat": 18.7882068,
+    "lng": 98.9813773
+  },
+  {
+    "id": "chiang-mai__chiang-mai-old-city-a-pie",
+    "name": "Chiang Mai Old City (a pie)",
+    "city": "Chiang Mai",
+    "category": "Barrio / Cultural",
+    "short": "Murallas, templos y cafés",
+    "image": "https://source.unsplash.com/featured/?Chiang%20Mai%20Old%20City%20(a%20pie)%20Chiang%20Mai%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "chiang-mai__chiang-mai-night-bazaar",
+    "name": "Chiang Mai Night Bazaar",
+    "city": "Chiang Mai",
+    "category": "Mercado nocturno",
+    "short": "Puestos, comida y compras",
+    "image": "https://source.unsplash.com/featured/?Chiang%20Mai%20Night%20Bazaar%20Chiang%20Mai%20thailand",
+    "lat": 18.784441,
+    "lng": 99.0003797
+  },
+  {
+    "id": "chiang-mai__sunday-walking-street-tha-pae",
+    "name": "Sunday Walking Street (Tha Pae)",
+    "city": "Chiang Mai",
+    "category": "Mercado nocturno",
+    "short": "El mejor mercado semanal",
+    "image": "https://source.unsplash.com/featured/?Sunday%20Walking%20Street%20(Tha%20Pae)%20Chiang%20Mai%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "chiang-mai__monk-chat-wat-suan-dok-otros",
+    "name": "Monk Chat (Wat Suan Dok / otros)",
+    "city": "Chiang Mai",
+    "category": "Experiencia cultural",
+    "short": "Charla con monjes",
+    "image": "https://source.unsplash.com/featured/?Monk%20Chat%20(Wat%20Suan%20Dok%20%2F%20otros)%20Chiang%20Mai%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "cerca-de-chiang-mai__elephant-nature-park-santuario-etico",
+    "name": "Elephant Nature Park (santuario ético)",
+    "city": "Cerca de Chiang Mai",
+    "category": "Naturaleza / Ético",
+    "short": "Elefantes rescatados (sin montar)",
+    "image": "https://source.unsplash.com/featured/?Elephant%20Nature%20Park%20(santuario%20%C3%A9tico)%20Cerca%20de%20Chiang%20Mai%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "cerca-de-chiang-mai__sticky-waterfall-bua-thong",
+    "name": "Sticky Waterfall (Bua Thong)",
+    "city": "Cerca de Chiang Mai",
+    "category": "Naturaleza",
+    "short": "Cascada “antideslizante”",
+    "image": "https://source.unsplash.com/featured/?Sticky%20Waterfall%20(Bua%20Thong)%20Cerca%20de%20Chiang%20Mai%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "cerca-de-chiang-mai__doi-inthanon-national-park",
+    "name": "Doi Inthanon National Park",
+    "city": "Cerca de Chiang Mai",
+    "category": "Naturaleza / Montaña",
+    "short": "Cima de Tailandia + cascadas",
+    "image": "https://source.unsplash.com/featured/?Doi%20Inthanon%20National%20Park%20Cerca%20de%20Chiang%20Mai%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "cerca-de-chiang-mai__mae-kampong-village",
+    "name": "Mae Kampong Village",
+    "city": "Cerca de Chiang Mai",
+    "category": "Pueblo / Cultural",
+    "short": "Aldea de montaña auténtica",
+    "image": "https://source.unsplash.com/featured/?Mae%20Kampong%20Village%20Cerca%20de%20Chiang%20Mai%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "chiang-mai__clase-de-cocina-tailandesa",
+    "name": "Clase de cocina tailandesa",
+    "city": "Chiang Mai",
+    "category": "Gastronomía",
+    "short": "Cocina local desde cero",
+    "image": "https://source.unsplash.com/featured/?Clase%20de%20cocina%20tailandesa%20Chiang%20Mai%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "chiang-mai__street-food-chiang-mai",
+    "name": "Street Food Chiang Mai",
+    "city": "Chiang Mai",
+    "category": "Gastronomía",
+    "short": "Sabores del norte",
+    "image": "https://source.unsplash.com/featured/?Street%20Food%20Chiang%20Mai%20Chiang%20Mai%20thailand",
+    "lat": 18.7969091,
+    "lng": 98.9830406
+  },
+  {
+    "id": "phuket__phuket-old-town",
+    "name": "Phuket Old Town",
+    "city": "Phuket",
+    "category": "Barrio / Cultural",
+    "short": "Casco histórico sino-portugués",
+    "image": "https://source.unsplash.com/featured/?Phuket%20Old%20Town%20Phuket%20thailand",
+    "lat": 7.8847774,
+    "lng": 98.3892206
+  },
+  {
+    "id": "phuket__karon-beach",
+    "name": "Karon Beach",
+    "city": "Phuket",
+    "category": "Playa",
+    "short": "Playa amplia y relajada",
+    "image": "https://source.unsplash.com/featured/?Karon%20Beach%20Phuket%20thailand",
+    "lat": 7.8439574,
+    "lng": 98.2934247
+  },
+  {
+    "id": "phuket__kata-beach",
+    "name": "Kata Beach",
+    "city": "Phuket",
+    "category": "Playa",
+    "short": "Playa escénica y caminable",
+    "image": "https://source.unsplash.com/featured/?Kata%20Beach%20Phuket%20thailand",
+    "lat": 7.8193599,
+    "lng": 98.29805
+  },
+  {
+    "id": "phuket__patong-beach-noche",
+    "name": "Patong Beach (noche)",
+    "city": "Phuket",
+    "category": "Playa / Noche",
+    "short": "Zona más movida",
+    "image": "https://source.unsplash.com/featured/?Patong%20Beach%20(noche)%20Phuket%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "phuket__big-buddha-viewpoint",
+    "name": "Big Buddha Viewpoint",
+    "city": "Phuket",
+    "category": "Mirador",
+    "short": "Vistas panorámicas",
+    "image": "https://source.unsplash.com/featured/?Big%20Buddha%20Viewpoint%20Phuket%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "phi-phi__ko-phi-phi-day-trip",
+    "name": "Ko Phi Phi (day trip)",
+    "city": "Phi Phi",
+    "category": "Islas",
+    "short": "Bahías icónicas",
+    "image": "https://source.unsplash.com/featured/?Ko%20Phi%20Phi%20(day%20trip)%20Phi%20Phi%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "ko-yao-yai__ko-yao-yai",
+    "name": "Ko Yao Yai",
+    "city": "Ko Yao Yai",
+    "category": "Isla / Relax",
+    "short": "Isla tranquila y auténtica",
+    "image": "https://source.unsplash.com/featured/?Ko%20Yao%20Yai%20Ko%20Yao%20Yai%20thailand",
+    "lat": 8.070531,
+    "lng": 98.5857298
+  },
+  {
+    "id": "phuket__island-hopping-desde-phuket",
+    "name": "Island Hopping desde Phuket",
+    "city": "Phuket",
+    "category": "Excursión",
+    "short": "Varias islas en lancha",
+    "image": "https://source.unsplash.com/featured/?Island%20Hopping%20desde%20Phuket%20Phuket%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "railay__railay-beach-west-east",
+    "name": "Railay Beach (West & East)",
+    "city": "Railay",
+    "category": "Playa",
+    "short": "Playa + acantilados",
+    "image": "https://source.unsplash.com/featured/?Railay%20Beach%20(West%20%26%20East)%20Railay%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "railay__phra-nang-cave-beach",
+    "name": "Phra Nang Cave Beach",
+    "city": "Railay",
+    "category": "Playa / Natural",
+    "short": "Playa escénica",
+    "image": "https://source.unsplash.com/featured/?Phra%20Nang%20Cave%20Beach%20Railay%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "krabi__four-islands-tour",
+    "name": "Four Islands Tour",
+    "city": "Krabi",
+    "category": "Excursión",
+    "short": "Islas + snorkeling",
+    "image": "https://source.unsplash.com/featured/?Four%20Islands%20Tour%20Krabi%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "krabi__ao-nang",
+    "name": "Ao Nang",
+    "city": "Krabi",
+    "category": "Base / Playa",
+    "short": "Base práctica",
+    "image": "https://source.unsplash.com/featured/?Ao%20Nang%20Krabi%20thailand",
+    "lat": 7.7211733,
+    "lng": 98.7655426
+  },
+  {
+    "id": "bangkok__so-thai-spa-bangkok",
+    "name": "So Thai Spa Bangkok",
+    "city": "Bangkok",
+    "category": "Spa / Masaje",
+    "short": "Spa premium de masaje tailandés",
+    "image": "https://source.unsplash.com/featured/?So%20Thai%20Spa%20Bangkok%20Bangkok%20thailand",
+    "lat": 13.7275531,
+    "lng": 100.5242139
+  },
+  {
+    "id": "bangkok__amaranth-spa-kimpton-maa-lai",
+    "name": "Amaranth Spa – Kimpton Maa-Lai",
+    "city": "Bangkok",
+    "category": "Spa / Masaje",
+    "short": "Spa boutique en hotel de diseño",
+    "image": "https://source.unsplash.com/featured/?Amaranth%20Spa%20%E2%80%93%20Kimpton%20Maa-Lai%20Bangkok%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "bangkok__bangkok-thai-cooking-academy",
+    "name": "Bangkok Thai Cooking Academy",
+    "city": "Bangkok",
+    "category": "Gastronomía / Clase",
+    "short": "Clase de cocina tailandesa con mercado",
+    "image": "https://source.unsplash.com/featured/?Bangkok%20Thai%20Cooking%20Academy%20Bangkok%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "chiang-mai__antique-massage-chiang-mai",
+    "name": "Antique Massage Chiang Mai",
+    "city": "Chiang Mai",
+    "category": "Spa / Masaje",
+    "short": "Masaje tradicional muy valorado",
+    "image": "https://source.unsplash.com/featured/?Antique%20Massage%20Chiang%20Mai%20Chiang%20Mai%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "chiang-mai__calm-massage-and-spa",
+    "name": "Calm Massage and Spa",
+    "city": "Chiang Mai",
+    "category": "Spa / Masaje",
+    "short": "Spa relajante y moderno",
+    "image": "https://source.unsplash.com/featured/?Calm%20Massage%20and%20Spa%20Chiang%20Mai%20thailand",
+    "lat": 18.7897022,
+    "lng": 98.9841997
+  },
+  {
+    "id": "chiang-mai__baan-thai-cookery-school",
+    "name": "Baan Thai Cookery School",
+    "city": "Chiang Mai",
+    "category": "Gastronomía / Clase",
+    "short": "Clase de cocina tailandesa tradicional",
+    "image": "https://source.unsplash.com/featured/?Baan%20Thai%20Cookery%20School%20Chiang%20Mai%20thailand",
+    "lat": 18.7890909,
+    "lng": 98.9910256
+  },
+  {
+    "id": "chiang-mai__cabalgata-rural-en-chiang-mai",
+    "name": "Cabalgata rural en Chiang Mai",
+    "city": "Chiang Mai",
+    "category": "Naturaleza / Experiencia",
+    "short": "Paseo a caballo en zona rural",
+    "image": "https://source.unsplash.com/featured/?Cabalgata%20rural%20en%20Chiang%20Mai%20Chiang%20Mai%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "phuket__spa-burasari-phuket",
+    "name": "Spa Burasari Phuket",
+    "city": "Phuket",
+    "category": "Spa / Masaje",
+    "short": "Spa boutique muy reconocido",
+    "image": "https://source.unsplash.com/featured/?Spa%20Burasari%20Phuket%20Phuket%20thailand",
+    "lat": 7.8879283,
+    "lng": 98.2929442
+  },
+  {
+    "id": "phuket__sama-onsen-massage",
+    "name": "SAMA Onsen & Massage",
+    "city": "Phuket",
+    "category": "Spa / Masaje",
+    "short": "Spa moderno con onsen",
+    "image": "https://source.unsplash.com/featured/?SAMA%20Onsen%20%26%20Massage%20Phuket%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "phuket__phuket-thai-cooking-class-by-chef-vj",
+    "name": "Phuket Thai Cooking Class by Chef VJ",
+    "city": "Phuket",
+    "category": "Gastronomía / Clase",
+    "short": "Clase de cocina con chef local",
+    "image": "https://source.unsplash.com/featured/?Phuket%20Thai%20Cooking%20Class%20by%20Chef%20VJ%20Phuket%20thailand",
+    "lat": 7.819598,
+    "lng": 98.3069523
+  },
+  {
+    "id": "phuket__cabalgata-costera-en-phuket",
+    "name": "Cabalgata costera en Phuket",
+    "city": "Phuket",
+    "category": "Naturaleza / Experiencia",
+    "short": "Paseo a caballo cerca del mar",
+    "image": "https://source.unsplash.com/featured/?Cabalgata%20costera%20en%20Phuket%20Phuket%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "bangkok__column-bangkok",
+    "name": "Column Bangkok",
+    "city": "Bangkok",
+    "category": "Alojamiento / Base",
+    "short": "Hotel base en Sukhumvit",
+    "image": "https://source.unsplash.com/featured/?Column%20Bangkok%20Bangkok%20thailand",
+    "lat": 13.7330179,
+    "lng": 100.5603839
+  },
+  {
+    "id": "chiang-mai__vieng-thapae-resort",
+    "name": "Vieng Thapae Resort",
+    "city": "Chiang Mai",
+    "category": "Alojamiento / Base",
+    "short": "Resort céntrico cerca del Old City",
+    "image": "https://source.unsplash.com/featured/?Vieng%20Thapae%20Resort%20Chiang%20Mai%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "phuket-kamala__novotel-phuket-kamala-beach",
+    "name": "Novotel Phuket Kamala Beach",
+    "city": "Phuket (Kamala)",
+    "category": "Alojamiento / Base",
+    "short": "Resort frente al mar en Kamala",
+    "image": "https://source.unsplash.com/featured/?Novotel%20Phuket%20Kamala%20Beach%20Phuket%20(Kamala)%20thailand",
+    "lat": 7.9634738,
+    "lng": 98.2835136
+  },
+  {
+    "id": "bangkok__vuelo-a-chiang-mai",
+    "name": "Vuelo a Chiang Mai",
+    "city": "Bangkok",
+    "category": "Vuelos",
+    "short": "Bangkok a Chiang Mai",
+    "image": "https://source.unsplash.com/featured/?Vuelo%20a%20Chiang%20Mai%20Bangkok%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "chiang-mai__vuelo-a-phuket",
+    "name": "Vuelo a Phuket",
+    "city": "Chiang Mai",
+    "category": "Vuelos",
+    "short": "Chiang Mai a Phuket",
+    "image": "https://source.unsplash.com/featured/?Vuelo%20a%20Phuket%20Chiang%20Mai%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "phuket__vuelo-a-bangkok",
+    "name": "Vuelo a Bangkok",
+    "city": "Phuket",
+    "category": "Vuelos",
+    "short": "Phuket a Bangkok",
+    "image": "https://source.unsplash.com/featured/?Vuelo%20a%20Bangkok%20Phuket%20thailand",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id": "bangkok__vuelo-a-estambul",
+    "name": "Vuelo a Estambul",
+    "city": "Bangkok",
+    "category": "Vuelos",
+    "short": "Bangkok a Estambul",
+    "image": "https://source.unsplash.com/featured/?Vuelo%20a%20Estambul%20Bangkok%20thailand",
+    "lat": null,
+    "lng": null
+  }
+]
