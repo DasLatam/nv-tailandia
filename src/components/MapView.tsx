@@ -2,7 +2,7 @@
 
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, useMapEvents } from "react-leaflet";
 import { useEffect } from "react";
 import type { Place } from "./MapPage";
 
@@ -14,6 +14,7 @@ type Props = {
 
 function FixLeafletIcons() {
   useEffect(() => {
+    // Fix default marker icons in Next bundlers
     // @ts-ignore
     delete L.Icon.Default.prototype._getIconUrl;
     L.Icon.Default.mergeOptions({
@@ -40,7 +41,7 @@ function BoundsWatcher({
   const update = () => {
     const z = map.getZoom();
 
-    // zoom país o más abierto => mostrar los 112 items
+    // Zoom país o más abierto -> mostrar TODOS en sidebar
     if (z <= 6) {
       onVisibleIdsChange(null);
       return;
@@ -55,12 +56,17 @@ function BoundsWatcher({
     onVisibleIdsChange(ids);
   };
 
-  useEffect(() => update(), [places.length]); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    update();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [places.length]);
+
   return null;
 }
 
 export default function MapView({ places, onPick, onVisibleIdsChange }: Props) {
-  const center: [number, number] = [13.7563, 100.5018]; // Bangkok
+  // Centro general en Tailandia (Bangkok)
+  const center: [number, number] = [13.7563, 100.5018];
 
   return (
     <MapContainer center={center} zoom={6} className="h-full w-full">
@@ -68,7 +74,7 @@ export default function MapView({ places, onPick, onVisibleIdsChange }: Props) {
       <BoundsWatcher places={places} onVisibleIdsChange={onVisibleIdsChange} />
 
       <TileLayer
-        attribution='&copy; OpenStreetMap contributors'
+        attribution="&copy; OpenStreetMap contributors"
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
 
@@ -76,20 +82,10 @@ export default function MapView({ places, onPick, onVisibleIdsChange }: Props) {
         <Marker
           key={p.id}
           position={[p.lat as number, p.lng as number]}
-          eventHandlers={{ click: () => onPick(p) }}
-        >
-          <Popup>
-            <div className="w-64">
-              <div className="font-semibold">{p.name}</div>
-              <div className="text-sm opacity-80">
-                {p.city} • {p.category}
-              </div>
-              <div className="text-sm mt-1">{p.duration}</div>
-              <div className="text-sm mt-1">{p.short}</div>
-              <div className="text-xs opacity-60 mt-2">Click para ver detalle</div>
-            </div>
-          </Popup>
-        </Marker>
+          eventHandlers={{
+            click: () => onPick(p), // Click -> abre el Drawer (detalle)
+          }}
+        />
       ))}
     </MapContainer>
   );

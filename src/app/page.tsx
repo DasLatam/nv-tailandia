@@ -1,6 +1,6 @@
-import dynamic from "next/dynamic";
+"use client";
 
-const MapPage = dynamic(() => import("@/components/MapPage"), { ssr: false });
+import MapPage from "@/components/MapPage";
 
 export default function Home() {
   return <MapPage />;
