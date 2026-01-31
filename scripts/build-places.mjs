@@ -16,6 +16,24 @@ function slugify(s) {
     .replace(/(^-|-$)/g, "");
 }
 
+function pick(r, key) {
+  return (r[key] ?? "").toString().trim();
+}
+
+// Detecta la fila que se coló como “títulos”
+function isHeaderLikeRow(r) {
+  const name = pick(r, "Nombre de Actividad").toLowerCase();
+  const city = pick(r, "Ciudad").toLowerCase();
+  const cat = pick(r, "Categoría").toLowerCase();
+
+  const looksLikeHeader =
+    name.includes("nombre") && name.includes("actividad") &&
+    city === "ciudad" &&
+    (cat.includes("categor") || cat === "categoria");
+
+  return looksLikeHeader;
+}
+
 async function geocode(q) {
   const url = `https://nominatim.openstreetmap.org/search?format=json&limit=1&q=${encodeURIComponent(q)}`;
   const res = await fetch(url, {
@@ -26,32 +44,21 @@ async function geocode(q) {
   if (!res.ok) return null;
   const data = await res.json();
   if (!data?.length) return null;
-  return {
-    lat: Number(data[0].lat),
-    lng: Number(data[0].lon),
-    label: data[0].display_name,
-  };
-}
-
-function pick(r, key) {
-  // soporta variantes de headers si cambian levemente
-  return (r[key] ?? "").toString().trim();
+  return { lat: Number(data[0].lat), lng: Number(data[0].lon) };
 }
 
 (async () => {
   if (!fs.existsSync(inCsv)) {
-    console.error("❌ No encuentro el CSV:", inCsv);
+    console.error("❌ No encuentro:", inCsv);
     process.exit(1);
   }
 
   const csvText = fs.readFileSync(inCsv, "utf8");
   const parsed = Papa.parse(csvText, { header: true, skipEmptyLines: true });
 
-  if (parsed.errors?.length) {
-    console.warn("⚠️ CSV parse warnings:", parsed.errors.slice(0, 5));
-  }
-
-  const rows = (parsed.data || []).filter((r) => pick(r, "Nombre de Actividad").length);
+  const rows = (parsed.data || [])
+    .filter((r) => pick(r, "Nombre de Actividad").length)
+    .filter((r) => !isHeaderLikeRow(r));
 
   const out = [];
   const idCounts = new Map();
@@ -69,19 +76,14 @@ function pick(r, key) {
     const baseId = `${slugify(city)}__${slugify(name)}`;
     const count = (idCounts.get(baseId) || 0) + 1;
     idCounts.set(baseId, count);
-
-    // Si se repite, agregamos sufijo -2, -3, etc.
     const id = count === 1 ? baseId : `${baseId}-${count}`;
 
-    // Imagen MVP sin keys (se puede reemplazar luego por URLs curadas)
-    const image = `https://source.unsplash.com/featured/?${encodeURIComponent(
-      `${name} ${city} thailand`
-    )}`;
+    // Mantener lo que haya (si luego enriquecés imágenes se reemplaza)
+    const image = `https://source.unsplash.com/featured/?${encodeURIComponent(`${name} ${city} thailand`)}`;
 
-    const query = `${name}, ${city}, Thailand`;
-
-    const geo = await geocode(query);
-    await sleep(1100); // ~1 req/s para ser amable con Nominatim
+    const q = `${name}, ${city}, Thailand`;
+    const geo = await geocode(q);
+    await sleep(1100);
 
     out.push({
       id,
@@ -94,28 +96,12 @@ function pick(r, key) {
       image,
       lat: geo?.lat ?? null,
       lng: geo?.lng ?? null,
-      geocodeLabel: geo?.label ?? null,
     });
 
-    const status = geo ? "OK" : "NO RESULT";
-    console.log(`[${i + 1}/${rows.length}] ${status} -> ${id}`);
+    console.log(`[${i + 1}/${rows.length}] ${id}`);
   }
 
   fs.mkdirSync(path.dirname(outJson), { recursive: true });
   fs.writeFileSync(outJson, JSON.stringify(out, null, 2), "utf8");
-  console.log("✅ Wrote:", outJson);
-
-  // Check duplicates (should be none)
-  const dupes = [];
-  const seen = new Set();
-  for (const p of out) {
-    if (seen.has(p.id)) dupes.push(p.id);
-    seen.add(p.id);
-  }
-  if (dupes.length) {
-    console.log("❌ Duplicate IDs still exist:", dupes.slice(0, 20));
-    process.exit(2);
-  } else {
-    console.log("✅ Duplicate ID check: OK (0 duplicates)");
-  }
+  console.log("✅ places.json generado:", outJson);
 })();

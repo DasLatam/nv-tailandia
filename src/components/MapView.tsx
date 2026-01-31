@@ -25,6 +25,7 @@ function FixLeafletIcons() {
   useEffect(() => {
     // @ts-ignore
     delete L.Icon.Default.prototype._getIconUrl;
+    // dejamos default como fallback
     L.Icon.Default.mergeOptions({
       iconRetinaUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
       iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
@@ -52,13 +53,11 @@ function InvalidateSizeOnMount() {
 function MapReady({ onMapReady }: { onMapReady: (map: any) => void }) {
   const map = useMap();
   const did = useRef(false);
-
   useEffect(() => {
     if (did.current) return;
     did.current = true;
     onMapReady(map);
   }, [map, onMapReady]);
-
   return null;
 }
 
@@ -93,8 +92,43 @@ function BoundsWatcher({
   return null;
 }
 
+// Iconos simples por categoría (sin exagerar)
+function iconEmojiFor(place: Place) {
+  const t = `${place.category || ""} ${place.name || ""}`.toLowerCase();
+
+  if (t.includes("vuelo") || t.includes("flight") || t.includes("aeropuerto")) return "✈️";
+  if (t.includes("hotel") || t.includes("resort") || t.includes("hostel") || t.includes("novotel") || t.includes("column")) return "🏨";
+  if (t.includes("templo") || t.includes("wat ") || t.includes("pagoda") || t.includes("buda")) return "🛕";
+  if (t.includes("shopping") || t.includes("mercado") || t.includes("mall") || t.includes("compras") || t.includes("market")) return "🛍️";
+  if (t.includes("comida") || t.includes("food") || t.includes("café") || t.includes("cafe") || t.includes("restaurant") || t.includes("gastr")) return "🍜";
+
+  return "📍";
+}
+
+function makeIcon(emoji: string) {
+  // DivIcon simple y legible
+  return L.divIcon({
+    className: "",
+    html: `
+      <div style="
+        width: 28px; height: 28px;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.95);
+        border: 1px solid rgba(17,24,39,0.25);
+        display:flex; align-items:center; justify-content:center;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+        font-size: 16px;
+      ">${emoji}</div>
+    `,
+    iconSize: [28, 28],
+    iconAnchor: [14, 14],
+    popupAnchor: [0, -12],
+    tooltipAnchor: [0, -12],
+  });
+}
+
 export default function MapView({ places, onVisibleIdsChange, onOpenDetail, onMapReady }: Props) {
-  const center: [number, number] = [13.7563, 100.5018]; // Bangkok
+  const center: [number, number] = [13.7563, 100.5018];
 
   const markers = useMemo(
     () => places.filter((p) => typeof p.lat === "number" && typeof p.lng === "number"),
@@ -124,9 +158,11 @@ export default function MapView({ places, onVisibleIdsChange, onOpenDetail, onMa
 
       {markers.map((p: any) => {
         const thumb = p.thumb || p.image || "/placeholder.svg";
+        const icon = makeIcon(iconEmojiFor(p));
+
         return (
-          <Marker key={p.id} position={[p.lat as number, p.lng as number]}>
-            {/* Hover tooltip */}
+          <Marker key={p.id} position={[p.lat as number, p.lng as number]} icon={icon}>
+            {/* Tooltip (hover) */}
             <Tooltip direction="top" opacity={1} offset={[0, -8]} sticky>
               <div style={{ width: 240 }}>
                 <div style={{ fontWeight: 700, marginBottom: 2 }}>{p.name}</div>
@@ -137,13 +173,7 @@ export default function MapView({ places, onVisibleIdsChange, onOpenDetail, onMa
                   <img
                     src={thumb}
                     alt={p.name}
-                    style={{
-                      width: 72,
-                      height: 48,
-                      objectFit: "cover",
-                      borderRadius: 8,
-                      background: "#f3f4f6",
-                    }}
+                    style={{ width: 72, height: 48, objectFit: "cover", borderRadius: 8, background: "#f3f4f6" }}
                     loading="lazy"
                     onError={(e) => (((e.currentTarget as HTMLImageElement).src = "/placeholder.svg"))}
                   />
@@ -151,13 +181,10 @@ export default function MapView({ places, onVisibleIdsChange, onOpenDetail, onMa
                     {p.short || "—"}
                   </div>
                 </div>
-                <div style={{ marginTop: 8, fontSize: 11, opacity: 0.75 }}>
-                  Hover: info rápida • Click: resumen + link al detalle
-                </div>
               </div>
             </Tooltip>
 
-            {/* Click popup */}
+            {/* Popup (click) */}
             <Popup>
               <div style={{ width: 300 }}>
                 <div style={{ fontWeight: 800 }}>{p.name}</div>
@@ -168,14 +195,7 @@ export default function MapView({ places, onVisibleIdsChange, onOpenDetail, onMa
                 <img
                   src={thumb}
                   alt={p.name}
-                  style={{
-                    width: "100%",
-                    height: 130,
-                    objectFit: "cover",
-                    borderRadius: 10,
-                    marginTop: 10,
-                    background: "#f3f4f6",
-                  }}
+                  style={{ width: "100%", height: 130, objectFit: "cover", borderRadius: 10, marginTop: 10, background: "#f3f4f6" }}
                   loading="lazy"
                   onError={(e) => (((e.currentTarget as HTMLImageElement).src = "/placeholder.svg"))}
                 />
@@ -200,10 +220,6 @@ export default function MapView({ places, onVisibleIdsChange, onOpenDetail, onMa
                 >
                   Ver detalle completo
                 </button>
-
-                <div style={{ marginTop: 8, fontSize: 11, opacity: 0.7 }}>
-                  Incluye descripción amplia + todo el CSV.
-                </div>
               </div>
             </Popup>
           </Marker>

@@ -20,13 +20,16 @@ export type Place = {
   lng: number | null;
 };
 
+function byName(a: Place, b: Place) {
+  return (a.name || "").localeCompare(b.name || "", "es", { sensitivity: "base" });
+}
+
 export default function MapPage() {
   const [places, setPlaces] = useState<Place[]>([]);
   const [visibleIds, setVisibleIds] = useState<Set<string> | null>(null);
   const [selected, setSelected] = useState<Place | null>(null);
   const [query, setQuery] = useState("");
 
-  // Leaflet map instance (client only)
   const mapRef = useRef<any>(null);
 
   useEffect(() => {
@@ -38,16 +41,22 @@ export default function MapPage() {
 
   const shown = useMemo(() => {
     const q = query.trim().toLowerCase();
+
     let base = places;
 
-    // visibleIds null => mostrar todo (zoom out)
+    // filtro por visibles
     if (visibleIds) base = base.filter((p) => visibleIds.has(p.id));
-    if (!q) return base;
 
-    return base.filter((p) => {
-      const hay = `${p.name} ${p.city} ${p.category} ${p.short}`.toLowerCase();
-      return hay.includes(q);
-    });
+    // filtro texto
+    if (q) {
+      base = base.filter((p) => {
+        const hay = `${p.name} ${p.city} ${p.category} ${p.short}`.toLowerCase();
+        return hay.includes(q);
+      });
+    }
+
+    // ✅ orden por nombre
+    return [...base].sort(byName);
   }, [places, visibleIds, query]);
 
   const mappable = useMemo(
