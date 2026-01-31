@@ -11,7 +11,7 @@ import {
   useMap,
   useMapEvents,
 } from "react-leaflet";
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import type { Place } from "./MapPage";
 
 type Props = {
@@ -46,6 +46,19 @@ function InvalidateSizeOnMount() {
       clearTimeout(t3);
     };
   }, [map]);
+  return null;
+}
+
+function MapReady({ onMapReady }: { onMapReady: (map: any) => void }) {
+  const map = useMap();
+  const did = useRef(false);
+
+  useEffect(() => {
+    if (did.current) return;
+    did.current = true;
+    onMapReady(map);
+  }, [map, onMapReady]);
+
   return null;
 }
 
@@ -98,9 +111,9 @@ export default function MapView({ places, onVisibleIdsChange, onOpenDetail, onMa
       dragging={true}
       touchZoom={true}
       zoomControl={true}
-      whenReady={(e) => onMapReady(e.target)}
     >
       <FixLeafletIcons />
+      <MapReady onMapReady={onMapReady} />
       <InvalidateSizeOnMount />
       <BoundsWatcher places={markers} onVisibleIdsChange={onVisibleIdsChange} />
 
@@ -113,7 +126,7 @@ export default function MapView({ places, onVisibleIdsChange, onOpenDetail, onMa
         const thumb = p.thumb || p.image || "/placeholder.svg";
         return (
           <Marker key={p.id} position={[p.lat as number, p.lng as number]}>
-            {/* POPUP CHICO: hover/rollover */}
+            {/* Hover tooltip */}
             <Tooltip direction="top" opacity={1} offset={[0, -8]} sticky>
               <div style={{ width: 240 }}>
                 <div style={{ fontWeight: 700, marginBottom: 2 }}>{p.name}</div>
@@ -124,7 +137,13 @@ export default function MapView({ places, onVisibleIdsChange, onOpenDetail, onMa
                   <img
                     src={thumb}
                     alt={p.name}
-                    style={{ width: 72, height: 48, objectFit: "cover", borderRadius: 8, background: "#f3f4f6" }}
+                    style={{
+                      width: 72,
+                      height: 48,
+                      objectFit: "cover",
+                      borderRadius: 8,
+                      background: "#f3f4f6",
+                    }}
                     loading="lazy"
                     onError={(e) => (((e.currentTarget as HTMLImageElement).src = "/placeholder.svg"))}
                   />
@@ -133,12 +152,12 @@ export default function MapView({ places, onVisibleIdsChange, onOpenDetail, onMa
                   </div>
                 </div>
                 <div style={{ marginTop: 8, fontSize: 11, opacity: 0.75 }}>
-                  Hover: info rápida • Click: ver resumen + detalle
+                  Hover: info rápida • Click: resumen + link al detalle
                 </div>
               </div>
             </Tooltip>
 
-            {/* POPUP CHICO: click */}
+            {/* Click popup */}
             <Popup>
               <div style={{ width: 300 }}>
                 <div style={{ fontWeight: 800 }}>{p.name}</div>
@@ -149,7 +168,14 @@ export default function MapView({ places, onVisibleIdsChange, onOpenDetail, onMa
                 <img
                   src={thumb}
                   alt={p.name}
-                  style={{ width: "100%", height: 130, objectFit: "cover", borderRadius: 10, marginTop: 10, background: "#f3f4f6" }}
+                  style={{
+                    width: "100%",
+                    height: 130,
+                    objectFit: "cover",
+                    borderRadius: 10,
+                    marginTop: 10,
+                    background: "#f3f4f6",
+                  }}
                   loading="lazy"
                   onError={(e) => (((e.currentTarget as HTMLImageElement).src = "/placeholder.svg"))}
                 />
@@ -176,7 +202,7 @@ export default function MapView({ places, onVisibleIdsChange, onOpenDetail, onMa
                 </button>
 
                 <div style={{ marginTop: 8, fontSize: 11, opacity: 0.7 }}>
-                  El detalle completo incluye descripción amplia + todo el CSV.
+                  Incluye descripción amplia + todo el CSV.
                 </div>
               </div>
             </Popup>
