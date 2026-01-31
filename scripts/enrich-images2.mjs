@@ -15,10 +15,47 @@ function isGoodExisting(url) {
   if (!url) return false;
   const u = url.toLowerCase();
   if (u.includes("placeholder")) return false;
-  if (u.includes("source.unsplash.com")) return false; // lo consideramos NO real
   return true;
 }
 
+// 🔒 Filtro anti-accidentes (títulos/urls)
+function looksBad(titleOrUrl = "") {
+  const s = titleOrUrl.toLowerCase();
+  return (
+    s.includes("crash") ||
+    s.includes("accident") ||
+    s.includes("wreck") ||
+    s.includes("disaster") ||
+    s.includes("incident") ||
+    s.includes("fatal") ||
+    s.includes("shot down") ||
+    s.includes("explosion")
+  );
+}
+
+// ✅ Imágenes seguras y reales para Vuelos/Aeropuertos (estables)
+const FLIGHT_SAFE = [
+  {
+    match: (p) => (p.name || "").toLowerCase().includes("vuelo") && (p.name || "").toLowerCase().includes("bangkok"),
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Suvarnabhumi_Airport_terminal.jpg/1280px-Suvarnabhumi_Airport_terminal.jpg",
+    thumb: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Suvarnabhumi_Airport_terminal.jpg/320px-Suvarnabhumi_Airport_terminal.jpg",
+    source: "commons:Suvarnabhumi Airport terminal",
+  },
+  {
+    match: (p) => (p.name || "").toLowerCase().includes("vuelo") && (p.name || "").toLowerCase().includes("phuket"),
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Phuket_International_Airport_terminal.jpg/1280px-Phuket_International_Airport_terminal.jpg",
+    thumb: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Phuket_International_Airport_terminal.jpg/320px-Phuket_International_Airport_terminal.jpg",
+    source: "commons:Phuket International Airport terminal",
+  },
+  {
+    match: (p) => (p.name || "").toLowerCase().includes("vuelo") && (p.name || "").toLowerCase().includes("chiang"),
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Chiang_Mai_International_Airport.jpg/1280px-Chiang_Mai_International_Airport.jpg",
+    thumb: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Chiang_Mai_International_Airport.jpg/320px-Chiang_Mai_International_Airport.jpg",
+    source: "commons:Chiang Mai International Airport",
+  },
+];
+
+// Wikimedia Commons search
 async function commonsSearchImage(query) {
   const api = "https://commons.wikimedia.org/w/api.php";
   const params = new URLSearchParams({
@@ -27,7 +64,7 @@ async function commonsSearchImage(query) {
     origin: "*",
     generator: "search",
     gsrsearch: query,
-    gsrlimit: "1",
+    gsrlimit: "3",
     gsrnamespace: "6", // File:
     prop: "imageinfo",
     iiprop: "url",
@@ -44,45 +81,61 @@ async function commonsSearchImage(query) {
   const pages = data?.query?.pages;
   if (!pages) return null;
 
-  const firstKey = Object.keys(pages)[0];
-  const page = pages[firstKey];
-  const info = page?.imageinfo?.[0];
-  if (!info) return null;
+  // probamos hasta 3 resultados y elegimos uno que no parezca “malo”
+  const keys = Object.keys(pages);
+  for (const k of keys) {
+    const page = pages[k];
+    const info = page?.imageinfo?.[0];
+    const title = page?.title || "";
+    const img = info?.url || "";
+    const thumb = info?.thumburl || "";
 
-  return {
-    image: info.url || null,
-    thumb: info.thumburl || null,
-    source: `commons:${page.title}`,
-  };
+    if (!info) continue;
+    if (looksBad(title) || looksBad(img) || looksBad(thumb)) continue;
+
+    return {
+      image: img || null,
+      thumb: thumb || null,
+      source: `commons:${title}`,
+    };
+  }
+
+  return null;
 }
 
+// Openverse fallback
 async function openverseSearch(query) {
-  // API pública
-  const url = `https://api.openverse.org/v1/images?q=${encodeURIComponent(query)}&page_size=1`;
+  const url = `https://api.openverse.org/v1/images?q=${encodeURIComponent(query)}&page_size=3`;
   const res = await fetch(url);
   if (!res.ok) return null;
   const data = await res.json();
-  const r = data?.results?.[0];
-  if (!r) return null;
 
-  const image = r.url || null;
-  const thumb = r.thumbnail || r.url || null;
+  for (const r of data?.results || []) {
+    const image = r.url || null;
+    const thumb = r.thumbnail || r.url || null;
+    const title = r.title || "";
+    const landing = r.foreign_landing_url || "";
 
-  if (!thumb && !image) return null;
+    if (!image && !thumb) continue;
+    if (looksBad(title) || looksBad(image || "") || looksBad(landing || "")) continue;
 
-  return {
-    image: image,
-    thumb: thumb,
-    source: `openverse:${r.id || "result"}`,
-    license: r.license || null,
-    creator: r.creator || null,
-  };
+    return {
+      image,
+      thumb,
+      source: `openverse:${r.id || "result"}`,
+      license: r.license || null,
+      creator: r.creator || null,
+    };
+  }
+
+  return null;
 }
 
 function buildQueries(p) {
   const name = safe(p.name);
   const city = safe(p.city);
-  // combinaciones
+
+  // Para templos y lugares muy conocidos, esto funciona bastante bien
   return [
     `${name} ${city} Thailand`,
     `${name} Thailand`,
@@ -104,8 +157,18 @@ function buildQueries(p) {
   for (let i = 0; i < places.length; i++) {
     const p = places[i];
 
-    // Si ya tiene thumb “real”, no tocamos
-    if (isGoodExisting(p.thumb)) continue;
+    // 0) Override seguro para vuelos
+    const flightOverride = FLIGHT_SAFE.find((o) => o.match(p));
+    if (flightOverride) {
+      p.image = flightOverride.image;
+      p.thumb = flightOverride.thumb;
+      p.imageSource = flightOverride.source;
+      updated++;
+      continue;
+    }
+
+    // Si ya tiene imagen real, no tocamos
+    if (isGoodExisting(p.thumb) && p.imageSource && p.imageSource !== "missing") continue;
 
     const queries = buildQueries(p);
 
@@ -130,28 +193,26 @@ function buildQueries(p) {
       p.thumb = hit.thumb || hit.image || "/placeholder.svg";
       p.image = hit.image || hit.thumb || "/placeholder.svg";
       p.imageSource = hit.source;
-
       if (hit.license) p.imageLicense = hit.license;
       if (hit.creator) p.imageCreator = hit.creator;
-
       updated++;
     } else {
       missing++;
-      // Si no hay imagen, dejamos placeholder (y NO unsplash)
-      p.thumb = p.thumb || "/placeholder.svg";
-      p.image = p.image || "/placeholder.svg";
-      if (!p.imageSource) p.imageSource = "missing";
+      p.thumb = "/placeholder.svg";
+      p.image = "/placeholder.svg";
+      p.imageSource = "missing";
     }
 
     if ((i + 1) % 20 === 0) console.log(`Progress: ${i + 1}/${places.length}`);
   }
 
+  fs.mkdirSync(path.dirname(outFile), { recursive: true });
   fs.writeFileSync(outFile, JSON.stringify(places, null, 2), "utf8");
 
-  // Reporte de faltantes (para curación manual)
+  // Reporte de faltantes
   const header = "id,name,city,category\n";
   const rows = places
-    .filter((p) => !isGoodExisting(p.thumb))
+    .filter((p) => !isGoodExisting(p.thumb) || p.imageSource === "missing")
     .map((p) => `"${p.id}","${(p.name || "").replace(/"/g, '""')}","${(p.city || "").replace(/"/g, '""')}","${(p.category || "").replace(/"/g, '""')}"`)
     .join("\n");
 
