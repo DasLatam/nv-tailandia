@@ -7,9 +7,11 @@
     "duration": "",
     "short": "Complejo real + templo más sagrado",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Grand%20Palace%20(Bangkok)%20%2F%20Wat%20Phra%20Kaew%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/d3/%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%A3%E0%B8%B1%E0%B8%95%E0%B8%99%E0%B8%A8%E0%B8%B2%E0%B8%AA%E0%B8%94%E0%B8%B2%E0%B8%A3%E0%B8%B2%E0%B8%A1_8_%28edited%29.jpg",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%A3%E0%B8%B1%E0%B8%95%E0%B8%99%E0%B8%A8%E0%B8%B2%E0%B8%AA%E0%B8%94%E0%B8%B2%E0%B8%A3%E0%B8%B2%E0%B8%A1_8_%28edited%29.jpg/330px-%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%A3%E0%B8%B1%E0%B8%95%E0%B8%99%E0%B8%A8%E0%B8%B2%E0%B8%AA%E0%B8%94%E0%B8%B2%E0%B8%A3%E0%B8%B2%E0%B8%A1_8_%28edited%29.jpg",
+    "imageSource": "commons:File:วัดพระศรีรัตนศาสดาราม 8 (edited).jpg"
   },
   {
     "id": "bangkok__wat-pho",
@@ -19,9 +21,11 @@
     "duration": "",
     "short": "Buda reclinado + patios y estupas",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Wat%20Pho%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Wat_Pho%2C_Bangkok%2C_Tailandia%2C_2013-08-22%2C_DD_07.jpg",
     "lat": 13.7463456,
-    "lng": 100.4927381
+    "lng": 100.4927381,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Wat_Pho%2C_Bangkok%2C_Tailandia%2C_2013-08-22%2C_DD_07.jpg/250px-Wat_Pho%2C_Bangkok%2C_Tailandia%2C_2013-08-22%2C_DD_07.jpg",
+    "imageSource": "commons:File:Wat Pho, Bangkok, Tailandia, 2013-08-22, DD 07.jpg"
   },
   {
     "id": "bangkok__wat-arun",
@@ -31,9 +35,11 @@
     "duration": "",
     "short": "Ícono junto al río + mejores fotos",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Wat%20Arun%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Templo_Wat_Arun%2C_Bangkok%2C_Tailandia%2C_2013-08-22%2C_DD_30.jpg",
     "lat": 13.7438976,
-    "lng": 100.4885137
+    "lng": 100.4885137,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Templo_Wat_Arun%2C_Bangkok%2C_Tailandia%2C_2013-08-22%2C_DD_30.jpg/500px-Templo_Wat_Arun%2C_Bangkok%2C_Tailandia%2C_2013-08-22%2C_DD_30.jpg",
+    "imageSource": "commons:File:Templo Wat Arun, Bangkok, Tailandia, 2013-08-22, DD 30.jpg"
   },
   {
     "id": "bangkok__wat-paknam-bhasicharoen",
@@ -43,9 +49,11 @@
     "duration": "",
     "short": "Templo menos turístico + gran Buda",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Wat%20Paknam%20Bhasicharoen%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/14/The_stupa_at_Wat_Paknam_Bhasicharoen_202104.jpg",
     "lat": 13.7216718,
-    "lng": 100.4704273
+    "lng": 100.4704273,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/The_stupa_at_Wat_Paknam_Bhasicharoen_202104.jpg/330px-The_stupa_at_Wat_Paknam_Bhasicharoen_202104.jpg",
+    "imageSource": "commons:File:The stupa at Wat Paknam Bhasicharoen 202104.jpg"
   },
   {
     "id": "bangkok__wat-saket",
@@ -55,9 +63,11 @@
     "duration": "",
     "short": "Golden Mount con vista 360°",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Wat%20Saket%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Wat_Saket%2C_Bangkok%2C_Thailand.jpg",
     "lat": 13.7538418,
-    "lng": 100.5066951
+    "lng": 100.5066951,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Wat_Saket%2C_Bangkok%2C_Thailand.jpg/500px-Wat_Saket%2C_Bangkok%2C_Thailand.jpg",
+    "imageSource": "commons:File:Wat Saket, Bangkok, Thailand.jpg"
   },
   {
     "id": "bangkok__wat-traimit",
@@ -67,9 +77,11 @@
     "duration": "",
     "short": "Buda de oro + entrada a Chinatown",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Wat%20Traimit%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/ec/2016_Bangkok%2C_Dystrykt_Samphanthawong%2C_Wat_Traimit_Witthayaram_%2817%29.jpg",
     "lat": 13.7379989,
-    "lng": 100.5136529
+    "lng": 100.5136529,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/2016_Bangkok%2C_Dystrykt_Samphanthawong%2C_Wat_Traimit_Witthayaram_%2817%29.jpg/250px-2016_Bangkok%2C_Dystrykt_Samphanthawong%2C_Wat_Traimit_Witthayaram_%2817%29.jpg",
+    "imageSource": "commons:File:2016 Bangkok, Dystrykt Samphanthawong, Wat Traimit Witthayaram (17).jpg"
   },
   {
     "id": "nakhon-pathom-excursion-desde-bangkok__wat-samphran",
@@ -79,9 +91,11 @@
     "duration": "",
     "short": "Templo del “dragón” (muy Instagram)",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Wat%20Samphran%20Nakhon%20Pathom%20(excursi%C3%B3n%20desde%20Bangkok)%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/38/Wat_Samphran.jpg",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Wat_Samphran.jpg/330px-Wat_Samphran.jpg",
+    "imageSource": "commons:File:Wat Samphran.jpg"
   },
   {
     "id": "bangkok__mahanakhon-skywalk",
@@ -91,9 +105,13 @@
     "duration": "",
     "short": "Vidrio + rooftop, ideal sunset",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Mahanakhon%20SkyWalk%20Bangkok%20thailand",
+    "image": "https://live.staticflickr.com/65535/47157007241_2cd04626c6_b.jpg",
     "lat": 13.7231503,
-    "lng": 100.5280809
+    "lng": 100.5280809,
+    "thumb": "https://api.openverse.org/v1/images/cd8cb082-98c3-4fb5-9e38-c76a855d2f6a/thumb/",
+    "imageSource": "openverse:cd8cb082-98c3-4fb5-9e38-c76a855d2f6a",
+    "imageLicense": "by-sa",
+    "imageCreator": "Aaron9017"
   },
   {
     "id": "bangkok__tichuca-rooftop-bar",
@@ -105,7 +123,9 @@
     "long": "",
     "image": "https://source.unsplash.com/featured/?Tichuca%20Rooftop%20Bar%20Bangkok%20thailand",
     "lat": 13.7220802,
-    "lng": 100.5804417
+    "lng": 100.5804417,
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "bangkok__red-sky-bar",
@@ -115,9 +135,11 @@
     "duration": "",
     "short": "Rooftop céntrico con vista 360",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Red%20Sky%20Bar%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/42/Vanilla_Sky_Rooftop_Bar_-_Compass_Skyview_Hotel.jpg",
     "lat": 13.7477432,
-    "lng": 100.5384744
+    "lng": 100.5384744,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Vanilla_Sky_Rooftop_Bar_-_Compass_Skyview_Hotel.jpg/330px-Vanilla_Sky_Rooftop_Bar_-_Compass_Skyview_Hotel.jpg",
+    "imageSource": "commons:File:Vanilla Sky Rooftop Bar - Compass Skyview Hotel.jpg"
   },
   {
     "id": "bangkok__sirocco",
@@ -127,9 +149,11 @@
     "duration": "",
     "short": "Cena/tragos “movie vibe”",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Sirocco%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Kakapo_Sirocco_1.jpg",
     "lat": 13.7212917,
-    "lng": 100.5168726
+    "lng": 100.5168726,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Kakapo_Sirocco_1.jpg/500px-Kakapo_Sirocco_1.jpg",
+    "imageSource": "commons:File:Kakapo Sirocco 1.jpg"
   },
   {
     "id": "bangkok__ojo-bangkok",
@@ -139,9 +163,11 @@
     "duration": "",
     "short": "Restaurante rooftop mexicano (76° piso)",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Ojo%20Bangkok%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Una_aventura_en_Siam_-_zarzuela_en_dos_actos%2C_en_verso_y_prosa_%28IA_unaaventuraensia00hern%29.pdf",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Una_aventura_en_Siam_-_zarzuela_en_dos_actos%2C_en_verso_y_prosa_%28IA_unaaventuraensia00hern%29.pdf/page1-213px-Una_aventura_en_Siam_-_zarzuela_en_dos_actos%2C_en_verso_y_prosa_%28IA_unaaventuraensia00hern%29.pdf.jpg",
+    "imageSource": "commons:File:Una aventura en Siam - zarzuela en dos actos, en verso y prosa (IA unaaventuraensia00hern).pdf"
   },
   {
     "id": "bangkok__chinatown-yaowarat-road",
@@ -151,9 +177,11 @@
     "duration": "",
     "short": "Street food + noche vibrante",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Chinatown%20(Yaowarat%20Road)%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/d8/2016_Bangkok%2C_Dystrykt_Samphanthawong%2C_Ulica_Yaowarat_%2805%29.jpg",
     "lat": 13.74175,
-    "lng": 100.5107544
+    "lng": 100.5107544,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/2016_Bangkok%2C_Dystrykt_Samphanthawong%2C_Ulica_Yaowarat_%2805%29.jpg/500px-2016_Bangkok%2C_Dystrykt_Samphanthawong%2C_Ulica_Yaowarat_%2805%29.jpg",
+    "imageSource": "commons:File:2016 Bangkok, Dystrykt Samphanthawong, Ulica Yaowarat (05).jpg"
   },
   {
     "id": "bangkok__jodd-fairs",
@@ -163,9 +191,11 @@
     "duration": "",
     "short": "Mercado para comer + shopping",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Jodd%20Fairs%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f9/The_New_York_herald_%28IA_newyorkherald241861newy%29.pdf",
     "lat": 13.7681679,
-    "lng": 100.5709179
+    "lng": 100.5709179,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/The_New_York_herald_%28IA_newyorkherald241861newy%29.pdf/page1-249px-The_New_York_herald_%28IA_newyorkherald241861newy%29.pdf.jpg",
+    "imageSource": "commons:File:The New York herald (IA newyorkherald241861newy).pdf"
   },
   {
     "id": "bangkok__iconsiam",
@@ -175,9 +205,11 @@
     "duration": "",
     "short": "Mall al río + zona gastronómica",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?ICONSIAM%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Iconsiam_Skyscrapers.jpg",
     "lat": 13.7268226,
-    "lng": 100.510294
+    "lng": 100.510294,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Iconsiam_Skyscrapers.jpg/330px-Iconsiam_Skyscrapers.jpg",
+    "imageSource": "commons:File:Iconsiam Skyscrapers.jpg"
   },
   {
     "id": "bangkok__khao-san-road",
@@ -187,9 +219,11 @@
     "duration": "",
     "short": "Backpacker vibe + bares",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Khao%20San%20Road%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/4b/2016_Bangkok%2C_Dystrykt_Phra_Nakhon%2C_Ulica_Khaosan_%2808%29.jpg",
     "lat": 13.7587665,
-    "lng": 100.4975792
+    "lng": 100.4975792,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/2016_Bangkok%2C_Dystrykt_Phra_Nakhon%2C_Ulica_Khaosan_%2808%29.jpg/500px-2016_Bangkok%2C_Dystrykt_Phra_Nakhon%2C_Ulica_Khaosan_%2808%29.jpg",
+    "imageSource": "commons:File:2016 Bangkok, Dystrykt Phra Nakhon, Ulica Khaosan (08).jpg"
   },
   {
     "id": "bangkok__lumphini-park",
@@ -199,9 +233,11 @@
     "duration": "",
     "short": "Parque para cortar el ritmo",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Lumphini%20Park%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Parque_Lumphini%2C_Bangkok%2C_Tailandia%2C_2013-08-22%2C_DD_01.jpg",
     "lat": 13.7306004,
-    "lng": 100.5415377
+    "lng": 100.5415377,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Parque_Lumphini%2C_Bangkok%2C_Tailandia%2C_2013-08-22%2C_DD_01.jpg/500px-Parque_Lumphini%2C_Bangkok%2C_Tailandia%2C_2013-08-22%2C_DD_01.jpg",
+    "imageSource": "commons:File:Parque Lumphini, Bangkok, Tailandia, 2013-08-22, DD 01.jpg"
   },
   {
     "id": "bangkok__pak-khlong-talat",
@@ -211,9 +247,11 @@
     "duration": "",
     "short": "Mercado de flores 24/7",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Pak%20Khlong%20Talat%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Bangkok_Pak_Khlong_Talat_2.jpg",
     "lat": 13.7417086,
-    "lng": 100.4963295
+    "lng": 100.4963295,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Bangkok_Pak_Khlong_Talat_2.jpg/500px-Bangkok_Pak_Khlong_Talat_2.jpg",
+    "imageSource": "commons:File:Bangkok Pak Khlong Talat 2.jpg"
   },
   {
     "id": "bangkok__thecommons-thonglor",
@@ -223,9 +261,11 @@
     "duration": "",
     "short": "Community mall “lindo” para comer",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?theCOMMONS%20Thonglor%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/7/71/Park_Origin_Thonglor.jpg",
     "lat": 13.7349518,
-    "lng": 100.5821642
+    "lng": 100.5821642,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Park_Origin_Thonglor.jpg/250px-Park_Origin_Thonglor.jpg",
+    "imageSource": "commons:File:Park Origin Thonglor.jpg"
   },
   {
     "id": "bangkok__khlong-saen-saep",
@@ -235,9 +275,11 @@
     "duration": "",
     "short": "Barco por canal, rápido y local",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Khlong%20Saen%20Saep%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/45/Platinum_Fashion_Mall_%28I%29.jpg",
     "lat": 13.8438425,
-    "lng": 100.8037609
+    "lng": 100.8037609,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Platinum_Fashion_Mall_%28I%29.jpg/500px-Platinum_Fashion_Mall_%28I%29.jpg",
+    "imageSource": "commons:File:Platinum Fashion Mall (I).jpg"
   },
   {
     "id": "bangkok__khlong-ong-ang-walking-street",
@@ -247,9 +289,13 @@
     "duration": "",
     "short": "Canal modernizado + puestos + música",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Khlong%20Ong%20Ang%20Walking%20Street%20Bangkok%20thailand",
+    "image": "https://live.staticflickr.com/65535/51737486317_9c246fd888_b.jpg",
     "lat": 13.7430569,
-    "lng": 100.5018578
+    "lng": 100.5018578,
+    "thumb": "https://api.openverse.org/v1/images/ce4d7cd4-cba8-4154-afd7-2e98d3f8d9e9/thumb/",
+    "imageSource": "openverse:ce4d7cd4-cba8-4154-afd7-2e98d3f8d9e9",
+    "imageLicense": "by-nc-sa",
+    "imageCreator": "UweBKK (α 77 on )"
   },
   {
     "id": "bangkok__arabica-bangkok-empire-tower",
@@ -261,7 +307,9 @@
     "long": "",
     "image": "https://source.unsplash.com/featured/?%25%20Arabica%20Bangkok%20Empire%20Tower%20Bangkok%20thailand",
     "lat": 13.7204262,
-    "lng": 100.5299983
+    "lng": 100.5299983,
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "bangkok__ojo-bangkok-2",
@@ -271,9 +319,11 @@
     "duration": "",
     "short": "Restaurante en el Mahanakhon",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Ojo%20Bangkok%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Una_aventura_en_Siam_-_zarzuela_en_dos_actos%2C_en_verso_y_prosa_%28IA_unaaventuraensia00hern%29.pdf",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Una_aventura_en_Siam_-_zarzuela_en_dos_actos%2C_en_verso_y_prosa_%28IA_unaaventuraensia00hern%29.pdf/page1-213px-Una_aventura_en_Siam_-_zarzuela_en_dos_actos%2C_en_verso_y_prosa_%28IA_unaaventuraensia00hern%29.pdf.jpg",
+    "imageSource": "commons:File:Una aventura en Siam - zarzuela en dos actos, en verso y prosa (IA unaaventuraensia00hern).pdf"
   },
   {
     "id": "bangkok__arabica-empire-tower",
@@ -283,9 +333,11 @@
     "duration": "",
     "short": "Café de especialidad",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Arabica%20Empire%20Tower%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/02/The_century_dictionary_and_cyclopedia%2C_a_work_of_universal_reference_in_all_departments_of_knowledge_with_a_new_atlas_of_the_world_%28IA_centurydiction10whit%29.pdf",
     "lat": 13.7204262,
-    "lng": 100.5299983
+    "lng": 100.5299983,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/The_century_dictionary_and_cyclopedia%2C_a_work_of_universal_reference_in_all_departments_of_knowledge_with_a_new_atlas_of_the_world_%28IA_centurydiction10whit%29.pdf/page1-268px-The_century_dictionary_and_cyclopedia%2C_a_work_of_universal_reference_in_all_departments_of_knowledge_with_a_new_atlas_of_the_world_%28IA_centurydiction10whit%29.pdf.jpg",
+    "imageSource": "commons:File:The century dictionary and cyclopedia, a work of universal reference in all departments of knowledge with a new atlas of the world (IA centurydiction10whit).pdf"
   },
   {
     "id": "ciudad__nombre",
@@ -295,9 +347,11 @@
     "duration": "",
     "short": "Descripción",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Nombre%20Ciudad%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/61/Calle_Nguyen_Thai_Hoc_al_anochecer%2C_Ciudad_Vieja_de_Hoi_An%2C_Vietnam_%2838559354010%29.jpg",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Calle_Nguyen_Thai_Hoc_al_anochecer%2C_Ciudad_Vieja_de_Hoi_An%2C_Vietnam_%2838559354010%29.jpg/500px-Calle_Nguyen_Thai_Hoc_al_anochecer%2C_Ciudad_Vieja_de_Hoi_An%2C_Vietnam_%2838559354010%29.jpg",
+    "imageSource": "commons:File:Calle Nguyen Thai Hoc al anochecer, Ciudad Vieja de Hoi An, Vietnam (38559354010).jpg"
   },
   {
     "id": "chiang-mai__wat-phra-that-doi-suthep",
@@ -307,9 +361,11 @@
     "duration": "",
     "short": "Templo sagrado en la montaña",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Wat%20Phra%20That%20Doi%20Suthep%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/14/20171106_Wat_Phra_That_Doi_Suthep_0103_DxO.jpg",
     "lat": 18.8035942,
-    "lng": 98.9202265
+    "lng": 98.9202265,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/20171106_Wat_Phra_That_Doi_Suthep_0103_DxO.jpg/250px-20171106_Wat_Phra_That_Doi_Suthep_0103_DxO.jpg",
+    "imageSource": "commons:File:20171106 Wat Phra That Doi Suthep 0103 DxO.jpg"
   },
   {
     "id": "chiang-mai__wat-chedi-luang",
@@ -319,9 +375,11 @@
     "duration": "",
     "short": "Enorme estupa en ruinas",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Wat%20Chedi%20Luang%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/20/20171105_Wat_Chedi_Luang_Chiang_Mai_9897_DxO.jpg",
     "lat": 18.7871427,
-    "lng": 98.986784
+    "lng": 98.986784,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/20171105_Wat_Chedi_Luang_Chiang_Mai_9897_DxO.jpg/500px-20171105_Wat_Chedi_Luang_Chiang_Mai_9897_DxO.jpg",
+    "imageSource": "commons:File:20171105 Wat Chedi Luang Chiang Mai 9897 DxO.jpg"
   },
   {
     "id": "chiang-mai__wat-phra-singh",
@@ -331,9 +389,11 @@
     "duration": "",
     "short": "Arquitectura Lanna clásica",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Wat%20Phra%20Singh%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/c/cd/20171105_Golden_elephant_statue_of_the_Wat_Phra_Singh_temple%2C_Chiang_Mai%2C_Thailand_9843_DxO.jpg",
     "lat": 18.7882068,
-    "lng": 98.9813773
+    "lng": 98.9813773,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/20171105_Golden_elephant_statue_of_the_Wat_Phra_Singh_temple%2C_Chiang_Mai%2C_Thailand_9843_DxO.jpg/250px-20171105_Golden_elephant_statue_of_the_Wat_Phra_Singh_temple%2C_Chiang_Mai%2C_Thailand_9843_DxO.jpg",
+    "imageSource": "commons:File:20171105 Golden elephant statue of the Wat Phra Singh temple, Chiang Mai, Thailand 9843 DxO.jpg"
   },
   {
     "id": "chiang-mai__dantewada-land-of-angels",
@@ -343,9 +403,11 @@
     "duration": "",
     "short": "Parque natural artificial",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Dantewada%20Land%20of%20Angels%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/eb/The_Bombay_Guardian%2C_14_September_1867_%28IA_dli.granth.115984%29.pdf",
     "lat": 19.1232029,
-    "lng": 98.9432396
+    "lng": 98.9432396,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/The_Bombay_Guardian%2C_14_September_1867_%28IA_dli.granth.115984%29.pdf/page1-257px-The_Bombay_Guardian%2C_14_September_1867_%28IA_dli.granth.115984%29.pdf.jpg",
+    "imageSource": "commons:File:The Bombay Guardian, 14 September 1867 (IA dli.granth.115984).pdf"
   },
   {
     "id": "chiang-mai__khao-soi-maesai",
@@ -357,7 +419,9 @@
     "long": "",
     "image": "https://source.unsplash.com/featured/?Khao%20Soi%20Maesai%20Chiang%20Mai%20thailand",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "chiang-mai__khao-so-i",
@@ -367,9 +431,11 @@
     "duration": "",
     "short": "Khao soi gourmet",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Khao-so-i%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/8f/2014_0526_Khao_man_kai_vendor_Chiang_Mai.jpg",
     "lat": 18.8091521,
-    "lng": 99.0047472
+    "lng": 99.0047472,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/2014_0526_Khao_man_kai_vendor_Chiang_Mai.jpg/500px-2014_0526_Khao_man_kai_vendor_Chiang_Mai.jpg",
+    "imageSource": "commons:File:2014 0526 Khao man kai vendor Chiang Mai.jpg"
   },
   {
     "id": "chiang-mai__night-bazaar",
@@ -379,9 +445,11 @@
     "duration": "",
     "short": "Mercado nocturno",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Night%20Bazaar%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/43/CHIANG_MAI_NIGHT_BAZAAR_THAILAND_FEB_2012_%286869571256%29.jpg",
     "lat": 18.7867043,
-    "lng": 99.0007492
+    "lng": 99.0007492,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/CHIANG_MAI_NIGHT_BAZAAR_THAILAND_FEB_2012_%286869571256%29.jpg/500px-CHIANG_MAI_NIGHT_BAZAAR_THAILAND_FEB_2012_%286869571256%29.jpg",
+    "imageSource": "commons:File:CHIANG MAI NIGHT BAZAAR THAILAND FEB 2012 (6869571256).jpg"
   },
   {
     "id": "chiang-mai__santuario-de-elefantes",
@@ -391,9 +459,11 @@
     "duration": "",
     "short": "Cuidado ético de elefantes",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Santuario%20de%20Elefantes%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/35/Elefante_y_cuidador_en_santuario_de_Tailandia.jpg",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Elefante_y_cuidador_en_santuario_de_Tailandia.jpg/500px-Elefante_y_cuidador_en_santuario_de_Tailandia.jpg",
+    "imageSource": "commons:File:Elefante y cuidador en santuario de Tailandia.jpg"
   },
   {
     "id": "chiang-mai__zoe-in-yellow",
@@ -403,9 +473,11 @@
     "duration": "",
     "short": "Epicentro de la fiesta",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Zoe%20in%20Yellow%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/b/bb/The_octoroon%3B_or%2C_life_in_Louisiana_-_a_play%2C_in_five_acts_%28IA_octoroonorlifein00bouc%29.pdf",
     "lat": 18.7908639,
-    "lng": 98.9905989
+    "lng": 98.9905989,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/The_octoroon%3B_or%2C_life_in_Louisiana_-_a_play%2C_in_five_acts_%28IA_octoroonorlifein00bouc%29.pdf/page1-225px-The_octoroon%3B_or%2C_life_in_Louisiana_-_a_play%2C_in_five_acts_%28IA_octoroonorlifein00bouc%29.pdf.jpg",
+    "imageSource": "commons:File:The octoroon; or, life in Louisiana - a play, in five acts (IA octoroonorlifein00bouc).pdf"
   },
   {
     "id": "chiang-mai__vieng-thapae-resort",
@@ -417,7 +489,9 @@
     "long": "",
     "image": "https://source.unsplash.com/featured/?Vieng%20Thapae%20Resort%20Chiang%20Mai%20thailand",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "chiang-rai__wat-rong-khun",
@@ -427,9 +501,11 @@
     "duration": "",
     "short": "El Templo Blanco",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Wat%20Rong%20Khun%20Chiang%20Rai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Wat_Rong_Khun-001.jpg",
     "lat": 19.8238794,
-    "lng": 99.7628959
+    "lng": 99.7628959,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Wat_Rong_Khun-001.jpg/500px-Wat_Rong_Khun-001.jpg",
+    "imageSource": "commons:File:Wat Rong Khun-001.jpg"
   },
   {
     "id": "chiang-rai__wat-rong-suea-ten",
@@ -439,9 +515,11 @@
     "duration": "",
     "short": "El Templo Azul",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Wat%20Rong%20Suea%20Ten%20Chiang%20Rai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Wat_Rong_Suea_Ten_%28Blue_Temple%2C_Chiang_Rai%29_%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%A3%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B8%AD%E0%B9%80%E0%B8%95%E0%B9%89%E0%B8%99_%28October_2021%29_-_img_01.jpg",
     "lat": 19.9233569,
-    "lng": 99.8417552
+    "lng": 99.8417552,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Wat_Rong_Suea_Ten_%28Blue_Temple%2C_Chiang_Rai%29_%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%A3%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B8%AD%E0%B9%80%E0%B8%95%E0%B9%89%E0%B8%99_%28October_2021%29_-_img_01.jpg/500px-Wat_Rong_Suea_Ten_%28Blue_Temple%2C_Chiang_Rai%29_%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%A3%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B8%AD%E0%B9%80%E0%B8%95%E0%B9%89%E0%B8%99_%28October_2021%29_-_img_01.jpg",
+    "imageSource": "commons:File:Wat Rong Suea Ten (Blue Temple, Chiang Rai) วัดร่องเสือเต้น (October 2021) - img 01.jpg"
   },
   {
     "id": "chiang-rai__baandam-museum",
@@ -451,9 +529,13 @@
     "duration": "",
     "short": "La Casa Negra",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Baandam%20Museum%20Chiang%20Rai%20thailand",
+    "image": "https://live.staticflickr.com/3709/32099787344_a4111c05b6_b.jpg",
     "lat": 19.9911504,
-    "lng": 99.8611152
+    "lng": 99.8611152,
+    "thumb": "https://api.openverse.org/v1/images/a8eed303-d4a0-443b-a843-2e00a9a29776/thumb/",
+    "imageSource": "openverse:a8eed303-d4a0-443b-a843-2e00a9a29776",
+    "imageLicense": "by-nc-nd",
+    "imageCreator": "Sitoo"
   },
   {
     "id": "chiang-rai__lalitta-cafe",
@@ -465,7 +547,9 @@
     "long": "",
     "image": "https://source.unsplash.com/featured/?Lalitta%20Caf%C3%A9%20Chiang%20Rai%20thailand",
     "lat": 19.9424815,
-    "lng": 99.8112885
+    "lng": 99.8112885,
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "chiang-rai__choui-fong-tea",
@@ -475,9 +559,11 @@
     "duration": "",
     "short": "Plantaciones de té",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Choui%20Fong%20Tea%20Chiang%20Rai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/88/Choui_Fong_tea_plantation.jpg",
     "lat": 20.2002448,
-    "lng": 99.8185308
+    "lng": 99.8185308,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Choui_Fong_tea_plantation.jpg/500px-Choui_Fong_tea_plantation.jpg",
+    "imageSource": "commons:File:Choui Fong tea plantation.jpg"
   },
   {
     "id": "chiang-rai__mujeres-jirafa-karen",
@@ -487,9 +573,13 @@
     "duration": "",
     "short": "Aldea étnica",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Mujeres%20Jirafa%20(Karen)%20Chiang%20Rai%20thailand",
+    "image": "https://live.staticflickr.com/8476/8097496397_8d97777c5f_b.jpg",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "https://api.openverse.org/v1/images/cfee5a56-482d-4de9-a5bd-e52034e7dc11/thumb/",
+    "imageSource": "openverse:cfee5a56-482d-4de9-a5bd-e52034e7dc11",
+    "imageLicense": "by-nc",
+    "imageCreator": "Pacific Wanderer 태평양 과객"
   },
   {
     "id": "satun-mar-de-andaman__koh-lipe",
@@ -499,9 +589,11 @@
     "duration": "",
     "short": "Las Maldivas de Tailandia",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Koh%20Lipe%20Satun%20(Mar%20de%20Andam%C3%A1n)%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Koh_Lipe_island_coast.jpg",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Koh_Lipe_island_coast.jpg/500px-Koh_Lipe_island_coast.jpg",
+    "imageSource": "commons:File:Koh Lipe island coast.jpg"
   },
   {
     "id": "mar-del-golfo__koh-tao",
@@ -511,9 +603,11 @@
     "duration": "",
     "short": "Paraíso del buceo",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Koh%20Tao%20Mar%20del%20Golfo%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Koh_Tao%2C_View_from_Shark_Bay%2C_Thailand.jpg",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Koh_Tao%2C_View_from_Shark_Bay%2C_Thailand.jpg/500px-Koh_Tao%2C_View_from_Shark_Bay%2C_Thailand.jpg",
+    "imageSource": "commons:File:Koh Tao, View from Shark Bay, Thailand.jpg"
   },
   {
     "id": "koh-tao__john-suwan-viewpoint",
@@ -523,9 +617,11 @@
     "duration": "",
     "short": "El mirador más famoso",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?John%20Suwan%20Viewpoint%20Koh%20Tao%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/7/72/Water_resources_development_in_Florida_1993_-_USACE-p16021coll7-4173.pdf",
     "lat": 10.0601256,
-    "lng": 99.8294293
+    "lng": 99.8294293,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Water_resources_development_in_Florida_1993_-_USACE-p16021coll7-4173.pdf/page1-275px-Water_resources_development_in_Florida_1993_-_USACE-p16021coll7-4173.pdf.jpg",
+    "imageSource": "commons:File:Water resources development in Florida 1993 - USACE-p16021coll7-4173.pdf"
   },
   {
     "id": "koh-samui__crystal-bay-silver-beach",
@@ -535,9 +631,11 @@
     "duration": "",
     "short": "Bahía de rocas gigantes",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Crystal%20Bay%20(Silver%20Beach)%20Koh%20Samui%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Thong_Ta_Kian_Beach%2C_Koh_Samui_%2848107413542%29.jpg",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Thong_Ta_Kian_Beach%2C_Koh_Samui_%2848107413542%29.jpg/500px-Thong_Ta_Kian_Beach%2C_Koh_Samui_%2848107413542%29.jpg",
+    "imageSource": "commons:File:Thong Ta Kian Beach, Koh Samui (48107413542).jpg"
   },
   {
     "id": "koh-samui__big-buddha-samui",
@@ -547,9 +645,11 @@
     "duration": "",
     "short": "Estatua dorada de 12 metros",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Big%20Buddha%20Samui%20Koh%20Samui%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/9/99/Koh_Samui_Big_Buddha_-_panoramio.jpg",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Koh_Samui_Big_Buddha_-_panoramio.jpg/330px-Koh_Samui_Big_Buddha_-_panoramio.jpg",
+    "imageSource": "commons:File:Koh Samui Big Buddha - panoramio.jpg"
   },
   {
     "id": "surat-thani__khao-sok",
@@ -559,9 +659,11 @@
     "duration": "",
     "short": "Parque Nacional y Lago",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Khao%20Sok%20Surat%20Thani%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Cheow_Lan_Lake%2C_Rainforest%2C_Khao_Sok%2C_Thailand.jpg",
     "lat": 9.0686898,
-    "lng": 98.5738024
+    "lng": 98.5738024,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Cheow_Lan_Lake%2C_Rainforest%2C_Khao_Sok%2C_Thailand.jpg/500px-Cheow_Lan_Lake%2C_Rainforest%2C_Khao_Sok%2C_Thailand.jpg",
+    "imageSource": "commons:File:Cheow Lan Lake, Rainforest, Khao Sok, Thailand.jpg"
   },
   {
     "id": "krabi__railay-beach",
@@ -571,9 +673,11 @@
     "duration": "",
     "short": "Playa entre acantilados",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Railay%20Beach%20Krabi%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/40/Railay_Beach_5.jpg",
     "lat": 8.0114166,
-    "lng": 98.8379541
+    "lng": 98.8379541,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Railay_Beach_5.jpg/500px-Railay_Beach_5.jpg",
+    "imageSource": "commons:File:Railay Beach 5.jpg"
   },
   {
     "id": "krabi__phi-phi-islands",
@@ -583,9 +687,11 @@
     "duration": "",
     "short": "Icono de Tailandia",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Phi%20Phi%20Islands%20Krabi%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/09/Isla_Phi_Phi_Lay%2C_Tailandia%2C_2013-08-19%2C_DD_04.JPG",
     "lat": 7.7522403,
-    "lng": 98.7766434
+    "lng": 98.7766434,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Isla_Phi_Phi_Lay%2C_Tailandia%2C_2013-08-19%2C_DD_04.JPG/500px-Isla_Phi_Phi_Lay%2C_Tailandia%2C_2013-08-19%2C_DD_04.JPG",
+    "imageSource": "commons:File:Isla Phi Phi Lay, Tailandia, 2013-08-19, DD 04.JPG"
   },
   {
     "id": "krabi__koh-lanta",
@@ -595,9 +701,11 @@
     "duration": "",
     "short": "Isla tranquila",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Koh%20Lanta%20Krabi%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/5/58/1062-mu-koh-lanta-national-park-05.jpg",
     "lat": 7.6823683,
-    "lng": 99.0900688
+    "lng": 99.0900688,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/1062-mu-koh-lanta-national-park-05.jpg/500px-1062-mu-koh-lanta-national-park-05.jpg",
+    "imageSource": "commons:File:1062-mu-koh-lanta-national-park-05.jpg"
   },
   {
     "id": "phuket__old-phuket-town",
@@ -607,9 +715,11 @@
     "duration": "",
     "short": "Casco histórico colonial",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Old%20Phuket%20Town%20Phuket%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/61/Phuket_Town_Thailand-Murals-in-Phang-Nga-Road-04.jpg",
     "lat": 7.8847774,
-    "lng": 98.3892206
+    "lng": 98.3892206,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Phuket_Town_Thailand-Murals-in-Phang-Nga-Road-04.jpg/500px-Phuket_Town_Thailand-Murals-in-Phang-Nga-Road-04.jpg",
+    "imageSource": "commons:File:Phuket Town Thailand-Murals-in-Phang-Nga-Road-04.jpg"
   },
   {
     "id": "phuket__lard-yai-market",
@@ -619,9 +729,11 @@
     "duration": "",
     "short": "Mercado de domingo",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Lard%20Yai%20Market%20Phuket%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/7/72/Mariposa_Gazette_1860-10-23_%28IA_cmarm_000241%29.pdf",
     "lat": 7.8847833,
-    "lng": 98.3890437
+    "lng": 98.3890437,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Mariposa_Gazette_1860-10-23_%28IA_cmarm_000241%29.pdf/page1-245px-Mariposa_Gazette_1860-10-23_%28IA_cmarm_000241%29.pdf.jpg",
+    "imageSource": "commons:File:Mariposa Gazette 1860-10-23 (IA cmarm 000241).pdf"
   },
   {
     "id": "phuket__ko-yao-yai",
@@ -631,9 +743,11 @@
     "duration": "",
     "short": "Isla virgen y auténtica",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Ko%20Yao%20Yai%20Phuket%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Lonely_rocks_between_Ko_Yao_Yai_and_Phuket._-_panoramio.jpg",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Lonely_rocks_between_Ko_Yao_Yai_and_Phuket._-_panoramio.jpg/500px-Lonely_rocks_between_Ko_Yao_Yai_and_Phuket._-_panoramio.jpg",
+    "imageSource": "commons:File:Lonely rocks between Ko Yao Yai and Phuket. - panoramio.jpg"
   },
   {
     "id": "kanchanaburi__cataratas-erawan",
@@ -643,9 +757,13 @@
     "duration": "",
     "short": "7 niveles de cascadas",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Cataratas%20Erawan%20Kanchanaburi%20thailand",
+    "image": "https://live.staticflickr.com/2178/2109051818_4677412c85_b.jpg",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "https://api.openverse.org/v1/images/9a7d2dca-9cc9-4dc8-85eb-51c9fffab0b1/thumb/",
+    "imageSource": "openverse:9a7d2dca-9cc9-4dc8-85eb-51c9fffab0b1",
+    "imageLicense": "by-nc",
+    "imageCreator": "Dani Rubio :)"
   },
   {
     "id": "kanchanaburi__puente-sobre-el-rio-kwai",
@@ -655,9 +773,11 @@
     "duration": "",
     "short": "Monumento de la 2da Guerra",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Puente%20sobre%20el%20R%C3%ADo%20Kwai%20Kanchanaburi%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/24/Bridge_on_the_River_Kwai_-_tourist_plaza.JPG",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Bridge_on_the_River_Kwai_-_tourist_plaza.JPG/500px-Bridge_on_the_River_Kwai_-_tourist_plaza.JPG",
+    "imageSource": "commons:File:Bridge on the River Kwai - tourist plaza.JPG"
   },
   {
     "id": "sukhothai__sukhothai-historical-park",
@@ -667,9 +787,11 @@
     "duration": "",
     "short": "Ruinas de la primera capital",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Sukhothai%20Historical%20Park%20Sukhothai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Ram_Khamhaeng_the_Great_%28I%29.jpg",
     "lat": 17.0203334,
-    "lng": 99.7038571
+    "lng": 99.7038571,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Ram_Khamhaeng_the_Great_%28I%29.jpg/500px-Ram_Khamhaeng_the_Great_%28I%29.jpg",
+    "imageSource": "commons:File:Ram Khamhaeng the Great (I).jpg"
   },
   {
     "id": "ayutthaya__p-historico-ayutthaya",
@@ -679,9 +801,11 @@
     "duration": "",
     "short": "Ruinas de la antigua capital",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?P.%20Hist%C3%B3rico%20Ayutthaya%20Ayutthaya%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Public_outreach_and_reuse_of_KB_images_via_Wikipedia%2C_2014-2022.pdf",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Public_outreach_and_reuse_of_KB_images_via_Wikipedia%2C_2014-2022.pdf/page1-278px-Public_outreach_and_reuse_of_KB_images_via_Wikipedia%2C_2014-2022.pdf.jpg",
+    "imageSource": "commons:File:Public outreach and reuse of KB images via Wikipedia, 2014-2022.pdf"
   },
   {
     "id": "ayutthaya__ayutthaya-historical-park",
@@ -691,9 +815,11 @@
     "duration": "",
     "short": "Ruinas de la antigua capital",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Ayutthaya%20Historical%20Park%20Ayutthaya%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Ayutthaya_Thailand_2004.jpg",
     "lat": 14.3535461,
-    "lng": 100.5622548
+    "lng": 100.5622548,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Ayutthaya_Thailand_2004.jpg/500px-Ayutthaya_Thailand_2004.jpg",
+    "imageSource": "commons:File:Ayutthaya Thailand 2004.jpg"
   },
   {
     "id": "ayutthaya__wat-mahathat",
@@ -703,9 +829,11 @@
     "duration": "",
     "short": "Cabeza de Buda en raíces",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Wat%20Mahathat%20Ayutthaya%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/03/Templo_Mahathat%2C_Ayutthaya%2C_Tailandia%2C_2013-08-23%2C_DD_06.jpg",
     "lat": 14.3563513,
-    "lng": 100.5685271
+    "lng": 100.5685271,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Templo_Mahathat%2C_Ayutthaya%2C_Tailandia%2C_2013-08-23%2C_DD_06.jpg/500px-Templo_Mahathat%2C_Ayutthaya%2C_Tailandia%2C_2013-08-23%2C_DD_06.jpg",
+    "imageSource": "commons:File:Templo Mahathat, Ayutthaya, Tailandia, 2013-08-23, DD 06.jpg"
   },
   {
     "id": "ayutthaya__wat-phra-si-sanphet",
@@ -715,9 +843,11 @@
     "duration": "",
     "short": "Tres estupas reales",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Wat%20Phra%20Si%20Sanphet%20Ayutthaya%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/7/76/Templo_Phra_Si_Sanphet%2C_Ayutthaya%2C_Tailandia%2C_2013-08-23%2C_DD_17.jpg",
     "lat": 14.3559133,
-    "lng": 100.5585079
+    "lng": 100.5585079,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Templo_Phra_Si_Sanphet%2C_Ayutthaya%2C_Tailandia%2C_2013-08-23%2C_DD_17.jpg/250px-Templo_Phra_Si_Sanphet%2C_Ayutthaya%2C_Tailandia%2C_2013-08-23%2C_DD_17.jpg",
+    "imageSource": "commons:File:Templo Phra Si Sanphet, Ayutthaya, Tailandia, 2013-08-23, DD 17.jpg"
   },
   {
     "id": "ayutthaya__wat-chaiwatthanaram",
@@ -727,9 +857,11 @@
     "duration": "",
     "short": "Templo al río, gran sunset",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Wat%20Chaiwatthanaram%20Ayutthaya%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Ayutthaya_Thailand_2004.jpg",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Ayutthaya_Thailand_2004.jpg/500px-Ayutthaya_Thailand_2004.jpg",
+    "imageSource": "commons:File:Ayutthaya Thailand 2004.jpg"
   },
   {
     "id": "ayutthaya__ayutthaya-en-bici",
@@ -739,9 +871,13 @@
     "duration": "",
     "short": "Recorrido práctico y plano",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Ayutthaya%20en%20bici%20Ayutthaya%20thailand",
+    "image": "https://live.staticflickr.com/2464/5833445129_33c18bd726_b.jpg",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "https://api.openverse.org/v1/images/de9f1508-48a9-4814-b495-d1662809ec79/thumb/",
+    "imageSource": "openverse:de9f1508-48a9-4814-b495-d1662809ec79",
+    "imageLicense": "by-nc-sa",
+    "imageCreator": "jose.jhg"
   },
   {
     "id": "ayutthaya__ayutthaya-boat-tour",
@@ -751,9 +887,13 @@
     "duration": "",
     "short": "Paseo fluvial por ruinas",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Ayutthaya%20Boat%20Tour%20Ayutthaya%20thailand",
+    "image": "https://live.staticflickr.com/4221/34624102150_3226baa7c3_b.jpg",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "https://api.openverse.org/v1/images/d433eeb4-b394-4e13-8e72-f7a206f46539/thumb/",
+    "imageSource": "openverse:d433eeb4-b394-4e13-8e72-f7a206f46539",
+    "imageLicense": "by-nc-sa",
+    "imageCreator": "UweBKK (α 77 on )"
   },
   {
     "id": "kanchanaburi__erawan-national-park-cataratas-erawan",
@@ -765,7 +905,9 @@
     "long": "",
     "image": "https://source.unsplash.com/featured/?Erawan%20National%20Park%20(Cataratas%20Erawan)%20Kanchanaburi%20thailand",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "kanchanaburi__puente-sobre-el-rio-kwai-2",
@@ -775,9 +917,11 @@
     "duration": "",
     "short": "Ícono de la II Guerra",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Puente%20sobre%20el%20R%C3%ADo%20Kwai%20Kanchanaburi%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/24/Bridge_on_the_River_Kwai_-_tourist_plaza.JPG",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Bridge_on_the_River_Kwai_-_tourist_plaza.JPG/500px-Bridge_on_the_River_Kwai_-_tourist_plaza.JPG",
+    "imageSource": "commons:File:Bridge on the River Kwai - tourist plaza.JPG"
   },
   {
     "id": "kanchanaburi__death-railway-tren-escenico",
@@ -789,7 +933,9 @@
     "long": "",
     "image": "https://source.unsplash.com/featured/?Death%20Railway%20(tren%20esc%C3%A9nico)%20Kanchanaburi%20thailand",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "kanchanaburi__jeath-war-museum",
@@ -799,9 +945,11 @@
     "duration": "",
     "short": "Contexto de la guerra",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?JEATH%20War%20Museum%20Kanchanaburi%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Kanchanaburi_World_War_II_Museum.jpg",
     "lat": 14.0163017,
-    "lng": 99.5305998
+    "lng": 99.5305998,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Kanchanaburi_World_War_II_Museum.jpg/500px-Kanchanaburi_World_War_II_Museum.jpg",
+    "imageSource": "commons:File:Kanchanaburi World War II Museum.jpg"
   },
   {
     "id": "kanchanaburi__hellfire-pass-memorial",
@@ -811,9 +959,11 @@
     "duration": "",
     "short": "Sendero conmemorativo",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Hellfire%20Pass%20Memorial%20Kanchanaburi%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/5/55/Hellfire_pass_2023.jpg",
     "lat": 14.3560337,
-    "lng": 98.9523444
+    "lng": 98.9523444,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Hellfire_pass_2023.jpg/330px-Hellfire_pass_2023.jpg",
+    "imageSource": "commons:File:Hellfire pass 2023.jpg"
   },
   {
     "id": "kanchanaburi__river-kwai-cruise-opcional",
@@ -825,7 +975,9 @@
     "long": "",
     "image": "https://source.unsplash.com/featured/?River%20Kwai%20Cruise%20(opcional)%20Kanchanaburi%20thailand",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "chiang-mai__wat-phra-that-doi-suthep-2",
@@ -835,9 +987,11 @@
     "duration": "",
     "short": "Templo símbolo en la montaña",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Wat%20Phra%20That%20Doi%20Suthep%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/14/20171106_Wat_Phra_That_Doi_Suthep_0103_DxO.jpg",
     "lat": 18.8035942,
-    "lng": 98.9202265
+    "lng": 98.9202265,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/20171106_Wat_Phra_That_Doi_Suthep_0103_DxO.jpg/250px-20171106_Wat_Phra_That_Doi_Suthep_0103_DxO.jpg",
+    "imageSource": "commons:File:20171106 Wat Phra That Doi Suthep 0103 DxO.jpg"
   },
   {
     "id": "chiang-mai__wat-chedi-luang-2",
@@ -847,9 +1001,11 @@
     "duration": "",
     "short": "Estupa monumental en el casco antiguo",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Wat%20Chedi%20Luang%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/20/20171105_Wat_Chedi_Luang_Chiang_Mai_9897_DxO.jpg",
     "lat": 18.7871427,
-    "lng": 98.986784
+    "lng": 98.986784,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/20171105_Wat_Chedi_Luang_Chiang_Mai_9897_DxO.jpg/500px-20171105_Wat_Chedi_Luang_Chiang_Mai_9897_DxO.jpg",
+    "imageSource": "commons:File:20171105 Wat Chedi Luang Chiang Mai 9897 DxO.jpg"
   },
   {
     "id": "chiang-mai__wat-phra-singh-2",
@@ -859,9 +1015,11 @@
     "duration": "",
     "short": "Templo elegante y activo",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Wat%20Phra%20Singh%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/c/cd/20171105_Golden_elephant_statue_of_the_Wat_Phra_Singh_temple%2C_Chiang_Mai%2C_Thailand_9843_DxO.jpg",
     "lat": 18.7882068,
-    "lng": 98.9813773
+    "lng": 98.9813773,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/20171105_Golden_elephant_statue_of_the_Wat_Phra_Singh_temple%2C_Chiang_Mai%2C_Thailand_9843_DxO.jpg/250px-20171105_Golden_elephant_statue_of_the_Wat_Phra_Singh_temple%2C_Chiang_Mai%2C_Thailand_9843_DxO.jpg",
+    "imageSource": "commons:File:20171105 Golden elephant statue of the Wat Phra Singh temple, Chiang Mai, Thailand 9843 DxO.jpg"
   },
   {
     "id": "chiang-mai__chiang-mai-old-city-a-pie",
@@ -871,9 +1029,11 @@
     "duration": "",
     "short": "Murallas, templos y cafés",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Chiang%20Mai%20Old%20City%20(a%20pie)%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Dictionary_of_the_Swatow_dialect.djvu",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Dictionary_of_the_Swatow_dialect.djvu/page1-271px-Dictionary_of_the_Swatow_dialect.djvu.jpg",
+    "imageSource": "commons:File:Dictionary of the Swatow dialect.djvu"
   },
   {
     "id": "chiang-mai__chiang-mai-night-bazaar",
@@ -883,9 +1043,11 @@
     "duration": "",
     "short": "Puestos, comida y compras",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Chiang%20Mai%20Night%20Bazaar%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Chiang_Mai_Night_Bazaar_in_2018.jpg",
     "lat": 18.784441,
-    "lng": 99.0003797
+    "lng": 99.0003797,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Chiang_Mai_Night_Bazaar_in_2018.jpg/500px-Chiang_Mai_Night_Bazaar_in_2018.jpg",
+    "imageSource": "commons:File:Chiang Mai Night Bazaar in 2018.jpg"
   },
   {
     "id": "chiang-mai__sunday-walking-street-tha-pae",
@@ -895,9 +1057,11 @@
     "duration": "",
     "short": "El mejor mercado semanal",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Sunday%20Walking%20Street%20(Tha%20Pae)%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/dd/ThaPaeWalkingStreet3.jpg",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/ThaPaeWalkingStreet3.jpg/500px-ThaPaeWalkingStreet3.jpg",
+    "imageSource": "commons:File:ThaPaeWalkingStreet3.jpg"
   },
   {
     "id": "chiang-mai__monk-chat-wat-suan-dok-otros",
@@ -909,7 +1073,9 @@
     "long": "",
     "image": "https://source.unsplash.com/featured/?Monk%20Chat%20(Wat%20Suan%20Dok%20%2F%20otros)%20Chiang%20Mai%20thailand",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "cerca-de-chiang-mai__elephant-nature-park-santuario-etico",
@@ -921,7 +1087,9 @@
     "long": "",
     "image": "https://source.unsplash.com/featured/?Elephant%20Nature%20Park%20(santuario%20%C3%A9tico)%20Cerca%20de%20Chiang%20Mai%20thailand",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "cerca-de-chiang-mai__sticky-waterfall-bua-thong",
@@ -931,9 +1099,11 @@
     "duration": "",
     "short": "Cascada “antideslizante”",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Sticky%20Waterfall%20(Bua%20Thong)%20Cerca%20de%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/3f/%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%95%E0%B8%81%E0%B8%AB%E0%B8%99%E0%B8%B6%E0%B9%88%E0%B8%87%E0%B9%80%E0%B8%AB%E0%B8%99%E0%B8%B5%E0%B8%A2%E0%B8%A7_%E0%B9%91_-_One_sticky_waterfall_1.jpg",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%95%E0%B8%81%E0%B8%AB%E0%B8%99%E0%B8%B6%E0%B9%88%E0%B8%87%E0%B9%80%E0%B8%AB%E0%B8%99%E0%B8%B5%E0%B8%A2%E0%B8%A7_%E0%B9%91_-_One_sticky_waterfall_1.jpg/250px-%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%95%E0%B8%81%E0%B8%AB%E0%B8%99%E0%B8%B6%E0%B9%88%E0%B8%87%E0%B9%80%E0%B8%AB%E0%B8%99%E0%B8%B5%E0%B8%A2%E0%B8%A7_%E0%B9%91_-_One_sticky_waterfall_1.jpg",
+    "imageSource": "commons:File:น้ำตกหนึ่งเหนียว ๑ - One sticky waterfall 1.jpg"
   },
   {
     "id": "cerca-de-chiang-mai__doi-inthanon-national-park",
@@ -943,9 +1113,11 @@
     "duration": "",
     "short": "Cima de Tailandia + cascadas",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Doi%20Inthanon%20National%20Park%20Cerca%20de%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/61/Minla_strigula_-_Doi_Inthanon.jpg",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Minla_strigula_-_Doi_Inthanon.jpg/500px-Minla_strigula_-_Doi_Inthanon.jpg",
+    "imageSource": "commons:File:Minla strigula - Doi Inthanon.jpg"
   },
   {
     "id": "cerca-de-chiang-mai__mae-kampong-village",
@@ -955,9 +1127,11 @@
     "duration": "",
     "short": "Aldea de montaña auténtica",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Mae%20Kampong%20Village%20Cerca%20de%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/80/Wat_Khantha_Phrueksa_-_2017-07-09_%28002%29.jpg",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wat_Khantha_Phrueksa_-_2017-07-09_%28002%29.jpg/330px-Wat_Khantha_Phrueksa_-_2017-07-09_%28002%29.jpg",
+    "imageSource": "commons:File:Wat Khantha Phrueksa - 2017-07-09 (002).jpg"
   },
   {
     "id": "chiang-mai__clase-de-cocina-tailandesa",
@@ -967,9 +1141,11 @@
     "duration": "",
     "short": "Cocina local desde cero",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Clase%20de%20cocina%20tailandesa%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/84/OJ_L_41_of_2013_-_ES_Spanish.pdf",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/OJ_L_41_of_2013_-_ES_Spanish.pdf/page1-254px-OJ_L_41_of_2013_-_ES_Spanish.pdf.jpg",
+    "imageSource": "commons:File:OJ L 41 of 2013 - ES Spanish.pdf"
   },
   {
     "id": "chiang-mai__street-food-chiang-mai",
@@ -979,9 +1155,11 @@
     "duration": "",
     "short": "Sabores del norte",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Street%20Food%20Chiang%20Mai%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/9/91/Street_Food_Stall%2C_Chiang_Mai%2C_Thailand_%287113967189%29.jpg",
     "lat": 18.7969091,
-    "lng": 98.9830406
+    "lng": 98.9830406,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Street_Food_Stall%2C_Chiang_Mai%2C_Thailand_%287113967189%29.jpg/500px-Street_Food_Stall%2C_Chiang_Mai%2C_Thailand_%287113967189%29.jpg",
+    "imageSource": "commons:File:Street Food Stall, Chiang Mai, Thailand (7113967189).jpg"
   },
   {
     "id": "phuket__phuket-old-town",
@@ -991,9 +1169,11 @@
     "duration": "",
     "short": "Casco histórico sino-portugués",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Phuket%20Old%20Town%20Phuket%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/61/Phuket_Town_Thailand-Murals-in-Phang-Nga-Road-04.jpg",
     "lat": 7.8847774,
-    "lng": 98.3892206
+    "lng": 98.3892206,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Phuket_Town_Thailand-Murals-in-Phang-Nga-Road-04.jpg/500px-Phuket_Town_Thailand-Murals-in-Phang-Nga-Road-04.jpg",
+    "imageSource": "commons:File:Phuket Town Thailand-Murals-in-Phang-Nga-Road-04.jpg"
   },
   {
     "id": "phuket__karon-beach",
@@ -1003,9 +1183,11 @@
     "duration": "",
     "short": "Playa amplia y relajada",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Karon%20Beach%20Phuket%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Sunset_at_Karon_Beach%2C_Phuket%2C_Thailand_4.JPG",
     "lat": 7.8439574,
-    "lng": 98.2934247
+    "lng": 98.2934247,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Sunset_at_Karon_Beach%2C_Phuket%2C_Thailand_4.JPG/500px-Sunset_at_Karon_Beach%2C_Phuket%2C_Thailand_4.JPG",
+    "imageSource": "commons:File:Sunset at Karon Beach, Phuket, Thailand 4.JPG"
   },
   {
     "id": "phuket__kata-beach",
@@ -1015,9 +1197,11 @@
     "duration": "",
     "short": "Playa escénica y caminable",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Kata%20Beach%20Phuket%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Phuket_-_Kata_Beach_001.jpg",
     "lat": 7.8193599,
-    "lng": 98.29805
+    "lng": 98.29805,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Phuket_-_Kata_Beach_001.jpg/500px-Phuket_-_Kata_Beach_001.jpg",
+    "imageSource": "commons:File:Phuket - Kata Beach 001.jpg"
   },
   {
     "id": "phuket__patong-beach-noche",
@@ -1027,9 +1211,13 @@
     "duration": "",
     "short": "Zona más movida",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Patong%20Beach%20(noche)%20Phuket%20thailand",
+    "image": "https://live.staticflickr.com/7218/7186708869_290f90d4d2_b.jpg",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "https://api.openverse.org/v1/images/97333dcb-30ff-4729-ab62-913176c15820/thumb/",
+    "imageSource": "openverse:97333dcb-30ff-4729-ab62-913176c15820",
+    "imageLicense": "by-nc-sa",
+    "imageCreator": "jose.jhg"
   },
   {
     "id": "phuket__big-buddha-viewpoint",
@@ -1039,9 +1227,11 @@
     "duration": "",
     "short": "Vistas panorámicas",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Big%20Buddha%20Viewpoint%20Phuket%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Big_Buddha_from_Windmill_Viewpoint.jpg",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Big_Buddha_from_Windmill_Viewpoint.jpg/500px-Big_Buddha_from_Windmill_Viewpoint.jpg",
+    "imageSource": "commons:File:Big Buddha from Windmill Viewpoint.jpg"
   },
   {
     "id": "phi-phi__ko-phi-phi-day-trip",
@@ -1051,9 +1241,11 @@
     "duration": "",
     "short": "Bahías icónicas",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Ko%20Phi%20Phi%20(day%20trip)%20Phi%20Phi%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Phi_Psi_Cli_%28electronic_resource%29_%28IA_phipsicli1933elon%29.pdf",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Phi_Psi_Cli_%28electronic_resource%29_%28IA_phipsicli1933elon%29.pdf/page1-252px-Phi_Psi_Cli_%28electronic_resource%29_%28IA_phipsicli1933elon%29.pdf.jpg",
+    "imageSource": "commons:File:Phi Psi Cli (electronic resource) (IA phipsicli1933elon).pdf"
   },
   {
     "id": "ko-yao-yai__ko-yao-yai",
@@ -1063,9 +1255,11 @@
     "duration": "",
     "short": "Isla tranquila y auténtica",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Ko%20Yao%20Yai%20Ko%20Yao%20Yai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Koh_Yao_Yai_Peer%2C_Tambon_Ko_Yao_Yai%2C_Thailand_%28Unsplash%29.jpg",
     "lat": 8.070531,
-    "lng": 98.5857298
+    "lng": 98.5857298,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Koh_Yao_Yai_Peer%2C_Tambon_Ko_Yao_Yai%2C_Thailand_%28Unsplash%29.jpg/500px-Koh_Yao_Yai_Peer%2C_Tambon_Ko_Yao_Yai%2C_Thailand_%28Unsplash%29.jpg",
+    "imageSource": "commons:File:Koh Yao Yai Peer, Tambon Ko Yao Yai, Thailand (Unsplash).jpg"
   },
   {
     "id": "phuket__island-hopping-desde-phuket",
@@ -1077,7 +1271,9 @@
     "long": "",
     "image": "https://source.unsplash.com/featured/?Island%20Hopping%20desde%20Phuket%20Phuket%20thailand",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "railay__railay-beach-west-east",
@@ -1087,9 +1283,11 @@
     "duration": "",
     "short": "Playa + acantilados",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Railay%20Beach%20(West%20%26%20East)%20Railay%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Krabi%2C_Railay_West_Beach_%286218177231%29.jpg",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Krabi%2C_Railay_West_Beach_%286218177231%29.jpg/500px-Krabi%2C_Railay_West_Beach_%286218177231%29.jpg",
+    "imageSource": "commons:File:Krabi, Railay West Beach (6218177231).jpg"
   },
   {
     "id": "railay__phra-nang-cave-beach",
@@ -1099,9 +1297,11 @@
     "duration": "",
     "short": "Playa escénica",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Phra%20Nang%20Cave%20Beach%20Railay%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Phra_Nang_Nai_Cave.jpg",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Phra_Nang_Nai_Cave.jpg/500px-Phra_Nang_Nai_Cave.jpg",
+    "imageSource": "commons:File:Phra Nang Nai Cave.jpg"
   },
   {
     "id": "krabi__four-islands-tour",
@@ -1111,9 +1311,11 @@
     "duration": "",
     "short": "Islas + snorkeling",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Four%20Islands%20Tour%20Krabi%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/ed/A_tour_thro%27_the_whole_island_of_Great_Britain._Divided_into_circuits_or_journeys_giving_a_particular_and_entertaining_account_of_whatever_is_curious_and_worth_observation_..._%28IA_b3052796x_0004%29.pdf",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/A_tour_thro%27_the_whole_island_of_Great_Britain._Divided_into_circuits_or_journeys_giving_a_particular_and_entertaining_account_of_whatever_is_curious_and_worth_observation_..._%28IA_b3052796x_0004%29.pdf/page1-207px-thumbnail.pdf.jpg",
+    "imageSource": "commons:File:A tour thro' the whole island of Great Britain. Divided into circuits or journeys giving a particular and entertaining account of whatever is curious and worth observation ... (IA b3052796x 0004).pdf"
   },
   {
     "id": "krabi__ao-nang",
@@ -1123,9 +1325,11 @@
     "duration": "",
     "short": "Base práctica",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Ao%20Nang%20Krabi%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/9/94/Macaca_fascicularis_Ao_Nang_5.jpg",
     "lat": 7.7211733,
-    "lng": 98.7655426
+    "lng": 98.7655426,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Macaca_fascicularis_Ao_Nang_5.jpg/500px-Macaca_fascicularis_Ao_Nang_5.jpg",
+    "imageSource": "commons:File:Macaca fascicularis Ao Nang 5.jpg"
   },
   {
     "id": "bangkok__so-thai-spa-bangkok",
@@ -1135,9 +1339,11 @@
     "duration": "",
     "short": "Spa premium de masaje tailandés",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?So%20Thai%20Spa%20Bangkok%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f5/So_Thai_Spa_Bangkok_%28252701005%29.jpeg",
     "lat": 13.7275531,
-    "lng": 100.5242139
+    "lng": 100.5242139,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/So_Thai_Spa_Bangkok_%28252701005%29.jpeg/500px-So_Thai_Spa_Bangkok_%28252701005%29.jpeg",
+    "imageSource": "commons:File:So Thai Spa Bangkok (252701005).jpeg"
   },
   {
     "id": "bangkok__amaranth-spa-kimpton-maa-lai",
@@ -1149,7 +1355,9 @@
     "long": "",
     "image": "https://source.unsplash.com/featured/?Amaranth%20Spa%20%E2%80%93%20Kimpton%20Maa-Lai%20Bangkok%20thailand",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "bangkok__bangkok-thai-cooking-academy",
@@ -1159,9 +1367,11 @@
     "duration": "",
     "short": "Clase de cocina tailandesa con mercado",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Bangkok%20Thai%20Cooking%20Academy%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/64/Federal_Register_1964-04-_Vol_29_Index_%28IA_sim_federal-register-find_1964-04_29_index%29.pdf",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Federal_Register_1964-04-_Vol_29_Index_%28IA_sim_federal-register-find_1964-04_29_index%29.pdf/page1-262px-Federal_Register_1964-04-_Vol_29_Index_%28IA_sim_federal-register-find_1964-04_29_index%29.pdf.jpg",
+    "imageSource": "commons:File:Federal Register 1964-04- Vol 29 Index (IA sim federal-register-find 1964-04 29 index).pdf"
   },
   {
     "id": "chiang-mai__antique-massage-chiang-mai",
@@ -1173,7 +1383,9 @@
     "long": "",
     "image": "https://source.unsplash.com/featured/?Antique%20Massage%20Chiang%20Mai%20Chiang%20Mai%20thailand",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "chiang-mai__calm-massage-and-spa",
@@ -1183,9 +1395,11 @@
     "duration": "",
     "short": "Spa relajante y moderno",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Calm%20Massage%20and%20Spa%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/7/75/Irish_journal_of_medical_science_%28IA_s3irishjournalof135roya%29.pdf",
     "lat": 18.7897022,
-    "lng": 98.9841997
+    "lng": 98.9841997,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Irish_journal_of_medical_science_%28IA_s3irishjournalof135roya%29.pdf/page1-231px-Irish_journal_of_medical_science_%28IA_s3irishjournalof135roya%29.pdf.jpg",
+    "imageSource": "commons:File:Irish journal of medical science (IA s3irishjournalof135roya).pdf"
   },
   {
     "id": "chiang-mai__baan-thai-cookery-school",
@@ -1197,7 +1411,9 @@
     "long": "",
     "image": "https://source.unsplash.com/featured/?Baan%20Thai%20Cookery%20School%20Chiang%20Mai%20thailand",
     "lat": 18.7890909,
-    "lng": 98.9910256
+    "lng": 98.9910256,
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "chiang-mai__cabalgata-rural-en-chiang-mai",
@@ -1209,7 +1425,9 @@
     "long": "",
     "image": "https://source.unsplash.com/featured/?Cabalgata%20rural%20en%20Chiang%20Mai%20Chiang%20Mai%20thailand",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "phuket__spa-burasari-phuket",
@@ -1221,7 +1439,9 @@
     "long": "",
     "image": "https://source.unsplash.com/featured/?Spa%20Burasari%20Phuket%20Phuket%20thailand",
     "lat": 7.8879283,
-    "lng": 98.2929442
+    "lng": 98.2929442,
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "phuket__sama-onsen-massage",
@@ -1233,7 +1453,9 @@
     "long": "",
     "image": "https://source.unsplash.com/featured/?SAMA%20Onsen%20%26%20Massage%20Phuket%20thailand",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "phuket__phuket-thai-cooking-class-by-chef-vj",
@@ -1245,7 +1467,9 @@
     "long": "",
     "image": "https://source.unsplash.com/featured/?Phuket%20Thai%20Cooking%20Class%20by%20Chef%20VJ%20Phuket%20thailand",
     "lat": 7.819598,
-    "lng": 98.3069523
+    "lng": 98.3069523,
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "phuket__cabalgata-costera-en-phuket",
@@ -1257,7 +1481,9 @@
     "long": "",
     "image": "https://source.unsplash.com/featured/?Cabalgata%20costera%20en%20Phuket%20Phuket%20thailand",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "bangkok__column-bangkok",
@@ -1267,9 +1493,11 @@
     "duration": "",
     "short": "Hotel base en Sukhumvit",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Column%20Bangkok%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Bangkok_wat_suthat_002.JPG",
     "lat": 13.7330179,
-    "lng": 100.5603839
+    "lng": 100.5603839,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Bangkok_wat_suthat_002.JPG/500px-Bangkok_wat_suthat_002.JPG",
+    "imageSource": "commons:File:Bangkok wat suthat 002.JPG"
   },
   {
     "id": "chiang-mai__vieng-thapae-resort-2",
@@ -1281,7 +1509,9 @@
     "long": "",
     "image": "https://source.unsplash.com/featured/?Vieng%20Thapae%20Resort%20Chiang%20Mai%20thailand",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "phuket-kamala__novotel-phuket-kamala-beach",
@@ -1293,7 +1523,9 @@
     "long": "",
     "image": "https://source.unsplash.com/featured/?Novotel%20Phuket%20Kamala%20Beach%20Phuket%20(Kamala)%20thailand",
     "lat": 7.9634738,
-    "lng": 98.2835136
+    "lng": 98.2835136,
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "bangkok__vuelo-a-chiang-mai",
@@ -1303,9 +1535,13 @@
     "duration": "",
     "short": "Bangkok a Chiang Mai",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Vuelo%20a%20Chiang%20Mai%20Bangkok%20thailand",
+    "image": "https://live.staticflickr.com/195/475415687_666a24dc0f.jpg",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "https://api.openverse.org/v1/images/257c05f6-9b3a-4c1d-95e5-d7271ccb1974/thumb/",
+    "imageSource": "openverse:257c05f6-9b3a-4c1d-95e5-d7271ccb1974",
+    "imageLicense": "by-nc",
+    "imageCreator": "chinota"
   },
   {
     "id": "chiang-mai__vuelo-a-phuket",
@@ -1315,9 +1551,11 @@
     "duration": "",
     "short": "Chiang Mai a Phuket",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Vuelo%20a%20Phuket%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/3c/One-Two-Go_Airlines_HS-OMG_wreckage.jpg",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/One-Two-Go_Airlines_HS-OMG_wreckage.jpg/500px-One-Two-Go_Airlines_HS-OMG_wreckage.jpg",
+    "imageSource": "commons:File:One-Two-Go Airlines HS-OMG wreckage.jpg"
   },
   {
     "id": "phuket__vuelo-a-bangkok",
@@ -1327,9 +1565,11 @@
     "duration": "",
     "short": "Phuket a Bangkok",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Vuelo%20a%20Bangkok%20Phuket%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/3c/One-Two-Go_Airlines_HS-OMG_wreckage.jpg",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/One-Two-Go_Airlines_HS-OMG_wreckage.jpg/500px-One-Two-Go_Airlines_HS-OMG_wreckage.jpg",
+    "imageSource": "commons:File:One-Two-Go Airlines HS-OMG wreckage.jpg"
   },
   {
     "id": "bangkok__vuelo-a-estambul",
@@ -1339,8 +1579,10 @@
     "duration": "",
     "short": "Bangkok a Estambul",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Vuelo%20a%20Estambul%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Los_dedos_hu%C3%A9spedes%2C_o%2C_Fiebre_de_celos_-_comedia_en_un_acto_y_en_verso_%28IA_losdedoshuespede4256past%29.pdf",
     "lat": null,
-    "lng": null
+    "lng": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Los_dedos_hu%C3%A9spedes%2C_o%2C_Fiebre_de_celos_-_comedia_en_un_acto_y_en_verso_%28IA_losdedoshuespede4256past%29.pdf/page1-213px-Los_dedos_hu%C3%A9spedes%2C_o%2C_Fiebre_de_celos_-_comedia_en_un_acto_y_en_verso_%28IA_losdedoshuespede4256past%29.pdf.jpg",
+    "imageSource": "commons:File:Los dedos huéspedes, o, Fiebre de celos - comedia en un acto y en verso (IA losdedoshuespede4256past).pdf"
   }
 ]
