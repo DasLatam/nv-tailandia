@@ -7,10 +7,12 @@
     "duration": "",
     "short": "Complejo real + templo más sagrado",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Grand%20Palace%20(Bangkok)%20%2F%20Wat%20Phra%20Kaew%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/d3/%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%A3%E0%B8%B1%E0%B8%95%E0%B8%99%E0%B8%A8%E0%B8%B2%E0%B8%AA%E0%B8%94%E0%B8%B2%E0%B8%A3%E0%B8%B2%E0%B8%A1_8_%28edited%29.jpg",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%A3%E0%B8%B1%E0%B8%95%E0%B8%99%E0%B8%A8%E0%B8%B2%E0%B8%AA%E0%B8%94%E0%B8%B2%E0%B8%A3%E0%B8%B2%E0%B8%A1_8_%28edited%29.jpg/250px-%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%A3%E0%B8%B1%E0%B8%95%E0%B8%99%E0%B8%A8%E0%B8%B2%E0%B8%AA%E0%B8%94%E0%B8%B2%E0%B8%A3%E0%B8%B2%E0%B8%A1_8_%28edited%29.jpg",
+    "imageSource": "commons:File:วัดพระศรีรัตนศาสดาราม 8 (edited).jpg"
   },
   {
     "id": "bangkok__wat-pho",
@@ -110,10 +112,14 @@
     "duration": "",
     "short": "Vidrio + rooftop, ideal sunset",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Mahanakhon%20SkyWalk%20Bangkok%20thailand",
+    "image": "https://live.staticflickr.com/65535/47157007241_2cd04626c6_b.jpg",
     "lat": 13.7231503,
     "lng": 100.5280809,
-    "geocodeLabel": "MAHANAKHON SKYWALK, 114/1, ซอยสีลม 9, ละลายทรัพย์, แขวงสีลม, เขตบางรัก, กรุงเทพมหานคร, 10500, ประเทศไทย"
+    "geocodeLabel": "MAHANAKHON SKYWALK, 114/1, ซอยสีลม 9, ละลายทรัพย์, แขวงสีลม, เขตบางรัก, กรุงเทพมหานคร, 10500, ประเทศไทย",
+    "thumb": "https://api.openverse.org/v1/images/cd8cb082-98c3-4fb5-9e38-c76a855d2f6a/thumb/",
+    "imageSource": "openverse:cd8cb082-98c3-4fb5-9e38-c76a855d2f6a",
+    "imageLicense": "by-sa",
+    "imageCreator": "Aaron9017"
   },
   {
     "id": "bangkok__tichuca-rooftop-bar",
@@ -126,7 +132,9 @@
     "image": "https://source.unsplash.com/featured/?Tichuca%20Rooftop%20Bar%20Bangkok%20thailand",
     "lat": 13.7220802,
     "lng": 100.5804417,
-    "geocodeLabel": "Tichuca Rooftop Bar, 8, ซอยสุขุมวิท 40, แขวงพระโขนง, เขตคลองเตย, กรุงเทพมหานคร, 10110, ประเทศไทย"
+    "geocodeLabel": "Tichuca Rooftop Bar, 8, ซอยสุขุมวิท 40, แขวงพระโขนง, เขตคลองเตย, กรุงเทพมหานคร, 10110, ประเทศไทย",
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "bangkok__red-sky-bar",
@@ -136,10 +144,12 @@
     "duration": "",
     "short": "Rooftop céntrico con vista 360",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Red%20Sky%20Bar%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/42/Vanilla_Sky_Rooftop_Bar_-_Compass_Skyview_Hotel.jpg",
     "lat": 13.7477432,
     "lng": 100.5384744,
-    "geocodeLabel": "Red Sky Bar, 999/9, ถนนราชดำริ, แขวงปทุมวัน, เขตปทุมวัน, กรุงเทพมหานคร, 10330, ประเทศไทย"
+    "geocodeLabel": "Red Sky Bar, 999/9, ถนนราชดำริ, แขวงปทุมวัน, เขตปทุมวัน, กรุงเทพมหานคร, 10330, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Vanilla_Sky_Rooftop_Bar_-_Compass_Skyview_Hotel.jpg/250px-Vanilla_Sky_Rooftop_Bar_-_Compass_Skyview_Hotel.jpg",
+    "imageSource": "commons:File:Vanilla Sky Rooftop Bar - Compass Skyview Hotel.jpg"
   },
   {
     "id": "bangkok__sirocco",
@@ -179,10 +189,12 @@
     "duration": "",
     "short": "Street food + noche vibrante",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Chinatown%20(Yaowarat%20Road)%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/d8/2016_Bangkok%2C_Dystrykt_Samphanthawong%2C_Ulica_Yaowarat_%2805%29.jpg",
     "lat": 13.74175,
     "lng": 100.5107544,
-    "geocodeLabel": "สมาคมกว๋องสิวแห่งประเทศไทย, ถนนเจริญกรุง, เยาวราช, แขวงสัมพันธวงศ์, เขตสัมพันธวงศ์, กรุงเทพมหานคร, 10100, ประเทศไทย"
+    "geocodeLabel": "สมาคมกว๋องสิวแห่งประเทศไทย, ถนนเจริญกรุง, เยาวราช, แขวงสัมพันธวงศ์, เขตสัมพันธวงศ์, กรุงเทพมหานคร, 10100, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/2016_Bangkok%2C_Dystrykt_Samphanthawong%2C_Ulica_Yaowarat_%2805%29.jpg/330px-2016_Bangkok%2C_Dystrykt_Samphanthawong%2C_Ulica_Yaowarat_%2805%29.jpg",
+    "imageSource": "commons:File:2016 Bangkok, Dystrykt Samphanthawong, Ulica Yaowarat (05).jpg"
   },
   {
     "id": "bangkok__jodd-fairs",
@@ -267,10 +279,12 @@
     "duration": "",
     "short": "Community mall “lindo” para comer",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?theCOMMONS%20Thonglor%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/7/71/Park_Origin_Thonglor.jpg",
     "lat": 13.7349518,
     "lng": 100.5821642,
-    "geocodeLabel": "The Commons, 335, ซอยทองหล่อ 17, แขวงคลองตันเหนือ, เขตวัฒนา, กรุงเทพมหานคร, 10110, ประเทศไทย"
+    "geocodeLabel": "The Commons, 335, ซอยทองหล่อ 17, แขวงคลองตันเหนือ, เขตวัฒนา, กรุงเทพมหานคร, 10110, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Park_Origin_Thonglor.jpg/250px-Park_Origin_Thonglor.jpg",
+    "imageSource": "commons:File:Park Origin Thonglor.jpg"
   },
   {
     "id": "bangkok__khlong-saen-saep",
@@ -295,10 +309,14 @@
     "duration": "",
     "short": "Canal modernizado + puestos + música",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Khlong%20Ong%20Ang%20Walking%20Street%20Bangkok%20thailand",
+    "image": "https://live.staticflickr.com/65535/51737486317_9c246fd888_b.jpg",
     "lat": 13.7430569,
     "lng": 100.5018578,
-    "geocodeLabel": "ถนนคนเดินคลองโอ่งอ่าง, พาหุรัด, แขวงวังบูรพาภิรมย์, เขตพระนคร, กรุงเทพมหานคร, 10200, ประเทศไทย"
+    "geocodeLabel": "ถนนคนเดินคลองโอ่งอ่าง, พาหุรัด, แขวงวังบูรพาภิรมย์, เขตพระนคร, กรุงเทพมหานคร, 10200, ประเทศไทย",
+    "thumb": "https://api.openverse.org/v1/images/ce4d7cd4-cba8-4154-afd7-2e98d3f8d9e9/thumb/",
+    "imageSource": "openverse:ce4d7cd4-cba8-4154-afd7-2e98d3f8d9e9",
+    "imageLicense": "by-nc-sa",
+    "imageCreator": "UweBKK (α 77 on )"
   },
   {
     "id": "bangkok__arabica-bangkok-empire-tower",
@@ -311,7 +329,9 @@
     "image": "https://source.unsplash.com/featured/?%25%20Arabica%20Bangkok%20Empire%20Tower%20Bangkok%20thailand",
     "lat": 13.7204262,
     "lng": 100.5299983,
-    "geocodeLabel": "Arabica Percentage Empire Tower Bangkok, ถนนนราธิวาสราชนครินทร์, ชุมชนเซ็นหลุยส์ 3, แขวงยานนาวา, เขตสาทร, กรุงเทพมหานคร, 10120, ประเทศไทย"
+    "geocodeLabel": "Arabica Percentage Empire Tower Bangkok, ถนนนราธิวาสราชนครินทร์, ชุมชนเซ็นหลุยส์ 3, แขวงยานนาวา, เขตสาทร, กรุงเทพมหานคร, 10120, ประเทศไทย",
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "bangkok__ojo-bangkok-2",
@@ -336,10 +356,12 @@
     "duration": "",
     "short": "Café de especialidad",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Arabica%20Empire%20Tower%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/02/The_century_dictionary_and_cyclopedia%2C_a_work_of_universal_reference_in_all_departments_of_knowledge_with_a_new_atlas_of_the_world_%28IA_centurydiction10whit%29.pdf",
     "lat": 13.7204262,
     "lng": 100.5299983,
-    "geocodeLabel": "Arabica Percentage Empire Tower Bangkok, ถนนนราธิวาสราชนครินทร์, ชุมชนเซ็นหลุยส์ 3, แขวงยานนาวา, เขตสาทร, กรุงเทพมหานคร, 10120, ประเทศไทย"
+    "geocodeLabel": "Arabica Percentage Empire Tower Bangkok, ถนนนราธิวาสราชนครินทร์, ชุมชนเซ็นหลุยส์ 3, แขวงยานนาวา, เขตสาทร, กรุงเทพมหานคร, 10120, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/The_century_dictionary_and_cyclopedia%2C_a_work_of_universal_reference_in_all_departments_of_knowledge_with_a_new_atlas_of_the_world_%28IA_centurydiction10whit%29.pdf/page1-238px-The_century_dictionary_and_cyclopedia%2C_a_work_of_universal_reference_in_all_departments_of_knowledge_with_a_new_atlas_of_the_world_%28IA_centurydiction10whit%29.pdf.jpg",
+    "imageSource": "commons:File:The century dictionary and cyclopedia, a work of universal reference in all departments of knowledge with a new atlas of the world (IA centurydiction10whit).pdf"
   },
   {
     "id": "ciudad__nombre",
@@ -409,10 +431,12 @@
     "duration": "",
     "short": "Parque natural artificial",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Dantewada%20Land%20of%20Angels%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/eb/The_Bombay_Guardian%2C_14_September_1867_%28IA_dli.granth.115984%29.pdf",
     "lat": 19.1232029,
     "lng": 98.9432396,
-    "geocodeLabel": "DanTeWaDa Land of Angels, เทศบาลตำบลสันมหาพน ๑๐, Ban Pha Sao, สันมหาพน, อำเภอแม่แตง, จังหวัดเชียงใหม่, ประเทศไทย"
+    "geocodeLabel": "DanTeWaDa Land of Angels, เทศบาลตำบลสันมหาพน ๑๐, Ban Pha Sao, สันมหาพน, อำเภอแม่แตง, จังหวัดเชียงใหม่, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/The_Bombay_Guardian%2C_14_September_1867_%28IA_dli.granth.115984%29.pdf/page1-228px-The_Bombay_Guardian%2C_14_September_1867_%28IA_dli.granth.115984%29.pdf.jpg",
+    "imageSource": "commons:File:The Bombay Guardian, 14 September 1867 (IA dli.granth.115984).pdf"
   },
   {
     "id": "chiang-mai__khao-soi-maesai",
@@ -425,7 +449,9 @@
     "image": "https://source.unsplash.com/featured/?Khao%20Soi%20Maesai%20Chiang%20Mai%20thailand",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "chiang-mai__khao-so-i",
@@ -465,10 +491,12 @@
     "duration": "",
     "short": "Cuidado ético de elefantes",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Santuario%20de%20Elefantes%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/35/Elefante_y_cuidador_en_santuario_de_Tailandia.jpg",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Elefante_y_cuidador_en_santuario_de_Tailandia.jpg/330px-Elefante_y_cuidador_en_santuario_de_Tailandia.jpg",
+    "imageSource": "commons:File:Elefante y cuidador en santuario de Tailandia.jpg"
   },
   {
     "id": "chiang-mai__zoe-in-yellow",
@@ -478,10 +506,12 @@
     "duration": "",
     "short": "Epicentro de la fiesta",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Zoe%20in%20Yellow%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/b/bb/The_octoroon%3B_or%2C_life_in_Louisiana_-_a_play%2C_in_five_acts_%28IA_octoroonorlifein00bouc%29.pdf",
     "lat": 18.7908639,
     "lng": 98.9905989,
-    "geocodeLabel": "Zoe in Yellow Pub, ถนนราชวิถี, เทศบาลนครเชียงใหม่, ฟ้าฮ่าม, อำเภอเมืองเชียงใหม่, จังหวัดเชียงใหม่, 55520, ประเทศไทย"
+    "geocodeLabel": "Zoe in Yellow Pub, ถนนราชวิถี, เทศบาลนครเชียงใหม่, ฟ้าฮ่าม, อำเภอเมืองเชียงใหม่, จังหวัดเชียงใหม่, 55520, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/The_octoroon%3B_or%2C_life_in_Louisiana_-_a_play%2C_in_five_acts_%28IA_octoroonorlifein00bouc%29.pdf/page1-200px-The_octoroon%3B_or%2C_life_in_Louisiana_-_a_play%2C_in_five_acts_%28IA_octoroonorlifein00bouc%29.pdf.jpg",
+    "imageSource": "commons:File:The octoroon; or, life in Louisiana - a play, in five acts (IA octoroonorlifein00bouc).pdf"
   },
   {
     "id": "chiang-mai__vieng-thapae-resort",
@@ -494,7 +524,9 @@
     "image": "https://source.unsplash.com/featured/?Vieng%20Thapae%20Resort%20Chiang%20Mai%20thailand",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "chiang-rai__wat-rong-khun",
@@ -504,10 +536,12 @@
     "duration": "",
     "short": "El Templo Blanco",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Wat%20Rong%20Khun%20Chiang%20Rai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Wat_Rong_Khun-001.jpg",
     "lat": 19.8238794,
     "lng": 99.7628959,
-    "geocodeLabel": "Wat Rong Khun, บ้านร่องขุ่น, ป่าอ้อดอนชัย, อำเภอเมืองเชียงราย, จังหวัดเชียงราย, ประเทศไทย"
+    "geocodeLabel": "Wat Rong Khun, บ้านร่องขุ่น, ป่าอ้อดอนชัย, อำเภอเมืองเชียงราย, จังหวัดเชียงราย, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Wat_Rong_Khun-001.jpg/330px-Wat_Rong_Khun-001.jpg",
+    "imageSource": "commons:File:Wat Rong Khun-001.jpg"
   },
   {
     "id": "chiang-rai__wat-rong-suea-ten",
@@ -517,10 +551,12 @@
     "duration": "",
     "short": "El Templo Azul",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Wat%20Rong%20Suea%20Ten%20Chiang%20Rai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Wat_Rong_Suea_Ten_%28Blue_Temple%2C_Chiang_Rai%29_%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%A3%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B8%AD%E0%B9%80%E0%B8%95%E0%B9%89%E0%B8%99_%28October_2021%29_-_img_01.jpg",
     "lat": 19.9233569,
     "lng": 99.8417552,
-    "geocodeLabel": "วัดร่องเสือเต้น, ถนนวัดร่องเสือเต้น, รั้วเหล็กเหนือ, ห้วยปลากั้ง, เทศบาลนครเชียงราย, แม่ยาว, อำเภอเมืองเชียงราย, จังหวัดเชียงราย, 57000, ประเทศไทย"
+    "geocodeLabel": "วัดร่องเสือเต้น, ถนนวัดร่องเสือเต้น, รั้วเหล็กเหนือ, ห้วยปลากั้ง, เทศบาลนครเชียงราย, แม่ยาว, อำเภอเมืองเชียงราย, จังหวัดเชียงราย, 57000, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Wat_Rong_Suea_Ten_%28Blue_Temple%2C_Chiang_Rai%29_%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%A3%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B8%AD%E0%B9%80%E0%B8%95%E0%B9%89%E0%B8%99_%28October_2021%29_-_img_01.jpg/330px-Wat_Rong_Suea_Ten_%28Blue_Temple%2C_Chiang_Rai%29_%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%A3%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%AA%E0%B8%B7%E0%B8%AD%E0%B9%80%E0%B8%95%E0%B9%89%E0%B8%99_%28October_2021%29_-_img_01.jpg",
+    "imageSource": "commons:File:Wat Rong Suea Ten (Blue Temple, Chiang Rai) วัดร่องเสือเต้น (October 2021) - img 01.jpg"
   },
   {
     "id": "chiang-rai__baandam-museum",
@@ -530,10 +566,14 @@
     "duration": "",
     "short": "La Casa Negra",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Baandam%20Museum%20Chiang%20Rai%20thailand",
+    "image": "https://live.staticflickr.com/3709/32099787344_a4111c05b6_b.jpg",
     "lat": 19.9911504,
     "lng": 99.8611152,
-    "geocodeLabel": "บ้านดำ, ถนนบ้านดำ, บ้านนางแล, นางแล, อำเภอเมืองเชียงราย, จังหวัดเชียงราย, 57100, ประเทศไทย"
+    "geocodeLabel": "บ้านดำ, ถนนบ้านดำ, บ้านนางแล, นางแล, อำเภอเมืองเชียงราย, จังหวัดเชียงราย, 57100, ประเทศไทย",
+    "thumb": "https://api.openverse.org/v1/images/a8eed303-d4a0-443b-a843-2e00a9a29776/thumb/",
+    "imageSource": "openverse:a8eed303-d4a0-443b-a843-2e00a9a29776",
+    "imageLicense": "by-nc-nd",
+    "imageCreator": "Sitoo"
   },
   {
     "id": "chiang-rai__lalitta-cafe",
@@ -546,7 +586,9 @@
     "image": "https://source.unsplash.com/featured/?Lalitta%20Caf%C3%A9%20Chiang%20Rai%20thailand",
     "lat": 19.9424815,
     "lng": 99.8112885,
-    "geocodeLabel": "Lalitta Cafe, ถนนห้วยปลากั้ง, แม่ยาว, อำเภอเมืองเชียงราย, จังหวัดเชียงราย, 57000, ประเทศไทย"
+    "geocodeLabel": "Lalitta Cafe, ถนนห้วยปลากั้ง, แม่ยาว, อำเภอเมืองเชียงราย, จังหวัดเชียงราย, 57000, ประเทศไทย",
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "chiang-rai__choui-fong-tea",
@@ -556,10 +598,12 @@
     "duration": "",
     "short": "Plantaciones de té",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Choui%20Fong%20Tea%20Chiang%20Rai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/88/Choui_Fong_tea_plantation.jpg",
     "lat": 20.2002448,
     "lng": 99.8185308,
-    "geocodeLabel": "ไร่ชาฉุยฟง, อำเภอแม่จัน, ป่าซาง, จังหวัดเชียงราย, ประเทศไทย"
+    "geocodeLabel": "ไร่ชาฉุยฟง, อำเภอแม่จัน, ป่าซาง, จังหวัดเชียงราย, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Choui_Fong_tea_plantation.jpg/330px-Choui_Fong_tea_plantation.jpg",
+    "imageSource": "commons:File:Choui Fong tea plantation.jpg"
   },
   {
     "id": "chiang-rai__mujeres-jirafa-karen",
@@ -569,10 +613,14 @@
     "duration": "",
     "short": "Aldea étnica",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Mujeres%20Jirafa%20(Karen)%20Chiang%20Rai%20thailand",
+    "image": "https://live.staticflickr.com/8476/8097496397_8d97777c5f_b.jpg",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "https://api.openverse.org/v1/images/cfee5a56-482d-4de9-a5bd-e52034e7dc11/thumb/",
+    "imageSource": "openverse:cfee5a56-482d-4de9-a5bd-e52034e7dc11",
+    "imageLicense": "by-nc",
+    "imageCreator": "Pacific Wanderer 태평양 과객"
   },
   {
     "id": "satun-mar-de-andaman__koh-lipe",
@@ -582,10 +630,12 @@
     "duration": "",
     "short": "Las Maldivas de Tailandia",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Koh%20Lipe%20Satun%20(Mar%20de%20Andam%C3%A1n)%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Koh_Lipe_island_coast.jpg",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Koh_Lipe_island_coast.jpg/330px-Koh_Lipe_island_coast.jpg",
+    "imageSource": "commons:File:Koh Lipe island coast.jpg"
   },
   {
     "id": "mar-del-golfo__koh-tao",
@@ -595,10 +645,12 @@
     "duration": "",
     "short": "Paraíso del buceo",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Koh%20Tao%20Mar%20del%20Golfo%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Koh_Tao%2C_View_from_Shark_Bay%2C_Thailand.jpg",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Koh_Tao%2C_View_from_Shark_Bay%2C_Thailand.jpg/330px-Koh_Tao%2C_View_from_Shark_Bay%2C_Thailand.jpg",
+    "imageSource": "commons:File:Koh Tao, View from Shark Bay, Thailand.jpg"
   },
   {
     "id": "koh-tao__john-suwan-viewpoint",
@@ -608,10 +660,12 @@
     "duration": "",
     "short": "El mirador más famoso",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?John%20Suwan%20Viewpoint%20Koh%20Tao%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/7/72/Water_resources_development_in_Florida_1993_-_USACE-p16021coll7-4173.pdf",
     "lat": 10.0601256,
     "lng": 99.8294293,
-    "geocodeLabel": "John-Suwan Mountain Viewpoint, Haad Tien Beach Resort, บ้านโฉลกบ้านเก่า, เกาะเต่า, อำเภอเกาะพะงัน, จังหวัดสุราษฎร์ธานี, 84369, ประเทศไทย"
+    "geocodeLabel": "John-Suwan Mountain Viewpoint, Haad Tien Beach Resort, บ้านโฉลกบ้านเก่า, เกาะเต่า, อำเภอเกาะพะงัน, จังหวัดสุราษฎร์ธานี, 84369, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Water_resources_development_in_Florida_1993_-_USACE-p16021coll7-4173.pdf/page1-244px-Water_resources_development_in_Florida_1993_-_USACE-p16021coll7-4173.pdf.jpg",
+    "imageSource": "commons:File:Water resources development in Florida 1993 - USACE-p16021coll7-4173.pdf"
   },
   {
     "id": "koh-samui__crystal-bay-silver-beach",
@@ -621,10 +675,12 @@
     "duration": "",
     "short": "Bahía de rocas gigantes",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Crystal%20Bay%20(Silver%20Beach)%20Koh%20Samui%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Thong_Ta_Kian_Beach%2C_Koh_Samui_%2848107413542%29.jpg",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Thong_Ta_Kian_Beach%2C_Koh_Samui_%2848107413542%29.jpg/330px-Thong_Ta_Kian_Beach%2C_Koh_Samui_%2848107413542%29.jpg",
+    "imageSource": "commons:File:Thong Ta Kian Beach, Koh Samui (48107413542).jpg"
   },
   {
     "id": "koh-samui__big-buddha-samui",
@@ -634,10 +690,12 @@
     "duration": "",
     "short": "Estatua dorada de 12 metros",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Big%20Buddha%20Samui%20Koh%20Samui%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/9/99/Koh_Samui_Big_Buddha_-_panoramio.jpg",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Koh_Samui_Big_Buddha_-_panoramio.jpg/250px-Koh_Samui_Big_Buddha_-_panoramio.jpg",
+    "imageSource": "commons:File:Koh Samui Big Buddha - panoramio.jpg"
   },
   {
     "id": "surat-thani__khao-sok",
@@ -647,10 +705,12 @@
     "duration": "",
     "short": "Parque Nacional y Lago",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Khao%20Sok%20Surat%20Thani%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Cheow_Lan_Lake%2C_Rainforest%2C_Khao_Sok%2C_Thailand.jpg",
     "lat": 9.0686898,
     "lng": 98.5738024,
-    "geocodeLabel": "อุทยานแห่งชาติเขาสก, อำเภอบ้านตาขุน, จังหวัดสุราษฎร์ธานี, 84230, ประเทศไทย"
+    "geocodeLabel": "อุทยานแห่งชาติเขาสก, อำเภอบ้านตาขุน, จังหวัดสุราษฎร์ธานี, 84230, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Cheow_Lan_Lake%2C_Rainforest%2C_Khao_Sok%2C_Thailand.jpg/330px-Cheow_Lan_Lake%2C_Rainforest%2C_Khao_Sok%2C_Thailand.jpg",
+    "imageSource": "commons:File:Cheow Lan Lake, Rainforest, Khao Sok, Thailand.jpg"
   },
   {
     "id": "krabi__railay-beach",
@@ -660,10 +720,12 @@
     "duration": "",
     "short": "Playa entre acantilados",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Railay%20Beach%20Krabi%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/40/Railay_Beach_5.jpg",
     "lat": 8.0114166,
     "lng": 98.8379541,
-    "geocodeLabel": "Railay Beach Café, Railay Promenade, อ่าวไร่เลย์, อ่าวนาง, อำเภอเมืองกระบี่, จังหวัดกระบี่, 81000, ประเทศไทย"
+    "geocodeLabel": "Railay Beach Café, Railay Promenade, อ่าวไร่เลย์, อ่าวนาง, อำเภอเมืองกระบี่, จังหวัดกระบี่, 81000, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Railay_Beach_5.jpg/330px-Railay_Beach_5.jpg",
+    "imageSource": "commons:File:Railay Beach 5.jpg"
   },
   {
     "id": "krabi__phi-phi-islands",
@@ -673,10 +735,12 @@
     "duration": "",
     "short": "Icono de Tailandia",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Phi%20Phi%20Islands%20Krabi%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/09/Isla_Phi_Phi_Lay%2C_Tailandia%2C_2013-08-19%2C_DD_04.JPG",
     "lat": 7.7522403,
     "lng": 98.7766434,
-    "geocodeLabel": "หมู่เกาะพีพี, ตำบลอ่าวนาง, อำเภอเมืองกระบี่, จังหวัดกระบี่, 81210, ประเทศไทย"
+    "geocodeLabel": "หมู่เกาะพีพี, ตำบลอ่าวนาง, อำเภอเมืองกระบี่, จังหวัดกระบี่, 81210, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Isla_Phi_Phi_Lay%2C_Tailandia%2C_2013-08-19%2C_DD_04.JPG/330px-Isla_Phi_Phi_Lay%2C_Tailandia%2C_2013-08-19%2C_DD_04.JPG",
+    "imageSource": "commons:File:Isla Phi Phi Lay, Tailandia, 2013-08-19, DD 04.JPG"
   },
   {
     "id": "krabi__koh-lanta",
@@ -686,10 +750,12 @@
     "duration": "",
     "short": "Isla tranquila",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Koh%20Lanta%20Krabi%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/5/58/1062-mu-koh-lanta-national-park-05.jpg",
     "lat": 7.6823683,
     "lng": 99.0900688,
-    "geocodeLabel": "เกาะลันตา, กบ.6022, ศาลาด่าน, อำเภอเกาะลันตา, จังหวัดกระบี่, ประเทศไทย"
+    "geocodeLabel": "เกาะลันตา, กบ.6022, ศาลาด่าน, อำเภอเกาะลันตา, จังหวัดกระบี่, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/1062-mu-koh-lanta-national-park-05.jpg/330px-1062-mu-koh-lanta-national-park-05.jpg",
+    "imageSource": "commons:File:1062-mu-koh-lanta-national-park-05.jpg"
   },
   {
     "id": "phuket__old-phuket-town",
@@ -699,10 +765,12 @@
     "duration": "",
     "short": "Casco histórico colonial",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Old%20Phuket%20Town%20Phuket%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/61/Phuket_Town_Thailand-Murals-in-Phang-Nga-Road-04.jpg",
     "lat": 7.8847774,
     "lng": 98.3892206,
-    "geocodeLabel": "เมืองเก่าภูเก็ต, เทศบาลนครภูเก็ต, อำเภอเมืองภูเก็ต, จังหวัดภูเก็ต, 83000, ประเทศไทย"
+    "geocodeLabel": "เมืองเก่าภูเก็ต, เทศบาลนครภูเก็ต, อำเภอเมืองภูเก็ต, จังหวัดภูเก็ต, 83000, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Phuket_Town_Thailand-Murals-in-Phang-Nga-Road-04.jpg/330px-Phuket_Town_Thailand-Murals-in-Phang-Nga-Road-04.jpg",
+    "imageSource": "commons:File:Phuket Town Thailand-Murals-in-Phang-Nga-Road-04.jpg"
   },
   {
     "id": "phuket__lard-yai-market",
@@ -712,10 +780,12 @@
     "duration": "",
     "short": "Mercado de domingo",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Lard%20Yai%20Market%20Phuket%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/7/72/Mariposa_Gazette_1860-10-23_%28IA_cmarm_000241%29.pdf",
     "lat": 7.8847833,
     "lng": 98.3890437,
-    "geocodeLabel": "ถนนคนเดิน หลาดใหญ่, ถนนถลาง, ตำบลตลาดเหนือ, เทศบาลนครภูเก็ต, อำเภอเมืองภูเก็ต, จังหวัดภูเก็ต, 83000, ประเทศไทย"
+    "geocodeLabel": "ถนนคนเดิน หลาดใหญ่, ถนนถลาง, ตำบลตลาดเหนือ, เทศบาลนครภูเก็ต, อำเภอเมืองภูเก็ต, จังหวัดภูเก็ต, 83000, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Mariposa_Gazette_1860-10-23_%28IA_cmarm_000241%29.pdf/page1-217px-Mariposa_Gazette_1860-10-23_%28IA_cmarm_000241%29.pdf.jpg",
+    "imageSource": "commons:File:Mariposa Gazette 1860-10-23 (IA cmarm 000241).pdf"
   },
   {
     "id": "phuket__ko-yao-yai",
@@ -725,10 +795,12 @@
     "duration": "",
     "short": "Isla virgen y auténtica",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Ko%20Yao%20Yai%20Phuket%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Lonely_rocks_between_Ko_Yao_Yai_and_Phuket._-_panoramio.jpg",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Lonely_rocks_between_Ko_Yao_Yai_and_Phuket._-_panoramio.jpg/330px-Lonely_rocks_between_Ko_Yao_Yai_and_Phuket._-_panoramio.jpg",
+    "imageSource": "commons:File:Lonely rocks between Ko Yao Yai and Phuket. - panoramio.jpg"
   },
   {
     "id": "kanchanaburi__cataratas-erawan",
@@ -738,10 +810,14 @@
     "duration": "",
     "short": "7 niveles de cascadas",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Cataratas%20Erawan%20Kanchanaburi%20thailand",
+    "image": "https://live.staticflickr.com/2178/2109051818_4677412c85_b.jpg",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "https://api.openverse.org/v1/images/9a7d2dca-9cc9-4dc8-85eb-51c9fffab0b1/thumb/",
+    "imageSource": "openverse:9a7d2dca-9cc9-4dc8-85eb-51c9fffab0b1",
+    "imageLicense": "by-nc",
+    "imageCreator": "Dani Rubio :)"
   },
   {
     "id": "kanchanaburi__puente-sobre-el-rio-kwai",
@@ -751,10 +827,12 @@
     "duration": "",
     "short": "Monumento de la 2da Guerra",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Puente%20sobre%20el%20R%C3%ADo%20Kwai%20Kanchanaburi%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/24/Bridge_on_the_River_Kwai_-_tourist_plaza.JPG",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Bridge_on_the_River_Kwai_-_tourist_plaza.JPG/330px-Bridge_on_the_River_Kwai_-_tourist_plaza.JPG",
+    "imageSource": "commons:File:Bridge on the River Kwai - tourist plaza.JPG"
   },
   {
     "id": "sukhothai__sukhothai-historical-park",
@@ -764,10 +842,12 @@
     "duration": "",
     "short": "Ruinas de la primera capital",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Sukhothai%20Historical%20Park%20Sukhothai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Ram_Khamhaeng_the_Great_%28I%29.jpg",
     "lat": 17.0203334,
     "lng": 99.7038571,
-    "geocodeLabel": "อุทยานประวัติศาสตร์สุโขทัย, ถนนจรดวิถีถ่อง, บ้านศรีชุม, เมืองเก่า, อำเภอเมืองสุโขทัย, จังหวัดสุโขทัย, 64210, ประเทศไทย"
+    "geocodeLabel": "อุทยานประวัติศาสตร์สุโขทัย, ถนนจรดวิถีถ่อง, บ้านศรีชุม, เมืองเก่า, อำเภอเมืองสุโขทัย, จังหวัดสุโขทัย, 64210, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Ram_Khamhaeng_the_Great_%28I%29.jpg/330px-Ram_Khamhaeng_the_Great_%28I%29.jpg",
+    "imageSource": "commons:File:Ram Khamhaeng the Great (I).jpg"
   },
   {
     "id": "ayutthaya__p-historico-ayutthaya",
@@ -777,10 +857,12 @@
     "duration": "",
     "short": "Ruinas de la antigua capital",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?P.%20Hist%C3%B3rico%20Ayutthaya%20Ayutthaya%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Public_outreach_and_reuse_of_KB_images_via_Wikipedia%2C_2014-2022.pdf",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Public_outreach_and_reuse_of_KB_images_via_Wikipedia%2C_2014-2022.pdf/page1-247px-Public_outreach_and_reuse_of_KB_images_via_Wikipedia%2C_2014-2022.pdf.jpg",
+    "imageSource": "commons:File:Public outreach and reuse of KB images via Wikipedia, 2014-2022.pdf"
   },
   {
     "id": "ayutthaya__ayutthaya-historical-park",
@@ -790,10 +872,12 @@
     "duration": "",
     "short": "Ruinas de la antigua capital",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Ayutthaya%20Historical%20Park%20Ayutthaya%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Ayutthaya_Thailand_2004.jpg",
     "lat": 14.3535461,
     "lng": 100.5622548,
-    "geocodeLabel": "อุทยานประวัติศาสตร์พระนครศรีอยุธยา, ตำบลประตูชัย, เทศบาลนครพระนครศรีอยุธยา, อำเภอพระนครศรีอยุธยา, จังหวัดพระนครศรีอยุธยา, 13000, ประเทศไทย"
+    "geocodeLabel": "อุทยานประวัติศาสตร์พระนครศรีอยุธยา, ตำบลประตูชัย, เทศบาลนครพระนครศรีอยุธยา, อำเภอพระนครศรีอยุธยา, จังหวัดพระนครศรีอยุธยา, 13000, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Ayutthaya_Thailand_2004.jpg/330px-Ayutthaya_Thailand_2004.jpg",
+    "imageSource": "commons:File:Ayutthaya Thailand 2004.jpg"
   },
   {
     "id": "ayutthaya__wat-mahathat",
@@ -803,10 +887,12 @@
     "duration": "",
     "short": "Cabeza de Buda en raíces",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Wat%20Mahathat%20Ayutthaya%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/03/Templo_Mahathat%2C_Ayutthaya%2C_Tailandia%2C_2013-08-23%2C_DD_06.jpg",
     "lat": 14.3563513,
     "lng": 100.5685271,
-    "geocodeLabel": "วัดมหาธาตุ, ถนนชีกุน, กองกำกับ, ประตูจีน, หมู่ที่ 2, ตำบลประตูชัย, เทศบาลนครพระนครศรีอยุธยา, อำเภอพระนครศรีอยุธยา, จังหวัดพระนครศรีอยุธยา, 13000, ประเทศไทย"
+    "geocodeLabel": "วัดมหาธาตุ, ถนนชีกุน, กองกำกับ, ประตูจีน, หมู่ที่ 2, ตำบลประตูชัย, เทศบาลนครพระนครศรีอยุธยา, อำเภอพระนครศรีอยุธยา, จังหวัดพระนครศรีอยุธยา, 13000, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Templo_Mahathat%2C_Ayutthaya%2C_Tailandia%2C_2013-08-23%2C_DD_06.jpg/330px-Templo_Mahathat%2C_Ayutthaya%2C_Tailandia%2C_2013-08-23%2C_DD_06.jpg",
+    "imageSource": "commons:File:Templo Mahathat, Ayutthaya, Tailandia, 2013-08-23, DD 06.jpg"
   },
   {
     "id": "ayutthaya__wat-phra-si-sanphet",
@@ -816,10 +902,12 @@
     "duration": "",
     "short": "Tres estupas reales",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Wat%20Phra%20Si%20Sanphet%20Ayutthaya%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/7/76/Templo_Phra_Si_Sanphet%2C_Ayutthaya%2C_Tailandia%2C_2013-08-23%2C_DD_17.jpg",
     "lat": 14.3559133,
     "lng": 100.5585079,
-    "geocodeLabel": "วัดพระศรีสรรเพชญ์, ถนนศรีสรรเพชญ์, หมู่ที่ 2, ตำบลประตูชัย, เทศบาลนครพระนครศรีอยุธยา, อำเภอพระนครศรีอยุธยา, จังหวัดพระนครศรีอยุธยา, 13000, ประเทศไทย"
+    "geocodeLabel": "วัดพระศรีสรรเพชญ์, ถนนศรีสรรเพชญ์, หมู่ที่ 2, ตำบลประตูชัย, เทศบาลนครพระนครศรีอยุธยา, อำเภอพระนครศรีอยุธยา, จังหวัดพระนครศรีอยุธยา, 13000, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Templo_Phra_Si_Sanphet%2C_Ayutthaya%2C_Tailandia%2C_2013-08-23%2C_DD_17.jpg/250px-Templo_Phra_Si_Sanphet%2C_Ayutthaya%2C_Tailandia%2C_2013-08-23%2C_DD_17.jpg",
+    "imageSource": "commons:File:Templo Phra Si Sanphet, Ayutthaya, Tailandia, 2013-08-23, DD 17.jpg"
   },
   {
     "id": "ayutthaya__wat-chaiwatthanaram",
@@ -829,10 +917,12 @@
     "duration": "",
     "short": "Templo al río, gran sunset",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Wat%20Chaiwatthanaram%20Ayutthaya%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Ayutthaya_Thailand_2004.jpg",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Ayutthaya_Thailand_2004.jpg/330px-Ayutthaya_Thailand_2004.jpg",
+    "imageSource": "commons:File:Ayutthaya Thailand 2004.jpg"
   },
   {
     "id": "ayutthaya__ayutthaya-en-bici",
@@ -842,10 +932,14 @@
     "duration": "",
     "short": "Recorrido práctico y plano",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Ayutthaya%20en%20bici%20Ayutthaya%20thailand",
+    "image": "https://live.staticflickr.com/2464/5833445129_33c18bd726_b.jpg",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "https://api.openverse.org/v1/images/de9f1508-48a9-4814-b495-d1662809ec79/thumb/",
+    "imageSource": "openverse:de9f1508-48a9-4814-b495-d1662809ec79",
+    "imageLicense": "by-nc-sa",
+    "imageCreator": "jose.jhg"
   },
   {
     "id": "ayutthaya__ayutthaya-boat-tour",
@@ -855,10 +949,14 @@
     "duration": "",
     "short": "Paseo fluvial por ruinas",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Ayutthaya%20Boat%20Tour%20Ayutthaya%20thailand",
+    "image": "https://live.staticflickr.com/4221/34624102150_3226baa7c3_b.jpg",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "https://api.openverse.org/v1/images/d433eeb4-b394-4e13-8e72-f7a206f46539/thumb/",
+    "imageSource": "openverse:d433eeb4-b394-4e13-8e72-f7a206f46539",
+    "imageLicense": "by-nc-sa",
+    "imageCreator": "UweBKK (α 77 on )"
   },
   {
     "id": "kanchanaburi__erawan-national-park-cataratas-erawan",
@@ -871,7 +969,9 @@
     "image": "https://source.unsplash.com/featured/?Erawan%20National%20Park%20(Cataratas%20Erawan)%20Kanchanaburi%20thailand",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "kanchanaburi__puente-sobre-el-rio-kwai-2",
@@ -881,10 +981,12 @@
     "duration": "",
     "short": "Ícono de la II Guerra",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Puente%20sobre%20el%20R%C3%ADo%20Kwai%20Kanchanaburi%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/24/Bridge_on_the_River_Kwai_-_tourist_plaza.JPG",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Bridge_on_the_River_Kwai_-_tourist_plaza.JPG/330px-Bridge_on_the_River_Kwai_-_tourist_plaza.JPG",
+    "imageSource": "commons:File:Bridge on the River Kwai - tourist plaza.JPG"
   },
   {
     "id": "kanchanaburi__death-railway-tren-escenico",
@@ -897,7 +999,9 @@
     "image": "https://source.unsplash.com/featured/?Death%20Railway%20(tren%20esc%C3%A9nico)%20Kanchanaburi%20thailand",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "kanchanaburi__jeath-war-museum",
@@ -907,10 +1011,12 @@
     "duration": "",
     "short": "Contexto de la guerra",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?JEATH%20War%20Museum%20Kanchanaburi%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Kanchanaburi_World_War_II_Museum.jpg",
     "lat": 14.0163017,
     "lng": 99.5305998,
-    "geocodeLabel": "พิพิธภัณฑ์อักษะเชลยศึก, ถนนกำแพงเมือง, กาญจนบุรี, ปากแพรก, อำเภอเมืองกาญจนบุรี, จังหวัดกาญจนบุรี, 71000, ประเทศไทย"
+    "geocodeLabel": "พิพิธภัณฑ์อักษะเชลยศึก, ถนนกำแพงเมือง, กาญจนบุรี, ปากแพรก, อำเภอเมืองกาญจนบุรี, จังหวัดกาญจนบุรี, 71000, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Kanchanaburi_World_War_II_Museum.jpg/330px-Kanchanaburi_World_War_II_Museum.jpg",
+    "imageSource": "commons:File:Kanchanaburi World War II Museum.jpg"
   },
   {
     "id": "kanchanaburi__hellfire-pass-memorial",
@@ -920,10 +1026,12 @@
     "duration": "",
     "short": "Sendero conmemorativo",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Hellfire%20Pass%20Memorial%20Kanchanaburi%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/5/55/Hellfire_pass_2023.jpg",
     "lat": 14.3560337,
     "lng": 98.9523444,
-    "geocodeLabel": "Hellfire Pass, Hellfire Pass Cutting, อำเภอไทรโยค, จังหวัดกาญจนบุรี, ประเทศไทย"
+    "geocodeLabel": "Hellfire Pass, Hellfire Pass Cutting, อำเภอไทรโยค, จังหวัดกาญจนบุรี, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Hellfire_pass_2023.jpg/250px-Hellfire_pass_2023.jpg",
+    "imageSource": "commons:File:Hellfire pass 2023.jpg"
   },
   {
     "id": "kanchanaburi__river-kwai-cruise-opcional",
@@ -936,7 +1044,9 @@
     "image": "https://source.unsplash.com/featured/?River%20Kwai%20Cruise%20(opcional)%20Kanchanaburi%20thailand",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "chiang-mai__wat-phra-that-doi-suthep-2",
@@ -991,10 +1101,12 @@
     "duration": "",
     "short": "Murallas, templos y cafés",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Chiang%20Mai%20Old%20City%20(a%20pie)%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Dictionary_of_the_Swatow_dialect.djvu",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Dictionary_of_the_Swatow_dialect.djvu/page1-241px-Dictionary_of_the_Swatow_dialect.djvu.jpg",
+    "imageSource": "commons:File:Dictionary of the Swatow dialect.djvu"
   },
   {
     "id": "chiang-mai__chiang-mai-night-bazaar",
@@ -1004,10 +1116,12 @@
     "duration": "",
     "short": "Puestos, comida y compras",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Chiang%20Mai%20Night%20Bazaar%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/43/CHIANG_MAI_NIGHT_BAZAAR_THAILAND_FEB_2012_%286869571256%29.jpg",
     "lat": 18.784441,
     "lng": 99.0003797,
-    "geocodeLabel": "Chiang Mai Night Bazaar, ถนนช้างคลาน, เทศบาลนครเชียงใหม่, ฟ้าฮ่าม, อำเภอเมืองเชียงใหม่, จังหวัดเชียงใหม่, 55520, ประเทศไทย"
+    "geocodeLabel": "Chiang Mai Night Bazaar, ถนนช้างคลาน, เทศบาลนครเชียงใหม่, ฟ้าฮ่าม, อำเภอเมืองเชียงใหม่, จังหวัดเชียงใหม่, 55520, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/CHIANG_MAI_NIGHT_BAZAAR_THAILAND_FEB_2012_%286869571256%29.jpg/330px-CHIANG_MAI_NIGHT_BAZAAR_THAILAND_FEB_2012_%286869571256%29.jpg",
+    "imageSource": "commons:File:CHIANG MAI NIGHT BAZAAR THAILAND FEB 2012 (6869571256).jpg"
   },
   {
     "id": "chiang-mai__sunday-walking-street-tha-pae",
@@ -1017,10 +1131,12 @@
     "duration": "",
     "short": "El mejor mercado semanal",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Sunday%20Walking%20Street%20(Tha%20Pae)%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/dd/ThaPaeWalkingStreet3.jpg",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/ThaPaeWalkingStreet3.jpg/330px-ThaPaeWalkingStreet3.jpg",
+    "imageSource": "commons:File:ThaPaeWalkingStreet3.jpg"
   },
   {
     "id": "chiang-mai__monk-chat-wat-suan-dok-otros",
@@ -1033,7 +1149,9 @@
     "image": "https://source.unsplash.com/featured/?Monk%20Chat%20(Wat%20Suan%20Dok%20%2F%20otros)%20Chiang%20Mai%20thailand",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "cerca-de-chiang-mai__elephant-nature-park-santuario-etico",
@@ -1046,7 +1164,9 @@
     "image": "https://source.unsplash.com/featured/?Elephant%20Nature%20Park%20(santuario%20%C3%A9tico)%20Cerca%20de%20Chiang%20Mai%20thailand",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "cerca-de-chiang-mai__sticky-waterfall-bua-thong",
@@ -1056,10 +1176,12 @@
     "duration": "",
     "short": "Cascada “antideslizante”",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Sticky%20Waterfall%20(Bua%20Thong)%20Cerca%20de%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/3f/%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%95%E0%B8%81%E0%B8%AB%E0%B8%99%E0%B8%B6%E0%B9%88%E0%B8%87%E0%B9%80%E0%B8%AB%E0%B8%99%E0%B8%B5%E0%B8%A2%E0%B8%A7_%E0%B9%91_-_One_sticky_waterfall_1.jpg",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%95%E0%B8%81%E0%B8%AB%E0%B8%99%E0%B8%B6%E0%B9%88%E0%B8%87%E0%B9%80%E0%B8%AB%E0%B8%99%E0%B8%B5%E0%B8%A2%E0%B8%A7_%E0%B9%91_-_One_sticky_waterfall_1.jpg/250px-%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%95%E0%B8%81%E0%B8%AB%E0%B8%99%E0%B8%B6%E0%B9%88%E0%B8%87%E0%B9%80%E0%B8%AB%E0%B8%99%E0%B8%B5%E0%B8%A2%E0%B8%A7_%E0%B9%91_-_One_sticky_waterfall_1.jpg",
+    "imageSource": "commons:File:น้ำตกหนึ่งเหนียว ๑ - One sticky waterfall 1.jpg"
   },
   {
     "id": "cerca-de-chiang-mai__doi-inthanon-national-park",
@@ -1069,10 +1191,12 @@
     "duration": "",
     "short": "Cima de Tailandia + cascadas",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Doi%20Inthanon%20National%20Park%20Cerca%20de%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/61/Minla_strigula_-_Doi_Inthanon.jpg",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Minla_strigula_-_Doi_Inthanon.jpg/330px-Minla_strigula_-_Doi_Inthanon.jpg",
+    "imageSource": "commons:File:Minla strigula - Doi Inthanon.jpg"
   },
   {
     "id": "cerca-de-chiang-mai__mae-kampong-village",
@@ -1082,10 +1206,12 @@
     "duration": "",
     "short": "Aldea de montaña auténtica",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Mae%20Kampong%20Village%20Cerca%20de%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/80/Wat_Khantha_Phrueksa_-_2017-07-09_%28002%29.jpg",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wat_Khantha_Phrueksa_-_2017-07-09_%28002%29.jpg/250px-Wat_Khantha_Phrueksa_-_2017-07-09_%28002%29.jpg",
+    "imageSource": "commons:File:Wat Khantha Phrueksa - 2017-07-09 (002).jpg"
   },
   {
     "id": "chiang-mai__clase-de-cocina-tailandesa",
@@ -1095,10 +1221,12 @@
     "duration": "",
     "short": "Cocina local desde cero",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Clase%20de%20cocina%20tailandesa%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/84/OJ_L_41_of_2013_-_ES_Spanish.pdf",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/OJ_L_41_of_2013_-_ES_Spanish.pdf/page1-226px-OJ_L_41_of_2013_-_ES_Spanish.pdf.jpg",
+    "imageSource": "commons:File:OJ L 41 of 2013 - ES Spanish.pdf"
   },
   {
     "id": "chiang-mai__street-food-chiang-mai",
@@ -1108,10 +1236,12 @@
     "duration": "",
     "short": "Sabores del norte",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Street%20Food%20Chiang%20Mai%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/9/91/Street_Food_Stall%2C_Chiang_Mai%2C_Thailand_%287113967189%29.jpg",
     "lat": 18.7969091,
     "lng": 98.9830406,
-    "geocodeLabel": "Jim's restaurant (local Street restaurant), ถนนมณีนพรัตน์ ซอย 2, เทศบาลนครเชียงใหม่, ฟ้าฮ่าม, อำเภอเมืองเชียงใหม่, จังหวัดเชียงใหม่, 55520, ประเทศไทย"
+    "geocodeLabel": "Jim's restaurant (local Street restaurant), ถนนมณีนพรัตน์ ซอย 2, เทศบาลนครเชียงใหม่, ฟ้าฮ่าม, อำเภอเมืองเชียงใหม่, จังหวัดเชียงใหม่, 55520, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Street_Food_Stall%2C_Chiang_Mai%2C_Thailand_%287113967189%29.jpg/330px-Street_Food_Stall%2C_Chiang_Mai%2C_Thailand_%287113967189%29.jpg",
+    "imageSource": "commons:File:Street Food Stall, Chiang Mai, Thailand (7113967189).jpg"
   },
   {
     "id": "phuket__phuket-old-town",
@@ -1121,10 +1251,12 @@
     "duration": "",
     "short": "Casco histórico sino-portugués",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Phuket%20Old%20Town%20Phuket%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/61/Phuket_Town_Thailand-Murals-in-Phang-Nga-Road-04.jpg",
     "lat": 7.8847774,
     "lng": 98.3892206,
-    "geocodeLabel": "เมืองเก่าภูเก็ต, เทศบาลนครภูเก็ต, อำเภอเมืองภูเก็ต, จังหวัดภูเก็ต, 83000, ประเทศไทย"
+    "geocodeLabel": "เมืองเก่าภูเก็ต, เทศบาลนครภูเก็ต, อำเภอเมืองภูเก็ต, จังหวัดภูเก็ต, 83000, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Phuket_Town_Thailand-Murals-in-Phang-Nga-Road-04.jpg/330px-Phuket_Town_Thailand-Murals-in-Phang-Nga-Road-04.jpg",
+    "imageSource": "commons:File:Phuket Town Thailand-Murals-in-Phang-Nga-Road-04.jpg"
   },
   {
     "id": "phuket__karon-beach",
@@ -1134,10 +1266,12 @@
     "duration": "",
     "short": "Playa amplia y relajada",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Karon%20Beach%20Phuket%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Sunset_at_Karon_Beach%2C_Phuket%2C_Thailand_4.JPG",
     "lat": 7.8439574,
     "lng": 98.2934247,
-    "geocodeLabel": "หาดกะรน, กะรน, ตำบลกะรน, อำเภอเมืองภูเก็ต, จังหวัดภูเก็ต, ประเทศไทย"
+    "geocodeLabel": "หาดกะรน, กะรน, ตำบลกะรน, อำเภอเมืองภูเก็ต, จังหวัดภูเก็ต, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Sunset_at_Karon_Beach%2C_Phuket%2C_Thailand_4.JPG/330px-Sunset_at_Karon_Beach%2C_Phuket%2C_Thailand_4.JPG",
+    "imageSource": "commons:File:Sunset at Karon Beach, Phuket, Thailand 4.JPG"
   },
   {
     "id": "phuket__kata-beach",
@@ -1147,10 +1281,12 @@
     "duration": "",
     "short": "Playa escénica y caminable",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Kata%20Beach%20Phuket%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Phuket_-_Kata_Beach_001.jpg",
     "lat": 7.8193599,
     "lng": 98.29805,
-    "geocodeLabel": "หาดกะตะ, กะตะใสยวน, Ban Kata Kiri, ตำบลกะรน, อำเภอเมืองภูเก็ต, จังหวัดภูเก็ต, 83100, ประเทศไทย"
+    "geocodeLabel": "หาดกะตะ, กะตะใสยวน, Ban Kata Kiri, ตำบลกะรน, อำเภอเมืองภูเก็ต, จังหวัดภูเก็ต, 83100, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Phuket_-_Kata_Beach_001.jpg/330px-Phuket_-_Kata_Beach_001.jpg",
+    "imageSource": "commons:File:Phuket - Kata Beach 001.jpg"
   },
   {
     "id": "phuket__patong-beach-noche",
@@ -1160,10 +1296,14 @@
     "duration": "",
     "short": "Zona más movida",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Patong%20Beach%20(noche)%20Phuket%20thailand",
+    "image": "https://live.staticflickr.com/7218/7186708869_290f90d4d2_b.jpg",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "https://api.openverse.org/v1/images/97333dcb-30ff-4729-ab62-913176c15820/thumb/",
+    "imageSource": "openverse:97333dcb-30ff-4729-ab62-913176c15820",
+    "imageLicense": "by-nc-sa",
+    "imageCreator": "jose.jhg"
   },
   {
     "id": "phuket__big-buddha-viewpoint",
@@ -1173,10 +1313,12 @@
     "duration": "",
     "short": "Vistas panorámicas",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Big%20Buddha%20Viewpoint%20Phuket%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Big_Buddha_from_Windmill_Viewpoint.jpg",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Big_Buddha_from_Windmill_Viewpoint.jpg/330px-Big_Buddha_from_Windmill_Viewpoint.jpg",
+    "imageSource": "commons:File:Big Buddha from Windmill Viewpoint.jpg"
   },
   {
     "id": "phi-phi__ko-phi-phi-day-trip",
@@ -1186,10 +1328,12 @@
     "duration": "",
     "short": "Bahías icónicas",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Ko%20Phi%20Phi%20(day%20trip)%20Phi%20Phi%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Phi_Psi_Cli_%28electronic_resource%29_%28IA_phipsicli1933elon%29.pdf",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Phi_Psi_Cli_%28electronic_resource%29_%28IA_phipsicli1933elon%29.pdf/page1-224px-Phi_Psi_Cli_%28electronic_resource%29_%28IA_phipsicli1933elon%29.pdf.jpg",
+    "imageSource": "commons:File:Phi Psi Cli (electronic resource) (IA phipsicli1933elon).pdf"
   },
   {
     "id": "ko-yao-yai__ko-yao-yai",
@@ -1199,10 +1343,12 @@
     "duration": "",
     "short": "Isla tranquila y auténtica",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Ko%20Yao%20Yai%20Ko%20Yao%20Yai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Koh_Yao_Yai_Peer%2C_Tambon_Ko_Yao_Yai%2C_Thailand_%28Unsplash%29.jpg",
     "lat": 8.070531,
     "lng": 98.5857298,
-    "geocodeLabel": "เกาะยาวใหญ่, จังหวัดพังงา, 82160, ประเทศไทย"
+    "geocodeLabel": "เกาะยาวใหญ่, จังหวัดพังงา, 82160, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Koh_Yao_Yai_Peer%2C_Tambon_Ko_Yao_Yai%2C_Thailand_%28Unsplash%29.jpg/330px-Koh_Yao_Yai_Peer%2C_Tambon_Ko_Yao_Yai%2C_Thailand_%28Unsplash%29.jpg",
+    "imageSource": "commons:File:Koh Yao Yai Peer, Tambon Ko Yao Yai, Thailand (Unsplash).jpg"
   },
   {
     "id": "phuket__island-hopping-desde-phuket",
@@ -1215,7 +1361,9 @@
     "image": "https://source.unsplash.com/featured/?Island%20Hopping%20desde%20Phuket%20Phuket%20thailand",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "railay__railay-beach-west-east",
@@ -1225,10 +1373,12 @@
     "duration": "",
     "short": "Playa + acantilados",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Railay%20Beach%20(West%20%26%20East)%20Railay%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Krabi%2C_Railay_West_Beach_%286218177231%29.jpg",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Krabi%2C_Railay_West_Beach_%286218177231%29.jpg/330px-Krabi%2C_Railay_West_Beach_%286218177231%29.jpg",
+    "imageSource": "commons:File:Krabi, Railay West Beach (6218177231).jpg"
   },
   {
     "id": "railay__phra-nang-cave-beach",
@@ -1238,10 +1388,12 @@
     "duration": "",
     "short": "Playa escénica",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Phra%20Nang%20Cave%20Beach%20Railay%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Phra_Nang_Nai_Cave.jpg",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Phra_Nang_Nai_Cave.jpg/330px-Phra_Nang_Nai_Cave.jpg",
+    "imageSource": "commons:File:Phra Nang Nai Cave.jpg"
   },
   {
     "id": "krabi__four-islands-tour",
@@ -1251,10 +1403,12 @@
     "duration": "",
     "short": "Islas + snorkeling",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Four%20Islands%20Tour%20Krabi%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/ed/A_tour_thro%27_the_whole_island_of_Great_Britain._Divided_into_circuits_or_journeys_giving_a_particular_and_entertaining_account_of_whatever_is_curious_and_worth_observation_..._%28IA_b3052796x_0004%29.pdf",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/A_tour_thro%27_the_whole_island_of_Great_Britain._Divided_into_circuits_or_journeys_giving_a_particular_and_entertaining_account_of_whatever_is_curious_and_worth_observation_..._%28IA_b3052796x_0004%29.pdf/page1-184px-thumbnail.pdf.jpg",
+    "imageSource": "commons:File:A tour thro' the whole island of Great Britain. Divided into circuits or journeys giving a particular and entertaining account of whatever is curious and worth observation ... (IA b3052796x 0004).pdf"
   },
   {
     "id": "krabi__ao-nang",
@@ -1264,10 +1418,12 @@
     "duration": "",
     "short": "Base práctica",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Ao%20Nang%20Krabi%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/9/94/Macaca_fascicularis_Ao_Nang_5.jpg",
     "lat": 7.7211733,
     "lng": 98.7655426,
-    "geocodeLabel": "ตำบลอ่าวนาง, อำเภอเมืองกระบี่, จังหวัดกระบี่, 81210, ประเทศไทย"
+    "geocodeLabel": "ตำบลอ่าวนาง, อำเภอเมืองกระบี่, จังหวัดกระบี่, 81210, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Macaca_fascicularis_Ao_Nang_5.jpg/330px-Macaca_fascicularis_Ao_Nang_5.jpg",
+    "imageSource": "commons:File:Macaca fascicularis Ao Nang 5.jpg"
   },
   {
     "id": "bangkok__so-thai-spa-bangkok",
@@ -1277,10 +1433,12 @@
     "duration": "",
     "short": "Spa premium de masaje tailandés",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?So%20Thai%20Spa%20Bangkok%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f5/So_Thai_Spa_Bangkok_%28252701005%29.jpeg",
     "lat": 13.7275531,
     "lng": 100.5242139,
-    "geocodeLabel": "So Thai Spa, 181/17;181/16;181/15;181/18, ถนนสุรวงศ์, ปราโมทย์, แขวงสุริยวงศ์, เขตบางรัก, กรุงเทพมหานคร, 10500, ประเทศไทย"
+    "geocodeLabel": "So Thai Spa, 181/17;181/16;181/15;181/18, ถนนสุรวงศ์, ปราโมทย์, แขวงสุริยวงศ์, เขตบางรัก, กรุงเทพมหานคร, 10500, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/So_Thai_Spa_Bangkok_%28252701005%29.jpeg/330px-So_Thai_Spa_Bangkok_%28252701005%29.jpeg",
+    "imageSource": "commons:File:So Thai Spa Bangkok (252701005).jpeg"
   },
   {
     "id": "bangkok__amaranth-spa-kimpton-maa-lai",
@@ -1293,7 +1451,9 @@
     "image": "https://source.unsplash.com/featured/?Amaranth%20Spa%20%E2%80%93%20Kimpton%20Maa-Lai%20Bangkok%20thailand",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "bangkok__bangkok-thai-cooking-academy",
@@ -1303,10 +1463,12 @@
     "duration": "",
     "short": "Clase de cocina tailandesa con mercado",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Bangkok%20Thai%20Cooking%20Academy%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/64/Federal_Register_1964-04-_Vol_29_Index_%28IA_sim_federal-register-find_1964-04_29_index%29.pdf",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Federal_Register_1964-04-_Vol_29_Index_%28IA_sim_federal-register-find_1964-04_29_index%29.pdf/page1-233px-Federal_Register_1964-04-_Vol_29_Index_%28IA_sim_federal-register-find_1964-04_29_index%29.pdf.jpg",
+    "imageSource": "commons:File:Federal Register 1964-04- Vol 29 Index (IA sim federal-register-find 1964-04 29 index).pdf"
   },
   {
     "id": "chiang-mai__antique-massage-chiang-mai",
@@ -1319,7 +1481,9 @@
     "image": "https://source.unsplash.com/featured/?Antique%20Massage%20Chiang%20Mai%20Chiang%20Mai%20thailand",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "chiang-mai__calm-massage-and-spa",
@@ -1329,10 +1493,12 @@
     "duration": "",
     "short": "Spa relajante y moderno",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Calm%20Massage%20and%20Spa%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/7/75/Irish_journal_of_medical_science_%28IA_s3irishjournalof135roya%29.pdf",
     "lat": 18.7897022,
     "lng": 98.9841997,
-    "geocodeLabel": "Calm Massage and Spa, ถนนอินทวโรรส, เทศบาลนครเชียงใหม่, ฟ้าฮ่าม, อำเภอเมืองเชียงใหม่, จังหวัดเชียงใหม่, 55520, ประเทศไทย"
+    "geocodeLabel": "Calm Massage and Spa, ถนนอินทวโรรส, เทศบาลนครเชียงใหม่, ฟ้าฮ่าม, อำเภอเมืองเชียงใหม่, จังหวัดเชียงใหม่, 55520, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Irish_journal_of_medical_science_%28IA_s3irishjournalof135roya%29.pdf/page1-205px-Irish_journal_of_medical_science_%28IA_s3irishjournalof135roya%29.pdf.jpg",
+    "imageSource": "commons:File:Irish journal of medical science (IA s3irishjournalof135roya).pdf"
   },
   {
     "id": "chiang-mai__baan-thai-cookery-school",
@@ -1345,7 +1511,9 @@
     "image": "https://source.unsplash.com/featured/?Baan%20Thai%20Cookery%20School%20Chiang%20Mai%20thailand",
     "lat": 18.7890909,
     "lng": 98.9910256,
-    "geocodeLabel": "Baan Thai Cookery School, ถนนราชดำเนิน ซอย 5, เทศบาลนครเชียงใหม่, ฟ้าฮ่าม, อำเภอเมืองเชียงใหม่, จังหวัดเชียงใหม่, 55520, ประเทศไทย"
+    "geocodeLabel": "Baan Thai Cookery School, ถนนราชดำเนิน ซอย 5, เทศบาลนครเชียงใหม่, ฟ้าฮ่าม, อำเภอเมืองเชียงใหม่, จังหวัดเชียงใหม่, 55520, ประเทศไทย",
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "chiang-mai__cabalgata-rural-en-chiang-mai",
@@ -1358,7 +1526,9 @@
     "image": "https://source.unsplash.com/featured/?Cabalgata%20rural%20en%20Chiang%20Mai%20Chiang%20Mai%20thailand",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "phuket__spa-burasari-phuket",
@@ -1371,7 +1541,9 @@
     "image": "https://source.unsplash.com/featured/?Spa%20Burasari%20Phuket%20Phuket%20thailand",
     "lat": 7.8879283,
     "lng": 98.2929442,
-    "geocodeLabel": "Spa Burasari, 18/110, ถนนร่วมใจ, ป่าตอง, ตำบลป่าตอง, อำเภอกะทู้, จังหวัดภูเก็ต, 83150, ประเทศไทย"
+    "geocodeLabel": "Spa Burasari, 18/110, ถนนร่วมใจ, ป่าตอง, ตำบลป่าตอง, อำเภอกะทู้, จังหวัดภูเก็ต, 83150, ประเทศไทย",
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "phuket__sama-onsen-massage",
@@ -1384,7 +1556,9 @@
     "image": "https://source.unsplash.com/featured/?SAMA%20Onsen%20%26%20Massage%20Phuket%20thailand",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "phuket__phuket-thai-cooking-class-by-chef-vj",
@@ -1397,7 +1571,9 @@
     "image": "https://source.unsplash.com/featured/?Phuket%20Thai%20Cooking%20Class%20by%20Chef%20VJ%20Phuket%20thailand",
     "lat": 7.819598,
     "lng": 98.3069523,
-    "geocodeLabel": "Phuket Thai Cooking Class by Chef VJ, ถนนปฏัก, บ้านกะรน, กะรน, ตำบลกะรน, อำเภอเมืองภูเก็ต, จังหวัดภูเก็ต, 83100, ประเทศไทย"
+    "geocodeLabel": "Phuket Thai Cooking Class by Chef VJ, ถนนปฏัก, บ้านกะรน, กะรน, ตำบลกะรน, อำเภอเมืองภูเก็ต, จังหวัดภูเก็ต, 83100, ประเทศไทย",
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "phuket__cabalgata-costera-en-phuket",
@@ -1410,7 +1586,9 @@
     "image": "https://source.unsplash.com/featured/?Cabalgata%20costera%20en%20Phuket%20Phuket%20thailand",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "bangkok__column-bangkok",
@@ -1420,10 +1598,12 @@
     "duration": "",
     "short": "Hotel base en Sukhumvit",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Column%20Bangkok%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Bangkok_wat_suthat_002.JPG",
     "lat": 13.7330179,
     "lng": 100.5603839,
-    "geocodeLabel": "Aesops Greek Restaurant & Rooftop, FL25, Column Bangkok Hotel, ถนนรัชดาภิเษก, สุขุมวิท, แขวงคลองเตย, เขตคลองเตย, กรุงเทพมหานคร, 10110, ประเทศไทย"
+    "geocodeLabel": "Aesops Greek Restaurant & Rooftop, FL25, Column Bangkok Hotel, ถนนรัชดาภิเษก, สุขุมวิท, แขวงคลองเตย, เขตคลองเตย, กรุงเทพมหานคร, 10110, ประเทศไทย",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Bangkok_wat_suthat_002.JPG/330px-Bangkok_wat_suthat_002.JPG",
+    "imageSource": "commons:File:Bangkok wat suthat 002.JPG"
   },
   {
     "id": "chiang-mai__vieng-thapae-resort-2",
@@ -1436,7 +1616,9 @@
     "image": "https://source.unsplash.com/featured/?Vieng%20Thapae%20Resort%20Chiang%20Mai%20thailand",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "phuket-kamala__novotel-phuket-kamala-beach",
@@ -1449,7 +1631,9 @@
     "image": "https://source.unsplash.com/featured/?Novotel%20Phuket%20Kamala%20Beach%20Phuket%20(Kamala)%20thailand",
     "lat": 7.9634738,
     "lng": 98.2835136,
-    "geocodeLabel": "Novotel Phuket Kamala Beach, 4030, หาดสุรินทร์, บ้านบางเทา, ตำบลกมลา, ศรีสุนทร, อำเภอกะทู้, จังหวัดภูเก็ต, ประเทศไทย"
+    "geocodeLabel": "Novotel Phuket Kamala Beach, 4030, หาดสุรินทร์, บ้านบางเทา, ตำบลกมลา, ศรีสุนทร, อำเภอกะทู้, จังหวัดภูเก็ต, ประเทศไทย",
+    "thumb": "/placeholder.svg",
+    "imageSource": "missing"
   },
   {
     "id": "bangkok__vuelo-a-chiang-mai",
@@ -1459,10 +1643,14 @@
     "duration": "",
     "short": "Bangkok a Chiang Mai",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Vuelo%20a%20Chiang%20Mai%20Bangkok%20thailand",
+    "image": "https://live.staticflickr.com/195/475415687_666a24dc0f.jpg",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "https://api.openverse.org/v1/images/257c05f6-9b3a-4c1d-95e5-d7271ccb1974/thumb/",
+    "imageSource": "openverse:257c05f6-9b3a-4c1d-95e5-d7271ccb1974",
+    "imageLicense": "by-nc",
+    "imageCreator": "chinota"
   },
   {
     "id": "chiang-mai__vuelo-a-phuket",
@@ -1472,10 +1660,12 @@
     "duration": "",
     "short": "Chiang Mai a Phuket",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Vuelo%20a%20Phuket%20Chiang%20Mai%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/3c/One-Two-Go_Airlines_HS-OMG_wreckage.jpg",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/One-Two-Go_Airlines_HS-OMG_wreckage.jpg/330px-One-Two-Go_Airlines_HS-OMG_wreckage.jpg",
+    "imageSource": "commons:File:One-Two-Go Airlines HS-OMG wreckage.jpg"
   },
   {
     "id": "phuket__vuelo-a-bangkok",
@@ -1485,10 +1675,12 @@
     "duration": "",
     "short": "Phuket a Bangkok",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Vuelo%20a%20Bangkok%20Phuket%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/3c/One-Two-Go_Airlines_HS-OMG_wreckage.jpg",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/One-Two-Go_Airlines_HS-OMG_wreckage.jpg/330px-One-Two-Go_Airlines_HS-OMG_wreckage.jpg",
+    "imageSource": "commons:File:One-Two-Go Airlines HS-OMG wreckage.jpg"
   },
   {
     "id": "bangkok__vuelo-a-estambul",
@@ -1498,9 +1690,11 @@
     "duration": "",
     "short": "Bangkok a Estambul",
     "long": "",
-    "image": "https://source.unsplash.com/featured/?Vuelo%20a%20Estambul%20Bangkok%20thailand",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Los_dedos_hu%C3%A9spedes%2C_o%2C_Fiebre_de_celos_-_comedia_en_un_acto_y_en_verso_%28IA_losdedoshuespede4256past%29.pdf",
     "lat": null,
     "lng": null,
-    "geocodeLabel": null
+    "geocodeLabel": null,
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Los_dedos_hu%C3%A9spedes%2C_o%2C_Fiebre_de_celos_-_comedia_en_un_acto_y_en_verso_%28IA_losdedoshuespede4256past%29.pdf/page1-189px-Los_dedos_hu%C3%A9spedes%2C_o%2C_Fiebre_de_celos_-_comedia_en_un_acto_y_en_verso_%28IA_losdedoshuespede4256past%29.pdf.jpg",
+    "imageSource": "commons:File:Los dedos huéspedes, o, Fiebre de celos - comedia en un acto y en verso (IA losdedoshuespede4256past).pdf"
   }
 ]
