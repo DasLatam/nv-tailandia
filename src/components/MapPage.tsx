@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import MapView from "./MapView";
 import Sidebar from "./Sidebar";
 import PlaceDrawer from "./PlaceDrawer";
@@ -14,6 +14,8 @@ export type Place = {
   short: string;
   long: string;
   image: string;
+  thumb?: string;
+  imageSource?: string;
   lat: number | null;
   lng: number | null;
 };
@@ -23,6 +25,9 @@ export default function MapPage() {
   const [visibleIds, setVisibleIds] = useState<Set<string> | null>(null);
   const [selected, setSelected] = useState<Place | null>(null);
   const [query, setQuery] = useState("");
+
+  // Leaflet map instance (client only)
+  const mapRef = useRef<any>(null);
 
   useEffect(() => {
     fetch("/places.json")
@@ -35,7 +40,7 @@ export default function MapPage() {
     const q = query.trim().toLowerCase();
     let base = places;
 
-    // visibleIds null => mostrar todo (zoom país)
+    // visibleIds null => mostrar todo (zoom out)
     if (visibleIds) base = base.filter((p) => visibleIds.has(p.id));
     if (!q) return base;
 
@@ -50,6 +55,15 @@ export default function MapPage() {
     [places]
   );
 
+  function openDetail(p: Place, opts?: { fly?: boolean }) {
+    setSelected(p);
+
+    if (opts?.fly && mapRef.current && typeof p.lat === "number" && typeof p.lng === "number") {
+      const targetZoom = Math.max(mapRef.current.getZoom?.() ?? 6, 12);
+      mapRef.current.flyTo([p.lat, p.lng], targetZoom, { animate: true, duration: 0.8 });
+    }
+  }
+
   return (
     <div className="h-screen w-screen flex overflow-hidden bg-white">
       <Sidebar
@@ -57,17 +71,19 @@ export default function MapPage() {
         shown={shown.length}
         query={query}
         setQuery={setQuery}
-        items={shown}
-        onPick={(p) => setSelected(p)}
+        items={shown as any}
+        onPick={(p) => openDetail(p, { fly: true })}
       />
 
       <div className="flex-1 relative">
         <MapView
-          places={mappable}
-          onPick={(p) => setSelected(p)}
+          places={mappable as any}
           onVisibleIdsChange={(ids) => setVisibleIds(ids)}
+          onMapReady={(map) => (mapRef.current = map)}
+          onOpenDetail={(p) => openDetail(p, { fly: false })}
         />
-        <PlaceDrawer place={selected} onClose={() => setSelected(null)} />
+
+        <PlaceDrawer place={selected as any} onClose={() => setSelected(null)} />
       </div>
     </div>
   );

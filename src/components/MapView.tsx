@@ -7,6 +7,7 @@ import {
   TileLayer,
   Marker,
   Popup,
+  Tooltip,
   useMap,
   useMapEvents,
 } from "react-leaflet";
@@ -15,8 +16,9 @@ import type { Place } from "./MapPage";
 
 type Props = {
   places: Place[];
-  onPick: (p: Place) => void;
   onVisibleIdsChange: (ids: Set<string> | null) => void;
+  onOpenDetail: (p: Place) => void;
+  onMapReady: (map: any) => void;
 };
 
 function FixLeafletIcons() {
@@ -61,12 +63,10 @@ function BoundsWatcher({
 
   const update = () => {
     const z = map.getZoom();
-
     if (z <= 6) {
       onVisibleIdsChange(null);
       return;
     }
-
     const b = map.getBounds();
     const ids = new Set<string>();
     for (const p of places) {
@@ -80,7 +80,7 @@ function BoundsWatcher({
   return null;
 }
 
-export default function MapView({ places, onPick, onVisibleIdsChange }: Props) {
+export default function MapView({ places, onVisibleIdsChange, onOpenDetail, onMapReady }: Props) {
   const center: [number, number] = [13.7563, 100.5018]; // Bangkok
 
   const markers = useMemo(
@@ -98,6 +98,7 @@ export default function MapView({ places, onPick, onVisibleIdsChange }: Props) {
       dragging={true}
       touchZoom={true}
       zoomControl={true}
+      whenReady={(e) => onMapReady(e.target)}
     >
       <FixLeafletIcons />
       <InvalidateSizeOnMount />
@@ -111,42 +112,71 @@ export default function MapView({ places, onPick, onVisibleIdsChange }: Props) {
       {markers.map((p: any) => {
         const thumb = p.thumb || p.image || "/placeholder.svg";
         return (
-          <Marker
-            key={p.id}
-            position={[p.lat as number, p.lng as number]}
-            eventHandlers={{
-              click: () => onPick(p), // click abre drawer
-            }}
-          >
-            <Popup>
-              <div style={{ width: 280 }}>
-                <div style={{ fontWeight: 700, marginBottom: 4 }}>{p.name}</div>
+          <Marker key={p.id} position={[p.lat as number, p.lng as number]}>
+            {/* POPUP CHICO: hover/rollover */}
+            <Tooltip direction="top" opacity={1} offset={[0, -8]} sticky>
+              <div style={{ width: 240 }}>
+                <div style={{ fontWeight: 700, marginBottom: 2 }}>{p.name}</div>
                 <div style={{ fontSize: 12, opacity: 0.8 }}>
+                  {p.city} • {p.category} • {p.duration}
+                </div>
+                <div style={{ display: "flex", gap: 8, marginTop: 8 }}>
+                  <img
+                    src={thumb}
+                    alt={p.name}
+                    style={{ width: 72, height: 48, objectFit: "cover", borderRadius: 8, background: "#f3f4f6" }}
+                    loading="lazy"
+                    onError={(e) => (((e.currentTarget as HTMLImageElement).src = "/placeholder.svg"))}
+                  />
+                  <div style={{ fontSize: 12, lineHeight: 1.3, maxHeight: 48, overflow: "hidden" }}>
+                    {p.short || "—"}
+                  </div>
+                </div>
+                <div style={{ marginTop: 8, fontSize: 11, opacity: 0.75 }}>
+                  Hover: info rápida • Click: ver resumen + detalle
+                </div>
+              </div>
+            </Tooltip>
+
+            {/* POPUP CHICO: click */}
+            <Popup>
+              <div style={{ width: 300 }}>
+                <div style={{ fontWeight: 800 }}>{p.name}</div>
+                <div style={{ fontSize: 12, opacity: 0.8, marginTop: 2 }}>
                   {p.city} • {p.category} • {p.duration}
                 </div>
 
                 <img
                   src={thumb}
                   alt={p.name}
-                  style={{ width: "100%", height: 120, objectFit: "cover", borderRadius: 8, marginTop: 8, background: "#f3f4f6" }}
+                  style={{ width: "100%", height: 130, objectFit: "cover", borderRadius: 10, marginTop: 10, background: "#f3f4f6" }}
                   loading="lazy"
                   onError={(e) => (((e.currentTarget as HTMLImageElement).src = "/placeholder.svg"))}
                 />
 
-                <div style={{ marginTop: 8, fontSize: 13 }}>
-                  <div style={{ fontWeight: 600 }}>Resumen</div>
-                  <div style={{ marginTop: 2 }}>{p.short || "—"}</div>
+                <div style={{ marginTop: 10, fontSize: 13 }}>
+                  <div style={{ fontWeight: 700 }}>Descripción</div>
+                  <div style={{ marginTop: 3 }}>{p.short || "—"}</div>
                 </div>
 
-                <div style={{ marginTop: 8, fontSize: 13 }}>
-                  <div style={{ fontWeight: 600 }}>Detalle</div>
-                  <div style={{ marginTop: 2, maxHeight: 120, overflow: "auto", whiteSpace: "pre-line" }}>
-                    {p.long || "—"}
-                  </div>
-                </div>
+                <button
+                  style={{
+                    marginTop: 12,
+                    width: "100%",
+                    padding: "10px 12px",
+                    borderRadius: 10,
+                    border: "1px solid #e5e7eb",
+                    background: "white",
+                    fontWeight: 700,
+                    cursor: "pointer",
+                  }}
+                  onClick={() => onOpenDetail(p)}
+                >
+                  Ver detalle completo
+                </button>
 
-                <div style={{ marginTop: 10, fontSize: 12, opacity: 0.7 }}>
-                  Click en el punto o en la lista para ver el panel completo.
+                <div style={{ marginTop: 8, fontSize: 11, opacity: 0.7 }}>
+                  El detalle completo incluye descripción amplia + todo el CSV.
                 </div>
               </div>
             </Popup>

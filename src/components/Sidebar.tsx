@@ -18,7 +18,7 @@ export default function Sidebar({
   onPick: (p: Place) => void;
 }) {
   return (
-    <aside className="w-[420px] border-r bg-white h-full flex flex-col z-[900]">
+    <aside className="w-[440px] border-r bg-white h-full flex flex-col z-[900]">
       <div className="p-4 border-b sticky top-0 bg-white z-10">
         <div className="text-lg font-semibold">NV Tailandia</div>
         <div className="text-sm opacity-70">
