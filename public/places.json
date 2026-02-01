@@ -179,11 +179,11 @@
     "duration": "2–4 h",
     "short": "Street food + noche vibrante",
     "long": "Lo mejor es ir de tarde-noche: faroles, puestos, postres, y caminata larga. Tip: elegí 2–3 cosas para probar y no te saturás.",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Yaowarat_Road%2C_Bangkok.jpg",
-    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Yaowarat_Road%2C_Bangkok.jpg/330px-Yaowarat_Road%2C_Bangkok.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Bangkok_skyline_at_night.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Bangkok_skyline_at_night.jpg/500px-Bangkok_skyline_at_night.jpg",
     "lat": 13.74175,
     "lng": 100.5107544,
-    "imageSource": "commons:File:Yaowarat Road, Bangkok.jpg"
+    "imageSource": "fallback:bangkok_skyline"
   },
   {
     "id": "bangkok__jodd-fairs",
@@ -393,11 +393,11 @@
     "duration": "2 horas",
     "short": "Parque natural artificial",
     "long": "Cascadas masivas, cuevas y jardines de flores creados para fotos perfectas.",
-    "image": "/placeholder.svg",
-    "thumb": "/placeholder.svg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Bangkok_skyline_at_night.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Bangkok_skyline_at_night.jpg/500px-Bangkok_skyline_at_night.jpg",
     "lat": 19.1232029,
     "lng": 98.9432396,
-    "imageSource": "missing"
+    "imageSource": "fallback:chiang_mai"
   },
   {
     "id": "chiang-mai__khao-soi-maesai",
@@ -407,11 +407,11 @@
     "duration": "1 hora",
     "short": "Khao soi tradicional",
     "long": "Local humilde que sirve el mejor curry del norte. Muy económico.",
-    "image": "/placeholder.svg",
-    "thumb": "/placeholder.svg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Bangkok_skyline_at_night.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Bangkok_skyline_at_night.jpg/500px-Bangkok_skyline_at_night.jpg",
     "lat": null,
     "lng": null,
-    "imageSource": "missing"
+    "imageSource": "fallback:chiang_mai"
   },
   {
     "id": "chiang-mai__khao-so-i",
@@ -477,11 +477,11 @@
     "duration": "--",
     "short": "Hotel boutique colonial",
     "long": "Hotel con piscina central preciosa cerca de la puerta Tha Phae.",
-    "image": "/placeholder.svg",
-    "thumb": "/placeholder.svg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Bangkok_skyline_at_night.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Bangkok_skyline_at_night.jpg/500px-Bangkok_skyline_at_night.jpg",
     "lat": null,
     "lng": null,
-    "imageSource": "missing"
+    "imageSource": "fallback:chiang_mai"
   },
   {
     "id": "chiang-rai__wat-rong-khun",
@@ -535,11 +535,11 @@
     "duration": "1.5 horas",
     "short": "Café jardín de hadas",
     "long": "Ambiente con niebla artificial, flores exóticas y cascadas. Muy instagrameable.",
-    "image": "/placeholder.svg",
-    "thumb": "/placeholder.svg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Wat_Rong_Khun_in_Chiang_Rai%2C_Thailand.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Wat_Rong_Khun_in_Chiang_Rai%2C_Thailand.jpg/500px-Wat_Rong_Khun_in_Chiang_Rai%2C_Thailand.jpg",
     "lat": 19.9424815,
     "lng": 99.8112885,
-    "imageSource": "missing"
+    "imageSource": "fallback:chiang_rai_temple"
   },
   {
     "id": "chiang-rai__choui-fong-tea",
@@ -793,11 +793,11 @@
     "duration": "6 horas",
     "short": "Ruinas de la antigua capital",
     "long": "Templos como Wat Mahathat (cabeza en raíces) y Wat Phra Si Sanphet.",
-    "image": "/placeholder.svg",
-    "thumb": "/placeholder.svg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Ayutthaya_Thailand_2004.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Ayutthaya_Thailand_2004.jpg/500px-Ayutthaya_Thailand_2004.jpg",
     "lat": null,
     "lng": null,
-    "imageSource": "missing"
+    "imageSource": "fallback:ayutthaya"
   },
   {
     "id": "ayutthaya__ayutthaya-historical-park",
@@ -895,11 +895,11 @@
     "duration": "4–6 h",
     "short": "Cascadas de 7 niveles",
     "long": "Caminata entre piletas turquesas donde se puede nadar. Llevar calzado antideslizante.",
-    "image": "/placeholder.svg",
-    "thumb": "/placeholder.svg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/35/Elefante_y_cuidador_en_santuario_de_Tailandia.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Elefante_y_cuidador_en_santuario_de_Tailandia.jpg/500px-Elefante_y_cuidador_en_santuario_de_Tailandia.jpg",
     "lat": null,
     "lng": null,
-    "imageSource": "missing"
+    "imageSource": "fallback:thailand_nature"
   },
   {
     "id": "kanchanaburi__puente-sobre-el-rio-kwai-2",
@@ -923,11 +923,11 @@
     "duration": "1.5–3 h",
     "short": "Tramo ferroviario histórico",
     "long": "Viaje corto con vistas al río y selva; combina historia y paisaje.",
-    "image": "/placeholder.svg",
-    "thumb": "/placeholder.svg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Wat_Phra_Kaew_by_Ninara_TSP_edit_crop.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Wat_Phra_Kaew_by_Ninara_TSP_edit_crop.jpg/500px-Wat_Phra_Kaew_by_Ninara_TSP_edit_crop.jpg",
     "lat": null,
     "lng": null,
-    "imageSource": "missing"
+    "imageSource": "fallback:thai_temple"
   },
   {
     "id": "kanchanaburi__jeath-war-museum",
@@ -937,11 +937,11 @@
     "duration": "45–75 min",
     "short": "Contexto de la guerra",
     "long": "Museo sencillo pero claro para entender el contexto del ferrocarril.",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/3/36/Kanchanaburi_World_War_II_Museum_-_locomotive.jpg",
-    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Kanchanaburi_World_War_II_Museum_-_locomotive.jpg/500px-Kanchanaburi_World_War_II_Museum_-_locomotive.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Wat_Phra_Kaew_by_Ninara_TSP_edit_crop.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Wat_Phra_Kaew_by_Ninara_TSP_edit_crop.jpg/500px-Wat_Phra_Kaew_by_Ninara_TSP_edit_crop.jpg",
     "lat": 14.0163017,
     "lng": 99.5305998,
-    "imageSource": "commons:File:Kanchanaburi World War II Museum - locomotive.jpg"
+    "imageSource": "fallback:thai_temple"
   },
   {
     "id": "kanchanaburi__hellfire-pass-memorial",
@@ -951,11 +951,11 @@
     "duration": "1.5–2.5 h",
     "short": "Sendero conmemorativo",
     "long": "Impactante por el relato y el entorno. Recomendado si te interesa la historia.",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/2/29/Hellfire_Pass_terminus.JPG",
-    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Hellfire_Pass_terminus.JPG/330px-Hellfire_Pass_terminus.JPG",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Wat_Phra_Kaew_by_Ninara_TSP_edit_crop.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Wat_Phra_Kaew_by_Ninara_TSP_edit_crop.jpg/500px-Wat_Phra_Kaew_by_Ninara_TSP_edit_crop.jpg",
     "lat": 14.3560337,
     "lng": 98.9523444,
-    "imageSource": "commons:File:Hellfire Pass terminus.JPG"
+    "imageSource": "fallback:thai_temple"
   },
   {
     "id": "kanchanaburi__river-kwai-cruise-opcional",
@@ -965,11 +965,11 @@
     "duration": "1–2 h",
     "short": "Paseo relajado por el río",
     "long": "Alternativa tranquila para cerrar el día.",
-    "image": "/placeholder.svg",
-    "thumb": "/placeholder.svg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Wat_Rong_Khun_in_Chiang_Rai%2C_Thailand.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Wat_Rong_Khun_in_Chiang_Rai%2C_Thailand.jpg/500px-Wat_Rong_Khun_in_Chiang_Rai%2C_Thailand.jpg",
     "lat": null,
     "lng": null,
-    "imageSource": "missing"
+    "imageSource": "fallback:thailand_culture"
   },
   {
     "id": "chiang-mai__wat-phra-that-doi-suthep-2",
@@ -1021,11 +1021,11 @@
     "duration": "2–4 h",
     "short": "Murallas, templos y cafés",
     "long": "Recorrido flexible: templos + pausas de café + mercados locales.",
-    "image": "/placeholder.svg",
-    "thumb": "/placeholder.svg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Bangkok_skyline_at_night.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Bangkok_skyline_at_night.jpg/500px-Bangkok_skyline_at_night.jpg",
     "lat": null,
     "lng": null,
-    "imageSource": "missing"
+    "imageSource": "fallback:chiang_mai"
   },
   {
     "id": "chiang-mai__chiang-mai-night-bazaar",
@@ -1063,11 +1063,11 @@
     "duration": "45–75 min",
     "short": "Charla con monjes",
     "long": "Intercambio cultural genuino (horarios fijos).",
-    "image": "/placeholder.svg",
-    "thumb": "/placeholder.svg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Bangkok_skyline_at_night.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Bangkok_skyline_at_night.jpg/500px-Bangkok_skyline_at_night.jpg",
     "lat": null,
     "lng": null,
-    "imageSource": "missing"
+    "imageSource": "fallback:chiang_mai"
   },
   {
     "id": "cerca-de-chiang-mai__elephant-nature-park-santuario-etico",
@@ -1077,11 +1077,11 @@
     "duration": "6–8 h",
     "short": "Elefantes rescatados (sin montar)",
     "long": "Referente en bienestar animal. Observación, alimentación y aprendizaje. Reservar con antelación.",
-    "image": "/placeholder.svg",
-    "thumb": "/placeholder.svg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Bangkok_skyline_at_night.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Bangkok_skyline_at_night.jpg/500px-Bangkok_skyline_at_night.jpg",
     "lat": null,
     "lng": null,
-    "imageSource": "missing"
+    "imageSource": "fallback:chiang_mai"
   },
   {
     "id": "cerca-de-chiang-mai__sticky-waterfall-bua-thong",
@@ -1133,11 +1133,11 @@
     "duration": "4–6 h",
     "short": "Cocina local desde cero",
     "long": "Mercado + preparación + degustación. Ideal para día tranquilo.",
-    "image": "/placeholder.svg",
-    "thumb": "/placeholder.svg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Bangkok_skyline_at_night.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Bangkok_skyline_at_night.jpg/500px-Bangkok_skyline_at_night.jpg",
     "lat": null,
     "lng": null,
-    "imageSource": "missing"
+    "imageSource": "fallback:chiang_mai"
   },
   {
     "id": "chiang-mai__street-food-chiang-mai",
@@ -1263,11 +1263,11 @@
     "duration": "Día completo",
     "short": "Varias islas en lancha",
     "long": "Elegir bien operador para evitar “corre-corre”.",
-    "image": "/placeholder.svg",
-    "thumb": "/placeholder.svg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Ayutthaya_Thailand_2004.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Ayutthaya_Thailand_2004.jpg/500px-Ayutthaya_Thailand_2004.jpg",
     "lat": null,
     "lng": null,
-    "imageSource": "missing"
+    "imageSource": "fallback:phuket_beach"
   },
   {
     "id": "railay__railay-beach-west-east",
@@ -1305,11 +1305,11 @@
     "duration": "Día completo",
     "short": "Islas + snorkeling",
     "long": "Clásico desde Krabi/Ao Nang.",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/2/24/A_tour_of_four_great_rivers-_the_Hudson%2C_Mohawk%2C_Susquehanna_and_Delaware_in_l769%3B_being_the_journal_of_Richard_Smith_of_Burlington%2C_New_Jersey%3B_%281906%29_%2814596750198%29.jpg",
-    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/A_tour_of_four_great_rivers-_the_Hudson%2C_Mohawk%2C_Susquehanna_and_Delaware_in_l769%3B_being_the_journal_of_Richard_Smith_of_Burlington%2C_New_Jersey%3B_%281906%29_%2814596750198%29.jpg/500px-thumbnail.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Ayutthaya_Thailand_2004.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Ayutthaya_Thailand_2004.jpg/500px-Ayutthaya_Thailand_2004.jpg",
     "lat": null,
     "lng": null,
-    "imageSource": "commons:File:A tour of four great rivers- the Hudson, Mohawk, Susquehanna and Delaware in l769; being the journal of Richard Smith of Burlington, New Jersey; (1906) (14596750198).jpg"
+    "imageSource": "fallback:phuket_beach"
   },
   {
     "id": "krabi__ao-nang",
@@ -1319,11 +1319,11 @@
     "duration": "2–4 h",
     "short": "Base práctica",
     "long": "Punto de partida para tours y playas cercanas.",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2d/2004-tsunami.jpg",
-    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/2004-tsunami.jpg/500px-2004-tsunami.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Ayutthaya_Thailand_2004.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Ayutthaya_Thailand_2004.jpg/500px-Ayutthaya_Thailand_2004.jpg",
     "lat": 7.7211733,
     "lng": 98.7655426,
-    "imageSource": "commons:File:2004-tsunami.jpg"
+    "imageSource": "fallback:phuket_beach"
   },
   {
     "id": "bangkok__so-thai-spa-bangkok",
@@ -1347,11 +1347,11 @@
     "duration": "1.5–2 h",
     "short": "Spa boutique en hotel de diseño",
     "long": "Spa moderno dentro del hotel Kimpton Maa-Lai. Tratamientos sofisticados, ambiente tranquilo y excelente nivel de servicio.",
-    "image": "/placeholder.svg",
-    "thumb": "/placeholder.svg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Bangkok_skyline_at_night.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Bangkok_skyline_at_night.jpg/500px-Bangkok_skyline_at_night.jpg",
     "lat": null,
     "lng": null,
-    "imageSource": "missing"
+    "imageSource": "fallback:bangkok_skyline"
   },
   {
     "id": "bangkok__bangkok-thai-cooking-academy",
@@ -1377,11 +1377,11 @@
     "duration": "1.5–2 h",
     "short": "Masaje tradicional muy valorado",
     "long": "Lugar clásico con masajistas expertos y ambiente tradicional. Excelente relación calidad/precio.",
-    "image": "/placeholder.svg",
-    "thumb": "/placeholder.svg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Bangkok_skyline_at_night.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Bangkok_skyline_at_night.jpg/500px-Bangkok_skyline_at_night.jpg",
     "lat": null,
     "lng": null,
-    "imageSource": "missing"
+    "imageSource": "fallback:chiang_mai"
   },
   {
     "id": "chiang-mai__calm-massage-and-spa",
@@ -1407,11 +1407,11 @@
     "duration": "4–5 h",
     "short": "Clase de cocina tailandesa tradicional",
     "long": "Clases prácticas en grupos reducidos. Incluye mercado, explicación de ingredientes y preparación de platos del norte de Tailandia.",
-    "image": "/placeholder.svg",
-    "thumb": "/placeholder.svg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Bangkok_skyline_at_night.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Bangkok_skyline_at_night.jpg/500px-Bangkok_skyline_at_night.jpg",
     "lat": 18.7890909,
     "lng": 98.9910256,
-    "imageSource": "missing"
+    "imageSource": "fallback:chiang_mai"
   },
   {
     "id": "chiang-mai__cabalgata-rural-en-chiang-mai",
@@ -1421,11 +1421,11 @@
     "duration": "2–3 h",
     "short": "Paseo a caballo en zona rural",
     "long": "Cabalgata guiada en áreas rurales alrededor de Chiang Mai, atravesando campos, caminos de tierra y paisajes naturales. Ritmo tranquilo.",
-    "image": "/placeholder.svg",
-    "thumb": "/placeholder.svg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Bangkok_skyline_at_night.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Bangkok_skyline_at_night.jpg/500px-Bangkok_skyline_at_night.jpg",
     "lat": null,
     "lng": null,
-    "imageSource": "missing"
+    "imageSource": "fallback:chiang_mai"
   },
   {
     "id": "phuket__spa-burasari-phuket",
@@ -1435,11 +1435,11 @@
     "duration": "1.5–2 h",
     "short": "Spa boutique muy reconocido",
     "long": "Uno de los mejores spas de Phuket, con ambiente tropical y masajes tradicionales tailandeses de alto nivel.",
-    "image": "/placeholder.svg",
-    "thumb": "/placeholder.svg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Ayutthaya_Thailand_2004.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Ayutthaya_Thailand_2004.jpg/500px-Ayutthaya_Thailand_2004.jpg",
     "lat": 7.8879283,
     "lng": 98.2929442,
-    "imageSource": "missing"
+    "imageSource": "fallback:phuket_beach"
   },
   {
     "id": "phuket__sama-onsen-massage",
@@ -1449,11 +1449,11 @@
     "duration": "1.5–2 h",
     "short": "Spa moderno con onsen",
     "long": "Spa con estilo japonés-onsen combinado con masaje tailandés. Excelente para relajación profunda.",
-    "image": "/placeholder.svg",
-    "thumb": "/placeholder.svg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Ayutthaya_Thailand_2004.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Ayutthaya_Thailand_2004.jpg/500px-Ayutthaya_Thailand_2004.jpg",
     "lat": null,
     "lng": null,
-    "imageSource": "missing"
+    "imageSource": "fallback:phuket_beach"
   },
   {
     "id": "phuket__phuket-thai-cooking-class-by-chef-vj",
@@ -1463,11 +1463,11 @@
     "duration": "3–4 h",
     "short": "Clase de cocina con chef local",
     "long": "Clase práctica enfocada en platos clásicos tailandeses. Incluye explicación de ingredientes y técnicas locales.",
-    "image": "/placeholder.svg",
-    "thumb": "/placeholder.svg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Ayutthaya_Thailand_2004.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Ayutthaya_Thailand_2004.jpg/500px-Ayutthaya_Thailand_2004.jpg",
     "lat": 7.819598,
     "lng": 98.3069523,
-    "imageSource": "missing"
+    "imageSource": "fallback:phuket_beach"
   },
   {
     "id": "phuket__cabalgata-costera-en-phuket",
@@ -1477,11 +1477,11 @@
     "duration": "1.5–2.5 h",
     "short": "Paseo a caballo cerca del mar",
     "long": "Cabalgata guiada por zonas rurales o costeras de Phuket, ideal al amanecer o atardecer para vistas y fotos.",
-    "image": "/placeholder.svg",
-    "thumb": "/placeholder.svg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Ayutthaya_Thailand_2004.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Ayutthaya_Thailand_2004.jpg/500px-Ayutthaya_Thailand_2004.jpg",
     "lat": null,
     "lng": null,
-    "imageSource": "missing"
+    "imageSource": "fallback:phuket_beach"
   },
   {
     "id": "bangkok__column-bangkok",
@@ -1505,11 +1505,11 @@
     "duration": "Estancia completa",
     "short": "Resort céntrico cerca del Old City",
     "long": "Resort tranquilo ubicado a pasos de Tha Phae Gate. Excelente base para recorrer el casco antiguo, mercados nocturnos y excursiones cercanas. Combina comodidad y ubicación estratégica.",
-    "image": "/placeholder.svg",
-    "thumb": "/placeholder.svg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Bangkok_skyline_at_night.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Bangkok_skyline_at_night.jpg/500px-Bangkok_skyline_at_night.jpg",
     "lat": null,
     "lng": null,
-    "imageSource": "missing"
+    "imageSource": "fallback:chiang_mai"
   },
   {
     "id": "phuket-kamala__novotel-phuket-kamala-beach",
@@ -1519,11 +1519,11 @@
     "duration": "Estancia completa",
     "short": "Resort frente al mar en Kamala",
     "long": "Hotel frente a la playa en Kamala, ideal para descansar tras las islas. Buen acceso a playas, spas y excursiones. Base cómoda y relajada para el tramo final del viaje.",
-    "image": "/placeholder.svg",
-    "thumb": "/placeholder.svg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Ayutthaya_Thailand_2004.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Ayutthaya_Thailand_2004.jpg/500px-Ayutthaya_Thailand_2004.jpg",
     "lat": 7.9634738,
     "lng": 98.2835136,
-    "imageSource": "missing"
+    "imageSource": "fallback:phuket_beach"
   },
   {
     "id": "bangkok__vuelo-a-chiang-mai",

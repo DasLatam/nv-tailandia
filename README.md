@@ -29,6 +29,11 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
+## Imágenes y datos
+
+- **Lugares:** se cargan desde `public/places.json`. La fuente canónica es la [Google Sheet "lugares"](https://docs.google.com/spreadsheets/d/1NNplPVYzFmUsQFoqF6D4pz4bCqbWky59u90YVnU-l5I/edit?usp=sharing). El botón "Añadir lugar" en el sidebar enlaza a esa Sheet.
+- **Pipeline de imágenes:** `scripts/image-pipeline.mjs` actualiza imágenes (Wikimedia → Openverse → fallbacks seguros por categoría/ciudad). Sin red: `npm run images:fallbacks`. Con APIs: `npm run images:full`. Overrides manuales en `data/image_overrides.json`.
+
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.

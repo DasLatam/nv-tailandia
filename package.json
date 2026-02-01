@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "images:fallbacks": "node scripts/image-pipeline.mjs --fallbacks-only",
+    "images:full": "node scripts/image-pipeline.mjs"
   },
   "dependencies": {
     "leaflet": "^1.9.4",

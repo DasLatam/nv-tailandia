@@ -29,6 +29,8 @@ export default function MapPage() {
   const [visibleIds, setVisibleIds] = useState<Set<string> | null>(null);
   const [selected, setSelected] = useState<Place | null>(null);
   const [query, setQuery] = useState("");
+  const [filterCity, setFilterCity] = useState("");
+  const [filterCategory, setFilterCategory] = useState("");
 
   const mapRef = useRef<any>(null);
 
@@ -39,15 +41,26 @@ export default function MapPage() {
       .catch(() => setPlaces([]));
   }, []);
 
+  const cities = useMemo(() => {
+    const set = new Set(places.map((p) => p.city).filter(Boolean));
+    return Array.from(set).sort((a, b) => a.localeCompare(b, "es", { sensitivity: "base" }));
+  }, [places]);
+
+  const categories = useMemo(() => {
+    const set = new Set(places.map((p) => p.category).filter(Boolean));
+    return Array.from(set).sort((a, b) => a.localeCompare(b, "es", { sensitivity: "base" }));
+  }, [places]);
+
   const shown = useMemo(() => {
     const q = query.trim().toLowerCase();
 
     let base = places;
 
-    // filtro por visibles
+    if (filterCity) base = base.filter((p) => p.city === filterCity);
+    if (filterCategory) base = base.filter((p) => p.category === filterCategory);
+
     if (visibleIds) base = base.filter((p) => visibleIds.has(p.id));
 
-    // filtro texto
     if (q) {
       base = base.filter((p) => {
         const hay = `${p.name} ${p.city} ${p.category} ${p.short}`.toLowerCase();
@@ -55,9 +68,8 @@ export default function MapPage() {
       });
     }
 
-    // ✅ orden por nombre
     return [...base].sort(byName);
-  }, [places, visibleIds, query]);
+  }, [places, visibleIds, query, filterCity, filterCategory]);
 
   const mappable = useMemo(
     () => places.filter((p) => typeof p.lat === "number" && typeof p.lng === "number"),
@@ -80,7 +92,14 @@ export default function MapPage() {
         shown={shown.length}
         query={query}
         setQuery={setQuery}
+        filterCity={filterCity}
+        setFilterCity={setFilterCity}
+        filterCategory={filterCategory}
+        setFilterCategory={setFilterCategory}
+        cities={cities}
+        categories={categories}
         items={shown as any}
+        selected={selected}
         onPick={(p) => openDetail(p, { fly: true })}
       />
 
