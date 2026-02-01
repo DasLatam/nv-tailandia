@@ -14,11 +14,9 @@ function safe(s) {
 function isGoodExisting(url) {
   if (!url) return false;
   const u = url.toLowerCase();
-  if (u.includes("placeholder")) return false;
-  return true;
+  return !u.includes("placeholder");
 }
 
-// 🔒 Filtro anti-accidentes (títulos/urls)
 function looksBad(titleOrUrl = "") {
   const s = titleOrUrl.toLowerCase();
   return (
@@ -33,29 +31,17 @@ function looksBad(titleOrUrl = "") {
   );
 }
 
-// ✅ Imágenes seguras y reales para Vuelos/Aeropuertos (estables)
-const FLIGHT_SAFE = [
-  {
-    match: (p) => (p.name || "").toLowerCase().includes("vuelo") && (p.name || "").toLowerCase().includes("bangkok"),
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Suvarnabhumi_Airport_terminal.jpg/1280px-Suvarnabhumi_Airport_terminal.jpg",
-    thumb: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Suvarnabhumi_Airport_terminal.jpg/320px-Suvarnabhumi_Airport_terminal.jpg",
-    source: "commons:Suvarnabhumi Airport terminal",
-  },
-  {
-    match: (p) => (p.name || "").toLowerCase().includes("vuelo") && (p.name || "").toLowerCase().includes("phuket"),
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Phuket_International_Airport_terminal.jpg/1280px-Phuket_International_Airport_terminal.jpg",
-    thumb: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Phuket_International_Airport_terminal.jpg/320px-Phuket_International_Airport_terminal.jpg",
-    source: "commons:Phuket International Airport terminal",
-  },
-  {
-    match: (p) => (p.name || "").toLowerCase().includes("vuelo") && (p.name || "").toLowerCase().includes("chiang"),
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Chiang_Mai_International_Airport.jpg/1280px-Chiang_Mai_International_Airport.jpg",
-    thumb: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Chiang_Mai_International_Airport.jpg/320px-Chiang_Mai_International_Airport.jpg",
-    source: "commons:Chiang Mai International Airport",
-  },
-];
+// ✅ solo aceptamos extensiones de imagen
+function isImageFile(titleOrUrl = "") {
+  const s = titleOrUrl.toLowerCase();
+  return (
+    s.endsWith(".jpg") ||
+    s.endsWith(".jpeg") ||
+    s.endsWith(".png") ||
+    s.endsWith(".webp")
+  );
+}
 
-// Wikimedia Commons search
 async function commonsSearchImage(query) {
   const api = "https://commons.wikimedia.org/w/api.php";
   const params = new URLSearchParams({
@@ -64,12 +50,12 @@ async function commonsSearchImage(query) {
     origin: "*",
     generator: "search",
     gsrsearch: query,
-    gsrlimit: "3",
+    gsrlimit: "8",
     gsrnamespace: "6", // File:
     prop: "imageinfo",
     iiprop: "url",
-    iiurlwidth: "360",
-    iiurlheight: "360",
+    iiurlwidth: "420",
+    iiurlheight: "420",
   });
 
   const url = `${api}?${params.toString()}`;
@@ -81,17 +67,18 @@ async function commonsSearchImage(query) {
   const pages = data?.query?.pages;
   if (!pages) return null;
 
-  // probamos hasta 3 resultados y elegimos uno que no parezca “malo”
-  const keys = Object.keys(pages);
-  for (const k of keys) {
+  for (const k of Object.keys(pages)) {
     const page = pages[k];
-    const info = page?.imageinfo?.[0];
     const title = page?.title || "";
+    const info = page?.imageinfo?.[0];
     const img = info?.url || "";
     const thumb = info?.thumburl || "";
 
+    // Filtrado fuerte: nada de PDFs/SVG, nada “bad”
     if (!info) continue;
     if (looksBad(title) || looksBad(img) || looksBad(thumb)) continue;
+    if (!isImageFile(title)) continue;
+    if (!isImageFile(img) && img) continue;
 
     return {
       image: img || null,
@@ -103,9 +90,8 @@ async function commonsSearchImage(query) {
   return null;
 }
 
-// Openverse fallback
 async function openverseSearch(query) {
-  const url = `https://api.openverse.org/v1/images?q=${encodeURIComponent(query)}&page_size=3`;
+  const url = `https://api.openverse.org/v1/images?q=${encodeURIComponent(query)}&page_size=5`;
   const res = await fetch(url);
   if (!res.ok) return null;
   const data = await res.json();
@@ -131,11 +117,31 @@ async function openverseSearch(query) {
   return null;
 }
 
+function isFlight(p) {
+  const t = `${p.category || ""} ${p.name || ""}`.toLowerCase();
+  return t.includes("vuelo") || t.includes("flight") || t.includes("aeropuerto");
+}
+
+// ✅ reglas seguras para vuelos: buscamos aeropuertos concretos (nada aleatorio)
+async function flightImage(p) {
+  const name = (p.name || "").toLowerCase();
+  // detectamos destino por texto
+  if (name.includes("bangkok") || name.includes("bkk")) {
+    return await commonsSearchImage("Suvarnabhumi Airport terminal Bangkok");
+  }
+  if (name.includes("phuket") || name.includes("hkt")) {
+    return await commonsSearchImage("Phuket International Airport terminal");
+  }
+  if (name.includes("chiang") || name.includes("cnx")) {
+    return await commonsSearchImage("Chiang Mai International Airport terminal");
+  }
+  // fallback genérico seguro
+  return await commonsSearchImage("airport terminal Thailand");
+}
+
 function buildQueries(p) {
   const name = safe(p.name);
   const city = safe(p.city);
-
-  // Para templos y lugares muy conocidos, esto funciona bastante bien
   return [
     `${name} ${city} Thailand`,
     `${name} Thailand`,
@@ -157,17 +163,26 @@ function buildQueries(p) {
   for (let i = 0; i < places.length; i++) {
     const p = places[i];
 
-    // 0) Override seguro para vuelos
-    const flightOverride = FLIGHT_SAFE.find((o) => o.match(p));
-    if (flightOverride) {
-      p.image = flightOverride.image;
-      p.thumb = flightOverride.thumb;
-      p.imageSource = flightOverride.source;
-      updated++;
+    // 0) Vuelos -> imagen segura
+    if (isFlight(p)) {
+      const hit = await flightImage(p);
+      await sleep(180);
+      if (hit?.thumb || hit?.image) {
+        p.thumb = hit.thumb || hit.image || "/placeholder.svg";
+        p.image = hit.image || hit.thumb || "/placeholder.svg";
+        p.imageSource = hit.source;
+        updated++;
+        continue;
+      }
+      // si no encontró, dejamos placeholder (pero jamás accidente)
+      p.thumb = "/placeholder.svg";
+      p.image = "/placeholder.svg";
+      p.imageSource = "missing";
+      missing++;
       continue;
     }
 
-    // Si ya tiene imagen real, no tocamos
+    // si ya tiene imagen real, no tocamos
     if (isGoodExisting(p.thumb) && p.imageSource && p.imageSource !== "missing") continue;
 
     const queries = buildQueries(p);
@@ -184,7 +199,7 @@ function buildQueries(p) {
     if (!hit?.thumb && !hit?.image) {
       for (const q of queries) {
         hit = await openverseSearch(q);
-        await sleep(200);
+        await sleep(220);
         if (hit?.thumb || hit?.image) break;
       }
     }
@@ -197,10 +212,10 @@ function buildQueries(p) {
       if (hit.creator) p.imageCreator = hit.creator;
       updated++;
     } else {
-      missing++;
       p.thumb = "/placeholder.svg";
       p.image = "/placeholder.svg";
       p.imageSource = "missing";
+      missing++;
     }
 
     if ((i + 1) % 20 === 0) console.log(`Progress: ${i + 1}/${places.length}`);
@@ -209,7 +224,7 @@ function buildQueries(p) {
   fs.mkdirSync(path.dirname(outFile), { recursive: true });
   fs.writeFileSync(outFile, JSON.stringify(places, null, 2), "utf8");
 
-  // Reporte de faltantes
+  // faltantes
   const header = "id,name,city,category\n";
   const rows = places
     .filter((p) => !isGoodExisting(p.thumb) || p.imageSource === "missing")
@@ -221,6 +236,5 @@ function buildQueries(p) {
 
   console.log("✅ Updated:", updated);
   console.log("⚠️ Missing:", missing);
-  console.log("Wrote:", outFile);
   console.log("Missing report:", missingReport);
 })();

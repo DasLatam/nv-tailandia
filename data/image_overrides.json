@@ -1,0 +1,28 @@
+{
+  "rules": [
+    {
+      "match": { "name_includes": ["arabica", "empire tower"] },
+      "thumb": "https://cdn.prod.rexby.com/image/45e362ad39844b1e9eab45bc633bd5f7",
+      "image": "https://cdn.prod.rexby.com/image/45e362ad39844b1e9eab45bc633bd5f7",
+      "source": "manual:rexby"
+    },
+    {
+      "match": { "name_includes": ["jodd fairs"] },
+      "thumb": "https://dynamic-media.tacdn.com/media/photo-o/2e/c9/67/d6/caption.jpg",
+      "image": "https://dynamic-media.tacdn.com/media/photo-o/2e/c9/67/d6/caption.jpg",
+      "source": "manual:tripadvisor"
+    },
+    {
+      "match": { "name_includes": ["sirocco"] },
+      "thumb": "https://viajeronomada.com/wp-content/uploads/2012/10/siroccobangkok.jpg",
+      "image": "https://viajeronomada.com/wp-content/uploads/2012/10/siroccobangkok.jpg",
+      "source": "manual:viajeronomada"
+    },
+    {
+      "match": { "name_includes": ["tichuca"] },
+      "thumb": "https://thailandmagazine.com/wp-content/uploads/2025/04/Tichuca-Rooftop-Bar-in-Bangkok-27-1024x682.webp",
+      "image": "https://thailandmagazine.com/wp-content/uploads/2025/04/Tichuca-Rooftop-Bar-in-Bangkok-27-1024x682.webp",
+      "source": "manual:thailandmagazine"
+    }
+  ]
+}
