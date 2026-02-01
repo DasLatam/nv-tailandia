@@ -607,13 +607,11 @@
     "duration": "1 hora",
     "short": "El mirador más famoso",
     "long": "Vista panorámica de las dos bahías enfrentadas rodeadas de palmeras.",
-    "image": "https://live.staticflickr.com/5553/30464276574_c36958cb2e_b.jpg",
-    "thumb": "https://api.openverse.org/v1/images/ee0792dd-bd48-4194-a6a8-a4429f8a9182/thumb/",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/5/51/Southern_tip_Ko_Tao_island_Surat_Thani_John-Suwan_Viewpoint.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Southern_tip_Ko_Tao_island_Surat_Thani_John-Suwan_Viewpoint.jpg/330px-Southern_tip_Ko_Tao_island_Surat_Thani_John-Suwan_Viewpoint.jpg",
     "lat": 10.0601256,
     "lng": 99.8294293,
-    "imageSource": "openverse:ee0792dd-bd48-4194-a6a8-a4429f8a9182",
-    "imageLicense": "by-nc-nd",
-    "imageCreator": "Sitoo"
+    "imageSource": "commons:File:Southern tip Ko Tao island Surat Thani John-Suwan Viewpoint.jpg"
   },
   {
     "id": "koh-samui__crystal-bay-silver-beach",
@@ -623,11 +621,11 @@
     "duration": "3 horas",
     "short": "Bahía de rocas gigantes",
     "long": "Playa de aguas mansas con enormes piedras de granito, muy pintoresca.",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/3/33/Thong_Ta_Kian_Beach%2C_Koh_Samui_%2848107248286%29.jpg",
-    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Thong_Ta_Kian_Beach%2C_Koh_Samui_%2848107248286%29.jpg/500px-Thong_Ta_Kian_Beach%2C_Koh_Samui_%2848107248286%29.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Thong_Ta_Kian_Beach%2C_Koh_Samui_%2848107295348%29.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Thong_Ta_Kian_Beach%2C_Koh_Samui_%2848107295348%29.jpg/500px-Thong_Ta_Kian_Beach%2C_Koh_Samui_%2848107295348%29.jpg",
     "lat": null,
     "lng": null,
-    "imageSource": "commons:File:Thong Ta Kian Beach, Koh Samui (48107248286).jpg"
+    "imageSource": "commons:File:Thong Ta Kian Beach, Koh Samui (48107295348).jpg"
   },
   {
     "id": "koh-samui__big-buddha-samui",
@@ -823,11 +821,11 @@
     "duration": "60–90 min",
     "short": "Cabeza de Buda en raíces",
     "long": "La imagen más icónica de Ayutthaya. Conviene ir temprano para evitar grupos.",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/6/65/Templo_Mahathat%2C_Ayutthaya%2C_Tailandia%2C_2013-08-23%2C_DD_02.jpg",
-    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Templo_Mahathat%2C_Ayutthaya%2C_Tailandia%2C_2013-08-23%2C_DD_02.jpg/330px-Templo_Mahathat%2C_Ayutthaya%2C_Tailandia%2C_2013-08-23%2C_DD_02.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/5/54/Templo_Mahathat%2C_Ayutthaya%2C_Tailandia%2C_2013-08-23%2C_DD_01.jpg",
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Templo_Mahathat%2C_Ayutthaya%2C_Tailandia%2C_2013-08-23%2C_DD_01.jpg/330px-Templo_Mahathat%2C_Ayutthaya%2C_Tailandia%2C_2013-08-23%2C_DD_01.jpg",
     "lat": 14.3563513,
     "lng": 100.5685271,
-    "imageSource": "commons:File:Templo Mahathat, Ayutthaya, Tailandia, 2013-08-23, DD 02.jpg"
+    "imageSource": "commons:File:Templo Mahathat, Ayutthaya, Tailandia, 2013-08-23, DD 01.jpg"
   },
   {
     "id": "ayutthaya__wat-phra-si-sanphet",
