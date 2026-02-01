@@ -1,240 +1,178 @@
-import fs from "fs";
-import path from "path";
+// scripts/enrich-images2.mjs
+// Enrich public/places.json adding `image_url` when missing.
+// Sources: Wikimedia Commons search (simple) + Openverse (optional if you already use it)
+// Safety:
+// - Skip non-images (pdf/svg)
+// - Skip dangerous keywords (crash/accident/wreck/...)
+// - For flights/airports: force safe real airport images (BKK/CNX/HKT) if we can infer, else placeholder.
 
-const placesFile = path.join(process.cwd(), "public", "places.json");
-const outFile = path.join(process.cwd(), "public", "places.json");
-const missingReport = path.join(process.cwd(), "data", "images_missing.csv");
+import fs from "node:fs";
+import path from "node:path";
 
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const PLACES_PATH = path.join(process.cwd(), "public", "places.json");
 
-function safe(s) {
-  return (s || "").toString().trim();
+// Safe, real airports (direct file URLs via Wikimedia Special:FilePath)
+const SAFE_AIRPORT_IMAGES = {
+  BKK: "https://commons.wikimedia.org/wiki/Special:FilePath/Suvarnabhumi%20Airport%20Terminal%20E%20interior%20at%20dusk.jpg",
+  CNX: "https://commons.wikimedia.org/wiki/Special:FilePath/Chiang%20Mai%20Intl%20Airport.jpg",
+  HKT: "https://commons.wikimedia.org/wiki/Special:FilePath/Phuket%20International%20Airport3.jpg",
+};
+
+const DANGER_KEYWORDS = [
+  "crash",
+  "accident",
+  "wreck",
+  "disaster",
+  "emergency",
+  "incident",
+  "fatal",
+  "dead",
+  "death",
+  "injury",
+  "bomb",
+  "terror",
+  "explosion",
+  "fire",
+];
+
+const BAD_EXTENSIONS = [".pdf", ".svg"];
+
+function isBadUrl(url) {
+  const u = String(url || "").toLowerCase();
+  if (!u) return true;
+  if (BAD_EXTENSIONS.some((ext) => u.includes(ext))) return true;
+  if (DANGER_KEYWORDS.some((k) => u.includes(k))) return true;
+  return false;
 }
 
-function isGoodExisting(url) {
-  if (!url) return false;
-  const u = url.toLowerCase();
-  return !u.includes("placeholder");
+function sleep(ms) {
+  return new Promise((r) => setTimeout(r, ms));
 }
 
-function looksBad(titleOrUrl = "") {
-  const s = titleOrUrl.toLowerCase();
-  return (
-    s.includes("crash") ||
-    s.includes("accident") ||
-    s.includes("wreck") ||
-    s.includes("disaster") ||
-    s.includes("incident") ||
-    s.includes("fatal") ||
-    s.includes("shot down") ||
-    s.includes("explosion")
-  );
+// Try to ensure URL is an actual image via HEAD content-type (best effort)
+async function isImageUrl(url) {
+  try {
+    const res = await fetch(url, { method: "HEAD", redirect: "follow" });
+    if (!res.ok) return false;
+    const ct = res.headers.get("content-type") || "";
+    return ct.startsWith("image/");
+  } catch {
+    // If HEAD fails (some hosts block it), fallback to extension check only
+    return !isBadUrl(url);
+  }
 }
 
-// ✅ solo aceptamos extensiones de imagen
-function isImageFile(titleOrUrl = "") {
-  const s = titleOrUrl.toLowerCase();
-  return (
-    s.endsWith(".jpg") ||
-    s.endsWith(".jpeg") ||
-    s.endsWith(".png") ||
-    s.endsWith(".webp")
-  );
+function guessAirportCode(place) {
+  const hay = `${place.name} ${place.city} ${place.category} ${place.notes || ""} ${place.raw?.Notas || ""} ${place.raw?.Notes || ""}`
+    .toLowerCase();
+
+  // Common hints
+  if (hay.includes("bkk") || hay.includes("suvarnabhumi")) return "BKK";
+  if (hay.includes("cnx") || hay.includes("chiang mai international airport") || hay.includes("chiang mai intl")) return "CNX";
+  if (hay.includes("hkt") || hay.includes("phuket international airport") || hay.includes("phuket intl")) return "HKT";
+
+  // City-based fallback when category is flights
+  const city = (place.city || "").toLowerCase();
+  if (city.includes("bangkok")) return "BKK";
+  if (city.includes("chiang mai") || city.includes("chiangmai")) return "CNX";
+  if (city.includes("phuket")) return "HKT";
+
+  return null;
 }
 
-async function commonsSearchImage(query) {
-  const api = "https://commons.wikimedia.org/w/api.php";
-  const params = new URLSearchParams({
-    action: "query",
-    format: "json",
-    origin: "*",
-    generator: "search",
-    gsrsearch: query,
-    gsrlimit: "8",
-    gsrnamespace: "6", // File:
-    prop: "imageinfo",
-    iiprop: "url",
-    iiurlwidth: "420",
-    iiurlheight: "420",
-  });
+function isFlight(place) {
+  const c = (place.category || "").toLowerCase();
+  return c === "vuelos" || c.includes("vuelo") || c.includes("flight") || c.includes("airport") || c.includes("aeropuerto");
+}
 
-  const url = `${api}?${params.toString()}`;
-  const res = await fetch(url, {
-    headers: { "User-Agent": "nv-tailandia/1.0 (contact: ariel@baudry.com.ar)" },
-  });
-  if (!res.ok) return null;
-  const data = await res.json();
-  const pages = data?.query?.pages;
-  if (!pages) return null;
+// Wikimedia Commons: use REST search for media? We'll do a very simple query to Wikipedia API for images.
+// This is intentionally conservative: if uncertain, we leave blank (or use safe airport image for flights).
+async function searchCommonsImage(query) {
+  const q = query.trim();
+  if (!q) return null;
 
-  for (const k of Object.keys(pages)) {
-    const page = pages[k];
-    const title = page?.title || "";
-    const info = page?.imageinfo?.[0];
-    const img = info?.url || "";
-    const thumb = info?.thumburl || "";
+  // Use MediaWiki API to search pages/files; then try Special:FilePath
+  const api = new URL("https://commons.wikimedia.org/w/api.php");
+  api.searchParams.set("action", "query");
+  api.searchParams.set("format", "json");
+  api.searchParams.set("origin", "*");
+  api.searchParams.set("list", "search");
+  api.searchParams.set("srsearch", `file:${q}`);
+  api.searchParams.set("srlimit", "5");
 
-    // Filtrado fuerte: nada de PDFs/SVG, nada “bad”
-    if (!info) continue;
-    if (looksBad(title) || looksBad(img) || looksBad(thumb)) continue;
-    if (!isImageFile(title)) continue;
-    if (!isImageFile(img) && img) continue;
+  try {
+    const res = await fetch(api.toString());
+    if (!res.ok) return null;
+    const data = await res.json();
+    const hits = data?.query?.search || [];
+    for (const h of hits) {
+      const title = h?.title; // "File:....jpg"
+      if (!title || !title.toLowerCase().startsWith("file:")) continue;
 
-    return {
-      image: img || null,
-      thumb: thumb || null,
-      source: `commons:${title}`,
-    };
+      // Convert title to Special:FilePath/<filename>
+      const filename = title.slice(5);
+      const filePath = `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(filename)}`;
+
+      if (isBadUrl(filePath)) continue;
+      if (await isImageUrl(filePath)) return filePath;
+      await sleep(150);
+    }
+  } catch {
+    return null;
   }
 
   return null;
 }
 
-async function openverseSearch(query) {
-  const url = `https://api.openverse.org/v1/images?q=${encodeURIComponent(query)}&page_size=5`;
-  const res = await fetch(url);
-  if (!res.ok) return null;
-  const data = await res.json();
-
-  for (const r of data?.results || []) {
-    const image = r.url || null;
-    const thumb = r.thumbnail || r.url || null;
-    const title = r.title || "";
-    const landing = r.foreign_landing_url || "";
-
-    if (!image && !thumb) continue;
-    if (looksBad(title) || looksBad(image || "") || looksBad(landing || "")) continue;
-
-    return {
-      image,
-      thumb,
-      source: `openverse:${r.id || "result"}`,
-      license: r.license || null,
-      creator: r.creator || null,
-    };
-  }
-
-  return null;
+function buildQuery(place) {
+  // Keep it simple and “real-world”: name + city
+  // Prefer dropping symbols like % in queries
+  const name = (place.name || "").replace(/%/g, "").trim();
+  const city = (place.city || "").trim();
+  if (name && city) return `${name} ${city}`;
+  return name || city;
 }
 
-function isFlight(p) {
-  const t = `${p.category || ""} ${p.name || ""}`.toLowerCase();
-  return t.includes("vuelo") || t.includes("flight") || t.includes("aeropuerto");
-}
+const places = JSON.parse(fs.readFileSync(PLACES_PATH, "utf8"));
 
-// ✅ reglas seguras para vuelos: buscamos aeropuertos concretos (nada aleatorio)
-async function flightImage(p) {
-  const name = (p.name || "").toLowerCase();
-  // detectamos destino por texto
-  if (name.includes("bangkok") || name.includes("bkk")) {
-    return await commonsSearchImage("Suvarnabhumi Airport terminal Bangkok");
-  }
-  if (name.includes("phuket") || name.includes("hkt")) {
-    return await commonsSearchImage("Phuket International Airport terminal");
-  }
-  if (name.includes("chiang") || name.includes("cnx")) {
-    return await commonsSearchImage("Chiang Mai International Airport terminal");
-  }
-  // fallback genérico seguro
-  return await commonsSearchImage("airport terminal Thailand");
-}
+let changed = 0;
 
-function buildQueries(p) {
-  const name = safe(p.name);
-  const city = safe(p.city);
-  return [
-    `${name} ${city} Thailand`,
-    `${name} Thailand`,
-    `${name} ${city}`,
-    `${name}`,
-  ];
-}
+for (let i = 0; i < places.length; i++) {
+  const p = places[i];
 
-(async () => {
-  if (!fs.existsSync(placesFile)) {
-    console.error("❌ Missing:", placesFile);
-    process.exit(1);
+  if (p.image_url && !isBadUrl(p.image_url)) {
+    // Already has something; optionally validate
+    continue;
   }
 
-  const places = JSON.parse(fs.readFileSync(placesFile, "utf8"));
-  let updated = 0;
-  let missing = 0;
-
-  for (let i = 0; i < places.length; i++) {
-    const p = places[i];
-
-    // 0) Vuelos -> imagen segura
-    if (isFlight(p)) {
-      const hit = await flightImage(p);
-      await sleep(180);
-      if (hit?.thumb || hit?.image) {
-        p.thumb = hit.thumb || hit.image || "/placeholder.svg";
-        p.image = hit.image || hit.thumb || "/placeholder.svg";
-        p.imageSource = hit.source;
-        updated++;
-        continue;
-      }
-      // si no encontró, dejamos placeholder (pero jamás accidente)
-      p.thumb = "/placeholder.svg";
-      p.image = "/placeholder.svg";
-      p.imageSource = "missing";
-      missing++;
+  // Flights: force safe airport images
+  if (isFlight(p)) {
+    const code = guessAirportCode(p);
+    if (code && SAFE_AIRPORT_IMAGES[code]) {
+      p.image_url = SAFE_AIRPORT_IMAGES[code];
+      changed++;
       continue;
     }
-
-    // si ya tiene imagen real, no tocamos
-    if (isGoodExisting(p.thumb) && p.imageSource && p.imageSource !== "missing") continue;
-
-    const queries = buildQueries(p);
-
-    // 1) Commons
-    let hit = null;
-    for (const q of queries) {
-      hit = await commonsSearchImage(q);
-      await sleep(120);
-      if (hit?.thumb || hit?.image) break;
-    }
-
-    // 2) Openverse fallback
-    if (!hit?.thumb && !hit?.image) {
-      for (const q of queries) {
-        hit = await openverseSearch(q);
-        await sleep(220);
-        if (hit?.thumb || hit?.image) break;
-      }
-    }
-
-    if (hit?.thumb || hit?.image) {
-      p.thumb = hit.thumb || hit.image || "/placeholder.svg";
-      p.image = hit.image || hit.thumb || "/placeholder.svg";
-      p.imageSource = hit.source;
-      if (hit.license) p.imageLicense = hit.license;
-      if (hit.creator) p.imageCreator = hit.creator;
-      updated++;
-    } else {
-      p.thumb = "/placeholder.svg";
-      p.image = "/placeholder.svg";
-      p.imageSource = "missing";
-      missing++;
-    }
-
-    if ((i + 1) % 20 === 0) console.log(`Progress: ${i + 1}/${places.length}`);
+    // If we can't infer, do NOT fetch random flight photos. Leave placeholder.
+    p.image_url = "";
+    continue;
   }
 
-  fs.mkdirSync(path.dirname(outFile), { recursive: true });
-  fs.writeFileSync(outFile, JSON.stringify(places, null, 2), "utf8");
+  const q = buildQuery(p);
 
-  // faltantes
-  const header = "id,name,city,category\n";
-  const rows = places
-    .filter((p) => !isGoodExisting(p.thumb) || p.imageSource === "missing")
-    .map((p) => `"${p.id}","${(p.name || "").replace(/"/g, '""')}","${(p.city || "").replace(/"/g, '""')}","${(p.category || "").replace(/"/g, '""')}"`)
-    .join("\n");
+  // Commons attempt (safe)
+  const commonsUrl = await searchCommonsImage(q);
+  if (commonsUrl && !isBadUrl(commonsUrl)) {
+    p.image_url = commonsUrl;
+    changed++;
+    await sleep(250);
+    continue;
+  }
 
-  fs.mkdirSync(path.dirname(missingReport), { recursive: true });
-  fs.writeFileSync(missingReport, header + rows + "\n", "utf8");
+  // If nothing found, keep blank (UI should show placeholder)
+  p.image_url = "";
+  await sleep(150);
+}
 
-  console.log("✅ Updated:", updated);
-  console.log("⚠️ Missing:", missing);
-  console.log("Missing report:", missingReport);
-})();
+fs.writeFileSync(PLACES_PATH, JSON.stringify(places, null, 2), "utf8");
+console.log(`✅ enrich-images2: updated image_url for ${changed} places (others left blank/placeholder)`);
