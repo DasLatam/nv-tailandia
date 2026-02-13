@@ -1,41 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mapa de Actividades – Tailandia (CSV → Mapa + Lista)
 
-## Getting Started
+App web (Next.js + MapLibre + OSM) que:
 
-First, run the development server:
+- Renderiza **un punto por cada `Nombre`** (usa `LATLON`; si falta, aplica override o fallback por ciudad).
+- Muestra una **lista en columna** (imagen + título + descripción corta).
+- La lista se **filtra automáticamente por lo que está dentro del viewport del mapa** (zoom/pan).
+- Título de lista: **“Mostrando X de Y referencias”**.
+- **Hover** en el punto: tooltip con **título + miniatura**.
+- **Click** en punto o item de lista: **popup/modal** con **toda la info del CSV**.
+
+---
+
+## 1) Ejecutar local
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abrí: http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 2) Actualizar el listado (CSV)
 
-## Learn More
+Reemplazá este archivo:
 
-To learn more about Next.js, take a look at the following resources:
+- `data/activities.csv`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Luego:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run data:build
+npm run dev
+```
 
-## Imágenes y datos
+> El build genera: `public/data/activities.json` (lo consume la app).
 
-- **Lugares:** se cargan desde `public/places.json`. La fuente canónica es la [Google Sheet "lugares"](https://docs.google.com/spreadsheets/d/1NNplPVYzFmUsQFoqF6D4pz4bCqbWky59u90YVnU-l5I/edit?usp=sharing). El botón "Añadir lugar" en el sidebar enlaza a esa Sheet.
-- **Pipeline de imágenes:** `scripts/image-pipeline.mjs` actualiza imágenes (Wikimedia → Openverse → fallbacks seguros por categoría/ciudad). Sin red: `npm run images:fallbacks`. Con APIs: `npm run images:full`. Overrides manuales en `data/image_overrides.json`.
+---
 
-## Deploy on Vercel
+## 3) Publicar en Vercel vía GitHub
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### A) Subir a GitHub
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Desde la carpeta del proyecto:
+
+```bash
+git init
+git add .
+git commit -m "Mapa actividades Tailandia"
+git branch -M main
+git remote add origin <TU_REPO_GITHUB_URL>
+git push -u origin main
+```
+
+### B) Deploy en Vercel
+
+1. Entrá a Vercel → **Add New…** → **Project**
+2. Importá el repo
+3. Framework: **Next.js** (auto-detect)
+4. Build Command: `npm run build` (default)
+5. Output: default
+6. Deploy
+
+---
+
+## Notas
+
+- Mapa base: tiles raster de OpenStreetMap.
+- Iconos: `public/thumbs/*.svg` (se elige por `Tipo`; fallback a `actividad.svg`).
+- Coordenadas faltantes: ver `scripts/build-data.mjs` (`COORD_OVERRIDES_BY_NAME` y `CITY_CENTROIDS`).
