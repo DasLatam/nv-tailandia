@@ -1,9 +1,13 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import 'maplibre-gl/dist/maplibre-gl.css'
 
 export const metadata: Metadata = {
   title: 'Mapa de Actividades – Tailandia',
-  description: 'Mapa interactivo + lista filtrada por viewport para planificar actividades.'
+  description: 'Mapa interactivo + lista filtrada por viewport para planificar actividades.',
+  icons: {
+    icon: '/favicon.ico'
+  }
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

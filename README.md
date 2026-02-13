@@ -1,6 +1,6 @@
 # Mapa de Actividades – Tailandia (CSV → Mapa + Lista)
 
-App web (Next.js + MapLibre + OSM) que:
+App web (Next.js + MapLibre) que:
 
 - Renderiza **un punto por cada `Nombre`** (usa `LATLON`; si falta, aplica override o fallback por ciudad).
 - Muestra una **lista en columna** (imagen + título + descripción corta).
@@ -8,6 +8,11 @@ App web (Next.js + MapLibre + OSM) que:
 - Título de lista: **“Mostrando X de Y referencias”**.
 - **Hover** en el punto: tooltip con **título + miniatura**.
 - **Click** en punto o item de lista: **popup/modal** con **toda la info del CSV**.
+
+UX:
+
+- Zoom del mapa: **Ctrl + scroll** (para que el scroll normal no “robe” el scroll de la lista).
+- Selector de base map: **Vector (mejor calidad)** / **Raster (fallback)**.
 
 ---
 
@@ -67,6 +72,6 @@ git push -u origin main
 
 ## Notas
 
-- Mapa base: tiles raster de OpenStreetMap.
+- Mapa base (default): estilo vector público (OpenFreeMap). Fallback: raster OpenStreetMap.
 - Iconos: `public/thumbs/*.svg` (se elige por `Tipo`; fallback a `actividad.svg`).
 - Coordenadas faltantes: ver `scripts/build-data.mjs` (`COORD_OVERRIDES_BY_NAME` y `CITY_CENTROIDS`).

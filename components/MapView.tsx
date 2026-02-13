@@ -1,14 +1,38 @@
 'use client'
 
-import { useEffect, useMemo, useRef } from 'react'
-import maplibregl, { Map as MapLibreMap, Marker, Popup } from 'maplibre-gl'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import maplibregl, { type Map as MapLibreMap } from 'maplibre-gl'
 import type { Activity } from '@/app/page'
 
 type Props = {
   items: Activity[]
-  selectedId: string | null
   onVisibleIdsChange: (ids: Set<string>) => void
   onSelect: (a: Activity) => void
+  selectedId: string | null
+}
+
+type Basemap = 'vector' | 'raster'
+
+// Vector basemap sin API key (OpenFreeMap).
+// Fuente: ejemplos de OpenFreeMap (servicio público de tiles/estilos).
+const VECTOR_STYLE_URL = 'https://tiles.openfreemap.org/styles/liberty'
+
+// Raster fallback (OSM) por si fallan fuentes/glyphs del estilo vectorial.
+const RASTER_STYLE: any = {
+  version: 8,
+  sources: {
+    osm: {
+      type: 'raster',
+      tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],
+      tileSize: 256,
+      attribution: '&copy; OpenStreetMap contributors'
+    }
+  },
+  layers: [{ id: 'osm', type: 'raster', source: 'osm' }]
+}
+
+function isFiniteNumber(n: unknown): n is number {
+  return typeof n === 'number' && Number.isFinite(n)
 }
 
 function escapeHtml(s: string) {
@@ -20,226 +44,437 @@ function escapeHtml(s: string) {
     .replaceAll("'", '&#039;')
 }
 
-function makeBounds(points: Array<{ lat: number; lon: number }>) {
-  const lats = points.map((p) => p.lat)
-  const lons = points.map((p) => p.lon)
-  const minLat = Math.min(...lats)
-  const maxLat = Math.max(...lats)
-  const minLon = Math.min(...lons)
-  const maxLon = Math.max(...lons)
-  return new maplibregl.LngLatBounds([minLon, minLat], [maxLon, maxLat])
-}
-
-export function MapView({ items, selectedId, onVisibleIdsChange, onSelect }: Props) {
+export function MapView({ items, onVisibleIdsChange, onSelect, selectedId }: Props) {
   const containerRef = useRef<HTMLDivElement | null>(null)
   const mapRef = useRef<MapLibreMap | null>(null)
-  const markersRef = useRef<Map<string, Marker>>(new Map())
-  const hoverPopupRef = useRef<Popup | null>(null)
+  const popupRef = useRef<maplibregl.Popup | null>(null)
+  const resizeObserverRef = useRef<ResizeObserver | null>(null)
 
-  const itemById = useMemo(() => {
-    const m = new Map<string, Activity>()
-    for (const a of items) m.set(a.id, a)
-    return m
-  }, [items])
+  const [basemap, setBasemap] = useState<Basemap>('vector')
+  const [ready, setReady] = useState(false)
+  const [status, setStatus] = useState<string | null>(null)
 
-  const thailandItems = useMemo(() => {
-    // Heurística: Tailandia aprox lat 5..22 lon 97..106
-    return items.filter((a) => a.lat >= 5 && a.lat <= 22 && a.lon >= 97 && a.lon <= 106)
-  }, [items])
+  const validItems = useMemo(() => items.filter((a) => isFiniteNumber(a.lat) && isFiniteNumber(a.lon)), [items])
 
+  const geojson = useMemo(() => {
+    return {
+      type: 'FeatureCollection',
+      features: validItems.map((a) => ({
+        type: 'Feature',
+        geometry: { type: 'Point', coordinates: [a.lon, a.lat] },
+        properties: {
+          id: a.id,
+          Nombre: a.Nombre,
+          Ciudad: a.Ciudad,
+          Tipo: a.Tipo,
+          imageUrl: a.imageUrl,
+          shortDescription: a.shortDescription,
+          approxLocation: a.approxLocation ? '1' : ''
+        }
+      }))
+    } as any
+  }, [validItems])
+
+  const computeBounds = useCallback(
+    (mode: 'thai' | 'all') => {
+      const points =
+        mode === 'thai'
+          ? validItems.filter((a) => a.lat >= 5 && a.lat <= 22 && a.lon >= 97 && a.lon <= 106)
+          : validItems
+
+      if (points.length === 0) return null
+
+      let minLat = points[0].lat
+      let maxLat = points[0].lat
+      let minLon = points[0].lon
+      let maxLon = points[0].lon
+
+      for (const p of points) {
+        minLat = Math.min(minLat, p.lat)
+        maxLat = Math.max(maxLat, p.lat)
+        minLon = Math.min(minLon, p.lon)
+        maxLon = Math.max(maxLon, p.lon)
+      }
+
+      // Padding mínimo si todo cae en el mismo punto.
+      if (minLat === maxLat) {
+        minLat -= 0.01
+        maxLat += 0.01
+      }
+      if (minLon === maxLon) {
+        minLon -= 0.01
+        maxLon += 0.01
+      }
+
+      return new maplibregl.LngLatBounds([minLon, minLat], [maxLon, maxLat])
+    },
+    [validItems]
+  )
+
+  const fitTo = useCallback(
+    (mode: 'thai' | 'all') => {
+      const map = mapRef.current
+      if (!map) return
+      const b = computeBounds(mode)
+      if (!b) return
+
+      map.fitBounds(b, {
+        padding: 60,
+        duration: 0,
+        maxZoom: mode === 'thai' ? 13 : 5
+      })
+    },
+    [computeBounds]
+  )
+
+  const updateVisibleIds = useCallback(() => {
+    const map = mapRef.current
+    if (!map) return
+    const b = map.getBounds()
+
+    const ids = new Set<string>()
+    for (const a of validItems) {
+      if (b.contains([a.lon, a.lat] as any)) ids.add(a.id)
+    }
+    onVisibleIdsChange(ids)
+  }, [validItems, onVisibleIdsChange])
+
+  // ---------- Map interaction handlers ----------
+  const onEnterCursor = useCallback(() => {
+    const map = mapRef.current
+    if (map) map.getCanvas().style.cursor = 'pointer'
+  }, [])
+
+  const onLeaveCursor = useCallback(() => {
+    const map = mapRef.current
+    if (map) map.getCanvas().style.cursor = ''
+  }, [])
+
+  const onLeave = useCallback(() => {
+    popupRef.current?.remove()
+  }, [])
+
+  const onHover = useCallback((e: any) => {
+    const map = mapRef.current
+    if (!map) return
+    const f = e?.features?.[0]
+    if (!f?.properties) return
+
+    const Nombre = escapeHtml(String(f.properties.Nombre ?? ''))
+    const Ciudad = escapeHtml(String(f.properties.Ciudad ?? ''))
+    const shortDescription = escapeHtml(String(f.properties.shortDescription ?? ''))
+    const imageUrl = String(f.properties.imageUrl ?? '')
+    const approx = String(f.properties.approxLocation ?? '')
+
+    const html = `
+      <div style="display:flex;gap:10px;align-items:flex-start;max-width:280px">
+        <img src="${escapeHtml(imageUrl)}" alt="" width="44" height="44" style="border-radius:10px;object-fit:cover;background:#0b1220" />
+        <div style="min-width:0">
+          <div style="font-weight:700;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${Nombre}</div>
+          <div style="font-size:12px;opacity:0.8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${Ciudad}${approx ? ' · aprox.' : ''}</div>
+          <div style="margin-top:4px;font-size:12px;opacity:0.9">${shortDescription}</div>
+        </div>
+      </div>
+    `.trim()
+
+    popupRef.current?.remove()
+    popupRef.current = new maplibregl.Popup({ closeButton: false, closeOnClick: false, offset: 14 })
+      .setLngLat(e.lngLat)
+      .setHTML(html)
+      .addTo(map)
+  }, [])
+
+  const onClickPoint = useCallback(
+    (e: any) => {
+      const f = e?.features?.[0]
+      const id = String(f?.properties?.id ?? '')
+      if (!id) return
+
+      const found = items.find((x) => x.id === id)
+      if (found) onSelect(found)
+    },
+    [items, onSelect]
+  )
+
+  const onClickCluster = useCallback((e: any) => {
+    const map = mapRef.current
+    if (!map) return
+
+    const f = e?.features?.[0]
+    const clusterId = f?.properties?.cluster_id
+    const src = map.getSource('activities') as any
+    if (!src || clusterId == null) return
+
+    src.getClusterExpansionZoom(clusterId, (err: any, zoom: number) => {
+      if (err) return
+      map.easeTo({ center: f.geometry.coordinates, zoom, duration: 250 })
+    })
+  }, [])
+
+  const ensureLayers = useCallback(() => {
+    const map = mapRef.current
+    if (!map || !map.isStyleLoaded()) return
+
+    // Fuente (crear o actualizar)
+    const src = map.getSource('activities') as maplibregl.GeoJSONSource | undefined
+    if (!src) {
+      map.addSource('activities', {
+        type: 'geojson',
+        data: geojson,
+        cluster: true,
+        clusterRadius: 45,
+        clusterMaxZoom: 12
+      })
+    } else {
+      src.setData(geojson)
+    }
+
+    const hasLayer = (id: string) => Boolean(map.getLayer(id))
+
+    if (!hasLayer('clusters')) {
+      map.addLayer({
+        id: 'clusters',
+        type: 'circle',
+        source: 'activities',
+        filter: ['has', 'point_count'],
+        paint: {
+          'circle-color': '#10b981',
+          'circle-radius': ['step', ['get', 'point_count'], 16, 20, 20, 50, 26],
+          'circle-opacity': 0.8,
+          'circle-stroke-color': '#052e1e',
+          'circle-stroke-width': 2
+        }
+      })
+    }
+
+    if (!hasLayer('cluster-count')) {
+      map.addLayer({
+        id: 'cluster-count',
+        type: 'symbol',
+        source: 'activities',
+        filter: ['has', 'point_count'],
+        layout: {
+          'text-field': '{point_count_abbreviated}',
+          'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
+          'text-size': 12
+        },
+        paint: {
+          'text-color': '#0b1220'
+        }
+      })
+    }
+
+    if (!hasLayer('unclustered-point')) {
+      map.addLayer({
+        id: 'unclustered-point',
+        type: 'circle',
+        source: 'activities',
+        filter: ['!', ['has', 'point_count']],
+        paint: {
+          'circle-color': '#e5e7eb',
+          'circle-radius': ['interpolate', ['linear'], ['zoom'], 2, 3, 8, 6, 12, 8],
+          'circle-stroke-color': '#0f172a',
+          'circle-stroke-width': 2,
+          'circle-opacity': 0.9
+        }
+      })
+    }
+
+    if (!hasLayer('selected-point')) {
+      map.addLayer({
+        id: 'selected-point',
+        type: 'circle',
+        source: 'activities',
+        filter: ['==', ['get', 'id'], '__none__'],
+        paint: {
+          'circle-color': '#f59e0b',
+          'circle-radius': ['interpolate', ['linear'], ['zoom'], 2, 6, 8, 10, 12, 14],
+          'circle-stroke-color': '#111827',
+          'circle-stroke-width': 3
+        }
+      })
+    }
+
+    // Handlers idempotentes (si se cambia el style, hay que re-registrar)
+    map.off('mousemove', 'unclustered-point', onHover)
+    map.off('mouseleave', 'unclustered-point', onLeave)
+    map.off('click', 'unclustered-point', onClickPoint)
+    map.off('click', 'clusters', onClickCluster)
+    map.off('mouseenter', 'clusters', onEnterCursor)
+    map.off('mouseleave', 'clusters', onLeaveCursor)
+    map.off('mouseenter', 'unclustered-point', onEnterCursor)
+    map.off('mouseleave', 'unclustered-point', onLeaveCursor)
+
+    map.on('mousemove', 'unclustered-point', onHover)
+    map.on('mouseleave', 'unclustered-point', onLeave)
+    map.on('click', 'unclustered-point', onClickPoint)
+    map.on('click', 'clusters', onClickCluster)
+    map.on('mouseenter', 'clusters', onEnterCursor)
+    map.on('mouseleave', 'clusters', onLeaveCursor)
+    map.on('mouseenter', 'unclustered-point', onEnterCursor)
+    map.on('mouseleave', 'unclustered-point', onLeaveCursor)
+  }, [geojson, onClickCluster, onClickPoint, onEnterCursor, onHover, onLeave, onLeaveCursor])
+
+  // ---------- Init map (una sola vez) ----------
   useEffect(() => {
     if (!containerRef.current) return
     if (mapRef.current) return
 
+    setStatus('Inicializando mapa…')
+
     const map = new maplibregl.Map({
       container: containerRef.current,
-      style: {
-        version: 8,
-        sources: {
-          osm: {
-            type: 'raster',
-            tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],
-            tileSize: 256,
-            attribution: '© OpenStreetMap contributors'
-          }
-        },
-        layers: [{ id: 'osm', type: 'raster', source: 'osm' }]
-      },
+      style: VECTOR_STYLE_URL,
       center: [100.501762, 13.756331],
-      zoom: 5
+      zoom: 4,
+      attributionControl: true
     })
-
-    map.addControl(new maplibregl.NavigationControl({ showCompass: true }), 'top-right')
 
     mapRef.current = map
 
+    // UX: sin rotación por defecto.
+    map.dragRotate.disable()
+    map.touchZoomRotate.disableRotation()
+
+    // UX: zoom cooperativo (Ctrl+scroll).
+    map.scrollZoom.disable()
+
+    map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-left')
+    map.addControl(new maplibregl.ScaleControl({ maxWidth: 100, unit: 'metric' }), 'bottom-left')
+
+    const onLoad = () => {
+      setReady(true)
+      setStatus(null)
+      ensureLayers()
+
+      // Fit inicial: prioriza Tailandia si la mayoría de puntos están ahí.
+      const thaiCount = validItems.filter((a) => a.lat >= 5 && a.lat <= 22 && a.lon >= 97 && a.lon <= 106).length
+      const thaiBounds = computeBounds('thai')
+      const allBounds = computeBounds('all')
+
+      if (thaiBounds && thaiCount >= Math.min(20, Math.floor(validItems.length * 0.35))) {
+        map.fitBounds(thaiBounds, { padding: 60, duration: 0, maxZoom: 13 })
+      } else if (allBounds) {
+        map.fitBounds(allBounds, { padding: 60, duration: 0, maxZoom: 5 })
+      }
+
+      updateVisibleIds()
+    }
+
+    const onMoveEnd = () => updateVisibleIds()
+
+    const onError = (ev: any) => {
+      const msg = ev?.error?.message || ev?.error?.toString?.() || 'Error de mapa'
+      setStatus(`Mapa: ${msg}`)
+    }
+
+    map.on('load', onLoad)
+    map.on('moveend', onMoveEnd)
+    map.on('zoomend', onMoveEnd)
+    map.on('style.load', () => {
+      ensureLayers()
+      updateVisibleIds()
+    })
+    map.on('error', onError)
+
+    // ResizeObserver para evitar tiles borrosos/offset en resize.
+    resizeObserverRef.current = new ResizeObserver(() => map.resize())
+    resizeObserverRef.current.observe(containerRef.current)
+
+    // Ctrl+wheel para zoom.
+    const el = containerRef.current
+    const onWheel = (e: WheelEvent) => {
+      if (!mapRef.current) return
+      if (e.ctrlKey || e.metaKey) {
+        mapRef.current.scrollZoom.enable()
+        window.setTimeout(() => mapRef.current?.scrollZoom.disable(), 450)
+      } else {
+        mapRef.current.scrollZoom.disable()
+      }
+    }
+    el.addEventListener('wheel', onWheel, { passive: true })
+
     return () => {
-      hoverPopupRef.current?.remove()
-      hoverPopupRef.current = null
-      for (const mk of markersRef.current.values()) mk.remove()
-      markersRef.current.clear()
+      el.removeEventListener('wheel', onWheel)
+      resizeObserverRef.current?.disconnect()
+      resizeObserverRef.current = null
+      popupRef.current?.remove()
+      popupRef.current = null
       map.remove()
       mapRef.current = null
     }
-  }, [])
+  }, [computeBounds, ensureLayers, updateVisibleIds, validItems])
 
-  // Crear markers (solo una vez cuando llegan items)
-  useEffect(() => {
-    const map = mapRef.current
-    if (!map) return
-    if (!items.length) return
-
-    // Evitar duplicar markers si ya están cargados
-    if (markersRef.current.size > 0) return
-
-    for (const a of items) {
-      const el = document.createElement('button')
-      el.type = 'button'
-      el.className =
-        'group relative flex h-9 w-9 items-center justify-center rounded-full border border-zinc-800 bg-zinc-950/80 shadow-lg backdrop-blur hover:bg-zinc-900 focus:outline-none focus:ring-2 focus:ring-zinc-700'
-      el.setAttribute('aria-label', a.Nombre)
-
-      const img = document.createElement('img')
-      img.src = a.imageUrl
-      img.alt = a.Tipo || 'Actividad'
-      img.className = 'h-6 w-6 rounded-md'
-      el.appendChild(img)
-
-      el.addEventListener('mouseenter', () => {
-        const m = mapRef.current
-        if (!m) return
-        hoverPopupRef.current?.remove()
-        hoverPopupRef.current = new maplibregl.Popup({
-          closeButton: false,
-          closeOnClick: false,
-          offset: 14
-        })
-          .setLngLat([a.lon, a.lat])
-          .setHTML(
-            `<div style="display:flex;gap:8px;align-items:center;max-width:260px;">` +
-              `<img src="${escapeHtml(a.imageUrl)}" style="width:28px;height:28px;border-radius:8px;border:1px solid rgba(255,255,255,0.12);"/>` +
-              `<div style="font-size:12px;line-height:1.2;">` +
-              `<div style="font-weight:700;">${escapeHtml(a.Nombre)}</div>` +
-              `<div style="opacity:0.8;">${escapeHtml(a.Ciudad)}${a.Tipo ? ' • ' + escapeHtml(a.Tipo) : ''}</div>` +
-              `</div></div>`
-          )
-          .addTo(m)
-      })
-
-      el.addEventListener('mouseleave', () => {
-        hoverPopupRef.current?.remove()
-        hoverPopupRef.current = null
-      })
-
-      el.addEventListener('click', () => onSelect(a))
-
-      const marker = new maplibregl.Marker({ element: el, anchor: 'center' }).setLngLat([a.lon, a.lat]).addTo(map)
-      markersRef.current.set(a.id, marker)
-    }
-
-    // Al cargar, encuadrar Tailandia (si existe), sino encuadrar todo
-    const points = (thailandItems.length ? thailandItems : items).map((a) => ({ lat: a.lat, lon: a.lon }))
-    if (points.length >= 2) {
-      const bounds = makeBounds(points)
-      map.fitBounds(bounds, { padding: 60, maxZoom: 12, duration: 0 })
-    }
-
-    const updateVisible = () => {
-      const m = mapRef.current
-      if (!m) return
-      const b = m.getBounds()
-      const ids = new Set<string>()
-      for (const a of items) {
-        if (b.contains([a.lon, a.lat])) ids.add(a.id)
-      }
-      onVisibleIdsChange(ids)
-    }
-
-    map.on('moveend', updateVisible)
-    map.on('zoomend', updateVisible)
-    map.on('dragend', updateVisible)
-    map.on('load', updateVisible)
-
-    // Primera evaluación
-    updateVisible()
-
-    return () => {
-      map.off('moveend', updateVisible)
-      map.off('zoomend', updateVisible)
-      map.off('dragend', updateVisible)
-      map.off('load', updateVisible)
-    }
-  }, [items, onSelect, onVisibleIdsChange, thailandItems])
-
-  // Highlight / flyTo selección
+  // Basemap switch (vector/raster)
   useEffect(() => {
     const map = mapRef.current
     if (!map) return
 
-    // reset highlight
-    for (const [id, marker] of markersRef.current.entries()) {
-      const el = marker.getElement()
-      if (id === selectedId) {
-        el.classList.add('ring-2', 'ring-emerald-400')
-      } else {
-        el.classList.remove('ring-2', 'ring-emerald-400')
-      }
+    setStatus('Cambiando basemap…')
+    try {
+      map.setStyle(basemap === 'vector' ? VECTOR_STYLE_URL : RASTER_STYLE)
+      window.setTimeout(() => setStatus(null), 600)
+    } catch (e: any) {
+      setStatus(e?.message ?? 'No se pudo cambiar el basemap')
     }
+  }, [basemap])
 
-    if (!selectedId) return
-    const a = itemById.get(selectedId)
-    if (!a) return
+  // Data update
+  useEffect(() => {
+    if (!ready) return
+    ensureLayers()
+    updateVisibleIds()
+  }, [geojson, ready, ensureLayers, updateVisibleIds])
 
-    map.flyTo({ center: [a.lon, a.lat], zoom: Math.max(map.getZoom(), 13), speed: 0.9 })
-  }, [selectedId, itemById])
-
-  const fitThailand = () => {
+  // Selected highlight
+  useEffect(() => {
     const map = mapRef.current
     if (!map) return
-    const points = (thailandItems.length ? thailandItems : items).map((a) => ({ lat: a.lat, lon: a.lon }))
-    if (!points.length) return
-    if (points.length === 1) {
-      map.flyTo({ center: [points[0].lon, points[0].lat], zoom: 12 })
-      return
-    }
-    map.fitBounds(makeBounds(points), { padding: 60, maxZoom: 12 })
-  }
-
-  const fitAll = () => {
-    const map = mapRef.current
-    if (!map) return
-    const points = items.map((a) => ({ lat: a.lat, lon: a.lon }))
-    if (!points.length) return
-    if (points.length === 1) {
-      map.flyTo({ center: [points[0].lon, points[0].lat], zoom: 12 })
-      return
-    }
-    map.fitBounds(makeBounds(points), { padding: 60, maxZoom: 6 })
-  }
+    if (!map.getLayer('selected-point')) return
+    map.setFilter('selected-point', ['==', ['get', 'id'], selectedId ?? '__none__'])
+  }, [selectedId])
 
   return (
     <div className="relative h-full w-full">
       <div ref={containerRef} className="h-full w-full" />
-      <div className="absolute left-3 top-3 z-10 flex gap-2">
-        <button
-          onClick={fitThailand}
-          className="rounded-lg border border-zinc-800 bg-zinc-950/80 px-3 py-2 text-xs text-zinc-200 backdrop-blur hover:bg-zinc-900/70"
-        >
-          Ver Tailandia
-        </button>
-        <button
-          onClick={fitAll}
-          className="rounded-lg border border-zinc-800 bg-zinc-950/80 px-3 py-2 text-xs text-zinc-200 backdrop-blur hover:bg-zinc-900/70"
-        >
-          Ver todo
-        </button>
-      </div>
 
-      {selectedId ? (
-        <div className="absolute bottom-3 left-3 z-10 rounded-lg border border-zinc-800 bg-zinc-950/80 px-3 py-2 text-xs text-zinc-200 backdrop-blur">
-          Seleccionado: <b>{itemById.get(selectedId)?.Nombre ?? selectedId}</b>
+      <div className="pointer-events-none absolute inset-x-3 top-3 z-10 flex items-start justify-end">
+        <div className="pointer-events-auto w-[min(360px,calc(100vw-24px))] rounded-xl border border-zinc-800 bg-zinc-950/90 p-3 shadow-xl backdrop-blur">
+          <div className="flex items-center justify-between gap-2">
+            <div className="text-xs font-semibold text-zinc-100">Mapa</div>
+            <div className="text-[11px] text-zinc-400">Zoom: Ctrl + scroll</div>
+          </div>
+
+          <div className="mt-2 flex flex-wrap items-center gap-2">
+            <label className="text-xs text-zinc-300">Base</label>
+            <select
+              value={basemap}
+              onChange={(e) => setBasemap(e.target.value as Basemap)}
+              className="rounded-lg border border-zinc-800 bg-zinc-900 px-2 py-1 text-xs text-zinc-100 outline-none"
+            >
+              <option value="vector">Vector (mejor calidad)</option>
+              <option value="raster">Raster (fallback)</option>
+            </select>
+
+            <button
+              onClick={() => fitTo('thai')}
+              className="ml-auto rounded-lg border border-zinc-800 bg-zinc-900 px-2 py-1 text-xs text-zinc-100 hover:bg-zinc-800"
+              type="button"
+            >
+              Centrar Tailandia
+            </button>
+            <button
+              onClick={() => fitTo('all')}
+              className="rounded-lg border border-zinc-800 bg-zinc-900 px-2 py-1 text-xs text-zinc-100 hover:bg-zinc-800"
+              type="button"
+            >
+              Centrar todo
+            </button>
+          </div>
+
+          {status ? <div className="mt-2 text-xs text-zinc-400">{status}</div> : null}
         </div>
-      ) : null}
+      </div>
     </div>
   )
 }

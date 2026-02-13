@@ -5,6 +5,3 @@
 html, body {
   height: 100%;
 }
-
-/* MapLibre default styles (required for controls/popups). */
-@import "maplibre-gl/dist/maplibre-gl.css";
