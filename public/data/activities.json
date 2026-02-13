@@ -91,9 +91,9 @@
     "Image": "Link",
     "lat": 13.756331,
     "lon": 100.501762,
+    "approxLocation": true,
     "imageUrl": "/thumbs/consejo.svg",
-    "shortDescription": "El \"truco\" secreto por el que la comida sabe tan bien.",
-    "approxLocation": true
+    "shortDescription": "El \"truco\" secreto por el que la comida sabe tan bien."
   },
   {
     "id": "bangkok-amaranth-spa-kimpton",
@@ -194,7 +194,7 @@
     "id": "chiang-mai-baan-thai-cookery-school",
     "Nombre": "Baan Thai Cookery School",
     "Tipo": "Gastronomía",
-    "Horario": "nan",
+    "Horario": "",
     "Ciudad": "Chiang Mai",
     "Tiempo": "5h",
     "Esfuerzo": "Bajo",

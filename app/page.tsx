@@ -40,7 +40,7 @@ export default function Page() {
     async function run() {
       try {
         setLoading(true)
-        const res = await fetch('/data/activities.json', { cache: 'no-store' })
+        const res = await fetch('/data/activities.json')
         if (!res.ok) throw new Error(`No se pudo cargar data: ${res.status}`)
         const json = (await res.json()) as Activity[]
         if (cancelled) return
@@ -72,8 +72,8 @@ export default function Page() {
   const showingCount = visibleActivities.length
 
   return (
-    <main className="h-dvh w-full">
-      <header className="sticky top-0 z-10 border-b border-zinc-800 bg-zinc-950/90 backdrop-blur">
+    <main className="flex h-dvh w-full flex-col overflow-hidden">
+      <header className="z-10 border-b border-zinc-800 bg-zinc-950/90 backdrop-blur">
         <div className="mx-auto flex max-w-[1600px] items-center justify-between gap-3 px-4 py-3">
           <div className="min-w-0">
             <h1 className="truncate text-lg font-semibold">Mapa de Actividades — Tailandia</h1>
@@ -95,8 +95,8 @@ export default function Page() {
         </div>
       </header>
 
-      <div className="mx-auto grid h-[calc(100dvh-57px)] max-w-[1600px] grid-cols-1 gap-0 md:grid-cols-[420px_1fr]">
-        <section className="order-2 h-full border-t border-zinc-800 md:order-1 md:border-r md:border-t-0">
+      <div className="mx-auto grid w-full max-w-[1600px] flex-1 min-h-0 grid-cols-1 gap-0 overflow-hidden md:grid-cols-[420px_1fr]">
+        <section className="order-2 h-full overflow-hidden border-t border-zinc-800 md:order-1 md:border-r md:border-t-0">
           <ActivityList
             items={visibleActivities}
             totalCount={totalCount}
@@ -106,7 +106,7 @@ export default function Page() {
           />
         </section>
 
-        <section className="order-1 h-full md:order-2">
+        <section className="order-1 h-full overflow-hidden md:order-2">
           <MapView
             items={activities}
             onVisibleIdsChange={(ids) => setVisibleIds(ids)}

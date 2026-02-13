@@ -61,7 +61,11 @@ export function ActivityList({ items, totalCount, showingCount, loading, onSelec
         </div>
       </div>
 
-      <div className="min-h-0 flex-1 overflow-auto">
+      <div
+        className="min-h-0 flex-1 overflow-auto overscroll-contain"
+        onWheelCapture={(e) => e.stopPropagation()}
+        onTouchMoveCapture={(e) => e.stopPropagation()}
+      >
         {loading ? (
           <div className="p-4 text-sm text-zinc-400">Cargando actividades…</div>
         ) : filtered.length === 0 ? (

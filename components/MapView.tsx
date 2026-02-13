@@ -11,14 +11,16 @@ type Props = {
   selectedId: string | null
 }
 
-type Basemap = 'vector' | 'raster'
+type Basemap = 'vector_demo' | 'vector_openfreemap' | 'raster_osm'
 
-// Vector basemap sin API key (OpenFreeMap).
-// Fuente: ejemplos de OpenFreeMap (servicio público de tiles/estilos).
-const VECTOR_STYLE_URL = 'https://tiles.openfreemap.org/styles/liberty'
+// Vector sin API key (muy estable para demos / prototipos)
+const VECTOR_DEMO_STYLE_URL = 'https://demotiles.maplibre.org/style.json'
 
-// Raster fallback (OSM) por si fallan fuentes/glyphs del estilo vectorial.
-const RASTER_STYLE: any = {
+// Vector sin API key (OpenFreeMap)
+const VECTOR_OPENFREEMAP_STYLE_URL = 'https://tiles.openfreemap.org/styles/liberty'
+
+// Raster fallback (OSM). Nota: en pantallas retina puede verse menos nítido que vector.
+const RASTER_OSM_STYLE: any = {
   version: 8,
   sources: {
     osm: {
@@ -44,13 +46,28 @@ function escapeHtml(s: string) {
     .replaceAll("'", '&#039;')
 }
 
+function basemapToStyle(b: Basemap) {
+  if (b === 'vector_openfreemap') return VECTOR_OPENFREEMAP_STYLE_URL
+  if (b === 'raster_osm') return RASTER_OSM_STYLE
+  return VECTOR_DEMO_STYLE_URL
+}
+
 export function MapView({ items, onVisibleIdsChange, onSelect, selectedId }: Props) {
   const containerRef = useRef<HTMLDivElement | null>(null)
   const mapRef = useRef<MapLibreMap | null>(null)
   const popupRef = useRef<maplibregl.Popup | null>(null)
   const resizeObserverRef = useRef<ResizeObserver | null>(null)
+  const didInitialFitRef = useRef(false)
 
-  const [basemap, setBasemap] = useState<Basemap>('vector')
+  // Refs para evitar closures “viejas” en handlers registrados una sola vez.
+  const validItemsRef = useRef<Activity[]>([])
+  const itemsByIdRef = useRef<Map<string, Activity>>(new Map())
+  const geojsonRef = useRef<any>(null)
+  const onVisibleIdsChangeRef = useRef(onVisibleIdsChange)
+  const onSelectRef = useRef(onSelect)
+  const selectedIdRef = useRef<string | null>(selectedId)
+
+  const [basemap, setBasemap] = useState<Basemap>('vector_demo')
   const [ready, setReady] = useState(false)
   const [status, setStatus] = useState<string | null>(null)
 
@@ -75,69 +92,108 @@ export function MapView({ items, onVisibleIdsChange, onSelect, selectedId }: Pro
     } as any
   }, [validItems])
 
-  const computeBounds = useCallback(
-    (mode: 'thai' | 'all') => {
-      const points =
-        mode === 'thai'
-          ? validItems.filter((a) => a.lat >= 5 && a.lat <= 22 && a.lon >= 97 && a.lon <= 106)
-          : validItems
+  useEffect(() => {
+    validItemsRef.current = validItems
+    geojsonRef.current = geojson
+    itemsByIdRef.current = new Map(items.map((a) => [a.id, a]))
+  }, [validItems, geojson, items])
 
-      if (points.length === 0) return null
+  useEffect(() => {
+    onVisibleIdsChangeRef.current = onVisibleIdsChange
+  }, [onVisibleIdsChange])
 
-      let minLat = points[0].lat
-      let maxLat = points[0].lat
-      let minLon = points[0].lon
-      let maxLon = points[0].lon
+  useEffect(() => {
+    onSelectRef.current = onSelect
+  }, [onSelect])
 
-      for (const p of points) {
-        minLat = Math.min(minLat, p.lat)
-        maxLat = Math.max(maxLat, p.lat)
-        minLon = Math.min(minLon, p.lon)
-        maxLon = Math.max(maxLon, p.lon)
-      }
+  useEffect(() => {
+    selectedIdRef.current = selectedId
+  }, [selectedId])
 
-      // Padding mínimo si todo cae en el mismo punto.
-      if (minLat === maxLat) {
-        minLat -= 0.01
-        maxLat += 0.01
-      }
-      if (minLon === maxLon) {
-        minLon -= 0.01
-        maxLon += 0.01
-      }
+  const computeBounds = useCallback((mode: 'thai' | 'all') => {
+    const points = validItemsRef.current
+    if (!points.length) return null
 
-      return new maplibregl.LngLatBounds([minLon, minLat], [maxLon, maxLat])
-    },
-    [validItems]
-  )
+    const filtered =
+      mode === 'thai'
+        ? points.filter((a) => a.lat >= 5 && a.lat <= 22 && a.lon >= 97 && a.lon <= 106)
+        : points
 
-  const fitTo = useCallback(
-    (mode: 'thai' | 'all') => {
-      const map = mapRef.current
-      if (!map) return
-      const b = computeBounds(mode)
-      if (!b) return
+    if (!filtered.length) return null
 
-      map.fitBounds(b, {
-        padding: 60,
-        duration: 0,
-        maxZoom: mode === 'thai' ? 13 : 5
-      })
-    },
-    [computeBounds]
-  )
+    let minLat = filtered[0].lat
+    let maxLat = filtered[0].lat
+    let minLon = filtered[0].lon
+    let maxLon = filtered[0].lon
+
+    for (const p of filtered) {
+      minLat = Math.min(minLat, p.lat)
+      maxLat = Math.max(maxLat, p.lat)
+      minLon = Math.min(minLon, p.lon)
+      maxLon = Math.max(maxLon, p.lon)
+    }
+
+    // Padding mínimo si cae en el mismo punto.
+    if (minLat === maxLat) {
+      minLat -= 0.01
+      maxLat += 0.01
+    }
+    if (minLon === maxLon) {
+      minLon -= 0.01
+      maxLon += 0.01
+    }
+
+    return new maplibregl.LngLatBounds([minLon, minLat], [maxLon, maxLat])
+  }, [])
+
+  const fitTo = useCallback((mode: 'thai' | 'all') => {
+    const map = mapRef.current
+    if (!map) return
+    const b = computeBounds(mode)
+    if (!b) return
+
+    map.fitBounds(b, {
+      padding: 60,
+      duration: 0,
+      maxZoom: mode === 'thai' ? 13 : 5
+    })
+  }, [computeBounds])
+
+  const fitBest = useCallback(() => {
+    const map = mapRef.current
+    if (!map) return
+    const points = validItemsRef.current
+    if (!points.length) return
+
+    const thaiCount = points.filter((a) => a.lat >= 5 && a.lat <= 22 && a.lon >= 97 && a.lon <= 106).length
+    const thaiBounds = computeBounds('thai')
+    const allBounds = computeBounds('all')
+
+    if (thaiBounds && thaiCount >= Math.min(20, Math.floor(points.length * 0.35))) {
+      map.fitBounds(thaiBounds, { padding: 60, duration: 0, maxZoom: 13 })
+      return
+    }
+    if (allBounds) {
+      map.fitBounds(allBounds, { padding: 60, duration: 0, maxZoom: 5 })
+    }
+  }, [computeBounds])
 
   const updateVisibleIds = useCallback(() => {
     const map = mapRef.current
     if (!map) return
-    const b = map.getBounds()
 
+    const points = validItemsRef.current
+    if (!points.length) return
+
+    const b = map.getBounds()
     const ids = new Set<string>()
-    for (const a of validItems) {
+
+    for (const a of points) {
       if (b.contains([a.lon, a.lat] as any)) ids.add(a.id)
     }
-    onVisibleIdsChange(ids)
-  }, [validItems, onVisibleIdsChange])
+
+    onVisibleIdsChangeRef.current(ids)
+  }, [])
 
   // ---------- Map interaction handlers ----------
   const onEnterCursor = useCallback(() => {
@@ -184,17 +240,14 @@ export function MapView({ items, onVisibleIdsChange, onSelect, selectedId }: Pro
       .addTo(map)
   }, [])
 
-  const onClickPoint = useCallback(
-    (e: any) => {
-      const f = e?.features?.[0]
-      const id = String(f?.properties?.id ?? '')
-      if (!id) return
+  const onClickPoint = useCallback((e: any) => {
+    const f = e?.features?.[0]
+    const id = String(f?.properties?.id ?? '')
+    if (!id) return
 
-      const found = items.find((x) => x.id === id)
-      if (found) onSelect(found)
-    },
-    [items, onSelect]
-  )
+    const found = itemsByIdRef.current.get(id)
+    if (found) onSelectRef.current(found)
+  }, [])
 
   const onClickCluster = useCallback((e: any) => {
     const map = mapRef.current
@@ -215,18 +268,20 @@ export function MapView({ items, onVisibleIdsChange, onSelect, selectedId }: Pro
     const map = mapRef.current
     if (!map || !map.isStyleLoaded()) return
 
+    const data = geojsonRef.current ?? { type: 'FeatureCollection', features: [] }
+
     // Fuente (crear o actualizar)
     const src = map.getSource('activities') as maplibregl.GeoJSONSource | undefined
     if (!src) {
       map.addSource('activities', {
         type: 'geojson',
-        data: geojson,
+        data,
         cluster: true,
         clusterRadius: 45,
         clusterMaxZoom: 12
       })
     } else {
-      src.setData(geojson)
+      src.setData(data)
     }
 
     const hasLayer = (id: string) => Boolean(map.getLayer(id))
@@ -295,6 +350,11 @@ export function MapView({ items, onVisibleIdsChange, onSelect, selectedId }: Pro
       })
     }
 
+    // Selected highlight
+    if (map.getLayer('selected-point')) {
+      map.setFilter('selected-point', ['==', ['get', 'id'], selectedIdRef.current ?? '__none__'])
+    }
+
     // Handlers idempotentes (si se cambia el style, hay que re-registrar)
     map.off('mousemove', 'unclustered-point', onHover)
     map.off('mouseleave', 'unclustered-point', onLeave)
@@ -313,7 +373,7 @@ export function MapView({ items, onVisibleIdsChange, onSelect, selectedId }: Pro
     map.on('mouseleave', 'clusters', onLeaveCursor)
     map.on('mouseenter', 'unclustered-point', onEnterCursor)
     map.on('mouseleave', 'unclustered-point', onLeaveCursor)
-  }, [geojson, onClickCluster, onClickPoint, onEnterCursor, onHover, onLeave, onLeaveCursor])
+  }, [onClickCluster, onClickPoint, onEnterCursor, onHover, onLeave, onLeaveCursor])
 
   // ---------- Init map (una sola vez) ----------
   useEffect(() => {
@@ -324,20 +384,18 @@ export function MapView({ items, onVisibleIdsChange, onSelect, selectedId }: Pro
 
     const map = new maplibregl.Map({
       container: containerRef.current,
-      style: VECTOR_STYLE_URL,
+      style: basemapToStyle('vector_demo'),
       center: [100.501762, 13.756331],
       zoom: 4,
-      attributionControl: true
-    })
+      attributionControl: true,
+      cooperativeGestures: true
+    } as any)
 
     mapRef.current = map
 
     // UX: sin rotación por defecto.
     map.dragRotate.disable()
     map.touchZoomRotate.disableRotation()
-
-    // UX: zoom cooperativo (Ctrl+scroll).
-    map.scrollZoom.disable()
 
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-left')
     map.addControl(new maplibregl.ScaleControl({ maxWidth: 100, unit: 'metric' }), 'bottom-left')
@@ -347,21 +405,14 @@ export function MapView({ items, onVisibleIdsChange, onSelect, selectedId }: Pro
       setStatus(null)
       ensureLayers()
 
-      // Fit inicial: prioriza Tailandia si la mayoría de puntos están ahí.
-      const thaiCount = validItems.filter((a) => a.lat >= 5 && a.lat <= 22 && a.lon >= 97 && a.lon <= 106).length
-      const thaiBounds = computeBounds('thai')
-      const allBounds = computeBounds('all')
-
-      if (thaiBounds && thaiCount >= Math.min(20, Math.floor(validItems.length * 0.35))) {
-        map.fitBounds(thaiBounds, { padding: 60, duration: 0, maxZoom: 13 })
-      } else if (allBounds) {
-        map.fitBounds(allBounds, { padding: 60, duration: 0, maxZoom: 5 })
+      // Si ya hay datos, hacemos fit ahora mismo.
+      if (!didInitialFitRef.current && validItemsRef.current.length > 0) {
+        didInitialFitRef.current = true
+        fitBest()
       }
 
       updateVisibleIds()
     }
-
-    const onMoveEnd = () => updateVisibleIds()
 
     const onError = (ev: any) => {
       const msg = ev?.error?.message || ev?.error?.toString?.() || 'Error de mapa'
@@ -369,8 +420,8 @@ export function MapView({ items, onVisibleIdsChange, onSelect, selectedId }: Pro
     }
 
     map.on('load', onLoad)
-    map.on('moveend', onMoveEnd)
-    map.on('zoomend', onMoveEnd)
+    map.on('moveend', updateVisibleIds)
+    map.on('zoomend', updateVisibleIds)
     map.on('style.load', () => {
       ensureLayers()
       updateVisibleIds()
@@ -381,21 +432,7 @@ export function MapView({ items, onVisibleIdsChange, onSelect, selectedId }: Pro
     resizeObserverRef.current = new ResizeObserver(() => map.resize())
     resizeObserverRef.current.observe(containerRef.current)
 
-    // Ctrl+wheel para zoom.
-    const el = containerRef.current
-    const onWheel = (e: WheelEvent) => {
-      if (!mapRef.current) return
-      if (e.ctrlKey || e.metaKey) {
-        mapRef.current.scrollZoom.enable()
-        window.setTimeout(() => mapRef.current?.scrollZoom.disable(), 450)
-      } else {
-        mapRef.current.scrollZoom.disable()
-      }
-    }
-    el.addEventListener('wheel', onWheel, { passive: true })
-
     return () => {
-      el.removeEventListener('wheel', onWheel)
       resizeObserverRef.current?.disconnect()
       resizeObserverRef.current = null
       popupRef.current?.remove()
@@ -403,30 +440,37 @@ export function MapView({ items, onVisibleIdsChange, onSelect, selectedId }: Pro
       map.remove()
       mapRef.current = null
     }
-  }, [computeBounds, ensureLayers, updateVisibleIds, validItems])
+  }, [ensureLayers, fitBest, updateVisibleIds])
 
-  // Basemap switch (vector/raster)
+  // Basemap switch
   useEffect(() => {
     const map = mapRef.current
     if (!map) return
 
     setStatus('Cambiando basemap…')
     try {
-      map.setStyle(basemap === 'vector' ? VECTOR_STYLE_URL : RASTER_STYLE)
-      window.setTimeout(() => setStatus(null), 600)
+      map.setStyle(basemapToStyle(basemap))
+      window.setTimeout(() => setStatus(null), 500)
     } catch (e: any) {
       setStatus(e?.message ?? 'No se pudo cambiar el basemap')
     }
   }, [basemap])
 
-  // Data update
+  // Sync data to map
   useEffect(() => {
     if (!ready) return
     ensureLayers()
-    updateVisibleIds()
-  }, [geojson, ready, ensureLayers, updateVisibleIds])
 
-  // Selected highlight
+    // Fit inicial cuando los datos llegan DESPUÉS de que el mapa ya cargó.
+    if (!didInitialFitRef.current && validItemsRef.current.length > 0) {
+      didInitialFitRef.current = true
+      fitBest()
+    }
+
+    updateVisibleIds()
+  }, [ready, items, ensureLayers, fitBest, updateVisibleIds])
+
+  // Selected highlight (sin re-crear listeners)
   useEffect(() => {
     const map = mapRef.current
     if (!map) return
@@ -435,14 +479,14 @@ export function MapView({ items, onVisibleIdsChange, onSelect, selectedId }: Pro
   }, [selectedId])
 
   return (
-    <div className="relative h-full w-full">
+    <div className="relative h-full w-full overscroll-none">
       <div ref={containerRef} className="h-full w-full" />
 
       <div className="pointer-events-none absolute inset-x-3 top-3 z-10 flex items-start justify-end">
-        <div className="pointer-events-auto w-[min(360px,calc(100vw-24px))] rounded-xl border border-zinc-800 bg-zinc-950/90 p-3 shadow-xl backdrop-blur">
+        <div className="pointer-events-auto w-[min(380px,calc(100vw-24px))] rounded-xl border border-zinc-800 bg-zinc-950/90 p-3 shadow-xl backdrop-blur">
           <div className="flex items-center justify-between gap-2">
             <div className="text-xs font-semibold text-zinc-100">Mapa</div>
-            <div className="text-[11px] text-zinc-400">Zoom: Ctrl + scroll</div>
+            <div className="text-[11px] text-zinc-400">Zoom: Ctrl/⌘ + scroll · Pan: arrastrar</div>
           </div>
 
           <div className="mt-2 flex flex-wrap items-center gap-2">
@@ -452,8 +496,9 @@ export function MapView({ items, onVisibleIdsChange, onSelect, selectedId }: Pro
               onChange={(e) => setBasemap(e.target.value as Basemap)}
               className="rounded-lg border border-zinc-800 bg-zinc-900 px-2 py-1 text-xs text-zinc-100 outline-none"
             >
-              <option value="vector">Vector (mejor calidad)</option>
-              <option value="raster">Raster (fallback)</option>
+              <option value="vector_demo">Vector (MapLibre demo)</option>
+              <option value="vector_openfreemap">Vector (OpenFreeMap)</option>
+              <option value="raster_osm">Raster (OSM, fallback)</option>
             </select>
 
             <button
