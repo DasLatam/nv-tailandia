@@ -5,3 +5,18 @@
 html, body {
   height: 100%;
 }
+
+/* MapLibre: suavizar popups y controles para UI clara */
+.maplibregl-popup-content {
+  border-radius: 14px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgb(228 228 231);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+  color: rgb(24 24 27);
+}
+
+.maplibregl-popup-tip {
+  border-top-color: rgb(228 228 231) !important;
+  border-bottom-color: rgb(228 228 231) !important;
+}

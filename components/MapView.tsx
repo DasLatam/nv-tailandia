@@ -11,15 +11,13 @@ type Props = {
   selectedId: string | null
 }
 
-type Basemap = 'vector_demo' | 'vector_openfreemap' | 'raster_osm'
+type Basemap = 'openfreemap_liberty' | 'openfreemap_positron' | 'raster_osm'
 
-// Vector sin API key (muy estable para demos / prototipos)
-const VECTOR_DEMO_STYLE_URL = 'https://demotiles.maplibre.org/style.json'
+// OpenFreeMap (sin API key): estilos públicos recomendados.
+const OPENFREEMAP_LIBERTY_STYLE_URL = 'https://tiles.openfreemap.org/styles/liberty'
+const OPENFREEMAP_POSITRON_STYLE_URL = 'https://tiles.openfreemap.org/styles/positron'
 
-// Vector sin API key (OpenFreeMap)
-const VECTOR_OPENFREEMAP_STYLE_URL = 'https://tiles.openfreemap.org/styles/liberty'
-
-// Raster fallback (OSM). Nota: en pantallas retina puede verse menos nítido que vector.
+// Raster fallback (OSM). Siempre funciona y no depende de glyphs/sprites.
 const RASTER_OSM_STYLE: any = {
   version: 8,
   sources: {
@@ -31,6 +29,12 @@ const RASTER_OSM_STYLE: any = {
     }
   },
   layers: [{ id: 'osm', type: 'raster', source: 'osm' }]
+}
+
+function basemapToStyle(b: Basemap) {
+  if (b === 'openfreemap_positron') return OPENFREEMAP_POSITRON_STYLE_URL
+  if (b === 'raster_osm') return RASTER_OSM_STYLE
+  return OPENFREEMAP_LIBERTY_STYLE_URL
 }
 
 function isFiniteNumber(n: unknown): n is number {
@@ -46,18 +50,44 @@ function escapeHtml(s: string) {
     .replaceAll("'", '&#039;')
 }
 
-function basemapToStyle(b: Basemap) {
-  if (b === 'vector_openfreemap') return VECTOR_OPENFREEMAP_STYLE_URL
-  if (b === 'raster_osm') return RASTER_OSM_STYLE
-  return VECTOR_DEMO_STYLE_URL
+function typeToThumb(tipo?: string) {
+  const t = (tipo ?? '').trim().toLowerCase()
+  const map: Record<string, string> = {
+    actividad: 'actividad',
+    visita: 'visita',
+    consejo: 'consejo',
+    comida: 'comida',
+    vuelo: 'vuelo',
+    transporte: 'transporte',
+    compras: 'compras',
+    experiencia: 'experiencia',
+    spa: 'spa',
+    gastronomia: 'gastronomia',
+    gastronomía: 'gastronomia',
+    hotel: 'hotel',
+    alojamiento: 'alojamiento',
+    mercado: 'mercado',
+    playa: 'playa',
+    naturaleza: 'naturaleza',
+    cultura: 'cultura',
+    logistica: 'logistica',
+    logística: 'logistica',
+    etico: 'etico',
+    ético: 'etico',
+    'vida nocturna': 'vida-nocturna'
+  }
+  const slug = map[t] ?? 'actividad'
+  return `/thumbs/${slug}.svg`
 }
 
 export function MapView({ items, onVisibleIdsChange, onSelect, selectedId }: Props) {
   const containerRef = useRef<HTMLDivElement | null>(null)
   const mapRef = useRef<MapLibreMap | null>(null)
   const popupRef = useRef<maplibregl.Popup | null>(null)
-  const resizeObserverRef = useRef<ResizeObserver | null>(null)
+
   const didInitialFitRef = useRef(false)
+  const layersReadyRef = useRef(false)
+  const lastAppliedBasemapRef = useRef<Basemap | null>(null)
 
   // Refs para evitar closures “viejas” en handlers registrados una sola vez.
   const validItemsRef = useRef<Activity[]>([])
@@ -67,9 +97,11 @@ export function MapView({ items, onVisibleIdsChange, onSelect, selectedId }: Pro
   const onSelectRef = useRef(onSelect)
   const selectedIdRef = useRef<string | null>(selectedId)
 
-  const [basemap, setBasemap] = useState<Basemap>('vector_demo')
+  const [basemap, setBasemap] = useState<Basemap>('openfreemap_liberty')
   const [ready, setReady] = useState(false)
   const [status, setStatus] = useState<string | null>(null)
+  const [layersOk, setLayersOk] = useState(false)
+  const [controlsOpen, setControlsOpen] = useState(true)
 
   const validItems = useMemo(() => items.filter((a) => isFiniteNumber(a.lat) && isFiniteNumber(a.lon)), [items])
 
@@ -133,7 +165,6 @@ export function MapView({ items, onVisibleIdsChange, onSelect, selectedId }: Pro
       maxLon = Math.max(maxLon, p.lon)
     }
 
-    // Padding mínimo si cae en el mismo punto.
     if (minLat === maxLat) {
       minLat -= 0.01
       maxLat += 0.01
@@ -146,18 +177,20 @@ export function MapView({ items, onVisibleIdsChange, onSelect, selectedId }: Pro
     return new maplibregl.LngLatBounds([minLon, minLat], [maxLon, maxLat])
   }, [])
 
-  const fitTo = useCallback((mode: 'thai' | 'all') => {
-    const map = mapRef.current
-    if (!map) return
-    const b = computeBounds(mode)
-    if (!b) return
-
-    map.fitBounds(b, {
-      padding: 60,
-      duration: 0,
-      maxZoom: mode === 'thai' ? 13 : 5
-    })
-  }, [computeBounds])
+  const fitTo = useCallback(
+    (mode: 'thai' | 'all') => {
+      const map = mapRef.current
+      if (!map) return
+      const b = computeBounds(mode)
+      if (!b) return
+      map.fitBounds(b, {
+        padding: 60,
+        duration: 0,
+        maxZoom: mode === 'thai' ? 13 : 5
+      })
+    },
+    [computeBounds]
+  )
 
   const fitBest = useCallback(() => {
     const map = mapRef.current
@@ -195,7 +228,6 @@ export function MapView({ items, onVisibleIdsChange, onSelect, selectedId }: Pro
     onVisibleIdsChangeRef.current(ids)
   }, [])
 
-  // ---------- Map interaction handlers ----------
   const onEnterCursor = useCallback(() => {
     const map = mapRef.current
     if (map) map.getCanvas().style.cursor = 'pointer'
@@ -206,13 +238,14 @@ export function MapView({ items, onVisibleIdsChange, onSelect, selectedId }: Pro
     if (map) map.getCanvas().style.cursor = ''
   }, [])
 
-  const onLeave = useCallback(() => {
+  const onLeaveHover = useCallback(() => {
     popupRef.current?.remove()
   }, [])
 
-  const onHover = useCallback((e: any) => {
+  const onHoverPoint = useCallback((e: any) => {
     const map = mapRef.current
     if (!map) return
+
     const f = e?.features?.[0]
     if (!f?.properties) return
 
@@ -222,13 +255,16 @@ export function MapView({ items, onVisibleIdsChange, onSelect, selectedId }: Pro
     const imageUrl = String(f.properties.imageUrl ?? '')
     const approx = String(f.properties.approxLocation ?? '')
 
+    const fallback = typeToThumb(String(f.properties.Tipo ?? ''))
+    const img = imageUrl && imageUrl !== 'Link' ? imageUrl : fallback
+
     const html = `
-      <div style="display:flex;gap:10px;align-items:flex-start;max-width:280px">
-        <img src="${escapeHtml(imageUrl)}" alt="" width="44" height="44" style="border-radius:10px;object-fit:cover;background:#0b1220" />
+      <div style="display:flex;gap:10px;align-items:flex-start;max-width:300px">
+        <img src="${escapeHtml(img)}" onerror="this.onerror=null;this.src='${escapeHtml(fallback)}'" alt="" width="44" height="44" style="border-radius:10px;object-fit:cover;background:#f4f4f5;border:1px solid #e5e7eb" />
         <div style="min-width:0">
           <div style="font-weight:700;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${Nombre}</div>
-          <div style="font-size:12px;opacity:0.8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${Ciudad}${approx ? ' · aprox.' : ''}</div>
-          <div style="margin-top:4px;font-size:12px;opacity:0.9">${shortDescription}</div>
+          <div style="font-size:12px;color:#52525b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${Ciudad}${approx ? ' · aprox.' : ''}</div>
+          <div style="margin-top:4px;font-size:12px;color:#3f3f46">${shortDescription}</div>
         </div>
       </div>
     `.trim()
@@ -266,88 +302,96 @@ export function MapView({ items, onVisibleIdsChange, onSelect, selectedId }: Pro
 
   const ensureLayers = useCallback(() => {
     const map = mapRef.current
-    if (!map || !map.isStyleLoaded()) return
+    if (!map) return
+
+    // 1) Asegurar que el style exista
+    try {
+      const style = map.getStyle()
+      if (!style || !style.layers) return
+    } catch {
+      return
+    }
 
     const data = geojsonRef.current ?? { type: 'FeatureCollection', features: [] }
 
-    // Fuente (crear o actualizar)
-    const src = map.getSource('activities') as maplibregl.GeoJSONSource | undefined
-    if (!src) {
-      map.addSource('activities', {
-        type: 'geojson',
-        data,
-        cluster: true,
-        clusterRadius: 45,
-        clusterMaxZoom: 12
-      })
-    } else {
-      src.setData(data)
+    // 2) Source (crear o actualizar)
+    try {
+      const src = map.getSource('activities') as maplibregl.GeoJSONSource | undefined
+      if (!src) {
+        map.addSource('activities', {
+          type: 'geojson',
+          data,
+          cluster: true,
+          clusterRadius: 45,
+          clusterMaxZoom: 12
+        })
+      } else {
+        src.setData(data)
+      }
+    } catch {
+      return
     }
 
     const hasLayer = (id: string) => Boolean(map.getLayer(id))
 
+    // 3) Layers (solo circle layers — evita dependencia de glyphs/fonts)
     if (!hasLayer('clusters')) {
-      map.addLayer({
-        id: 'clusters',
-        type: 'circle',
-        source: 'activities',
-        filter: ['has', 'point_count'],
-        paint: {
-          'circle-color': '#10b981',
-          'circle-radius': ['step', ['get', 'point_count'], 16, 20, 20, 50, 26],
-          'circle-opacity': 0.8,
-          'circle-stroke-color': '#052e1e',
-          'circle-stroke-width': 2
-        }
-      })
-    }
-
-    if (!hasLayer('cluster-count')) {
-      map.addLayer({
-        id: 'cluster-count',
-        type: 'symbol',
-        source: 'activities',
-        filter: ['has', 'point_count'],
-        layout: {
-          'text-field': '{point_count_abbreviated}',
-          'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
-          'text-size': 12
-        },
-        paint: {
-          'text-color': '#0b1220'
-        }
-      })
+      try {
+        map.addLayer({
+          id: 'clusters',
+          type: 'circle',
+          source: 'activities',
+          filter: ['has', 'point_count'],
+          paint: {
+            'circle-color': '#10b981',
+            'circle-radius': ['step', ['get', 'point_count'], 16, 20, 20, 50, 26],
+            'circle-opacity': 0.75,
+            'circle-stroke-color': '#052e1e',
+            'circle-stroke-width': 2
+          }
+        })
+      } catch {
+        return
+      }
     }
 
     if (!hasLayer('unclustered-point')) {
-      map.addLayer({
-        id: 'unclustered-point',
-        type: 'circle',
-        source: 'activities',
-        filter: ['!', ['has', 'point_count']],
-        paint: {
-          'circle-color': '#e5e7eb',
-          'circle-radius': ['interpolate', ['linear'], ['zoom'], 2, 3, 8, 6, 12, 8],
-          'circle-stroke-color': '#0f172a',
-          'circle-stroke-width': 2,
-          'circle-opacity': 0.9
-        }
-      })
+      try {
+        map.addLayer({
+          id: 'unclustered-point',
+          type: 'circle',
+          source: 'activities',
+          filter: ['!', ['has', 'point_count']],
+          paint: {
+            'circle-color': '#e5e7eb',
+            'circle-radius': ['interpolate', ['linear'], ['zoom'], 2, 3, 8, 6, 12, 8],
+            'circle-stroke-color': '#0f172a',
+            'circle-stroke-width': 2,
+            'circle-opacity': 0.9
+          }
+        })
+      } catch {
+        return
+      }
     }
 
     if (!hasLayer('selected-point')) {
-      map.addLayer({
-        id: 'selected-point',
-        type: 'circle',
-        source: 'activities',
-        filter: ['==', ['get', 'id'], '__none__'],
-        paint: {
-          'circle-color': '#f59e0b',
-          'circle-radius': ['interpolate', ['linear'], ['zoom'], 2, 6, 8, 10, 12, 14],
-          'circle-stroke-color': '#111827',
-          'circle-stroke-width': 3
-        }
-      })
+      try {
+        map.addLayer({
+          id: 'selected-point',
+          type: 'circle',
+          source: 'activities',
+          filter: ['==', ['get', 'id'], '__none__'],
+          paint: {
+            'circle-color': '#f59e0b',
+            'circle-radius': ['interpolate', ['linear'], ['zoom'], 2, 6, 8, 10, 12, 14],
+            'circle-stroke-color': '#111827',
+            'circle-stroke-width': 3
+          }
+        })
+      } catch {
+        return
+      }
     }
 
     // Selected highlight
@@ -355,9 +399,9 @@ export function MapView({ items, onVisibleIdsChange, onSelect, selectedId }: Pro
       map.setFilter('selected-point', ['==', ['get', 'id'], selectedIdRef.current ?? '__none__'])
     }
 
-    // Handlers idempotentes (si se cambia el style, hay que re-registrar)
-    map.off('mousemove', 'unclustered-point', onHover)
-    map.off('mouseleave', 'unclustered-point', onLeave)
+    // 4) Re-registrar handlers (idempotente)
+    map.off('mousemove', 'unclustered-point', onHoverPoint)
+    map.off('mouseleave', 'unclustered-point', onLeaveHover)
     map.off('click', 'unclustered-point', onClickPoint)
     map.off('click', 'clusters', onClickCluster)
     map.off('mouseenter', 'clusters', onEnterCursor)
@@ -365,15 +409,18 @@ export function MapView({ items, onVisibleIdsChange, onSelect, selectedId }: Pro
     map.off('mouseenter', 'unclustered-point', onEnterCursor)
     map.off('mouseleave', 'unclustered-point', onLeaveCursor)
 
-    map.on('mousemove', 'unclustered-point', onHover)
-    map.on('mouseleave', 'unclustered-point', onLeave)
+    map.on('mousemove', 'unclustered-point', onHoverPoint)
+    map.on('mouseleave', 'unclustered-point', onLeaveHover)
     map.on('click', 'unclustered-point', onClickPoint)
     map.on('click', 'clusters', onClickCluster)
     map.on('mouseenter', 'clusters', onEnterCursor)
     map.on('mouseleave', 'clusters', onLeaveCursor)
     map.on('mouseenter', 'unclustered-point', onEnterCursor)
     map.on('mouseleave', 'unclustered-point', onLeaveCursor)
-  }, [onClickCluster, onClickPoint, onEnterCursor, onHover, onLeave, onLeaveCursor])
+
+    layersReadyRef.current = true
+    setLayersOk(true)
+  }, [onClickCluster, onClickPoint, onEnterCursor, onHoverPoint, onLeaveCursor, onLeaveHover])
 
   // ---------- Init map (una sola vez) ----------
   useEffect(() => {
@@ -382,9 +429,12 @@ export function MapView({ items, onVisibleIdsChange, onSelect, selectedId }: Pro
 
     setStatus('Inicializando mapa…')
 
+    const initialBasemap: Basemap = basemap
+    lastAppliedBasemapRef.current = initialBasemap
+
     const map = new maplibregl.Map({
       container: containerRef.current,
-      style: basemapToStyle('vector_demo'),
+      style: basemapToStyle(initialBasemap),
       center: [100.501762, 13.756331],
       zoom: 4,
       attributionControl: true,
@@ -400,17 +450,34 @@ export function MapView({ items, onVisibleIdsChange, onSelect, selectedId }: Pro
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-left')
     map.addControl(new maplibregl.ScaleControl({ maxWidth: 100, unit: 'metric' }), 'bottom-left')
 
+    // Wheel: evitar que el scroll "se pase" al mapa (zoom solo con Ctrl/⌘)
+    const el = containerRef.current
+    const wheel = (ev: WheelEvent) => {
+      const wantsZoom = ev.ctrlKey || ev.metaKey
+      if (!wantsZoom) {
+        ev.preventDefault()
+      }
+    }
+    el?.addEventListener('wheel', wheel, { passive: false })
+
     const onLoad = () => {
       setReady(true)
       setStatus(null)
       ensureLayers()
 
-      // Si ya hay datos, hacemos fit ahora mismo.
       if (!didInitialFitRef.current && validItemsRef.current.length > 0) {
         didInitialFitRef.current = true
         fitBest()
       }
 
+      updateVisibleIds()
+    }
+
+    // Cuando cambia el style (setStyle), este evento es el lugar fiable para reinyectar capas.
+    const onStyleLoad = () => {
+      layersReadyRef.current = false
+      setLayersOk(false)
+      ensureLayers()
       updateVisibleIds()
     }
 
@@ -420,48 +487,54 @@ export function MapView({ items, onVisibleIdsChange, onSelect, selectedId }: Pro
     }
 
     map.on('load', onLoad)
+    map.on('style.load', onStyleLoad)
     map.on('moveend', updateVisibleIds)
     map.on('zoomend', updateVisibleIds)
-    map.on('style.load', () => {
-      ensureLayers()
-      updateVisibleIds()
+
+    // styledata se dispara muchas veces, pero es útil para reintentos cuando estilos remotos tardan.
+    map.on('styledata', () => {
+      if (!layersReadyRef.current) ensureLayers()
     })
+
     map.on('error', onError)
 
-    // ResizeObserver para evitar tiles borrosos/offset en resize.
-    resizeObserverRef.current = new ResizeObserver(() => map.resize())
-    resizeObserverRef.current.observe(containerRef.current)
-
     return () => {
-      resizeObserverRef.current?.disconnect()
-      resizeObserverRef.current = null
+      el?.removeEventListener('wheel', wheel)
       popupRef.current?.remove()
       popupRef.current = null
       map.remove()
       mapRef.current = null
     }
-  }, [ensureLayers, fitBest, updateVisibleIds])
+  }, [basemap, ensureLayers, fitBest, updateVisibleIds])
 
-  // Basemap switch
+  // Basemap switch (evitar setStyle redundante al montar)
   useEffect(() => {
     const map = mapRef.current
     if (!map) return
+    if (!ready) return
+
+    const last = lastAppliedBasemapRef.current
+    if (last === basemap) return
+    lastAppliedBasemapRef.current = basemap
 
     setStatus('Cambiando basemap…')
+    layersReadyRef.current = false
+    setLayersOk(false)
+
     try {
-      map.setStyle(basemapToStyle(basemap))
+      // IMPORTANT: diff:false evita errores internos de style diff (y flashes raros con fuentes/sprites)
+      map.setStyle(basemapToStyle(basemap), { diff: false } as any)
       window.setTimeout(() => setStatus(null), 500)
     } catch (e: any) {
       setStatus(e?.message ?? 'No se pudo cambiar el basemap')
     }
-  }, [basemap])
+  }, [basemap, ready])
 
-  // Sync data to map
+  // Sync data -> source
   useEffect(() => {
     if (!ready) return
     ensureLayers()
 
-    // Fit inicial cuando los datos llegan DESPUÉS de que el mapa ya cargó.
     if (!didInitialFitRef.current && validItemsRef.current.length > 0) {
       didInitialFitRef.current = true
       fitBest()
@@ -470,7 +543,7 @@ export function MapView({ items, onVisibleIdsChange, onSelect, selectedId }: Pro
     updateVisibleIds()
   }, [ready, items, ensureLayers, fitBest, updateVisibleIds])
 
-  // Selected highlight (sin re-crear listeners)
+  // Selected highlight
   useEffect(() => {
     const map = mapRef.current
     if (!map) return
@@ -483,42 +556,90 @@ export function MapView({ items, onVisibleIdsChange, onSelect, selectedId }: Pro
       <div ref={containerRef} className="h-full w-full" />
 
       <div className="pointer-events-none absolute inset-x-3 top-3 z-10 flex items-start justify-end">
-        <div className="pointer-events-auto w-[min(380px,calc(100vw-24px))] rounded-xl border border-zinc-800 bg-zinc-950/90 p-3 shadow-xl backdrop-blur">
-          <div className="flex items-center justify-between gap-2">
-            <div className="text-xs font-semibold text-zinc-100">Mapa</div>
-            <div className="text-[11px] text-zinc-400">Zoom: Ctrl/⌘ + scroll · Pan: arrastrar</div>
-          </div>
+        {controlsOpen ? (
+          <div className="pointer-events-auto w-[min(420px,calc(100vw-24px))] rounded-xl border border-zinc-200 bg-white/90 p-3 shadow-xl backdrop-blur">
+            <div className="flex items-center justify-between gap-2">
+              <div className="text-xs font-semibold text-zinc-900">Mapa</div>
+              <div className="flex items-center gap-2">
+                <div className="hidden text-[11px] text-zinc-600 sm:block">Zoom: Ctrl/⌘ + scroll · Pan: arrastrar</div>
+                <button
+                  onClick={() => setControlsOpen(false)}
+                  className="rounded-lg border border-zinc-200 bg-white px-2 py-1 text-[11px] text-zinc-800 shadow-sm hover:bg-zinc-100"
+                  type="button"
+                  title="Ocultar controles"
+                >
+                  Ocultar
+                </button>
+              </div>
+            </div>
 
           <div className="mt-2 flex flex-wrap items-center gap-2">
-            <label className="text-xs text-zinc-300">Base</label>
+            <label className="text-xs text-zinc-700">Base</label>
             <select
               value={basemap}
               onChange={(e) => setBasemap(e.target.value as Basemap)}
-              className="rounded-lg border border-zinc-800 bg-zinc-900 px-2 py-1 text-xs text-zinc-100 outline-none"
+              className="rounded-lg border border-zinc-200 bg-white px-2 py-1 text-xs text-zinc-900 outline-none shadow-sm"
             >
-              <option value="vector_demo">Vector (MapLibre demo)</option>
-              <option value="vector_openfreemap">Vector (OpenFreeMap)</option>
+              <option value="openfreemap_liberty">Vector (OpenFreeMap · Liberty)</option>
+              <option value="openfreemap_positron">Vector (OpenFreeMap · Positron)</option>
               <option value="raster_osm">Raster (OSM, fallback)</option>
             </select>
 
             <button
+              onClick={() => {
+                layersReadyRef.current = false
+                setLayersOk(false)
+                ensureLayers()
+                if (!didInitialFitRef.current && validItemsRef.current.length > 0) {
+                  didInitialFitRef.current = true
+                  fitBest()
+                }
+              }}
+              className="rounded-lg border border-zinc-200 bg-white px-2 py-1 text-xs text-zinc-900 shadow-sm hover:bg-zinc-100"
+              type="button"
+            >
+              Reintentar puntos
+            </button>
+
+            <div className="ml-auto flex items-center gap-2 text-[11px] text-zinc-700">
+              <span className="rounded bg-zinc-100 px-2 py-1">
+                Coordenadas: <b className="text-zinc-900">{validItems.length}</b>
+              </span>
+              <span className="rounded bg-zinc-100 px-2 py-1">
+                Capa: <b className={layersOk ? 'text-emerald-700' : 'text-amber-700'}>{layersOk ? 'OK' : '…'}</b>
+              </span>
+            </div>
+
+            <button
               onClick={() => fitTo('thai')}
-              className="ml-auto rounded-lg border border-zinc-800 bg-zinc-900 px-2 py-1 text-xs text-zinc-100 hover:bg-zinc-800"
+              className="rounded-lg border border-zinc-200 bg-white px-2 py-1 text-xs text-zinc-900 shadow-sm hover:bg-zinc-100"
               type="button"
             >
               Centrar Tailandia
             </button>
             <button
               onClick={() => fitTo('all')}
-              className="rounded-lg border border-zinc-800 bg-zinc-900 px-2 py-1 text-xs text-zinc-100 hover:bg-zinc-800"
+              className="rounded-lg border border-zinc-200 bg-white px-2 py-1 text-xs text-zinc-900 shadow-sm hover:bg-zinc-100"
               type="button"
             >
               Centrar todo
             </button>
           </div>
 
-          {status ? <div className="mt-2 text-xs text-zinc-400">{status}</div> : null}
-        </div>
+            {status ? <div className="mt-2 text-xs text-zinc-600">{status}</div> : null}
+          </div>
+        ) : (
+          <div className="pointer-events-auto">
+            <button
+              onClick={() => setControlsOpen(true)}
+              className="rounded-xl border border-zinc-200 bg-white/90 px-3 py-2 text-xs text-zinc-900 shadow-xl backdrop-blur hover:bg-white"
+              type="button"
+              title="Mostrar controles del mapa"
+            >
+              Mostrar controles
+            </button>
+          </div>
+        )}
       </div>
     </div>
   )

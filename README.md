@@ -42,6 +42,15 @@ npm run dev
 
 > El build genera: `public/data/activities.json` (lo consume la app).
 
+### Imágenes (columna `Image`)
+
+- Si `Image` es una URL pública (empieza con `https://`), se usa como miniatura.
+- Si `Image` es un path local servido desde `public` (empieza con `/`), también se usa.
+  - Ej: guardá `public/images/wat-arun.jpg` y poné `Image` = `/images/wat-arun.jpg`.
+- Si `Image` está vacío o es `Link`, se usa el ícono por `Tipo` (`/thumbs/*.svg`).
+
+> Tip: muchos links de Google Drive/Instagram/Maps **no** son “imagen directa” y no se renderizan en `<img>`. Usá una URL directa a `.jpg/.png` o subí las imágenes a `public/images`.
+
 ---
 
 ## 3) Publicar en Vercel vía GitHub
