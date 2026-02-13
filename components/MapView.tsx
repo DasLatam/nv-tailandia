@@ -80,6 +80,28 @@ function typeToThumb(tipo?: string) {
   return `/thumbs/${slug}.svg`
 }
 
+function makeAccuracyPolygon(lon: number, lat: number, meters: number) {
+  // Aproximación: metros -> grados (válida para UI). 64 puntos.
+  const points = 64
+  const latRad = (lat * Math.PI) / 180
+  const degLat = meters / 111320
+  const degLon = meters / (111320 * Math.cos(latRad))
+
+  const coords: [number, number][] = []
+  for (let i = 0; i <= points; i++) {
+    const a = (i / points) * Math.PI * 2
+    const x = Math.cos(a) * degLon
+    const y = Math.sin(a) * degLat
+    coords.push([lon + x, lat + y])
+  }
+
+  return {
+    type: 'Feature',
+    geometry: { type: 'Polygon', coordinates: [coords] },
+    properties: {}
+  } as any
+}
+
 export function MapView({ items, onVisibleIdsChange, onSelect, selectedId }: Props) {
   const containerRef = useRef<HTMLDivElement | null>(null)
   const mapRef = useRef<MapLibreMap | null>(null)
@@ -102,6 +124,8 @@ export function MapView({ items, onVisibleIdsChange, onSelect, selectedId }: Pro
   const [status, setStatus] = useState<string | null>(null)
   const [layersOk, setLayersOk] = useState(false)
   const [controlsOpen, setControlsOpen] = useState(true)
+  const [locating, setLocating] = useState(false)
+  const userLocRef = useRef<{ lon: number; lat: number; acc?: number } | null>(null)
 
   const validItems = useMemo(() => items.filter((a) => isFiniteNumber(a.lat) && isFiniteNumber(a.lon)), [items])
 
@@ -422,6 +446,145 @@ export function MapView({ items, onVisibleIdsChange, onSelect, selectedId }: Pro
     setLayersOk(true)
   }, [onClickCluster, onClickPoint, onEnterCursor, onHoverPoint, onLeaveCursor, onLeaveHover])
 
+  const ensureUserLocationLayers = useCallback(() => {
+    const map = mapRef.current
+    if (!map) return
+
+    const loc = userLocRef.current
+    if (!loc) return
+
+    const hasSource = (id: string) => Boolean(map.getSource(id))
+    const hasLayer = (id: string) => Boolean(map.getLayer(id))
+
+    const pointData = {
+      type: 'FeatureCollection',
+      features: [
+        {
+          type: 'Feature',
+          geometry: { type: 'Point', coordinates: [loc.lon, loc.lat] },
+          properties: {}
+        }
+      ]
+    } as any
+
+    const accuracy = typeof loc.acc === 'number' && Number.isFinite(loc.acc) ? Math.min(Math.max(loc.acc, 10), 1500) : null
+    const poly = accuracy ? makeAccuracyPolygon(loc.lon, loc.lat, accuracy) : null
+    const polyData = poly ? { type: 'FeatureCollection', features: [poly] } : { type: 'FeatureCollection', features: [] }
+
+    if (!hasSource('user-location')) {
+      try {
+        map.addSource('user-location', { type: 'geojson', data: pointData })
+      } catch {
+        // ignore
+      }
+    } else {
+      try {
+        ;(map.getSource('user-location') as any)?.setData(pointData)
+      } catch {
+        // ignore
+      }
+    }
+
+    if (!hasSource('user-accuracy')) {
+      try {
+        map.addSource('user-accuracy', { type: 'geojson', data: polyData })
+      } catch {
+        // ignore
+      }
+    } else {
+      try {
+        ;(map.getSource('user-accuracy') as any)?.setData(polyData)
+      } catch {
+        // ignore
+      }
+    }
+
+    // Accuracy fill
+    if (!hasLayer('user-accuracy-fill')) {
+      try {
+        map.addLayer({
+          id: 'user-accuracy-fill',
+          type: 'fill',
+          source: 'user-accuracy',
+          paint: {
+            'fill-color': '#60a5fa',
+            'fill-opacity': 0.15
+          }
+        })
+      } catch {
+        // ignore
+      }
+    }
+
+    // Accuracy outline
+    if (!hasLayer('user-accuracy-line')) {
+      try {
+        map.addLayer({
+          id: 'user-accuracy-line',
+          type: 'line',
+          source: 'user-accuracy',
+          paint: {
+            'line-color': '#60a5fa',
+            'line-width': 1.5,
+            'line-opacity': 0.6
+          }
+        })
+      } catch {
+        // ignore
+      }
+    }
+
+    // User point
+    if (!hasLayer('user-location-dot')) {
+      try {
+        map.addLayer({
+          id: 'user-location-dot',
+          type: 'circle',
+          source: 'user-location',
+          paint: {
+            'circle-color': '#2563eb',
+            'circle-radius': ['interpolate', ['linear'], ['zoom'], 2, 4, 10, 7, 14, 9],
+            'circle-stroke-color': '#ffffff',
+            'circle-stroke-width': 2,
+            'circle-opacity': 0.95
+          }
+        })
+      } catch {
+        // ignore
+      }
+    }
+  }, [])
+
+  const centerOnUser = useCallback(() => {
+    const map = mapRef.current
+    if (!map) return
+
+    if (typeof window === 'undefined' || !('geolocation' in navigator)) {
+      setStatus('Geolocalización no disponible en este dispositivo.')
+      return
+    }
+
+    setLocating(true)
+    setStatus('Obteniendo tu ubicación…')
+
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        const { latitude, longitude, accuracy } = pos.coords
+        userLocRef.current = { lat: latitude, lon: longitude, acc: accuracy }
+        ensureUserLocationLayers()
+        map.easeTo({ center: [longitude, latitude], zoom: Math.max(map.getZoom(), 13), duration: 600 })
+        setLocating(false)
+        setStatus(null)
+      },
+      (err) => {
+        setLocating(false)
+        const msg = err?.message || 'No se pudo obtener tu ubicación.'
+        setStatus(msg)
+      },
+      { enableHighAccuracy: true, timeout: 8000, maximumAge: 30000 }
+    )
+  }, [ensureUserLocationLayers])
+
   // ---------- Init map (una sola vez) ----------
   useEffect(() => {
     if (!containerRef.current) return
@@ -464,6 +627,8 @@ export function MapView({ items, onVisibleIdsChange, onSelect, selectedId }: Pro
       setReady(true)
       setStatus(null)
       ensureLayers()
+      // Si ya hay ubicación del usuario, reinyectar la capa luego del load.
+      ensureUserLocationLayers()
 
       if (!didInitialFitRef.current && validItemsRef.current.length > 0) {
         didInitialFitRef.current = true
@@ -478,6 +643,7 @@ export function MapView({ items, onVisibleIdsChange, onSelect, selectedId }: Pro
       layersReadyRef.current = false
       setLayersOk(false)
       ensureLayers()
+      ensureUserLocationLayers()
       updateVisibleIds()
     }
 
@@ -624,19 +790,38 @@ export function MapView({ items, onVisibleIdsChange, onSelect, selectedId }: Pro
             >
               Centrar todo
             </button>
+
+            <button
+              onClick={centerOnUser}
+              disabled={locating}
+              className="rounded-lg border border-zinc-200 bg-white px-2 py-1 text-xs text-zinc-900 shadow-sm hover:bg-zinc-100 disabled:cursor-not-allowed disabled:opacity-60"
+              type="button"
+              title="Centrar en tu ubicación (pide permiso)"
+            >
+              {locating ? 'Ubicando…' : '📍 Mi ubicación'}
+            </button>
           </div>
 
             {status ? <div className="mt-2 text-xs text-zinc-600">{status}</div> : null}
           </div>
         ) : (
-          <div className="pointer-events-auto">
+          <div className="pointer-events-auto flex items-center gap-2">
+            <button
+              onClick={centerOnUser}
+              disabled={locating}
+              className="rounded-xl border border-zinc-200 bg-white/90 px-3 py-2 text-xs text-zinc-900 shadow-xl backdrop-blur hover:bg-white disabled:cursor-not-allowed disabled:opacity-60"
+              type="button"
+              title="Centrar en tu ubicación"
+            >
+              {locating ? '…' : '📍'}
+            </button>
             <button
               onClick={() => setControlsOpen(true)}
               className="rounded-xl border border-zinc-200 bg-white/90 px-3 py-2 text-xs text-zinc-900 shadow-xl backdrop-blur hover:bg-white"
               type="button"
               title="Mostrar controles del mapa"
             >
-              Mostrar controles
+              Controles
             </button>
           </div>
         )}

@@ -75,6 +75,15 @@ export function ActivityModal({ activity, onClose }: Props) {
     return () => window.removeEventListener('keydown', onKey)
   }, [onClose])
 
+  // Evitar scroll del documento cuando el modal está abierto.
+  useEffect(() => {
+    const prev = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.body.style.overflow = prev
+    }
+  }, [])
+
   const mapsUrl = useMemo(() => {
     const lat = Number(activity.lat)
     const lon = Number(activity.lon)
@@ -83,6 +92,13 @@ export function ActivityModal({ activity, onClose }: Props) {
   }, [activity.lat, activity.lon])
 
   const thumbFallback = typeToThumb(activity.Tipo)
+
+  const coordsText = useMemo(() => {
+    const lat = Number(activity.lat)
+    const lon = Number(activity.lon)
+    if (!Number.isFinite(lat) || !Number.isFinite(lon)) return '-'
+    return `${lat}, ${lon}`
+  }, [activity.lat, activity.lon])
 
   return (
     <div className="fixed inset-0 z-20 flex items-end justify-center p-3 md:items-center">
@@ -94,9 +110,9 @@ export function ActivityModal({ activity, onClose }: Props) {
         tabIndex={0}
       />
 
-      <div className="relative w-full max-w-2xl overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-2xl">
+      <div className="relative flex h-[calc(100dvh-24px)] w-full max-w-3xl flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-2xl md:h-auto md:max-h-[88dvh]">
         {/* Header */}
-        <div className="flex items-start gap-3 border-b border-zinc-200 p-4">
+        <div className="flex items-start gap-3 border-b border-zinc-200 p-3 md:p-4">
           <div className="h-11 w-11 overflow-hidden rounded-xl border border-zinc-200 bg-zinc-50">
             <SafeImg
               src={activity.imageUrl}
@@ -132,46 +148,50 @@ export function ActivityModal({ activity, onClose }: Props) {
                 href={mapsUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-lg border border-zinc-200 bg-white px-3 py-2 text-xs text-zinc-800 shadow-sm hover:bg-zinc-100"
+                className="rounded-lg border border-zinc-200 bg-white px-2 py-2 text-xs text-zinc-800 shadow-sm hover:bg-zinc-100"
               >
-                Abrir en Maps
+                <span className="hidden sm:inline">Abrir en Maps</span>
+                <span className="sm:hidden">🗺️</span>
               </a>
             ) : null}
             <button
               onClick={onClose}
-              className="rounded-lg border border-zinc-200 bg-white px-3 py-2 text-xs text-zinc-800 shadow-sm hover:bg-zinc-100"
+              className="rounded-lg border border-zinc-200 bg-white px-2 py-2 text-xs text-zinc-800 shadow-sm hover:bg-zinc-100"
             >
-              Cerrar
+              <span className="hidden sm:inline">Cerrar</span>
+              <span className="sm:hidden">✕</span>
             </button>
           </div>
         </div>
 
         {/* Content */}
-        <div className="max-h-[78dvh] overflow-auto p-4">
-          {/* Bloques principales (reducen scroll: lo largo va en 1 columna solo cuando existe) */}
-          {activity.Descripción ? (
-            <section className="mb-3 rounded-xl border border-zinc-200 bg-zinc-50 p-4">
-              <h3 className="mb-1 text-sm font-semibold text-zinc-900">Descripción</h3>
-              <p className="whitespace-pre-wrap text-sm text-zinc-700">{activity.Descripción}</p>
-            </section>
-          ) : null}
+        <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain p-3 [-webkit-overflow-scrolling:touch] md:p-4">
+          {/* Bloques principales (2 columnas en desktop para aprovechar espacio) */}
+          <div className="grid gap-3 md:grid-cols-2">
+            {activity.Descripción ? (
+              <section className="rounded-xl border border-zinc-200 bg-zinc-50 p-4">
+                <h3 className="mb-1 text-sm font-semibold text-zinc-900">Descripción</h3>
+                <p className="whitespace-pre-wrap text-sm text-zinc-700">{activity.Descripción}</p>
+              </section>
+            ) : null}
 
-          {activity.Detalle ? (
-            <section className="mb-3 rounded-xl border border-zinc-200 bg-zinc-50 p-4">
-              <h3 className="mb-1 text-sm font-semibold text-zinc-900">Detalle</h3>
-              <p className="whitespace-pre-wrap text-sm text-zinc-700">{activity.Detalle}</p>
-            </section>
-          ) : null}
+            {activity.Detalle ? (
+              <section className="rounded-xl border border-zinc-200 bg-zinc-50 p-4">
+                <h3 className="mb-1 text-sm font-semibold text-zinc-900">Detalle</h3>
+                <p className="whitespace-pre-wrap text-sm text-zinc-700">{activity.Detalle}</p>
+              </section>
+            ) : null}
+          </div>
 
           {activity.NotaIA ? (
-            <section className="mb-3 rounded-xl border border-zinc-200 bg-zinc-50 p-4">
+            <section className="mt-3 rounded-xl border border-zinc-200 bg-zinc-50 p-4">
               <h3 className="mb-1 text-sm font-semibold text-zinc-900">Nota</h3>
               <p className="whitespace-pre-wrap text-sm text-zinc-700">{activity.NotaIA}</p>
             </section>
           ) : null}
 
           {/* Datos clave (siempre visible, compacto) */}
-          <section className="mb-3">
+          <section className="mt-3">
             <div className="mb-2 flex items-center justify-between gap-2">
               <h3 className="text-sm font-semibold text-zinc-900">Datos clave</h3>
               <button
@@ -184,21 +204,20 @@ export function ActivityModal({ activity, onClose }: Props) {
               </button>
             </div>
 
-            <div className="grid grid-cols-1 gap-2 text-xs md:grid-cols-2">
-              <Field label="Nombre" value={activity.Nombre} />
-              <Field label="Ciudad" value={activity.Ciudad} />
+            {/* Evita duplicar Nombre/Ciudad: ya están en el header */}
+            <div className="grid grid-cols-2 gap-2 text-xs md:grid-cols-3">
               <Field label="Tipo" value={activity.Tipo} />
               <Field label="Horario" value={activity.Horario} />
               <Field label="Tiempo" value={activity.Tiempo} />
               <Field label="Costo" value={activity.Costo} />
               <Field label="Esfuerzo" value={activity.Esfuerzo} />
-              <Field label="Coordenadas" value={`${activity.lat}, ${activity.lon}`} />
+              <Field label="Coordenadas" value={coordsText} />
             </div>
           </section>
 
           {/* CSV completo (colapsable) */}
           {showCsv ? (
-            <section className="rounded-xl border border-zinc-200 bg-white p-4">
+            <section className="mt-3 rounded-xl border border-zinc-200 bg-white p-4">
               <h3 className="mb-2 text-sm font-semibold text-zinc-900">Datos (CSV)</h3>
               <div className="grid grid-cols-1 gap-2 text-xs md:grid-cols-2">
                 <Field label="Nombre" value={activity.Nombre} />
@@ -209,7 +228,7 @@ export function ActivityModal({ activity, onClose }: Props) {
                 <Field label="Esfuerzo" value={activity.Esfuerzo} />
                 <Field label="Costo" value={activity.Costo} />
                 <Field label="LATLON (original)" value={activity.LATLON || '-'} />
-                <Field label="lat/lon (usado)" value={`${activity.lat}, ${activity.lon}`} />
+                <Field label="lat/lon (usado)" value={coordsText} />
                 <Field label="Image (original)" value={activity.Image || '-'} />
               </div>
             </section>
