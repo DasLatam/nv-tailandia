@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useMemo, useState } from 'react'
+import Link from 'next/link'
 import clsx from 'clsx'
 import { ActivityList } from '@/components/ActivityList'
 import { MapView } from '@/components/MapView'
@@ -107,6 +108,13 @@ export default function Page() {
             </p>
           </div>
           <div className="flex items-center gap-2 text-xs text-zinc-700">
+            <Link
+              href="/datos"
+              className="rounded-lg border border-zinc-200 bg-white px-2 py-1 text-xs font-semibold text-zinc-800 shadow-sm hover:bg-zinc-100"
+              title="Guía de lectura (Budismo, cultura y wats)"
+            >
+              DATOS
+            </Link>
             {rebuildMsg ? (
               <span className="rounded border border-zinc-200 bg-white px-2 py-1 text-xs text-zinc-700 shadow-sm">{rebuildMsg}</span>
             ) : null}

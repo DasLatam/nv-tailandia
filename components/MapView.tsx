@@ -487,7 +487,7 @@ export function MapView({ items, onVisibleIdsChange, onSelect, selectedId }: Pro
 
     if (!hasSource('user-accuracy')) {
       try {
-        map.addSource('user-accuracy', { type: 'geojson', data: (polyData as any) })
+        map.addSource('user-accuracy', { type: 'geojson', data: polyData })
       } catch {
         // ignore
       }

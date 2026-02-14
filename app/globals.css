@@ -20,3 +20,30 @@ html, body {
   border-top-color: rgb(228 228 231) !important;
   border-bottom-color: rgb(228 228 231) !important;
 }
+
+/* --- /datos (lectura) --- */
+.data-prose p {
+  line-height: 1.65;
+}
+
+.data-prose h1,
+.data-prose h2,
+.data-prose h3 {
+  letter-spacing: -0.01em;
+}
+
+.data-prose h2 {
+  scroll-margin-top: 84px;
+}
+
+@media print {
+  header[data-print-hide="1"] {
+    display: none !important;
+  }
+  .print\:hidden {
+    display: none !important;
+  }
+  .data-prose {
+    color: #111827 !important;
+  }
+}
