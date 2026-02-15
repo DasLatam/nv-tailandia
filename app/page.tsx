@@ -34,6 +34,7 @@ export default function Page() {
   const [activities, setActivities] = useState<Activity[]>([])
   const [visibleIds, setVisibleIds] = useState<Set<string>>(new Set())
   const [selected, setSelected] = useState<Activity | null>(null)
+  const [focusKey, setFocusKey] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [sidebarOpen, setSidebarOpen] = useState(true)
@@ -155,7 +156,7 @@ export default function Page() {
               totalCount={totalCount}
               showingCount={showingCount}
               loading={loading}
-              onSelect={(a) => setSelected(a)}
+              onSelect={(a) => { setSelected(a); setFocusKey(`${a.id}|${Date.now()}`) }}
               onRefreshSource={refreshSource}
               refreshing={rebuilding}
             />
@@ -166,8 +167,9 @@ export default function Page() {
           <MapView
             items={activities}
             onVisibleIdsChange={(ids) => setVisibleIds(ids)}
-            onSelect={(a) => setSelected(a)}
+            onSelect={(a) => { setSelected(a); setFocusKey(`${a.id}|${Date.now()}`) }}
             selectedId={selected?.id ?? null}
+            focusKey={focusKey}
           />
         </section>
       </div>

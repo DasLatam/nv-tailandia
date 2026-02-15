@@ -9,6 +9,7 @@ type Props = {
   onVisibleIdsChange: (ids: Set<string>) => void
   onSelect: (a: Activity) => void
   selectedId: string | null
+  focusKey?: string | null
 }
 
 type Basemap = 'openfreemap_liberty' | 'openfreemap_positron' | 'raster_osm'
@@ -102,7 +103,7 @@ function makeAccuracyPolygon(lon: number, lat: number, meters: number) {
   } as any
 }
 
-export function MapView({ items, onVisibleIdsChange, onSelect, selectedId }: Props) {
+export function MapView({ items, onVisibleIdsChange, onSelect, selectedId, focusKey }: Props) {
   const containerRef = useRef<HTMLDivElement | null>(null)
   const mapRef = useRef<MapLibreMap | null>(null)
   const popupRef = useRef<maplibregl.Popup | null>(null)
@@ -320,7 +321,9 @@ export function MapView({ items, onVisibleIdsChange, onSelect, selectedId }: Pro
 
     src.getClusterExpansionZoom(clusterId, (err: any, zoom: number) => {
       if (err) return
-      map.easeTo({ center: f.geometry.coordinates, zoom, duration: 250 })
+      const maxZoom = typeof (map as any).getMaxZoom === 'function' ? (map as any).getMaxZoom() : 22
+      const targetZoom = Math.min(zoom + 0.35, maxZoom)
+      map.easeTo({ center: f.geometry.coordinates, zoom: targetZoom, duration: 380 })
     })
   }, [])
 
@@ -716,6 +719,24 @@ export function MapView({ items, onVisibleIdsChange, onSelect, selectedId }: Pro
     if (!map.getLayer('selected-point')) return
     map.setFilter('selected-point', ['==', ['get', 'id'], selectedId ?? '__none__'])
   }, [selectedId])
+
+  // Focus (desde lista): centrar y hacer zoom a un punto aunque sea el mismo ID repetido
+  useEffect(() => {
+    if (!focusKey) return
+    const map = mapRef.current
+    if (!map) return
+
+    const id = String(focusKey).split('|')[0]
+    const a = itemsByIdRef.current.get(id)
+    if (!a) return
+    if (!isFiniteNumber(a.lat) || !isFiniteNumber(a.lon)) return
+
+    // Asegurar salir del clustering (clusterMaxZoom=12)
+    const targetZoom = Math.max(map.getZoom(), 13.25)
+    popupRef.current?.remove()
+    map.easeTo({ center: [a.lon, a.lat], zoom: targetZoom, duration: 650 })
+  }, [focusKey])
+
 
   return (
     <div className="relative h-full w-full overscroll-none">

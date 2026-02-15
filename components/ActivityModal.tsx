@@ -66,6 +66,7 @@ type Props = {
 
 export function ActivityModal({ activity, onClose }: Props) {
   const [showCsv, setShowCsv] = useState(false)
+  const [lightboxOpen, setLightboxOpen] = useState(false)
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
@@ -92,6 +93,7 @@ export function ActivityModal({ activity, onClose }: Props) {
   }, [activity.lat, activity.lon])
 
   const thumbFallback = typeToThumb(activity.Tipo)
+  const mainImg = activity.imageUrl && activity.imageUrl !== 'Link' ? activity.imageUrl : thumbFallback
 
   const coordsText = useMemo(() => {
     const lat = Number(activity.lat)
@@ -113,14 +115,19 @@ export function ActivityModal({ activity, onClose }: Props) {
       <div className="relative flex h-[calc(100dvh-24px)] w-full max-w-3xl flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-2xl md:h-auto md:max-h-[88dvh]">
         {/* Header */}
         <div className="flex items-start gap-3 border-b border-zinc-200 p-3 md:p-4">
-          <div className="h-11 w-11 overflow-hidden rounded-xl border border-zinc-200 bg-zinc-50">
+          <button
+            type="button"
+            onClick={() => setLightboxOpen(true)}
+            className="h-11 w-11 overflow-hidden rounded-xl border border-zinc-200 bg-zinc-50"
+            title="Ver imagen grande"
+          >
             <SafeImg
               src={activity.imageUrl}
               fallback={thumbFallback}
               alt={activity.Tipo || 'Actividad'}
               className="h-full w-full object-cover"
             />
-          </div>
+          </button>
 
           <div className="min-w-0 flex-1">
             <div className="flex items-center gap-2">
@@ -166,6 +173,23 @@ export function ActivityModal({ activity, onClose }: Props) {
 
         {/* Content */}
         <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain p-3 [-webkit-overflow-scrolling:touch] md:p-4">
+          <div className="mb-3">
+            <button
+              type="button"
+              onClick={() => setLightboxOpen(true)}
+              className="w-full overflow-hidden rounded-xl border border-zinc-200 bg-zinc-50"
+              title="Abrir imagen grande"
+            >
+              <SafeImg
+                src={mainImg}
+                fallback={thumbFallback}
+                alt={activity.Tipo || 'Actividad'}
+                className="h-48 w-full object-cover md:h-64"
+              />
+            </button>
+            <div className="mt-1 text-[11px] text-zinc-500">Tip: tocá la imagen para verla grande.</div>
+          </div>
+
           {/* Bloques principales (2 columnas en desktop para aprovechar espacio) */}
           <div className="grid gap-3 md:grid-cols-2">
             {activity.Descripción ? (
@@ -234,6 +258,40 @@ export function ActivityModal({ activity, onClose }: Props) {
             </section>
           ) : null}
         </div>
+
+
+      {lightboxOpen ? (
+        <div className="fixed inset-0 z-30 flex items-center justify-center p-4">
+          <div
+            className="absolute inset-0 bg-black/70"
+            onClick={() => setLightboxOpen(false)}
+            role="button"
+            aria-label="Cerrar imagen"
+            tabIndex={0}
+          />
+          <div className="relative z-10 w-full max-w-5xl">
+            <div className="flex items-center justify-between gap-3">
+              <div className="truncate text-sm font-semibold text-white">{activity.Nombre}</div>
+              <button
+                type="button"
+                onClick={() => setLightboxOpen(false)}
+                className="rounded-lg bg-white/10 px-3 py-2 text-xs text-white hover:bg-white/15"
+              >
+                Cerrar ✕
+              </button>
+            </div>
+            <div className="mt-3 overflow-hidden rounded-2xl border border-white/10 bg-black">
+              <SafeImg
+                src={mainImg}
+                fallback={thumbFallback}
+                alt={activity.Tipo || 'Actividad'}
+                className="max-h-[78vh] w-full object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      ) : null}
+
       </div>
     </div>
   )
