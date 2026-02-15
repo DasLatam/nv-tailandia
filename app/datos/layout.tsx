@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { PrintButton } from '@/components/PrintButton'
 import { ReadingProgress } from '@/components/datos/ReadingProgress'
+import { AutoOfflineWarmup } from '@/components/pwa/AutoOfflineWarmup'
 
 export const dynamic = 'force-static'
 
@@ -36,7 +37,10 @@ export default function DatosLayout({ children }: { children: React.ReactNode })
 
         <div data-datos-scroll className="min-h-0 flex-1 overflow-auto overscroll-contain">
           <div className="mx-auto max-w-[860px] px-4 py-6">
+            <div className="mb-3 flex items-center justify-between gap-2">
             <ReadingProgress />
+            <AutoOfflineWarmup />
+          </div>
             {children}
           </div>
         </div>

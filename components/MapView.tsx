@@ -12,7 +12,7 @@ type Props = {
   focusKey?: string | null
 }
 
-type Basemap = 'openfreemap_liberty' | 'openfreemap_positron' | 'raster_osm'
+type Basemap = 'openfreemap_liberty' | 'openfreemap_positron' | 'raster_osm' | 'blank'
 
 // OpenFreeMap (sin API key): estilos públicos recomendados.
 const OPENFREEMAP_LIBERTY_STYLE_URL = 'https://tiles.openfreemap.org/styles/liberty'
@@ -32,8 +32,17 @@ const RASTER_OSM_STYLE: any = {
   layers: [{ id: 'osm', type: 'raster', source: 'osm' }]
 }
 
+// Blank local style (useful offline: renders points with no external tiles)
+const BLANK_STYLE: any = {
+  version: 8,
+  sources: {},
+  layers: [{ id: 'bg', type: 'background', paint: { 'background-color': '#eef2f6' } }]
+}
+
+
 function basemapToStyle(b: Basemap) {
   if (b === 'openfreemap_positron') return OPENFREEMAP_POSITRON_STYLE_URL
+  if (b === 'blank') return BLANK_STYLE
   if (b === 'raster_osm') return RASTER_OSM_STYLE
   return OPENFREEMAP_LIBERTY_STYLE_URL
 }
@@ -595,7 +604,13 @@ export function MapView({ items, onVisibleIdsChange, onSelect, selectedId, focus
 
     setStatus('Inicializando mapa…')
 
-    const initialBasemap: Basemap = basemap
+    if (typeof navigator !== 'undefined' && !navigator.onLine) {
+      // Offline: usar un estilo local (sin depender de tiles/estilos remotos).
+      setBasemap('raster_osm')
+      setStatus('Offline: el mapa base no está disponible, pero los puntos sí.')
+    }
+
+    const initialBasemap: Basemap = typeof navigator !== 'undefined' && !navigator.onLine ? 'raster_osm' : basemap
     lastAppliedBasemapRef.current = initialBasemap
 
     const map = new maplibregl.Map({
@@ -651,7 +666,21 @@ export function MapView({ items, onVisibleIdsChange, onSelect, selectedId, focus
     }
 
     const onError = (ev: any) => {
+      // Ignorar errores de tiles individuales (si estamos offline o con mala señal, es ruido).
+      if (ev?.sourceId) return
+
       const msg = ev?.error?.message || ev?.error?.toString?.() || 'Error de mapa'
+
+      // Si el estilo remoto falla, caer a un estilo local (raster/blank) para que los puntos sigan funcionando.
+      const last = lastAppliedBasemapRef.current
+      const looksNetwork = /Failed to fetch|NetworkError|Load failed|fetch/i.test(String(msg))
+      const remoteBasemap = last === 'openfreemap_liberty' || last === 'openfreemap_positron'
+      if (looksNetwork && remoteBasemap) {
+        setBasemap('raster_osm')
+        setStatus('Mapa base no disponible (sin conexión). Mostrando puntos.')
+        return
+      }
+
       setStatus(`Mapa: ${msg}`)
     }
 

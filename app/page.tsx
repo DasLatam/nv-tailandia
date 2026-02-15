@@ -46,16 +46,36 @@ export default function Page() {
     async function run() {
       try {
         setLoading(true)
-        const res = await fetch('/data/activities.json')
+        const res = await fetch('/data/activities.json', { cache: 'force-cache' })
         if (!res.ok) throw new Error(`No se pudo cargar data: ${res.status}`)
-        const json = (await res.json()) as Activity[]
+        const txt = await res.text()
+        const json = JSON.parse(txt) as Activity[]
         if (cancelled) return
         setActivities(json)
         setVisibleIds(new Set(json.map((a) => a.id)))
         setError(null)
+        // Extra safety: guardar una copia para modo avión (por si el SW no está listo aún).
+        try {
+          localStorage.setItem('nv.activities.v1', txt)
+        } catch {
+          // ignore
+        }
       } catch (e: any) {
         if (cancelled) return
-        setError(e?.message ?? 'Error desconocido cargando data')
+        // Offline fallback: leer última copia local.
+        try {
+          const cached = localStorage.getItem('nv.activities.v1')
+          if (cached) {
+            const json = JSON.parse(cached) as Activity[]
+            setActivities(json)
+            setVisibleIds(new Set(json.map((a) => a.id)))
+            setError(null)
+          } else {
+            setError(e?.message ?? 'Error desconocido cargando data')
+          }
+        } catch {
+          setError(e?.message ?? 'Error desconocido cargando data')
+        }
       } finally {
         if (!cancelled) setLoading(false)
       }

@@ -1,13 +1,26 @@
-/* nv-tailandia SW (PWA offline for /datos)
-   Version bump: update VERSION to force refresh.
+/* nv-tailandia SW (PWA offline)
+   Goal: /datos should be readable 100% offline after ONE online visit.
+   Notes:
+   - Cache strategies are conservative for storage.
+   - Cross-origin images (activity photos, map tiles) are cached opportunistically once fetched online.
 */
 
-const VERSION = 'v13'
+const VERSION = 'v13d2'
 const STATIC_CACHE = `nv-static-${VERSION}`
 const PAGE_CACHE = `nv-pages-${VERSION}`
 const ASSET_CACHE = `nv-assets-${VERSION}`
+const IMAGE_CACHE = `nv-images-${VERSION}`
 
-const CORE_ASSETS = ['/offline.html', '/manifest.webmanifest', '/data/activities.json']
+const CORE_ASSETS = [
+  '/offline.html',
+  '/manifest.webmanifest',
+  '/apple-touch-icon.png',
+  '/icons/icon-192.png',
+  '/icons/icon-192-maskable.png',
+  '/icons/icon-512.png',
+  '/icons/icon-512-maskable.png',
+  '/data/activities.json'
+]
 
 async function precacheCore() {
   const cache = await caches.open(STATIC_CACHE)
@@ -18,6 +31,7 @@ async function precacheDatosPages() {
   const pageCache = await caches.open(PAGE_CACHE)
   const assetCache = await caches.open(ASSET_CACHE)
 
+  // Minimal known routes + expanded list from /pwa/datos-routes
   const routes = new Set(['/datos', '/datos/vuelo', '/datos/wats'])
 
   try {
@@ -33,15 +47,16 @@ async function precacheDatosPages() {
     // ignore
   }
 
+  // Parse asset links out of HTML to pre-cache the JS/CSS needed offline.
   const assets = new Set()
-  const assetRe = /\/(?:_next\/static\/[^"'\s>]+|data\/[^"'\s>]+|icons\/[^"'\s>]+)/g
+  const assetRe = /\/(?:_next\/static\/[^"'\s>]+|_next\/image\?[^"'\s>]+|data\/[^"'\s>]+|icons\/[^"'\s>]+|thumbs\/[^"'\s>]+|apple-touch-icon\.png)/g
 
   const precacheOne = async (path) => {
     try {
       const req = new Request(path, { cache: 'reload' })
       const res = await fetch(req)
       if (!res || !res.ok) return
-      await pageCache.put(path, res.clone())
+      await pageCache.put(req, res.clone())
       const html = await res.clone().text()
       const matches = html.match(assetRe) || []
       for (const a of matches) assets.add(a)
@@ -50,12 +65,13 @@ async function precacheDatosPages() {
     }
   }
 
+  // Cache HTML for each /datos route
   for (const r of routes) {
     await precacheOne(r)
   }
 
-  const toCache = Array.from(assets)
-  for (const a of toCache) {
+  // Cache referenced assets (JS/CSS/images)
+  for (const a of Array.from(assets)) {
     try {
       await assetCache.add(new Request(a, { cache: 'reload' }))
     } catch {
@@ -64,10 +80,11 @@ async function precacheDatosPages() {
   }
 }
 
-self.addEventListener('install' , (event) => {
+self.addEventListener('install', (event) => {
   event.waitUntil(
     (async () => {
       await precacheCore()
+      // Precache /datos immediately – no UI button needed.
       await precacheDatosPages()
       self.skipWaiting()
     })()
@@ -100,67 +117,104 @@ self.addEventListener('message', (event) => {
   }
 })
 
-function sameOrigin(url) {
-  try {
-    return new URL(url).origin === self.location.origin
-  } catch {
-    return false
-  }
-}
-
-async function cacheFirst(req, cacheName) {
+async function cacheFirstSafe(req, cacheName, fallbackUrl = '/offline.html') {
   const cache = await caches.open(cacheName)
   const cached = await cache.match(req)
   if (cached) return cached
-  const res = await fetch(req)
-  if (res && res.ok) cache.put(req, res.clone())
-  return res
+  try {
+    const res = await fetch(req)
+    // Cache OK responses + opaque (cross-origin images).
+    if (res && (res.ok || res.type === 'opaque')) {
+      cache.put(req, res.clone()).catch(() => {})
+    }
+    return res
+  } catch {
+    return cache.match(fallbackUrl) || caches.match(fallbackUrl)
+  }
 }
 
-async function networkFirst(req, cacheName) {
+async function networkFirst(req, cacheName, fallbackUrl = '/offline.html') {
   const cache = await caches.open(cacheName)
   try {
     const res = await fetch(req)
-    if (res && res.ok) cache.put(req, res.clone())
+    if (res && (res.ok || res.type === 'opaque')) cache.put(req, res.clone()).catch(() => {})
     return res
   } catch {
     const cached = await cache.match(req)
     if (cached) return cached
-    return caches.match('/offline.html')
+    return cache.match(fallbackUrl) || caches.match(fallbackUrl)
+  }
+}
+
+// Normalize Next App Router RSC requests so cache hits survive the random _rsc query param.
+function normalizeRscUrl(url) {
+  try {
+    const u = new URL(url)
+    if (!u.searchParams.has('_rsc')) return null
+    u.searchParams.set('_rsc', '1')
+    return u.toString()
+  } catch {
+    return null
   }
 }
 
 self.addEventListener('fetch', (event) => {
   const req = event.request
   if (req.method !== 'GET') return
-  if (!sameOrigin(req.url)) return
 
   const url = new URL(req.url)
   const path = url.pathname
 
-  // Navigation: make /datos work offline.
+  // 1) Images (ANY origin): cache-first.
+  // This covers activity photos and map tiles opportunistically.
+  if (req.destination === 'image') {
+    event.respondWith(cacheFirstSafe(req, IMAGE_CACHE, '/thumbs/actividad.svg'))
+    return
+  }
+
+  // 2) Navigations.
   if (req.mode === 'navigate') {
     if (path.startsWith('/datos')) {
-      event.respondWith(cacheFirst(req, PAGE_CACHE))
+      event.respondWith(cacheFirstSafe(req, PAGE_CACHE))
       return
     }
-    // For the rest of the app, prefer network but fall back.
     event.respondWith(networkFirst(req, PAGE_CACHE))
     return
   }
 
-  // Next static assets (JS/CSS) – cache-first.
-  if (path.startsWith('/_next/static/')) {
-    event.respondWith(cacheFirst(req, ASSET_CACHE))
+  // 3) Next assets (JS/CSS/fonts/media) – cache-first.
+  if (path.startsWith('/_next/')) {
+    event.respondWith(cacheFirstSafe(req, ASSET_CACHE))
     return
   }
 
-  // Public assets (images, etc.) – cache-first.
+  // 4) /datos RSC fetches (App Router) – cache-first with normalized key.
+  if (path.startsWith('/datos')) {
+    const normalized = normalizeRscUrl(req.url)
+    if (normalized) {
+      const cacheReq = new Request(normalized, {
+        headers: req.headers,
+        method: 'GET',
+        mode: req.mode,
+        credentials: req.credentials,
+        redirect: req.redirect,
+        referrer: req.referrer,
+        referrerPolicy: req.referrerPolicy,
+        integrity: req.integrity
+      })
+      event.respondWith(cacheFirstSafe(cacheReq, PAGE_CACHE))
+      return
+    }
+    event.respondWith(cacheFirstSafe(req, PAGE_CACHE))
+    return
+  }
+
+  // 5) Public assets (same origin)
   if (path.startsWith('/icons/') || path.startsWith('/thumbs/') || path.startsWith('/data/')) {
-    event.respondWith(cacheFirst(req, STATIC_CACHE))
+    event.respondWith(cacheFirstSafe(req, STATIC_CACHE))
     return
   }
 
-  // Default: stale-ish caching.
+  // Default
   event.respondWith(networkFirst(req, ASSET_CACHE))
 })

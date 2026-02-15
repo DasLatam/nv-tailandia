@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { ContinueBlock } from '@/components/datos/ContinueBlock'
-import { OfflinePrepButton } from '@/components/pwa/OfflinePrepButton'
+import { AutoOfflineWarmup } from '@/components/pwa/AutoOfflineWarmup'
 import {
   DATOS_CHAPTERS,
   chapterWordCount,
@@ -48,12 +48,11 @@ export default function ModoVueloPage() {
           >
             ← Índice
           </Link>
-          <OfflinePrepButton />
+          <AutoOfflineWarmup />
         </div>
         <h1 className="text-2xl font-semibold tracking-tight">Modo vuelo</h1>
         <p className="text-zinc-700">
-          Portada offline para leer <strong>/datos</strong> en el avión. La idea es: abrir esta sección una vez con
-          internet (para que el Service Worker la guarde) y después vas a poder entrar y leer sin conexión.
+          Portada offline para leer <strong>/datos</strong> en el avión. Abrí <strong>/datos</strong> una vez con internet (se cachea automáticamente) y después vas a poder entrar y leer sin conexión.
         </p>
 
         <div className="grid gap-3 md:grid-cols-3">

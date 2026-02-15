@@ -37,12 +37,14 @@ function SafeImg({
   src,
   fallback,
   alt,
-  className
+  className,
+  onFallback
 }: {
   src: string
   fallback: string
   alt: string
   className?: string
+  onFallback?: () => void
 }) {
   const [cur, setCur] = useState(src)
   useEffect(() => setCur(src), [src])
@@ -53,7 +55,10 @@ function SafeImg({
       alt={alt}
       className={className}
       onError={() => {
-        if (cur !== fallback) setCur(fallback)
+        if (cur !== fallback) {
+          setCur(fallback)
+          onFallback?.()
+        }
       }}
     />
   )
@@ -67,6 +72,11 @@ type Props = {
 export function ActivityModal({ activity, onClose }: Props) {
   const [showCsv, setShowCsv] = useState(false)
   const [lightboxOpen, setLightboxOpen] = useState(false)
+  const [imgOfflineFallback, setImgOfflineFallback] = useState(false)
+
+  useEffect(() => {
+    setImgOfflineFallback(false)
+  }, [activity.id])
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
@@ -185,9 +195,15 @@ export function ActivityModal({ activity, onClose }: Props) {
                 fallback={thumbFallback}
                 alt={activity.Tipo || 'Actividad'}
                 className="h-48 w-full object-cover md:h-64"
+                onFallback={() => setImgOfflineFallback(true)}
               />
             </button>
             <div className="mt-1 text-[11px] text-zinc-500">Tip: tocá la imagen para verla grande.</div>
+            {imgOfflineFallback ? (
+              <div className="mt-1 text-[11px] text-amber-700">
+                Imagen no disponible offline (se muestra un placeholder). Abrila una vez con internet y quedará cacheada.
+              </div>
+            ) : null}
           </div>
 
           {/* Bloques principales (2 columnas en desktop para aprovechar espacio) */}
@@ -286,6 +302,7 @@ export function ActivityModal({ activity, onClose }: Props) {
                 fallback={thumbFallback}
                 alt={activity.Tipo || 'Actividad'}
                 className="max-h-[78vh] w-full object-contain"
+                onFallback={() => setImgOfflineFallback(true)}
               />
             </div>
           </div>
