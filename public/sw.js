@@ -2,7 +2,7 @@
    Objetivo: offline real para /datos/** + /data/activities.json + imágenes.
    Nota: NO devolver nunca null/undefined en respondWith (Chrome muestra "Response is null").
 */
-const VERSION = 'v13h1';
+const VERSION = 'v13i1';
 const CORE_CACHE = `nv-core-${VERSION}`;
 const PAGE_CACHE = `nv-pages-${VERSION}`;
 const ASSET_CACHE = `nv-assets-${VERSION}`;
@@ -183,6 +183,8 @@ self.addEventListener('install', (event) => {
       await core.addAll(CORE_ASSETS);
       // Precache /datos para que "modo avión" funcione sin tocar botones
       await precacheDatos();
+      // Precache home (PWA launch from home screen)
+      await precacheOneRoute('/');
       self.skipWaiting();
     })()
   );
@@ -240,6 +242,13 @@ self.addEventListener('fetch', (event) => {
   }
   // Navigations
   if (req.mode === 'navigate') {
+    // Home: offline-first (PWA start_url)
+    if (url.pathname === '/') {
+      event.respondWith(
+        cacheFirst(req, PAGE_CACHE, async () => getFallbackResponse('/offline.html', 'text/html', 'Offline'))
+      );
+      return;
+    }
     if (isDatosPath(url.pathname)) {
       // Offline-first para /datos/**
       event.respondWith(

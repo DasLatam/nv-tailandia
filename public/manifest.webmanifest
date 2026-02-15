@@ -1,8 +1,8 @@
 {
   "name": "nv-tailandia",
   "short_name": "nv-tai",
-  "description": "Mapa + actividades desde CSV, con sección /datos para lectura offline.",
-  "start_url": "/datos/vuelo",
+  "description": "Mapa + actividades + sección /datos (lectura offline).",
+  "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "background_color": "#ffffff",
