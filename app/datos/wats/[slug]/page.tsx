@@ -25,9 +25,9 @@ export default function WatPage({ params }: { params: { slug: string } }) {
   const prev = idx > 0 ? WATS[idx - 1] : null
   const next = idx >= 0 && idx < WATS.length - 1 ? WATS[idx + 1] : null
 
-  const mapsHref = wat.mapsQuery
-    ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(wat.mapsQuery)}`
-    : null
+  const mapsQuery = wat.mapsQuery ?? `${wat.name}, ${wat.city}, Thailand}`
+
+  const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapsQuery)}`
 
   return (
     <article className="space-y-8">

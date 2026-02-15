@@ -4,6 +4,7 @@ export type WatGuide = {
   slug: string
   name: string
   city: string
+  mapsQuery?: string
   aka?: string[]
   sections: Record<WatGuideSectionKey, string[]>
 }
