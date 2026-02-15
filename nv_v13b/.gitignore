@@ -1,0 +1,12 @@
+node_modules
+.next
+out
+dist
+.DS_Store
+.env*
+public/data/activities.json
+
+# Avoid committing patch artifacts / handoff bundles
+nv-tailandia-v13/
+_handoff_*/
+*.zip

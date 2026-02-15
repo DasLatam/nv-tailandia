@@ -1,0 +1,1 @@
+Add papaparse.d.ts at repo root. Commit and push. This fixes Vercel build error: missing declaration for module 'papaparse'.
