@@ -1,9 +1,0 @@
-app/api/rebuild/route.ts
-app/datos/budismo/page.tsx
-app/datos/cultura/page.tsx
-app/datos/layout.tsx
-app/datos/page.tsx
-app/datos/wats/[slug]/page.tsx
-app/datos/wats/page.tsx
-app/layout.tsx
-app/page.tsx

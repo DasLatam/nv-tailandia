@@ -1,4 +1,0 @@
-== activities sources ==
-OK: data/activities.csv
-OK: public/data/activities.json
-OK: scripts/build-data.mjs

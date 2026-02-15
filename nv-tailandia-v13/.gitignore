@@ -1,7 +1,0 @@
-node_modules
-.next
-out
-dist
-.DS_Store
-.env*
-public/data/activities.json

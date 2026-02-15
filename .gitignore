@@ -5,3 +5,8 @@ dist
 .DS_Store
 .env*
 public/data/activities.json
+
+# patch/handoff artifacts (no versionar)
+nv-tailandia-v13/
+_handoff_*/
+nv-tailandia-*.zip

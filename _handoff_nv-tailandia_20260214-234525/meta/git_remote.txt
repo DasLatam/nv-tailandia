@@ -1,2 +1,0 @@
-origin	git@github.com:DasLatam/nv-tailandia.git (fetch)
-origin	git@github.com:DasLatam/nv-tailandia.git (push)

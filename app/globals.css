@@ -47,3 +47,18 @@ html, body {
     color: #111827 !important;
   }
 }
+
+/* Better anchor jumps under sticky headers */
+h2[id], h3[id], section[id] {
+  scroll-margin-top: 96px;
+}
+
+/* Printing */
+@media print {
+  [data-print-hide="1"] {
+    display: none !important;
+  }
+  body {
+    background: #fff !important;
+  }
+}

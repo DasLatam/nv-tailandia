@@ -1,60 +1,44 @@
 import Link from 'next/link'
 import { PrintButton } from '@/components/PrintButton'
+import { ReadingProgress } from '@/components/datos/ReadingProgress'
+
+export const dynamic = 'force-static'
 
 export default function DatosLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex h-dvh w-full flex-col overflow-hidden bg-white text-zinc-900">
-      <header data-print-hide="1" className="sticky top-0 z-10 border-b border-zinc-200 bg-white/90 backdrop-blur">
-        <div className="mx-auto flex max-w-[1100px] items-center justify-between gap-3 px-4 py-3">
-          <div className="flex min-w-0 items-center gap-2">
-            <Link
-              href="/"
-              className="rounded-lg border border-zinc-200 bg-white px-2 py-1 text-xs text-zinc-800 shadow-sm hover:bg-zinc-100"
-              title="Volver al mapa"
-            >
-              ← Mapa
-            </Link>
-            <div className="min-w-0">
-              <div className="truncate text-sm font-semibold">DATOS – Guía de lectura</div>
-              <div className="truncate text-xs text-zinc-600">Budismo, cultura e info práctica de wats</div>
+    <div className="min-h-dvh bg-zinc-50">
+      <div className="flex min-h-dvh flex-col">
+        <header className="sticky top-0 z-10 border-b border-zinc-200 bg-white/90 backdrop-blur" data-print-hide="1">
+          <div className="mx-auto flex max-w-[860px] items-center justify-between gap-3 px-4 py-3">
+            <div className="flex items-center gap-2">
+              <Link href="/" className="text-sm font-semibold tracking-tight">
+                nv-tailandia
+              </Link>
+              <span className="text-xs text-zinc-500">/ datos</span>
             </div>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <nav className="hidden items-center gap-2 sm:flex">
+            <div className="flex items-center gap-2">
               <Link
                 href="/datos"
-                className="rounded-lg border border-zinc-200 bg-white px-2 py-1 text-xs text-zinc-800 shadow-sm hover:bg-zinc-100"
+                className="rounded-lg border border-zinc-200 bg-white px-3 py-2 text-xs font-semibold text-zinc-900 shadow-sm hover:bg-zinc-100"
               >
                 Índice
               </Link>
               <Link
-                href="/datos/budismo"
-                className="rounded-lg border border-zinc-200 bg-white px-2 py-1 text-xs text-zinc-800 shadow-sm hover:bg-zinc-100"
+                href="/datos/vuelo"
+                className="rounded-lg border border-zinc-200 bg-white px-3 py-2 text-xs font-semibold text-zinc-900 shadow-sm hover:bg-zinc-100"
               >
-                Budismo
+                Modo vuelo
               </Link>
-              <Link
-                href="/datos/cultura"
-                className="rounded-lg border border-zinc-200 bg-white px-2 py-1 text-xs text-zinc-800 shadow-sm hover:bg-zinc-100"
-              >
-                Cultura
-              </Link>
-              <Link
-                href="/datos/wats"
-                className="rounded-lg border border-zinc-200 bg-white px-2 py-1 text-xs text-zinc-800 shadow-sm hover:bg-zinc-100"
-              >
-                Wats
-              </Link>
-            </nav>
-            <PrintButton />
+              <PrintButton />
+            </div>
           </div>
-        </div>
-      </header>
+        </header>
 
-      <div className="flex-1 overflow-auto overscroll-contain">
-        <div className="mx-auto max-w-[1100px] px-4 py-6">
-          <div className="data-prose">{children}</div>
+        <div data-datos-scroll className="flex-1 overflow-auto overscroll-contain">
+          <div className="mx-auto max-w-[860px] px-4 py-6">
+            <ReadingProgress />
+            {children}
+          </div>
         </div>
       </div>
     </div>
