@@ -34,6 +34,10 @@ export default function ModoVueloPage() {
     return { slug: w.slug, name: w.name, location: w.city, minutes }
   })
 
+  const chaptersTotalMinutes = chapters.reduce((acc, c) => acc + c.minutes, 0)
+  const watsTotalMinutes = wats.reduce((acc, w) => acc + w.minutes, 0)
+  const totalMinutes = chaptersTotalMinutes + watsTotalMinutes
+
   return (
     <div className="space-y-6">
       <header className="space-y-2">
@@ -51,6 +55,22 @@ export default function ModoVueloPage() {
           Portada offline para leer <strong>/datos</strong> en el avión. La idea es: abrir esta sección una vez con
           internet (para que el Service Worker la guarde) y después vas a poder entrar y leer sin conexión.
         </p>
+
+        <div className="grid gap-3 md:grid-cols-3">
+          <div className="rounded-xl border border-zinc-200 bg-white p-4 shadow-sm">
+            <div className="text-xs text-zinc-500">Tiempo (capítulos)</div>
+            <div className="mt-1 text-lg font-semibold text-zinc-900">{chaptersTotalMinutes} min</div>
+          </div>
+          <div className="rounded-xl border border-zinc-200 bg-white p-4 shadow-sm">
+            <div className="text-xs text-zinc-500">Tiempo (wats)</div>
+            <div className="mt-1 text-lg font-semibold text-zinc-900">{watsTotalMinutes} min</div>
+          </div>
+          <div className="rounded-xl border border-zinc-200 bg-white p-4 shadow-sm">
+            <div className="text-xs text-zinc-500">Total estimado</div>
+            <div className="mt-1 text-lg font-semibold text-zinc-900">{totalMinutes} min</div>
+            <div className="mt-1 text-[11px] text-zinc-500">(palabras / 220 ppm, redondeado)</div>
+          </div>
+        </div>
         <div className="rounded-xl border border-zinc-200 bg-white p-4 text-sm text-zinc-700 shadow-sm">
           <div className="font-semibold text-zinc-900">Offline real (cómo asegurarlo)</div>
           <ul className="mt-2 list-disc space-y-1 pl-5">

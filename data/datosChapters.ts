@@ -127,6 +127,34 @@ export const DATOS_CHAPTERS: DatosChapter[] = [
         ]
       },
       {
+        id: 'ofrendas',
+        title: 'Ofrendas y rituales comunes: lo que vas a ver (y cómo participar sin incomodar)',
+        paragraphs: [
+          'En la mayoría de los wats vas a ver una lógica repetida: altar + imagen de Buda + gente que deja flores, prende incienso, se sienta en el suelo, hace una reverencia (a veces tres) y se va. No es un “show”: es práctica cotidiana. Tu rol como visitante es no romper ese flujo.',
+          'Ofrendas típicas: guirnaldas de flores (phuang malai), lotos, velas, varitas de incienso y, en ciertos lugares, hojas de pan de oro para adherir a imágenes específicas. Muchas entradas venden un set armado; es la forma más fácil de participar sin inventar nada. Si no querés participar, mirar desde un costado con respeto es perfecto.',
+          'Vas a ver “hacer mérito” en acción: pequeñas donaciones en cajas (a veces con QR), comprar velas, aportar para restauración, o financiar actividades comunitarias del wat. Pensalo como sostener un espacio vivo, no como “pagar entrada”.'
+        ],
+        bullets: [
+          'Si hay set de ofrendas en la entrada, es una forma segura de participar.',
+          'No bloquees el paso frente al altar (esperá tu turno o corréte).',
+          'Evitá flash y poses “para redes” en el momento ritual.'
+        ]
+      },
+      {
+        id: 'pistas',
+        title: 'Pistas rápidas para entender lo que mirás: postura, manos, umbrales y torres',
+        paragraphs: [
+          'No hace falta estudiar teoría para “leer” un templo. Con pocas pistas ya cambia la experiencia: (1) postura del Buda, (2) gesto de las manos (mudras), (3) chedi/estupa (reliquias y mérito), (4) guardianes y criaturas (protección del umbral), (5) el recorrido (cómo la arquitectura te hace bajar un cambio).',
+          'Posturas frecuentes: sentado en meditación (calma y disciplina), de pie (protección o enseñanza), reclinado (parinirvana: fin del ciclo), y filas de budas repetidos (continuidad, comunidad, “muchos caminos”). Las manos también “dicen” cosas: tocar la tierra como testigo, gesto de enseñanza, gesto de calma. No memorices nombres: asociá gesto con idea.',
+          'Un detalle práctico: el “edificio más lindo” no siempre es el más sagrado. En muchos wats, el ubosot es el centro ritual (más sagrado) aunque parezca simple desde afuera. La señal suele ser: umbrales cuidados, marcadores (sema stones), y reglas más estrictas de acceso.'
+        ],
+        bullets: [
+          'Reclinado = parinirvana (no “siesta”).',
+          'Chedi/estupa = reliquias + mérito + memoria (movimiento circular).',
+          'Guardianes/naga = protección del umbral (y señal de “acá cambia el código”).'
+        ]
+      },
+      {
         id: '10-min',
         title: 'Cómo visitar un wat en 10–20 minutos (sin que sea “uno más”)',
         paragraphs: [
@@ -187,16 +215,16 @@ export const DATOS_CHAPTERS: DatosChapter[] = [
       },
       {
         id: 'idioma',
-        title: 'Idioma y escritura: lo mínimo útil (sin volverse loco)',
+        title: 'Idioma y escritura: lo mínimo útil (y dónde profundizar)',
         paragraphs: [
-          'El tailandés es tonal y su escritura no se parece al alfabeto latino. No vas a “leer” todo, pero podés aprender patrones para moverte mejor: reconocer números en precios, distinguir BTS/MRT, y usar romanización con cuidado.',
-          'Romanización: el mismo lugar puede aparecer escrito distinto en inglés (por sonido). Por eso, para taxis/Grab conviene usar el pin del mapa o copiar/pegar el nombre en tailandés cuando puedas (Google Maps lo muestra).',
-          'Frases que sirven: “khop khun” (gracias), “mai ao” (no quiero), “tao rai?” (¿cuánto?), “hong nam yu tee nai?” (¿dónde está el baño?). Con una sonrisa, alcanza.'
+          'El tailandés es tonal y su escritura no se parece al alfabeto latino. No vas a “leer” todo, pero podés aprender 3 cosas que cambian el viaje: (1) usar el pin del mapa para evitar confusión de nombres, (2) guardar direcciones en tailandés, (3) reconocer señales útiles (BTS/MRT, salida, baño).',
+          'Romanización: el mismo lugar puede aparecer escrito distinto en inglés. Por eso, para taxis/Grab conviene copiar el nombre en tailandés cuando puedas (Google Maps lo muestra) o directamente usar el pin.',
+          'Si querés una guía práctica más completa (por qué la escritura tiene bucles, cómo leer carteles, frases realmente útiles y tips para traductor), tenés un capítulo dedicado en /datos/idioma.'
         ],
         bullets: [
           'Usá pin de mapa para evitar confusión de nombres.',
           'Guardá capturas de direcciones en tailandés de tu hotel.',
-          'Aprendé números básicos si te divierte; si no, confiá en apps.'
+          'Aprendé 5 frases útiles y listo; el resto, apps.'
         ]
       },
       {
@@ -423,6 +451,193 @@ export const DATOS_CHAPTERS: DatosChapter[] = [
           'Top up / recargas: se resuelven en caja.',
           'Cargadores/pañuelos/curitas: soporte básico del viaje.',
           'Menos tiempo buscando = más tiempo viajando.'
+        ]
+      }
+    ]
+  },
+  {
+    slug: 'idioma',
+    title: 'Idioma y escritura (práctico para moverse y pedir cosas)',
+    description:
+      'Por qué la escritura tiene bucles, cómo leer señales, números tailandeses, frases útiles sin perfeccionismo y tips para traductor/Maps sin depender 100% de la señal.',
+    sections: [
+      {
+        id: 'como-funciona',
+        title: 'Por qué la escritura tailandesa “tiene bucles” (y qué implica para vos)',
+        paragraphs: [
+          'La escritura tailandesa no es “decorativa”: es un sistema completo. Para un viajero, lo importante no es memorizar letras; es entender por qué cuesta encontrar “palabras” y por qué la romanización en inglés cambia tanto.',
+          'Dos cosas te van a confundir si esperás lógica latina: (1) muchas vocales se escriben antes/arriba/abajo de la consonante aunque se pronuncien después, (2) no siempre hay espacios entre palabras: los espacios suelen separar frases/ideas, no “palabras”. Resultado práctico: para direcciones, copiar el texto en tailandés suele ser más confiable que escribir el nombre “a oído”.',
+          'Vas a ver estilos “con bucles” y versiones “simplificadas” (señalética moderna). No es otro idioma: es el mismo sistema con una tipografía distinta. No pelees con eso: usalo a favor con pins, capturas y nombres guardados.'
+        ],
+        bullets: [
+          'Asumí que la romanización varía: usá pins y copiado en tailandés.',
+          'No busques “palabras” separadas: buscá patrones (BTS/MRT, números, símbolos).',
+          'Cartelería moderna puede ser “sin bucles”: mismo idioma.'
+        ]
+      },
+      {
+        id: 'numeros',
+        title: 'Números tailandeses: el súper poder mínimo (precios, pisos, entradas)',
+        paragraphs: [
+          'Aprender los dígitos tailandeses te da una ventaja inmediata en mercados, tickets y señalización: podés reconocer 20, 100, 300, “piso 4” o “salida 2” aunque todo lo demás sea ilegible. No necesitás pronunciarlos: con reconocerlos alcanza.',
+          'Dígitos: ๐๑๒๓๔๕๖๗๘๙ equivalen a 0–9. En Bangkok vas a ver mucho en números arábigos (0–9) igualmente, pero en señalética, documentos y algunos carteles pueden aparecer estos.'
+        ],
+        bullets: [
+          '๐=0, ๑=1, ๒=2, ๓=3, ๔=4, ๕=5, ๖=6, ๗=7, ๘=8, ๙=9',
+          'Ejemplo: ๒๕๐ = 250',
+          'Ejemplo: ๓๐ = 30'
+        ]
+      },
+      {
+        id: 'frases',
+        title: 'Frases útiles (las que realmente destraban situaciones)',
+        paragraphs: [
+          'No busques pronunciación perfecta: buscá intención clara + sonrisa. En tailandés hay partículas de cortesía: “khrap” (cuando habla un hombre) y “kha” (cuando habla una mujer). No es obligatorio, pero suma muchísimo a tono y respeto.',
+          'Para pedir cosas, usá una estructura simple: “por favor + cosa + (no/si) + gracias”. Y si no sale, mostrás el texto en el teléfono. La comunicación “mixta” (voz + gesto + pantalla) funciona muy bien.'
+        ],
+        bullets: [
+          'Hola: sa‑wàt‑dee (khrap/kha)',
+          'Gracias: khop khun (khrap/kha)',
+          '¿Cuánto?: tao rai?',
+          'No quiero / no, gracias: mai ao, khop khun',
+          'Picante: phet | No picante: mai phet',
+          'Agua: nam | Baño: hong nam',
+          '¿Dónde queda…?: yu tee nai?'
+        ]
+      },
+      {
+        id: 'apps',
+        title: 'Maps + traductor: cómo evitar fricción (sin depender de señal perfecta)',
+        paragraphs: [
+          'Maps: cuando puedas, guardá lugares como favoritos y guardá capturas de pantalla (nombre en tailandés + pin). Esto te salva si la señal se cae. Para Grab/taxi, el pin es la verdad: reduce discusiones y errores de escritura.',
+          'Traductor: lo más efectivo es mostrar. Prepará notas con frases clave (alergias, “sin maní”, “sin mariscos”, “somos 4”, etc.) y tenelas guardadas. Si vas a usar traducción offline, descargá el paquete de idioma con anticipación en tu teléfono.'
+        ],
+        bullets: [
+          'Pins + capturas = robusto incluso sin señal.',
+          'Tené una nota con alergias/restricciones para mostrar.',
+          'En estaciones: estación + salida = navegación sin stress.'
+        ]
+      }
+    ]
+  },
+  {
+    slug: 'experiencias',
+    title: 'Experiencias: rooftops, calle, comida y “cosas que hacen viaje”',
+    description:
+      'Guía práctica para disfrutar lo que no entra en el mapa: rooftops, mercados nocturnos, street food, masajes, pequeños rituales urbanos y cómo hacerlo sin caer en trampas típicas.',
+    sections: [
+      {
+        id: 'rooftops',
+        title: 'Rooftops: cómo elegir, cuándo ir y cómo no arruinarlo',
+        paragraphs: [
+          'Los rooftops en Bangkok son parte de la experiencia moderna: skyline, atardecer, música suave y clima de “premio” después de un día de calor y caminata. El truco no es ir al más caro: es elegir el que te calza por horario, dress code y logística.',
+          'Si querés atardecer, llegá 30–45 min antes para elegir ubicación. Si vas con familia o querés charlar, el mejor momento suele ser temprano. Si buscás ambiente, más tarde sube música y densidad.',
+          'Dress code: muchos rooftops piden “smart casual”. Regla práctica: zapatillas limpias + ropa prolija suelen pasar; ojotas y musculosa, no. Llevar un abrigo liviano sirve por aire y viento.'
+        ],
+        bullets: [
+          'Atardecer: llegá antes (no “justo”).',
+          'Smart casual: prolijo > “de marca”.',
+          'Plan B: si llueve, elegí rooftop con sector cubierto.'
+        ]
+      },
+      {
+        id: 'street',
+        title: 'Calle y mercados: street food con criterio (sin paranoia)',
+        paragraphs: [
+          'La calle en Tailandia es una “cocina abierta”. Para que sea disfrute y no ruleta, usá dos filtros simples: (1) rotación alta (cola de locales), (2) cocción a alta temperatura. Eso baja riesgo más que cualquier teoría.',
+          'Ordenar: mirás qué están cocinando, señalás, decís cantidad y pagás. Si algo te da duda (hielo, salsas crudas, mariscos en calor), elegí otra cosa. No es miedo: es selección.',
+          'Condimentos: muchas mesas tienen “kit” (azúcar, fish sauce, chili, vinagre con ají). Probá de a poco. Si algo pica demasiado, lo más efectivo no siempre es agua: mejor leche/coco/yogur o algo graso (7‑Eleven te salva).'
+        ],
+        bullets: [
+          'Cola de locales + wok = casi siempre seguro.',
+          'Si te da duda, cambiá de puesto sin culpa.',
+          'Probá condimentos de a poco: el picante escala rápido.'
+        ]
+      },
+      {
+        id: 'masajes',
+        title: 'Masajes: cómo elegir y qué esperar (sin incomodidad)',
+        paragraphs: [
+          'Masaje tailandés, de pies y de aceite son parte del “mantenimiento” del viaje: caminás mucho y el calor drena. Para evitar sorpresas, elegí lugares con precios a la vista, staff profesional y ambiente claro (luz normal, recepción).',
+          'Etiqueta mínima: llegá limpio, avisá si tenés dolor/lesión y no te banques “porque sí” si duele demasiado: pedí menos presión. Propina: si el servicio fue bueno, un extra pequeño se agradece (no es obligación rígida).'
+        ],
+        bullets: [
+          'Precio visible + recepción = buena señal.',
+          'Si duele: pedí menos presión.',
+          'Después: hidratate; el cuerpo queda “flojo”.'
+        ]
+      },
+      {
+        id: 'comida',
+        title: 'Comidas base para pedir sin pensar (y armar un pedido fácil)',
+        paragraphs: [
+          'La manera más cómoda de comer es repetir un set de pedidos base y variar. Ejemplos: pad thai, curry, khao man gai, pad kra pao, tom yum/tom kha, mango sticky rice. Con eso cubrís días enteros sin gastar energía mental.',
+          'Nivel de picante: si no querés sufrir, pedí “mai phet”. Si te gusta un poco, “phet nit noi”. Recordá: “poco” tailandés puede ser “medio fuerte” argentino.'
+        ],
+        bullets: [
+          'Pedido base: 1 plato + agua + fruta/dulce.',
+          'Compartir: 2–3 platos + arroz aparte.',
+          'Picante: mai phet (no) | phet nit noi (poco).'
+        ]
+      }
+    ]
+  },
+  {
+    slug: 'animales',
+    title: 'Animales y ética (elefantes, cafés, tigres): cómo decidir sin culpa',
+    description:
+      'Un marco simple para elegir experiencias con animales: señales rojas, señales verdes, alternativas y tips de seguridad (monos, mordidas, sentido común).',
+    sections: [
+      {
+        id: 'elefantes',
+        title: 'Elefantes: una regla clara (y por qué importa)',
+        paragraphs: [
+          'La experiencia con elefantes es un clásico, pero la industria tiene zonas grises. Criterio simple: si hay montar elefantes, cadenas permanentes, shows, pintura o interacción forzada para foto, probablemente no sea un buen lugar. Si el foco es observar, caminar a distancia, alimentación controlada y educación, suele ser mejor.',
+          'Un santuario serio suele limitar grupos, explicar reglas, evitar ganchos y evitar “baños” forzados con turistas. Puede ser menos “instagrammable”, pero más coherente. Si dudás, saltearlo también está bien.'
+        ],
+        bullets: [
+          'Señales rojas: ride, show, cadenas largas, pintura, bebés para fotos.',
+          'Señales verdes: observación, educación, reglas, grupos chicos.',
+          'Si dudás: mirá desde lejos o saltealo.'
+        ]
+      },
+      {
+        id: 'cafes',
+        title: 'Cafés con animales y experiencias con grandes felinos',
+        paragraphs: [
+          'Los cafés con animales pueden parecer tiernos, pero el bienestar depende del manejo. Marco útil: ¿el animal tiene dónde esconderse? ¿puede alejarse? ¿hay límites de interacción? ¿el lugar parece un set de fotos? Si la respuesta es “set”, desconfiá.',
+          'Tigres y grandes felinos: donde hay contacto directo y fotos garantizadas, el incentivo económico suele empujar prácticas cuestionables. Si querés ver felinos, preferí observación sin contacto o cambiá por naturaleza/parques.'
+        ],
+        bullets: [
+          'Si no hay “escape” para el animal, no es buen lugar.',
+          '“Foto asegurada” = señal roja.',
+          'Flash y manipulación constante = mala señal.'
+        ]
+      },
+      {
+        id: 'urbano',
+        title: 'Fauna urbana: monos, perros y sentido común',
+        paragraphs: [
+          'En algunas zonas hay monos habituados a turistas: pueden robar comida, objetos y morder si se sienten amenazados. Regla práctica: no los alimentes, mantené distancia y guardá comida a la vista.',
+          'Si hay mordida/arañazo de cualquier animal, tratá el tema como serio (limpieza inmediata y consulta). No es para entrar en pánico; es para no minimizar.'
+        ],
+        bullets: [
+          'No alimentes monos; guardá comida y objetos.',
+          'Si hay mordida: limpieza inmediata + consulta.',
+          'Evitar contacto “porque sí” con animales desconocidos.'
+        ]
+      },
+      {
+        id: 'alternativas',
+        title: 'Alternativas que suelen ser mejores',
+        paragraphs: [
+          'Si querés fauna sin dilemas, el mejor plan suele ser naturaleza: parques, senderos, observación de aves, paseos con guía local. Muchas veces la mejor foto es la que no necesita contacto.',
+          'Para chicos, experiencias de observación y aprendizaje suelen generar más recuerdo que una foto rápida. Pregunta simple: ¿lo haría si yo fuera el animal?' 
+        ],
+        bullets: [
+          'Observación > contacto.',
+          'Si el modelo de negocio es la foto, probable mala señal.',
+          'Elegí experiencias donde el animal puede irse.'
         ]
       }
     ]

@@ -22,7 +22,12 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es">
-      <body className="h-dvh overflow-hidden overscroll-none bg-zinc-50 text-zinc-900 antialiased">
+      {/*
+        Nota: NO bloqueamos el scroll global acá. Algunas pantallas (p.ej. /datos) necesitan
+        scroll vertical normal. Las vistas full-screen (mapa) ya controlan su altura a nivel
+        de layout/página.
+      */}
+      <body className="min-h-dvh overflow-x-hidden bg-zinc-50 text-zinc-900 antialiased">
         {children}
         <ServiceWorkerRegister />
       </body>
