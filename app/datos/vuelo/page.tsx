@@ -16,7 +16,7 @@ function watWordCount(w: (typeof WATS)[number]) {
   return countWords(parts.join(' '))
 }
 
-export default function ModoVueloPage() {
+export default function PortadaLecturaPage() {
   const chapters = DATOS_CHAPTERS.map((c) => {
     const words = chapterWordCount(c)
     const minutes = estimateReadingMinutes(words)
@@ -36,13 +36,13 @@ export default function ModoVueloPage() {
   return (
     <div className="prose prose-zinc max-w-none">
       <p>
-        <Link href="/datos">← Índice</Link>
+        <Link href="/datos">← Volver a capítulos</Link>
       </p>
 
-      <h1>Modo vuelo</h1>
+      <h1>Portada de lectura</h1>
       <p>
-        Portada para leer <code>/datos</code> sin internet. El sitio cachea automáticamente cuando hay conexión. Si arriba ves{' '}
-        <em>“Sin conexión: OK”</em>, ya está listo para abrir en modo avión.
+        Índice completo de <code>/datos</code> con tiempos aproximados y acceso rápido a wats. Funciona igual con o sin
+        conexión; cuando hay internet, el sitio se sincroniza automáticamente.
       </p>
 
       <div className="not-prose">
@@ -61,10 +61,9 @@ export default function ModoVueloPage() {
         <div className="rounded-xl border border-zinc-200 bg-white p-3 shadow-sm">
           <div className="text-xs text-zinc-500">Total estimado</div>
           <div className="mt-1 text-lg font-semibold text-zinc-900">{totalMinutes} min</div>
+          <div className="mt-1 text-[11px] text-zinc-500">(palabras / 220 ppm, redondeado)</div>
         </div>
       </div>
-
-      <p className="text-xs text-zinc-500">(palabras / 220 ppm, redondeado)</p>
 
       <ContinueBlock />
 
@@ -74,14 +73,14 @@ export default function ModoVueloPage() {
           <Link
             key={c.slug}
             href={`/datos/${c.slug}`}
-            className="rounded-xl border border-zinc-200 bg-white p-4 shadow-sm no-underline hover:bg-zinc-50"
+            className="rounded-xl border border-zinc-200 bg-white p-4 shadow-sm hover:bg-zinc-50 no-underline"
           >
             <div className="flex items-start justify-between gap-3">
               <div>
-                <div className="text-sm font-semibold text-zinc-900">{c.title}</div>
-                <div className="mt-1 text-xs text-zinc-600">{c.description}</div>
+                <div className="font-semibold text-zinc-900">{c.title}</div>
+                <div className="mt-1 text-sm text-zinc-700">{c.description}</div>
               </div>
-              <div className="shrink-0 rounded-full border border-zinc-200 bg-white px-2 py-1 text-xs text-zinc-700">
+              <div className="shrink-0 rounded-lg border border-zinc-200 bg-zinc-50 px-2 py-1 text-xs text-zinc-700">
                 {c.minutes} min
               </div>
             </div>
@@ -91,22 +90,23 @@ export default function ModoVueloPage() {
 
       <h2>Wats que vamos a visitar</h2>
       <p>
-        <Link href="/datos/wats">Ver índice de wats →</Link>
+        Si estás por entrar a un templo, abrí el que toque. Cada uno tiene historia, arquitectura, recorrido y “qué mirar sí o sí”.
       </p>
-
-      <div className="not-prose grid gap-2">
+      <div className="not-prose grid gap-3 sm:grid-cols-2">
         {wats.map((w) => (
           <Link
             key={w.slug}
             href={`/datos/wats/${w.slug}`}
-            className="flex items-center justify-between gap-3 rounded-xl border border-zinc-200 bg-white px-4 py-3 shadow-sm no-underline hover:bg-zinc-50"
+            className="rounded-xl border border-zinc-200 bg-white p-4 shadow-sm hover:bg-zinc-50 no-underline"
           >
-            <div>
-              <div className="text-sm font-semibold text-zinc-900">{w.name}</div>
-              <div className="text-xs text-zinc-600">{w.location}</div>
-            </div>
-            <div className="shrink-0 rounded-full border border-zinc-200 bg-white px-2 py-1 text-xs text-zinc-700">
-              {w.minutes} min
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <div className="font-semibold text-zinc-900">{w.name}</div>
+                <div className="mt-1 text-sm text-zinc-700">{w.location}</div>
+              </div>
+              <div className="shrink-0 rounded-lg border border-zinc-200 bg-zinc-50 px-2 py-1 text-xs text-zinc-700">
+                {w.minutes} min
+              </div>
             </div>
           </Link>
         ))}

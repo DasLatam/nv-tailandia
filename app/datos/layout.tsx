@@ -23,13 +23,13 @@ export default function DatosLayout({ children }: { children: React.ReactNode })
               href="/datos"
               className="rounded-lg border border-zinc-200 bg-white px-2 py-1 text-xs text-zinc-800 shadow-sm hover:bg-zinc-50"
             >
-              Índice
+              Capítulos
             </Link>
             <Link
               href="/datos/vuelo"
               className="rounded-lg border border-zinc-200 bg-white px-2 py-1 text-xs text-zinc-800 shadow-sm hover:bg-zinc-50"
             >
-              Modo vuelo
+              Portada
             </Link>
             <AutoOfflineWarmup compact />
           </nav>
