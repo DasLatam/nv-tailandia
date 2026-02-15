@@ -5,12 +5,3 @@ dist
 .DS_Store
 .env*
 public/data/activities.json
-
-# Avoid committing patch artifacts / handoff bundles
-nv-tailandia-v13/
-_handoff_*/
-*.zip
-
-# patch artifacts
-__patch_tmp/
-*.zip

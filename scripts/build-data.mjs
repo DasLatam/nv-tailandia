@@ -80,6 +80,17 @@ function looksLikeImageRef(v) {
   return false
 }
 
+function localImageForId(id) {
+  const dir = path.join(projectRoot, 'public', 'img', 'activities')
+  const exts = ['webp', 'jpg', 'jpeg', 'png', 'gif']
+  for (const ext of exts) {
+    const p = path.join(dir, `${id}.${ext}`)
+    if (fs.existsSync(p)) return `/img/activities/${id}.${ext}`
+  }
+  return null
+}
+
+
 function main() {
   if (!fs.existsSync(csvPath)) {
     console.error('No se encontró CSV:', csvPath)
@@ -130,7 +141,8 @@ function main() {
       const id = `${slugify(Ciudad || 'na')}-${slugify(Nombre || `item-${idx + 1}`)}`
 
       const imageRaw = r['Image']
-      const imageUrl = looksLikeImageRef(imageRaw) ? String(imageRaw).trim() : normalizeTypeToThumb(Tipo)
+      const local = localImageForId(id)
+      const imageUrl = local ?? (looksLikeImageRef(imageRaw) ? String(imageRaw).trim() : normalizeTypeToThumb(Tipo))
 
       return {
         id,

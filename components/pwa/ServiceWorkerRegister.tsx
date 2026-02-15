@@ -31,8 +31,17 @@ export function ServiceWorkerRegister() {
     }
 
     // Defer until after first paint
+    const onControllerChange = () => {
+      // When a new SW takes control, reload once to ensure fresh caches are used.
+      window.location.reload()
+    }
+    navigator.serviceWorker.addEventListener('controllerchange', onControllerChange)
+
     const t = window.setTimeout(register, 0)
-    return () => window.clearTimeout(t)
+    return () => {
+      window.clearTimeout(t)
+      navigator.serviceWorker.removeEventListener('controllerchange', onControllerChange)
+    }
   }, [])
 
   return null

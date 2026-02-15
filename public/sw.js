@@ -2,7 +2,7 @@
    Objetivo: offline real para /datos/** + /data/activities.json + imágenes.
    Nota: NO devolver nunca null/undefined en respondWith (Chrome muestra "Response is null").
 */
-const VERSION = 'v13e1';
+const VERSION = 'v13h1';
 const CORE_CACHE = `nv-core-${VERSION}`;
 const PAGE_CACHE = `nv-pages-${VERSION}`;
 const ASSET_CACHE = `nv-assets-${VERSION}`;
@@ -232,6 +232,12 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
+
+  // Tiles / map hosts (MapLibre puede pedir tiles como fetch sin destination=image): cache-first + fallback.
+  if (looksLikeMapTileHost(url.hostname)) {
+    event.respondWith(cacheFirst(req, IMAGE_CACHE, () => imageFallback(url)));
+    return;
+  }
   // Navigations
   if (req.mode === 'navigate') {
     if (isDatosPath(url.pathname)) {

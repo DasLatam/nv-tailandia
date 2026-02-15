@@ -15,7 +15,7 @@
     "Image": "https://danielfooddiary.com/wp-content/uploads/2023/12/arabicaempiretower8.jpg",
     "lat": 13.7215,
     "lon": 100.5298,
-    "imageUrl": "https://danielfooddiary.com/wp-content/uploads/2023/12/arabicaempiretower8.jpg",
+    "imageUrl": "/img/activities/bangkok-arabica-empire-tower.jpg",
     "shortDescription": "Café minimalista con vista infinita desde el piso 55."
   },
   {
@@ -34,7 +34,7 @@
     "Image": "https://ik.imagekit.io/tvlk/dam/i/01k7c6zdtjemgf92fk0cwywptq.jpeg",
     "lat": 13.7544,
     "lon": 100.5663,
-    "imageUrl": "https://ik.imagekit.io/tvlk/dam/i/01k7c6zdtjemgf92fk0cwywptq.jpeg",
+    "imageUrl": "/img/activities/bangkok-100-shop-jodd-fairs.jpeg",
     "shortDescription": "Tienda de ropa donde (casi) todo cuesta 3€ / 100 Bahts."
   },
   {
@@ -53,7 +53,7 @@
     "Image": "https://media.timeout.com/images/106356168/1920/1080/image.webp",
     "lat": 13.7291,
     "lon": 100.5375,
-    "imageUrl": "https://media.timeout.com/images/106356168/1920/1080/image.webp",
+    "imageUrl": "/img/activities/bangkok-aether-rooftop-dusit-central-park.webp",
     "shortDescription": "Nueva azotea 360° con vistas espectaculares de la ciudad."
   },
   {
@@ -72,7 +72,7 @@
     "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/d7/01/40/img-20180109-141918-846.jpg",
     "lat": 13.7833337,
     "lon": 100.2692047,
-    "imageUrl": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/d7/01/40/img-20180109-141918-846.jpg",
+    "imageUrl": "/img/activities/bangkok-nakhon-pathom-after-the-rain-coffee-gallery.jpg",
     "shortDescription": "Café con laguna/jardín y botes (escapada cerca de BKK)."
   },
   {
@@ -91,7 +91,7 @@
     "Image": "https://www.renown-travel.com/images/airport-rail-link-bangkok-map-l.webp",
     "lat": 13.6899,
     "lon": 100.7501,
-    "imageUrl": "https://www.renown-travel.com/images/airport-rail-link-bangkok-map-l.webp",
+    "imageUrl": "/img/activities/bangkok-airport-rail-link.webp",
     "shortDescription": "El tren que conecta el aeropuerto Suvarnabhumi con el centro."
   },
   {
@@ -111,7 +111,7 @@
     "lat": 13.756331,
     "lon": 100.501762,
     "approxLocation": true,
-    "imageUrl": "https://cotodistributors.com/wp-content/uploads/2022/09/Ajinomoto.jpg",
+    "imageUrl": "/img/activities/comida-alerta-msg-phong-churot.jpg",
     "shortDescription": "El \"truco\" secreto por el que la comida sabe tan bien."
   },
   {
@@ -130,7 +130,7 @@
     "Image": "https://media-cdn.tripadvisor.com/media/photo-s/1d/53/9c/b6/spa-lobby.jpg",
     "lat": 13.7391,
     "lon": 100.543,
-    "imageUrl": "https://media-cdn.tripadvisor.com/media/photo-s/1d/53/9c/b6/spa-lobby.jpg",
+    "imageUrl": "/img/activities/bangkok-amaranth-spa-kimpton.jpg",
     "shortDescription": "Spa boutique de diseño en hotel de lujo."
   },
   {
@@ -149,7 +149,7 @@
     "Image": "https://www.asiakingtravel.com/cuploads/files/image-1(4).jpg",
     "lat": 13.4244,
     "lon": 99.9544,
-    "imageUrl": "https://www.asiakingtravel.com/cuploads/files/image-1(4).jpg",
+    "imageUrl": "/img/activities/bangkok-excursion-amphawa-floating-market-fireflies-tarde-noche.jpg",
     "shortDescription": "Mercado flotante por la tarde + paseo en lancha al atardecer para ver luciérnagas."
   },
   {
@@ -165,10 +165,10 @@
     "Detalle": "Excelente relación calidad/precio. Famoso por su técnica de masaje tailandés profundo.",
     "NotaIA": "Suele estar muy solicitado; reservar el mismo día por la mañana.",
     "LATLON": "18.7885, 98.9850",
-    "Image": "Link",
+    "Image": "https://www.antiquemassage.com/media/setting/img_banner1_1750697263.webp",
     "lat": 18.7885,
     "lon": 98.985,
-    "imageUrl": "/thumbs/spa.svg",
+    "imageUrl": "/img/activities/chiang-mai-antique-massage-cm.webp",
     "shortDescription": "Masaje tradicional en ambiente histórico."
   },
   {
@@ -184,10 +184,10 @@
     "Detalle": "Bolt es más barata que Grab en Tailandia. Pide moto-taxi si hay mucho tráfico.",
     "NotaIA": "Grab permite pago con tarjeta; Bolt suele ser efectivo (cash).",
     "LATLON": "13.7563, 100.5018",
-    "Image": "Link",
+    "Image": "https://static.vecteezy.com/system/resources/previews/039/865/584/non_2x/circle-bolt-logotype-icon-social-media-taxi-and-service-app-network-application-popular-editorial-brand-illustration-free-vector.jpg",
     "lat": 13.7563,
     "lon": 100.5018,
-    "imageUrl": "/thumbs/consejo.svg",
+    "imageUrl": "/img/activities/tailandia-app-bolt.jpg",
     "shortDescription": "Aplicación de transporte similar a Uber pero más barata."
   },
   {
@@ -203,10 +203,10 @@
     "Detalle": "No te pueden estafar porque el precio sale en la app. Tiene paradas fijas.",
     "NotaIA": "Funciona genial para distancias cortas dentro de barrios turísticos.",
     "LATLON": "13.7563, 100.5018",
-    "Image": "Link",
+    "Image": "https://muvmi.co/storage/images/184/shuttle-(1).png",
     "lat": 13.7563,
     "lon": 100.5018,
-    "imageUrl": "/thumbs/consejo.svg",
+    "imageUrl": "/img/activities/bangkok-app-muvmi.png",
     "shortDescription": "Tuk-Tuks eléctricos compartidos con precio fijo por App."
   },
   {
@@ -222,10 +222,10 @@
     "Detalle": "Mejor después de las 17:00. Se llega fácil en ferry desde BTS Saphan Taksin (según operación).",
     "NotaIA": "Buen lugar para cenar y caminar sin el caos de mercados callejeros.",
     "LATLON": "-",
-    "Image": "Link",
+    "Image": "https://excursionmania.com/uploads/blog/gallery/894/1736490200.jpg",
     "lat": 13.704975,
     "lon": 100.501925,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/bangkok-asiatique-the-riverfront.jpg",
     "shortDescription": "Mercado/riverfront con restaurantes, compras y paseo nocturno a orillas del río."
   },
   {
@@ -241,10 +241,10 @@
     "Detalle": "Clases prácticas en una casa tradicional. Enfoque en platos del norte (Khao Soi).",
     "NotaIA": "Aprenderás a hacer la pasta de curry desde cero.",
     "LATLON": "18.7834, 98.9912",
-    "Image": "Link",
+    "Image": "https://res.klook.com/image/upload/w_750,h_469,c_fill,q_85/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/cw1jbdqcxf33pqzik014.jpg",
     "lat": 18.7834,
     "lon": 98.9912,
-    "imageUrl": "/thumbs/gastronomia.svg",
+    "imageUrl": "/img/activities/chiang-mai-baan-thai-cookery-school.jpg",
     "shortDescription": "Escuela de cocina en grupos reducidos."
   },
   {
@@ -260,10 +260,10 @@
     "Detalle": "Obra de Thawan Duchanee. Decoración con pieles, huesos y maderas talladas.",
     "NotaIA": "Es el contrapunto artístico al Templo Blanco.",
     "LATLON": "19.9920, 99.8601",
-    "Image": "Link",
+    "Image": "https://tuguiaentailandia.com/wp-content/uploads/2022/06/La-Casa-Negra-de-CHiang-Rai-Ban-Dam-1024x576.jpg",
     "lat": 19.992,
     "lon": 99.8601,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/chiang-rai-baandam-museum-casa-negra.jpg",
     "shortDescription": "Conjunto de casas oscuras con arte macabro."
   },
   {
@@ -279,10 +279,10 @@
     "Detalle": "Se visita en lanchas rápidas. El punto icónico es la isla de James Bond. Se recomienda el kayak para entrar en lagunas internas.",
     "NotaIA": "Ideal ir temprano para evitar los cientos de barcos que llegan al mediodía.",
     "LATLON": "8.2439, 98.5060",
-    "Image": "Link",
+    "Image": "https://media.tacdn.com/media/attractions-splice-spp-674x446/12/33/96/10.jpg",
     "lat": 8.2439,
     "lon": 98.506,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/phuket-krabi-bahia-de-phang-nga-kayak.jpg",
     "shortDescription": "Paisaje de formaciones calizas y cuevas marinas."
   },
   {
@@ -298,10 +298,10 @@
     "Detalle": "Especialidad en noodles estirados a mano y dumplings virales.",
     "NotaIA": "Ubicado en la zona gastronómica de Chiang Mai, ideal para cenar informal.",
     "LATLON": "18.7885, 98.9850",
-    "Image": "Link",
+    "Image": "https://img4.restaurantguru.com/r177-Bami-Jae-Hua-Chinese-noodle-interior-2025-12-10.jpg",
     "lat": 18.7885,
     "lon": 98.985,
-    "imageUrl": "/thumbs/comida.svg",
+    "imageUrl": "/img/activities/chiang-mai-bami-jae-hua.jpg",
     "shortDescription": "Noodles chinos famosos y Gyozas de queso."
   },
   {
@@ -317,10 +317,10 @@
     "Detalle": "Busca siempre la bandera naranja. Conecta los principales templos y muelles.",
     "NotaIA": "Es mucho más barato que el barco azul (Tourist Boat) que cuesta 150 THB.",
     "LATLON": "13.7194, 100.5126",
-    "Image": "Link",
+    "Image": "https://www.langeasy.com/images2/bkk/bkk1/chaophrayamap10.jpg",
     "lat": 13.7194,
     "lon": 100.5126,
-    "imageUrl": "/thumbs/transporte.svg",
+    "imageUrl": "/img/activities/bangkok-barco-publico-orange-flag.jpg",
     "shortDescription": "La forma más barata y escénica de moverte por el río."
   },
   {
@@ -336,10 +336,10 @@
     "Detalle": "Situada en una pequeña isla conectada por una calzada. Gran vista de la costa norte.",
     "NotaIA": "Evita ir al mediodía; el suelo quema mucho (se entra descalzo).",
     "LATLON": "9.5707, 100.0604",
-    "Image": "Link",
+    "Image": "https://cdn.sanity.io/images/nxpteyfv/goguides/c5ab1c9fb0e5e25c4d63563805e133ba020c4124-1600x1066.jpg",
     "lat": 9.5707,
     "lon": 100.0604,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/koh-samui-big-buddha-samui.jpg",
     "shortDescription": "Estatua dorada de 12m visible desde el aire."
   },
   {
@@ -355,10 +355,10 @@
     "Detalle": "Incluye tour por mercado para elegir ingredientes y preparación de 4-5 platos.",
     "NotaIA": "Te dan un recetario digital al finalizar.",
     "LATLON": "13.7065, 100.6015",
-    "Image": "Link",
+    "Image": "https://image.cookly.me/tr:h-504,w-764,pr-true,rt-auto/images/bkk_academy.png",
     "lat": 13.7065,
     "lon": 100.6015,
-    "imageUrl": "/thumbs/gastronomia.svg",
+    "imageUrl": "/img/activities/bangkok-bkk-thai-cooking-academy.png",
     "shortDescription": "Clase de cocina con visita al mercado local."
   },
   {
@@ -374,11 +374,11 @@
     "Detalle": "Buen plan para almuerzo rápido o para armar vianda. Menú tipo delicatessen (sandwiches, quesos, embutidos).",
     "NotaIA": "Fuente: video (reels). Dirección en Koh Lanta; faltan coords exactas en esta pasada.",
     "LATLON": "-",
-    "Image": "",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/31/73/7a/79/caption.jpg",
     "lat": 13.756331,
     "lon": 100.501762,
     "approxLocation": true,
-    "imageUrl": "/thumbs/comida.svg",
+    "imageUrl": "/img/activities/koh-lanta-bonnie-s-deli-koh-lanta.jpg",
     "shortDescription": "Deli/sándwiches + quesos y fiambres (ideal para picnic o take-away)."
   },
   {
@@ -394,10 +394,10 @@
     "Detalle": "Recorrido por la orilla del mar. Muy fotogénico.",
     "NotaIA": "Reservar para el horario de las 17:30 para mejores fotos.",
     "LATLON": "8.0050, 98.2950",
-    "Image": "Link",
+    "Image": "https://media.tacdn.com/media/attractions-splice-spp-674x446/0e/3e/6c/fb.jpg",
     "lat": 8.005,
     "lon": 98.295,
-    "imageUrl": "/thumbs/experiencia.svg",
+    "imageUrl": "/img/activities/phuket-cabalgata-costera-phuket.jpg",
     "shortDescription": "Paseo a caballo por la playa al atardecer."
   },
   {
@@ -413,10 +413,10 @@
     "Detalle": "Recorrido guiado por zonas rurales fuera del casco urbano. Ritmo tranquilo.",
     "NotaIA": "Ideal para ver el paisaje de montaña sin caminar tanto.",
     "LATLON": "18.8200, 98.9500",
-    "Image": "Link",
+    "Image": "https://media.tacdn.com/media/attractions-splice-spp-674x446/10/7d/9f/5b.jpg",
     "lat": 18.82,
     "lon": 98.95,
-    "imageUrl": "/thumbs/experiencia.svg",
+    "imageUrl": "/img/activities/chiang-mai-cabalgata-rural-cm.jpg",
     "shortDescription": "Paseo a caballo por campos y senderos."
   },
   {
@@ -432,10 +432,10 @@
     "Detalle": "Récord mundial en estructuras de luces LED. Muy familiar y visual.",
     "NotaIA": "Ubicado en Kamala, cerca del Novotel.",
     "LATLON": "7.9555, 98.2872",
-    "Image": "Link",
+    "Image": "https://phuketbuyhouse.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MzYyMjM4LCJwdXIiOiJibG9iX2lkIn19--6d514c568e43875ba98db76c34108aaa5521d836/carnival-magic-media-discovery-teaser.jpg",
     "lat": 7.9555,
     "lon": 98.2872,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/phuket-carnival-magic.jpg",
     "shortDescription": "Parque temático de luces y carnaval."
   },
   {
@@ -451,10 +451,10 @@
     "Detalle": "Ubicada en la planta 4 del MBK Center (Zona A). Ideal para fans de los espacios \"instagrammables\" y arte digital.",
     "NotaIA": "Se inauguró en enero de 2026; es muy nueva.",
     "LATLON": "13.7444, 100.5299",
-    "Image": "Link",
+    "Image": "https://res.klook.com/image/upload/w_750,h_469,c_fill,q_85/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/illjpvd4ps6j1qdobd9f.jpg",
     "lat": 13.7444,
     "lon": 100.5299,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/bangkok-cave-fantasy-mbk.jpg",
     "shortDescription": "Nueva atracción inmersiva con luces, espejos y visuales."
   },
   {
@@ -470,10 +470,10 @@
     "Detalle": "Se reconoce por la imagen de un ciempiés en el paquete. Es muy efectivo a pesar de su apariencia.",
     "NotaIA": "Útil si el aire acondicionado de los aviones o trenes te afecta la garganta.",
     "LATLON": "13.7563, 100.5018",
-    "Image": "Link",
+    "Image": "https://www.thailandunique.com/image/cache/catalog/edible-insect-bags/edible-giant-centipede-bag-new-900x900.jpg",
     "lat": 13.7563,
     "lon": 100.5018,
-    "imageUrl": "/thumbs/consejo.svg",
+    "imageUrl": "/img/activities/tailandia-centipede-packet.jpg",
     "shortDescription": "Medicina tradicional para la tos y el dolor de garganta."
   },
   {
@@ -489,10 +489,10 @@
     "Detalle": "Ir sábado o domingo. Llegar antes del mediodía para menos calor y mejores precios. MRT: Kamphaeng Phet o Chatuchak Park.",
     "NotaIA": "Si tu itinerario cae sábado/domingo, reservá 1 bloque grande acá.",
     "LATLON": "13.80083, 100.55139",
-    "Image": "Link",
+    "Image": "https://passportandstamps.com/wp-content/uploads/2025/03/Immensive-Chatuchak-market.jpg",
     "lat": 13.80083,
     "lon": 100.55139,
-    "imageUrl": "/thumbs/compras.svg",
+    "imageUrl": "/img/activities/bangkok-chatuchak-weekend-market.jpg",
     "shortDescription": "El mercado más grande de Bangkok: ropa, souvenirs, arte, comida y plantas (ideal fin de semana)."
   },
   {
@@ -508,10 +508,10 @@
     "Detalle": "Ir al atardecer/noche cuando prenden luces. Reservar si vas en finde. Buen lugar para fotos tipo “pueblo europeo”.",
     "NotaIA": "Fuente: video (reels). Coordenadas aproximadas (WGS84).",
     "LATLON": "13.82955, 100.6638",
-    "Image": "",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/b6/1b/7f/let-s-dining-in-the-park.jpg",
     "lat": 13.82955,
     "lon": 100.6638,
-    "imageUrl": "/thumbs/comida.svg",
+    "imageUrl": "/img/activities/bangkok-chocolate-ville-parque-resto-estilo-europeo.jpg",
     "shortDescription": "Restó + parque temático fotogénico (ideal de noche)."
   },
   {
@@ -527,10 +527,10 @@
     "Detalle": "Campos verdes infinitos y una cafetería de diseño donde probar postres de matcha.",
     "NotaIA": "Las vistas desde la terraza de la cafetería son las mejores de la zona.",
     "LATLON": "20.1997, 99.8166",
-    "Image": "Link",
+    "Image": "https://mychiangmaitour.com/wp-content/uploads/2018/01/choui_fong_tea_plantation07.jpg",
     "lat": 20.1997,
     "lon": 99.8166,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/chiang-rai-choui-fong-tea.jpg",
     "shortDescription": "Plantaciones de té con arquitectura moderna."
   },
   {
@@ -546,10 +546,10 @@
     "Detalle": "Ubicado en Soi 16. Habitaciones con cocina y vistas increíbles. Cerca de BTS Asok y MRT Sukhumvit. Excelente para moverse y estar cerca de la movida nocturna.",
     "NotaIA": "Tip Logístico: Ideal para el último día (09/03). Puedes dejar las maletas tras el check-out y volver por ellas antes de ir al aeropuerto a las 20:30.",
     "LATLON": "13.7314, 100.5612",
-    "Image": "Link",
+    "Image": "https://images.skyscrapercenter.com/building/columnbangkok_ext-lookingup_(c)tansri__muliani.jpg",
     "lat": 13.7314,
     "lon": 100.5612,
-    "imageUrl": "/thumbs/hotel.svg",
+    "imageUrl": "/img/activities/bangkok-column-bangkok-hotel.jpg",
     "shortDescription": "Tu base moderna en el corazón de Sukhumvit. Sukhumvit Soi 16."
   },
   {
@@ -565,10 +565,10 @@
     "Detalle": "Combina el Airport Rail Link para traslados al aeropuerto, el Tren Nocturno Nº 9 para viajar a Chiang Mai ahorrando una noche de hotel, y la app MuvMi para trayectos cortos en Tuk-Tuk eléctrico.",
     "NotaIA": "Cubre larga, media y corta distancia de forma eficiente y evita las estafas de precios a turistas.",
     "LATLON": "13.7563, 100.5018",
-    "Image": "Link",
+    "Image": "https://wanderlustmemories.com/wp-content/uploads/2017/02/tren_chiang_mai_alex.jpg",
     "lat": 13.7563,
     "lon": 100.5018,
-    "imageUrl": "/thumbs/consejo.svg",
+    "imageUrl": "/img/activities/bangkok-chiang-mai-combo-transporte-economico.jpg",
     "shortDescription": "Estrategia integral para moverte por el país ahorrando."
   },
   {
@@ -584,10 +584,10 @@
     "Detalle": "Un plato estándar de Pad Thai o Fried Rice debe costar entre 50 y 100 THB en puestos locales.",
     "NotaIA": "Si el precio supera los 150 THB en un puesto de calle, estás pagando \"impuesto al turista\".",
     "LATLON": "13.7563, 100.5018",
-    "Image": "Link",
+    "Image": "https://fotografias.lasexta.com/clipping/cmsimages01/2019/05/30/8169AC0C-89DA-45C0-8678-639F02776338/98.jpg",
     "lat": 13.7563,
     "lon": 100.5018,
-    "imageUrl": "/thumbs/comida.svg",
+    "imageUrl": "/img/activities/tailandia-comida-callejera-precio-justo.jpg",
     "shortDescription": "Referencia de precio para no pagar de más en la calle."
   },
   {
@@ -603,10 +603,10 @@
     "Detalle": "Ready Net SIM True 5G (15GB / 30 días): pedila en caja; requiere pasaporte físico. Evitá comprar SIM en el aeropuerto (más cara). • Electrolitos Neo‑Lyte: sobres para mezclar con agua (más efectivos que bebidas deportivas) para calor/excursiones. • Fresh Doze: tapitas con polvo multivitamínico para botellas (colágeno rosa / L‑carnitina verde / vitaminas morado). Se activa presionando el tapón.• Flying Rabbit: emulsión blanca para acidez/malestar estomacal por street food (si no está en 7-Eleven, buscar en farmacia).• Gaviscon (sobres): para acidez tras comida picante (Tom Yum, etc.).• Repelente Soffell (paquete rosa): efectivo contra mosquitos (dengue).• Thai Red Bull (frasco de vidrio): energizante local sin gas, mucho más fuerte que el internacional (usar con moderación).• Ya Dom (inhalador): útil para mareos por calor / congestión (si lo ves, llevate uno). • Postre viral: **Chocolate Lava Cake** (~30–50 THB). Buscar en bakery/postres; pedir que lo calienten 20–30s en microondas para que quede líquido por dentro.",
     "NotaIA": "Si no encontrás Flying Rabbit o Ya Dom en esta sucursal, generalmente están en farmacias cercanas. Para SIM: pasaporte original.",
     "LATLON": "13.74387, 100.56208",
-    "Image": "Link",
+    "Image": "https://thumbs.dreamstime.com/b/tiendas-seven-eleven-hermosas-y-modernas-siete-en-bangkok-tailandia-162825383.jpg",
     "lat": 13.74387,
     "lon": 100.56208,
-    "imageUrl": "/thumbs/compras.svg",
+    "imageUrl": "/img/activities/bangkok-compras-clave-en-7-eleven-sucursal-grande-asok.jpg",
     "shortDescription": "Hacé una parada en el 7-Eleven más grande de Bangkok (Asok, sucursal 2457/02457, 2 pisos) y comprá todo esto…"
   },
   {
@@ -622,10 +622,10 @@
     "Detalle": "Ir muy temprano (salida 6–7am) para ver actividad y evitar multitudes. Suele combinarse con Maeklong Railway Market. Negociar precio del bote.",
     "NotaIA": "Fuente: video (reels). Coords web.",
     "LATLON": "13.517607, 99.953829",
-    "Image": "",
+    "Image": "https://media.tacdn.com/media/attractions-splice-spp-674x446/09/27/df/b8.jpg",
     "lat": 13.517607,
     "lon": 99.953829,
-    "imageUrl": "/thumbs/mercado.svg",
+    "imageUrl": "/img/activities/bangkok-excursion-damnoen-saduak-floating-market.jpg",
     "shortDescription": "Mercado flotante más famoso (muy turístico)."
   },
   {
@@ -641,10 +641,10 @@
     "Detalle": "Es un entorno artificial diseñado específicamente para fotografías de Instagram. Tiene cuevas y vegetación exuberante.",
     "NotaIA": "Ubicado a unos 45-60 min del centro de Chiang Mai.",
     "LATLON": "19.1415, 98.9272",
-    "Image": "Link",
+    "Image": "https://res.klook.com/image/upload/w_750,h_469,c_fill,q_85/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/m1kyuooy7kfk0vobrags.jpg",
     "lat": 19.1415,
     "lon": 98.9272,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/chiang-mai-dantewada-land-of-angels.jpg",
     "shortDescription": "Parque temático natural con cascadas y flores."
   },
   {
@@ -660,10 +660,10 @@
     "Detalle": "Incluye las Pagodas Gemelas, cascadas y senderos de bosque nuboso.",
     "NotaIA": "Imprescindible llevar una camperita; arriba hace frío (incluso 10°C).",
     "LATLON": "18.5882, 98.4870",
-    "Image": "Link",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/ce/09/87/garden.jpg",
     "lat": 18.5882,
     "lon": 98.487,
-    "imageUrl": "/thumbs/naturaleza.svg",
+    "imageUrl": "/img/activities/cerca-cm-doi-inthanon-park.jpg",
     "shortDescription": "El pico más alto de Tailandia."
   },
   {
@@ -679,10 +679,10 @@
     "Detalle": "Junto al río (detrás de Wat Don Wai). Fuerte en street food y platos locales (ej. pato estofado). Ideal de mañana/mediodía.",
     "NotaIA": "Fuente: video (reels). Coords web.",
     "LATLON": "13.77003, 100.28463",
-    "Image": "",
+    "Image": "https://travel-shark.com/wp-content/uploads/2024/08/car-park-1280x640.jpg",
     "lat": 13.77003,
     "lon": 100.28463,
-    "imageUrl": "/thumbs/mercado.svg",
+    "imageUrl": "/img/activities/bangkok-nakhon-pathom-don-wai-market-don-wai-floating-market.jpg",
     "shortDescription": "Mercado ribereño con mucha comida local (menos turístico)."
   },
   {
@@ -698,10 +698,10 @@
     "Detalle": "Ubicado en una playa privada cerca de Patong/Kamala. Muy visual para el atardecer.",
     "NotaIA": "NotaIA: Asegúrate de que el lugar siga prácticas de bienestar animal antes de reservar.",
     "LATLON": "7.8920, 98.2950",
-    "Image": "Link",
+    "Image": "https://phuketelephantonthebeach.com/wp-content/uploads/2025/05/phuket-elephant-on-the-beach-025-1-980x1225.jpg",
     "lat": 7.892,
     "lon": 98.295,
-    "imageUrl": "/thumbs/experiencia.svg",
+    "imageUrl": "/img/activities/phuket-elephant-dinner-phuket.jpg",
     "shortDescription": "Cena en la playa viendo elefantes pasar."
   },
   {
@@ -717,10 +717,10 @@
     "Detalle": "No se montan. Solo observación, alimentación y baño.",
     "NotaIA": "Reserva con meses de antelación; los cupos éticos vuelan.",
     "LATLON": "19.2154, 98.8604",
-    "Image": "Link",
+    "Image": "https://elephantfreedom.org/wp-content/uploads/2024/10/Elephant_bathing-1024x683.webp",
     "lat": 19.2154,
     "lon": 98.8604,
-    "imageUrl": "/thumbs/etico.svg",
+    "imageUrl": "/img/activities/chiang-mai-elephant-nature-park.webp",
     "shortDescription": "Santuario ético de elefantes rescatados."
   },
   {
@@ -736,10 +736,10 @@
     "Detalle": "Sale el 18/02 15:30. Puedes aplicar al tour gratis de Turkish o usar el hotel de escala.",
     "NotaIA": "Si el ticket lo permite, Turkish ofrece hotel gratis por escalas largas (verificar condiciones).",
     "LATLON": "41.2752, 28.7519",
-    "Image": "Link",
+    "Image": "https://cdn.istanbultouristpass.com/banner/doc/istanbul%20layover%20what%20to%20do%20in%205%20hours%20(2).jpg",
     "lat": 41.2752,
     "lon": 28.7519,
-    "imageUrl": "/thumbs/logistica.svg",
+    "imageUrl": "/img/activities/estambul-escala-en-estambul.jpg",
     "shortDescription": "Tiempo de espera antes del tramo final a Bangkok."
   },
   {
@@ -755,10 +755,10 @@
     "Detalle": "Combina comer en la planta baja de Iconsiam (SookSiam), que tiene precios de mercado local pero ambiente limpio, con el uso del Orange Flag Boat (16 THB) para recorrer el río.",
     "NotaIA": "Esta combinación permite visitar lugares de lujo y moverte por el centro por menos de 15€ al día.",
     "LATLON": "13.7274, 100.5103",
-    "Image": "Link",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2d/ac/29/3c/sooksiam-iconsiam-g-fl.jpg",
     "lat": 13.7274,
     "lon": 100.5103,
-    "imageUrl": "/thumbs/consejo.svg",
+    "imageUrl": "/img/activities/bangkok-estrategia-ahorro-diario.jpg",
     "shortDescription": "Cómo vivir la ciudad con un presupuesto bajo sin perder calidad."
   },
   {
@@ -774,10 +774,10 @@
     "Detalle": "Reemplaza al papel TM6. Se rellena online hasta 3 días antes. Te dan un QR.",
     "NotaIA": "No aceptes ayuda de webs que cobren; es un trámite 100% gratuito.",
     "LATLON": "13.6899, 100.7501",
-    "Image": "Link",
+    "Image": "https://www.conmochila.com/wp-content/uploads/2025/07/formulario-tdac-tailandia-06.jpg",
     "lat": 13.6899,
     "lon": 100.7501,
-    "imageUrl": "/thumbs/consejo.svg",
+    "imageUrl": "/img/activities/inmigracion-formulario-tdac.jpg",
     "shortDescription": "Tarjeta Digital de Llegada obligatoria desde mayo 2025."
   },
   {
@@ -793,10 +793,10 @@
     "Detalle": "Piezas artesanales que incluyen ingredientes premium como caviar o trufa. Ubicado en Ratchayothin Hills.",
     "NotaIA": "El restaurante tiene un diseño retro-futurista muy llamativo para fotos.",
     "LATLON": "13.8265, 100.5670",
-    "Image": "Link",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/4c/1e/71/an-upscale-sushi-bar.jpg",
     "lat": 13.8265,
     "lon": 100.567,
-    "imageUrl": "/thumbs/comida.svg",
+    "imageUrl": "/img/activities/bangkok-genbu-sushi-bar.jpg",
     "shortDescription": "Sushi de lujo asequible en un entorno de diseño."
   },
   {
@@ -812,10 +812,10 @@
     "Detalle": "Llegar 08:30h para evitar el calor y multitudes. Obligatorio hombros y rodillas cubiertas (no valen leggings ni tirantes). Verás el Buda de Esmeralda. • Incluye **Wat Phra Kaew** (Templo del Buda Esmeralda) dentro del complejo.",
     "NotaIA": "Es el sitio con el protocolo de vestimenta más estricto de toda Tailandia.",
     "LATLON": "13.7515, 100.4927",
-    "Image": "Link",
+    "Image": "https://cdn-67ebd632c1ac1810207eacb0.closte.com/wp-content/uploads/2020/12/Solo-Palacio.jpg.webp",
     "lat": 13.7515,
     "lon": 100.4927,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/bangkok-gran-palacio.webp",
     "shortDescription": "El recinto real más sagrado e importante del país."
   },
   {
@@ -831,10 +831,10 @@
     "Detalle": "Incluye descenso en carritos por la selva. Se requiere casco y seguir las instrucciones del staff estrictamente.",
     "NotaIA": "Ubicado en la selva de Phuket; combina bien con la tirolesa (Zipline).",
     "LATLON": "7.8732, 98.3415",
-    "Image": "Link",
+    "Image": "https://hanumanluge.com/wp-content/uploads/2026/02/New-Project-2026-02-04T123603.213.jpg",
     "lat": 7.8732,
     "lon": 98.3415,
-    "imageUrl": "/thumbs/experiencia.svg",
+    "imageUrl": "/img/activities/phuket-hanuman-world-mountain-carting.jpg",
     "shortDescription": "Circuito de aventura con carritos de montaña y tirolesas."
   },
   {
@@ -850,10 +850,10 @@
     "Detalle": "Sube a la planta 7 para vistas gratuitas del skyline. Usa el barco de 8 THB desde el muelle Sathorn (no pagues 100 por el turístico).",
     "NotaIA": "La planta baja (SookSiam) replica un mercado flotante con comida muy buena.",
     "LATLON": "13.7274, 100.5103",
-    "Image": "Link",
+    "Image": "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/12/a1/f1/6f.jpg",
     "lat": 13.7274,
     "lon": 100.5103,
-    "imageUrl": "/thumbs/compras.svg",
+    "imageUrl": "/img/activities/bangkok-iconsiam-rooftop-barco.jpg",
     "shortDescription": "Centro comercial de lujo con mirador gratuito y comida regional."
   },
   {
@@ -869,10 +869,10 @@
     "Detalle": "Lo verás en la nariz de todos los locales. Sirve para mareos, calor y malos olores.",
     "NotaIA": "El de la marca Poy-Sian es el más icónico.",
     "LATLON": "13.7563, 100.5018",
-    "Image": "Link",
+    "Image": "https://www.thailandfoundation.or.th/wp-content/uploads/2022/11/50f56e977567f764fa67171ece1bd2fa-1024x1024.png",
     "lat": 13.7563,
     "lon": 100.5018,
-    "imageUrl": "/thumbs/consejo.svg",
+    "imageUrl": "/img/activities/tailandia-inhalador-ya-dom.png",
     "shortDescription": "Tubito de aceites esenciales (mentol/eucalipto) para el calor."
   },
   {
@@ -888,10 +888,10 @@
     "Detalle": "Se sale en lancha rápida (tour de día completo). Las playas más blancas de Tailandia.",
     "NotaIA": "Solo abren de noviembre a mayo por seguridad climática.",
     "LATLON": "8.6500, 97.6333",
-    "Image": "Link",
+    "Image": "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/15/0e/6e/91.jpg",
     "lat": 8.65,
     "lon": 97.6333,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/phuket-islas-similan.jpg",
     "shortDescription": "Paraíso de aguas turquesas y snorkel de primer nivel."
   },
   {
@@ -907,10 +907,10 @@
     "Detalle": "Las colas son de 2 a 4 horas si no tienes reserva. El plato estrella vale unos 40€.",
     "NotaIA": "Ella sigue cocinando personalmente cada plato con sus gafas de bucear.",
     "LATLON": "13.7526, 100.5048",
-    "Image": "Link",
+    "Image": "https://i0.wp.com/samurai-gourmet.com/wp-content/uploads/2022/06/image-2.jpg",
     "lat": 13.7526,
     "lon": 100.5048,
-    "imageUrl": "/thumbs/comida.svg",
+    "imageUrl": "/img/activities/bangkok-jay-fai.jpg",
     "shortDescription": "Comida callejera con Estrella Michelin (Tortilla de Cangrejo)."
   },
   {
@@ -926,10 +926,10 @@
     "Detalle": "Tickets se compran en boletería. Boletería suele ser 10:00–17:00 (última entrada cercana al cierre).",
     "NotaIA": "Muy buena visita si te interesa cultura/diseño; combinar con Siam/MBK.",
     "LATLON": "-",
-    "Image": "Link",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/f3/f2/f8/outside.jpg",
     "lat": 13.74923,
     "lon": 100.52828,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/bangkok-jim-thompson-house-museum.jpg",
     "shortDescription": "Museo/house-museum de Jim Thompson (Thai silk) con casas tradicionales y colección de arte."
   },
   {
@@ -945,10 +945,10 @@
     "Detalle": "Subida empinada por rocas y cuerdas. No apto para personas con movilidad reducida.",
     "NotaIA": "La vista es la más famosa de Koh Tao, rodeada de palmeras.",
     "LATLON": "10.0638, 99.8273",
-    "Image": "Link",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/8c/dd/08/photo0jpg.jpg",
     "lat": 10.0638,
     "lon": 99.8273,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/koh-tao-john-suwan-viewpoint.jpg",
     "shortDescription": "Mirador con vista a las dos bahías enfrentadas."
   },
   {
@@ -964,10 +964,10 @@
     "Detalle": "Ir desde el atardecer. Ideal para una vuelta corta + street food. Evitar si buscás tranquilidad.",
     "NotaIA": "Fuente: video (reels). Coords web.",
     "LATLON": "13.758889, 100.497223",
-    "Image": "",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/70/7d/de/dsc-0561-1-largejpg.jpg",
     "lat": 13.758889,
     "lon": 100.497223,
-    "imageUrl": "/thumbs/vida-nocturna.svg",
+    "imageUrl": "/img/activities/bangkok-khao-san-road.jpg",
     "shortDescription": "Calle icónica para noche: bares, música, comida callejera."
   },
   {
@@ -983,10 +983,10 @@
     "Detalle": "Aparece en la guía Michelin. Es un local sencillo pero con filas largas. El sabor es intenso y ligeramente picante.",
     "NotaIA": "Solo abren hasta las 16:00h. No vayas tarde o se acaba el pollo.",
     "LATLON": "18.8000, 98.9744",
-    "Image": "Link",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/4d/cf/b2/caption.jpg",
     "lat": 18.8,
     "lon": 98.9744,
-    "imageUrl": "/thumbs/comida.svg",
+    "imageUrl": "/img/activities/chiang-mai-khao-soi-maesai.jpg",
     "shortDescription": "El mejor Khao Soi (curry de noodles) de Tailandia."
   },
   {
@@ -1002,10 +1002,10 @@
     "Detalle": "Se recomienda dormir en cabañas flotantes básicas sin internet. Incluye safaris en barco.",
     "NotaIA": "Es la selva con mayor biodiversidad del sur de Tailandia.",
     "LATLON": "8.9774, 98.6675",
-    "Image": "Link",
+    "Image": "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/07/00/a4/db.jpg",
     "lat": 8.9774,
     "lon": 98.6675,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/surat-thani-khao-sok-lago-cheow-lan.jpg",
     "shortDescription": "Parque Nacional con montañas de piedra surgiendo del agua."
   },
   {
@@ -1021,10 +1021,10 @@
     "Detalle": "Estética de restaurante japonés. Fideos frescos y presentaciones de autor.",
     "NotaIA": "Es la versión \"linda\" y cara comparada con Maesai, pero deliciosa.",
     "LATLON": "18.7965, 99.0020",
-    "Image": "Link",
+    "Image": "https://media-cdn.tripadvisor.com/media/photo-s/0e/5b/2d/14/khao-soi.jpg",
     "lat": 18.7965,
     "lon": 99.002,
-    "imageUrl": "/thumbs/gastronomia.svg",
+    "imageUrl": "/img/activities/chiang-mai-khao-so-i.jpg",
     "shortDescription": "Versión gourmet y moderna del Khao Soi."
   },
   {
@@ -1040,10 +1040,10 @@
     "Detalle": "Paseo nocturno (Vie-Dom). Música en vivo y ambiente joven.",
     "NotaIA": "Está cerca de Little India y Chinatown.",
     "LATLON": "13.7445, 100.5030",
-    "Image": "Link",
+    "Image": "https://www.inthailand.travel/wp-content/uploads/2021/05/Klong-Ong-night.jpg",
     "lat": 13.7445,
     "lon": 100.503,
-    "imageUrl": "/thumbs/mercado.svg",
+    "imageUrl": "/img/activities/bangkok-khlong-ong-ang.jpg",
     "shortDescription": "Canal modernizado con arte urbano y comida."
   },
   {
@@ -1059,10 +1059,10 @@
     "Detalle": "Atraviesa el centro de la ciudad. Rápido y muy auténtico (cuidado con el agua al subir).",
     "NotaIA": "Es la mejor forma de ir de Siam Square a la zona vieja (Wat Saket).",
     "LATLON": "13.7490, 100.5400",
-    "Image": "Link",
+    "Image": "https://ntyhn.wordpress.com/wp-content/uploads/2015/03/route-map.png",
     "lat": 13.749,
     "lon": 100.54,
-    "imageUrl": "/thumbs/transporte.svg",
+    "imageUrl": "/img/activities/bangkok-khlong-saen-saep-boat.png",
     "shortDescription": "Barco de canal usado por locales para evitar tráfico."
   },
   {
@@ -1078,10 +1078,10 @@
     "Detalle": "Mejor muy temprano (madrugada/mañana). Buen lugar para ver Bangkok “real” y comer barato. Ojo con calor/olores: ir con calzado cerrado.",
     "NotaIA": "Fuente: video (reels). Coords web.",
     "LATLON": "13.7213093, 100.5593429",
-    "Image": "",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/8f/14/42/photo0jpg.jpg",
     "lat": 13.7213093,
     "lon": 100.5593429,
-    "imageUrl": "/thumbs/mercado.svg",
+    "imageUrl": "/img/activities/bangkok-khlong-toei-market.jpg",
     "shortDescription": "Mercado local grande (verduras, carnes, comida callejera)."
   },
   {
@@ -1097,10 +1097,10 @@
     "Detalle": "A 6h de Bangkok (bus+ferry). Auténtica, tranquila, sin turismo de masas.",
     "NotaIA": "Perfecta para desconectar y ver atardeceres en calma total.",
     "LATLON": "11.6600, 102.5500",
-    "Image": "Link",
+    "Image": "https://www.turismotailandes.com/wp-content/uploads/2015/05/Koh-Kood.jpg",
     "lat": 11.66,
     "lon": 102.55,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/isla-koh-kood.jpg",
     "shortDescription": "La isla virgen, llamada las \"Maldivas de Tailandia\"."
   },
   {
@@ -1116,10 +1116,10 @@
     "Detalle": "Aguas ultra cristalinas y arena blanca finísima. Es una isla pequeña que se recorre a pie.",
     "NotaIA": "Es de difícil acceso (6h desde el aeropuerto más cercano), lo que la mantiene exclusiva.",
     "LATLON": "6.4886, 99.3015",
-    "Image": "Link",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/15/81/8d/20180215-142929-largejpg.jpg",
     "lat": 6.4886,
     "lon": 99.3015,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/satun-koh-lipe.jpg",
     "shortDescription": "Conocida como las \"Maldivas de Tailandia\"."
   },
   {
@@ -1135,10 +1135,10 @@
     "Detalle": "Ambiente joven, calas pequeñas y aguas mansas. Ideal para sacar el certificado PADI.",
     "NotaIA": "Shark Bay es excelente para ver tiburones de punta negra (inofensivos).",
     "LATLON": "10.0956, 99.8404",
-    "Image": "Link",
+    "Image": "https://scubafinders.com/blog/wp-content/uploads/2025/02/buceo-en-koh-tao.webp",
     "lat": 10.0956,
     "lon": 99.8404,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/isla-koh-tao-buceo-snorkel.webp",
     "shortDescription": "El lugar más barato del mundo para bucear."
   },
   {
@@ -1154,10 +1154,10 @@
     "Detalle": "Famoso por su niebla artificial constante, cascadas y flores exóticas. Es un restaurante completo.",
     "NotaIA": "Se paga entrada pero el valor se descuenta de lo que consumas dentro.",
     "LATLON": "19.9234, 99.8142",
-    "Image": "Link",
+    "Image": "https://media-cdn.tripadvisor.com/media/photo-m/1280/26/8a/94/08/caption.jpg",
     "lat": 19.9234,
     "lon": 99.8142,
-    "imageUrl": "/thumbs/comida.svg",
+    "imageUrl": "/img/activities/chiang-rai-lalitta-cafe.jpg",
     "shortDescription": "Café inmersivo que parece un bosque encantado."
   },
   {
@@ -1173,10 +1173,10 @@
     "Detalle": "Se realiza solo el domingo en Thalang Road. Comida local y shows callejeros.",
     "NotaIA": "Es el mejor momento para ver el casco histórico iluminado y con vida.",
     "LATLON": "7.8848, 98.3891",
-    "Image": "Link",
+    "Image": "https://thumbs.dreamstime.com/b/phuket-thailand-may-lard-yai-walking-street-night-market-every-sunday-famous-great-shopping-local-food-performance-arts-cafes-155400844.jpg",
     "lat": 7.8848,
     "lon": 98.3891,
-    "imageUrl": "/thumbs/mercado.svg",
+    "imageUrl": "/img/activities/phuket-lard-yai-market.jpg",
     "shortDescription": "Mercado nocturno de los domingos en el casco viejo."
   },
   {
@@ -1192,10 +1192,10 @@
     "Detalle": "Dirección: 531/20 Phuket Rd, Talat Yai, Mueang Phuket, Phuket 83000. Horario aprox.: 10:00–20:00. Actividad: café/brunch + área de fotos/interacción (paquetes y tiempos varían). Tip: reservar/consultar condiciones y reglas (no flash, movimientos suaves).",
     "NotaIA": "Las experiencias de 'cachorros para fotos' suelen estar asociadas a problemas de bienestar y comercio de fauna. Si vas evaluá críticamente condiciones (espacio manejo descanso del animal) y evitá prácticas invasivas.",
     "LATLON": "7.8755234, 98.3981891",
-    "Image": "Link",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/31/a0/65/19/einzigartiges-ambiente.jpg",
     "lat": 7.8755234,
     "lon": 98.3981891,
-    "imageUrl": "/thumbs/experiencia.svg",
+    "imageUrl": "/img/activities/phuket-lion-house-phuket.jpg",
     "shortDescription": "Café junto a un lago con opción de ver/interactuar con cachorro de león (polémico)."
   },
   {
@@ -1211,10 +1211,10 @@
     "Detalle": "Tienes que ponerte pantuflas y lavarte las manos al entrar. Los animales están vacunados y cuidados.",
     "NotaIA": "Debes reservar por adelantado ya que el cupo es muy limitado.",
     "LATLON": "13.7300, 100.5800",
-    "Image": "Link",
+    "Image": "https://cdn.corner.inc/place-photo/AWYs27z5ZZAAGJ8TAaAYckDfdANZggckWr6WPrpCVxNJgXD55H65y_wHAcoAayvP6Fv6gUCiPMxjC6RJVmk2iGWIpzh5wRrr7sAo9NbbgETg2ZtIKbAVxPD7qPln_cB1njV3eQODkOej2NZDlz7kOf-G6HFOR8CCTFCAcdDBlqAVWRYf3KNA.jpeg",
     "lat": 13.73,
     "lon": 100.58,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "https://cdn.corner.inc/place-photo/AWYs27z5ZZAAGJ8TAaAYckDfdANZggckWr6WPrpCVxNJgXD55H65y_wHAcoAayvP6Fv6gUCiPMxjC6RJVmk2iGWIpzh5wRrr7sAo9NbbgETg2ZtIKbAVxPD7qPln_cB1njV3eQODkOej2NZDlz7kOf-G6HFOR8CCTFCAcdDBlqAVWRYf3KNA.jpeg",
     "shortDescription": "Café temático con suricatas, zorros fennec y capibaras."
   },
   {
@@ -1230,10 +1230,10 @@
     "Detalle": "Ideal a la mañana temprano o al atardecer. Entrada gratuita; suele abrir 04:30 y cerrar 21:00–22:00 según temporada.",
     "NotaIA": "Buen “reset” entre templos/compras; llevar repelente si vas al atardecer.",
     "LATLON": "13.73056, 100.54167",
-    "Image": "Link",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/b8/3b/d3/lumpini-park-4.jpg",
     "lat": 13.73056,
     "lon": 100.54167,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/bangkok-lumphini-park.jpg",
     "shortDescription": "Parque urbano icónico: caminata, lago y chance de ver varanos (monitor lizards)."
   },
   {
@@ -1249,10 +1249,10 @@
     "Detalle": "Famosa por su café de altura, cascadas y casas de madera tradicionales.",
     "NotaIA": "Aire puro y temperatura mucho más fresca que en la ciudad.",
     "LATLON": "18.8653, 99.3495",
-    "Image": "Link",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/1b/e2/ef/photo0jpg.jpg",
     "lat": 18.8653,
     "lon": 99.3495,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/cerca-cm-mae-kampong-village.jpg",
     "shortDescription": "Aldea de montaña auténtica y nublada."
   },
   {
@@ -1268,10 +1268,10 @@
     "Detalle": "Ubicación: junto a Maeklong Railway Station, Samut Songkhram. Ideal ir con horario de paso del tren (pasa varias veces al día). Tip: pararte detrás de las líneas rojas y dejar pasar el tren; buen combo con Amphawa (tarde) el mismo día.",
     "NotaIA": "Actividad fotogénica pero concurrida: cuidar pertenencias y priorizar seguridad cuando pasa el tren.",
     "LATLON": "13.4076, 100.0005",
-    "Image": "Link",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/30/4e/4f/4e/caption.jpg",
     "lat": 13.4076,
     "lon": 100.0005,
-    "imageUrl": "/thumbs/mercado.svg",
+    "imageUrl": "/img/activities/bangkok-excursion-maeklong-railway-market-talad-rom-hoop.jpg",
     "shortDescription": "Mercado sobre las vías: ver cómo pliegan los puestos cuando pasa el tren."
   },
   {
@@ -1287,10 +1287,10 @@
     "Detalle": "Piso 78. No cámaras en el vidrio. Ir antes de las 16h es más barato. Compra en apps como GetYourGuide o Klook para conseguir combos con descuento.",
     "NotaIA": "Si almuerzas en el restaurante Ojo, el acceso suele estar incluido o bonificado.",
     "LATLON": "13.7235, 100.5284",
-    "Image": "Link",
+    "Image": "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/12/1d/df/0e.jpg",
     "lat": 13.7235,
     "lon": 100.5284,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/bangkok-mahanakhon-skywalk.jpg",
     "shortDescription": "Mirador con piso de cristal a 314m."
   },
   {
@@ -1306,10 +1306,10 @@
     "Detalle": "8 plantas. Busca las \"secret rooms\" para réplicas de lujo (bolsos/relojes) de alta calidad. Regatear es obligatorio.",
     "NotaIA": "Abre a las 10am. Es el lugar ideal para comprar ropa \"fake\" pero bien hecha.",
     "LATLON": "13.7444, 100.5299",
-    "Image": "Link",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2b/74/a1/0b/mbk-center.jpg",
     "lat": 13.7444,
     "lon": 100.5299,
-    "imageUrl": "/thumbs/compras.svg",
+    "imageUrl": "/img/activities/bangkok-mbk-center.jpg",
     "shortDescription": "El paraíso de las réplicas y electrónica."
   },
   {
@@ -1325,10 +1325,10 @@
     "Detalle": "Los monos en lugares como Phi Phi o Lopburi roban comida, móviles y bolsos si te descuidas.",
     "NotaIA": "Nunca intentes recuperar algo a la fuerza si el mono se pone agresivo; busca ayuda de un local.",
     "LATLON": "7.7407, 98.7784",
-    "Image": "Link",
+    "Image": "https://www.turismodebolsillo.com.ar/wp-content/uploads/2025/08/hq720.jpg",
     "lat": 7.7407,
     "lon": 98.7784,
-    "imageUrl": "/thumbs/consejo.svg",
+    "imageUrl": "/img/activities/varias-playas-templos-monos-carteristas.jpg",
     "shortDescription": "Precaución con los monos salvajes en zonas turísticas."
   },
   {
@@ -1344,10 +1344,10 @@
     "Detalle": "Conocerás la tradición de los anillos de latón y su artesanía textil.",
     "NotaIA": "Nota: Es un tema controversial; asegúrate de ir con un guía que respete a la comunidad.",
     "LATLON": "20.0515, 99.8820",
-    "Image": "Link",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2b/10/ec/c8/caption.jpg",
     "lat": 20.0515,
     "lon": 99.882,
-    "imageUrl": "/thumbs/cultura.svg",
+    "imageUrl": "/img/activities/chiang-rai-mujeres-jirafa-karen.jpg",
     "shortDescription": "Visita a la aldea de la etnia Long Neck."
   },
   {
@@ -1363,10 +1363,10 @@
     "Detalle": "Ubicación privilegiada con acceso directo a la playa. Más relajado que Patong pero cerca de todo.",
     "NotaIA": "Importante: Desde aquí al aeropuerto son 40-50 min. El show Carnival Magic queda muy cerca de este hotel.",
     "LATLON": "7.9555, 98.2872",
-    "Image": "Link",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/3a/d0/47/novotel-phuket-kamala.jpg",
     "lat": 7.9555,
     "lon": 98.2872,
-    "imageUrl": "/thumbs/hotel.svg",
+    "imageUrl": "/img/activities/phuket-novotel-phuket-kamala-beach.jpg",
     "shortDescription": "Resort frente al mar en la tranquila playa de Kamala."
   },
   {
@@ -1382,10 +1382,10 @@
     "Detalle": "El menú de almuerzo es la forma más barata de conocer el edificio. Si gastas más de 1500 THB, te dan acceso al Skywalk gratis.",
     "NotaIA": "Las vistas son mejores que las del propio mirador público.",
     "LATLON": "13.7235, 100.5284",
-    "Image": "Link",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/28/a4/cc/eb/ojo-main-dining-area.jpg",
     "lat": 13.7235,
     "lon": 100.5284,
-    "imageUrl": "/thumbs/comida.svg",
+    "imageUrl": "/img/activities/bangkok-ojo-bangkok.jpg",
     "shortDescription": "Restaurante mexicano en el piso 76 de la torre Mahanakhon."
   },
   {
@@ -1401,10 +1401,10 @@
     "Detalle": "Fachadas estilo sino-portugués. Muy instagrameable.",
     "NotaIA": "Domingo hay mercado nocturno (Lard Yai).",
     "LATLON": "7.8848, 98.3891",
-    "Image": "Link",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/49/f6/e1/img-20171115-104952-largejpg.jpg",
     "lat": 7.8848,
     "lon": 98.3891,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/phuket-old-phuket-town.jpg",
     "shortDescription": "Casco histórico colonial colorido."
   },
   {
@@ -1420,10 +1420,10 @@
     "Detalle": "Arquitectura de vanguardia, áreas verdes y tecnología de punta. Representa la \"Bangkok del futuro\".",
     "NotaIA": "Ideal para pasear cuando el calor es extremo gracias a sus áreas abiertas diseñadas con ventilación natural.",
     "LATLON": "13.7265, 100.5450",
-    "Image": "Link",
+    "Image": "https://rwdi.com/wp-content/uploads/2025/06/One-Bangkok-Frasers-Property-Holdings-Thailand.jpg",
     "lat": 13.7265,
     "lon": 100.545,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/bangkok-one-bangkok.jpg",
     "shortDescription": "Nuevo distrito futurista con centros comerciales y parques."
   },
   {
@@ -1439,10 +1439,10 @@
     "Detalle": "Funciona 24h, pero el pico de actividad es a las 3:00-4:00 AM. Muy cerca de Wat Pho.",
     "NotaIA": "Es un gran lugar para ver la vida local real sin filtros turísticos.",
     "LATLON": "13.7416, 100.4950",
-    "Image": "Link",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/01/ea/12/fa/flower-market.jpg",
     "lat": 13.7416,
     "lon": 100.495,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/bangkok-pak-khlong-talat.jpg",
     "shortDescription": "El mercado de flores más grande y colorido."
   },
   {
@@ -1458,10 +1458,10 @@
     "Detalle": "Tienen modelos de Jordan, Yeezy y Nike a precios muy bajos. Los precios son fijos, no hace falta regatear.",
     "NotaIA": "Ideal para renovar calzado si viajas con poco equipaje.",
     "LATLON": "7.8937, 98.2988",
-    "Image": "Link",
+    "Image": "https://media.phuket-plaza.com/images/pre/large/040125-01574.jpg",
     "lat": 7.8937,
     "lon": 98.2988,
-    "imageUrl": "/thumbs/compras.svg",
+    "imageUrl": "/img/activities/phuket-patong-sneakers.jpg",
     "shortDescription": "Tienda de zapatillas de segunda mano y \"pre-loved\" de alta calidad."
   },
   {
@@ -1477,10 +1477,10 @@
     "Detalle": "Se llega en lancha rápida. Incluye snorkel y almuerzo.",
     "NotaIA": "Maya Bay puede cerrar en temporada baja por restauración.",
     "LATLON": "7.7407, 98.7784",
-    "Image": "Link",
+    "Image": "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/08/a3/6b/14.jpg",
     "lat": 7.7407,
     "lon": 98.7784,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/krabi-phuket-phi-phi-islands-day-trip.jpg",
     "shortDescription": "Maya Bay y lagunas turquesas."
   },
   {
@@ -1496,10 +1496,10 @@
     "Detalle": "Una de las playas más bellas del mundo. Escenario de escalada y aguas turquesas.",
     "NotaIA": "Se llega caminando 15 min desde Railay East.",
     "LATLON": "8.0047, 98.8375",
-    "Image": "Link",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/fd/37/5b/fb-img-1474058408344.jpg",
     "lat": 8.0047,
     "lon": 98.8375,
-    "imageUrl": "/thumbs/playa.svg",
+    "imageUrl": "/img/activities/railay-phra-nang-cave-beach.jpg",
     "shortDescription": "Playa con altar de fertilidad y cuevas."
   },
   {
@@ -1515,10 +1515,10 @@
     "Detalle": "Enfoque en mariscos y platos clásicos del sur. Muy interactivo.",
     "NotaIA": "La ubicación es cerca de las playas principales.",
     "LATLON": "7.8320, 98.3315",
-    "Image": "Link",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/1e/99/8f/phuket-thai-cooking-class.jpg",
     "lat": 7.832,
     "lon": 98.3315,
-    "imageUrl": "/thumbs/gastronomia.svg",
+    "imageUrl": "/img/activities/phuket-phuket-cooking-class-vj.jpg",
     "shortDescription": "Clase personalizada con chef local."
   },
   {
@@ -1534,10 +1534,10 @@
     "Detalle": "Llegar 45–60 min antes del sunset para estacionar y encontrar buen lugar. Llevar agua.",
     "NotaIA": "Si querés fotos, subí antes de la hora pico y quedate hasta después del ocaso.",
     "LATLON": "7.7614, 98.3036",
-    "Image": "Link",
+    "Image": "https://kamalabeachestate.com/wp-content/uploads/2024/09/Promthep-Cape-10-of-26.jpg",
     "lat": 7.7614,
     "lon": 98.3036,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/phuket-promthep-cape-sunset-viewpoint.jpg",
     "shortDescription": "El mirador de atardecer más famoso del sur de Phuket (puede estar muy concurrido)."
   },
   {
@@ -1553,10 +1553,10 @@
     "Detalle": "Solo accesible en bote (longtail) desde Ao Nang. Famosa por la escalada en roca.",
     "NotaIA": "Phra Nang Cave es la mejor playa de este sector (lado oeste).",
     "LATLON": "8.0119, 98.8367",
-    "Image": "Link",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/be/e8/6f/railay-beach.jpg",
     "lat": 8.0119,
     "lon": 98.8367,
-    "imageUrl": "/thumbs/playa.svg",
+    "imageUrl": "/img/activities/krabi-railay-beach.jpg",
     "shortDescription": "Playa aislada rodeada de acantilados gigantes."
   },
   {
@@ -1572,10 +1572,10 @@
     "Detalle": "Ver calendario y comprar tickets con anticipación. Llegar 30–45 min antes para ubicarse.",
     "NotaIA": "Tomá esto como show cultural; si querés una noche distinta fuera de rooftops, es buena opción.",
     "LATLON": "-",
-    "Image": "Link",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2e/d8/f4/17/muay-thai-boxing-tickets.jpg",
     "lat": 13.756664,
     "lon": 100.505331,
-    "imageUrl": "/thumbs/actividad.svg",
+    "imageUrl": "/img/activities/bangkok-rajadamnern-muay-thai-stadium-fight-night.jpg",
     "shortDescription": "Noche de Muay Thai en uno de los estadios históricos de Bangkok."
   },
   {
@@ -1591,10 +1591,10 @@
     "Detalle": "Todos los cajeros tailandeses cobran 220 THB por transacción, sin importar el monto.",
     "NotaIA": "Conviene retirar el máximo permitido (normalmente 20,000 o 30,000 THB) para amortizar la comisión.",
     "LATLON": "13.7563, 100.5018",
-    "Image": "Link",
+    "Image": "https://www.infoviajera.com/wp-content/uploads/2018/01/Extraer_Efectivo_Baht_Tailandia_Cajero_Automatico_Tarjeta_de_Credito.jpg",
     "lat": 13.7563,
     "lon": 100.5018,
-    "imageUrl": "/thumbs/consejo.svg",
+    "imageUrl": "https://www.infoviajera.com/wp-content/uploads/2018/01/Extraer_Efectivo_Baht_Tailandia_Cajero_Automatico_Tarjeta_de_Credito.jpg",
     "shortDescription": "Comisión fija por sacar dinero con tarjetas extranjeras."
   },
   {
@@ -1610,10 +1610,10 @@
     "Detalle": "Realizado por un maestro Ajarn. No es solo un tatuaje, incluye un ritual de bendición y protección.",
     "NotaIA": "Requiere un compromiso ético de \"hacer el bien\" para que la protección funcione.",
     "LATLON": "13.7563, 100.5018",
-    "Image": "Link",
+    "Image": "https://cdn.forevervacation.com/uploads/tour/the-sacred-sak-yant-tattoo-tour2.jpg",
     "lat": 13.7563,
     "lon": 100.5018,
-    "imageUrl": "/thumbs/experiencia.svg",
+    "imageUrl": "/img/activities/bangkok-sak-yant-tattoo.jpg",
     "shortDescription": "Tatuaje tradicional tailandés hecho con varilla."
   },
   {
@@ -1629,10 +1629,10 @@
     "Detalle": "Experiencia de relajación profunda con piscinas de diferentes temperaturas.",
     "NotaIA": "Muy recomendado tras días intensos de excursiones en barco.",
     "LATLON": "7.8920, 98.3010",
-    "Image": "Link",
+    "Image": "https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/4144543488781/SAMA-Onsen-Massage-in-Phuket-City-37ca4d47-3fab-436c-b790-a085862a1cad.jpeg",
     "lat": 7.892,
     "lon": 98.301,
-    "imageUrl": "/thumbs/spa.svg",
+    "imageUrl": "/img/activities/phuket-sama-onsen-massage.jpeg",
     "shortDescription": "Fusión de onsen japonés y masaje tailandés."
   },
   {
@@ -1648,10 +1648,10 @@
     "Detalle": "Recomendado por creadores como alternativa a Phuket por ser menos turístico y más tranquilo.",
     "NotaIA": "Se llega en barco rápido (speed boat) desde el muelle de Phuket.",
     "LATLON": "8.0494, 98.6015",
-    "Image": "Link",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/31/69/b7/e6/santhiya-koh-yao-yai.jpg",
     "lat": 8.0494,
     "lon": 98.6015,
-    "imageUrl": "/thumbs/alojamiento.svg",
+    "imageUrl": "/img/activities/koh-yao-yai-santhiya-resort-koh-yao-yai.jpg",
     "shortDescription": "Resort de lujo de madera tallada a mano frente al mar."
   },
   {
@@ -1667,10 +1667,10 @@
     "Detalle": "Ubicado en Asiatique. 135 metros de altura. Adrenalina pura con vistas al río.",
     "NotaIA": "Ir al atardecer para fotos épicas desde el columpio.",
     "LATLON": "13.7042, 100.5034",
-    "Image": "Link",
+    "Image": "https://www.pelago.com/img/products/None-None/skyflyers-giant-swing-ride-at-asiatique-bangkok-thailand/48d5f142-cdc9-4e01-ba96-f65c848e182c_skyflyers-giant-swing-ride-at-asiatique-bangkok-thailand-xlarge.webp",
     "lat": 13.7042,
     "lon": 100.5034,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/bangkok-skyflyers-giant-swing.webp",
     "shortDescription": "El columpio gigante más alto del mundo en un parque de atracciones."
   },
   {
@@ -1686,10 +1686,10 @@
     "Detalle": "Ubicado en Sukhumvit. Ambiente elegante y terapeutas expertos.",
     "NotaIA": "Ideal para el primer día tras el vuelo largo (Jet lag).",
     "LATLON": "13.7330, 100.5620",
-    "Image": "Link",
+    "Image": "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/0b/0e/f4/f5.jpg",
     "lat": 13.733,
     "lon": 100.562,
-    "imageUrl": "/thumbs/spa.svg",
+    "imageUrl": "/img/activities/bangkok-so-thai-spa-bangkok.jpg",
     "shortDescription": "Spa premium con masajes tradicionales de alta calidad."
   },
   {
@@ -1705,10 +1705,10 @@
     "Detalle": "Edificios de estilo sino-portugués llenos de cafeterías y flores. Muy concurrida para fotos de Instagram.",
     "NotaIA": "Ve por la mañana temprano si quieres la calle vacía.",
     "LATLON": "7.8848, 98.3891",
-    "Image": "Link",
+    "Image": "https://media-cdn.tripadvisor.com/media/photo-s/05/30/23/e3/phuket-town.jpg",
     "lat": 7.8848,
     "lon": 98.3891,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/phuket-town-soi-romanee.jpg",
     "shortDescription": "La calle más pintoresca y colorida del casco antiguo."
   },
   {
@@ -1724,10 +1724,10 @@
     "Detalle": "No tomes los barcos de 30 o 100 THB; el oficial de IconSiam cuesta solo 8 THB.",
     "NotaIA": "El trayecto ofrece vistas rápidas pero lindas del skyline del río.",
     "LATLON": "13.7274, 100.5103",
-    "Image": "Link",
+    "Image": "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/16/b7/7f/f1.jpg",
     "lat": 13.7274,
     "lon": 100.5103,
-    "imageUrl": "/thumbs/transporte.svg",
+    "imageUrl": "/img/activities/bangkok-soksiam-iconsiam-barco.jpg",
     "shortDescription": "Barco lanzadera oficial desde el muelle Sathorn."
   },
   {
@@ -1743,10 +1743,10 @@
     "Detalle": "Planta baja del mall. Reúne comida de las 77 provincias de Tailandia.",
     "NotaIA": "Precios de calle en un entorno de lujo y limpio.",
     "LATLON": "13.7274, 100.5103",
-    "Image": "Link",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2d/ac/29/3c/sooksiam-iconsiam-g-fl.jpg",
     "lat": 13.7274,
     "lon": 100.5103,
-    "imageUrl": "/thumbs/comida.svg",
+    "imageUrl": "/img/activities/bangkok-sooksiam-iconsiam.jpg",
     "shortDescription": "Mercado flotante interior con aire acondicionado."
   },
   {
@@ -1762,10 +1762,10 @@
     "Detalle": "El depósito de calcio hace que las rocas no resbalen, permitiendo subir a pie como \"Spider-man\".",
     "NotaIA": "Lleva ropa que se pueda mojar y toalla; hay vestuarios en el lugar.",
     "LATLON": "19.0718, 99.1089",
-    "Image": "Link",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/e2/f5/56/beautiful-relatively.jpg",
     "lat": 19.0718,
     "lon": 99.1089,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/chiang-mai-sticky-waterfall-bua-thong.jpg",
     "shortDescription": "Cascada de piedra caliza que se puede trepar."
   },
   {
@@ -1781,10 +1781,10 @@
     "Detalle": "Patrimonio UNESCO. Mucho más tranquilo y menos masificado que Ayutthaya.",
     "NotaIA": "Tip IA: Alquila una bicicleta en la entrada (30 THB) para recorrer los tres sectores.",
     "LATLON": "17.0185, 99.7036",
-    "Image": "Link",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/4d/ce/6e/caption.jpg",
     "lat": 17.0185,
     "lon": 99.7036,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/sukhothai-sukhothai-historical-park.jpg",
     "shortDescription": "Ruinas de la primera capital del Reino de Siam."
   },
   {
@@ -1800,10 +1800,10 @@
     "Detalle": "Solo domingos. Ocupa toda la calle Ratchadamnoen. Artesanías y comida increíble.",
     "NotaIA": "Empieza a las 17:00h. Se llena mucho; ve temprano.",
     "LATLON": "18.7877, 98.9895",
-    "Image": "Link",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/fb/d2/70/saturday-night-market.jpg",
     "lat": 18.7877,
     "lon": 98.9895,
-    "imageUrl": "/thumbs/mercado.svg",
+    "imageUrl": "/img/activities/chiang-mai-sunday-walking-street.jpg",
     "shortDescription": "El mercado más grande y auténtico del país."
   },
   {
@@ -1819,10 +1819,10 @@
     "Detalle": "El color verde suele tener una tasa ligeramente mejor que el naranja. Hay muchas sucursales en centros comerciales.",
     "NotaIA": "Necesitas el pasaporte físico para cualquier operación de cambio.",
     "LATLON": "13.7485, 100.5404",
-    "Image": "Link",
+    "Image": "https://tuguiaentailandia.com/wp-content/uploads/2023/11/Super-Rich-Thailand-verde-cambio-moneda-en-bangkok.png",
     "lat": 13.7485,
     "lon": 100.5404,
-    "imageUrl": "/thumbs/consejo.svg",
+    "imageUrl": "/img/activities/bangkok-superrich-verde.png",
     "shortDescription": "La mejor casa de cambio de divisas de la ciudad."
   },
   {
@@ -1838,10 +1838,10 @@
     "Detalle": "No aceptes ofertas de taxistas en la puerta. Debes ir a las máquinas, sacar un ticket con el número de carril (ej. carril 44) y dirigirte allí. El costo incluye: taxímetro + 50 THB tasa aeropuerto + peajes.",
     "NotaIA": "Un taxi oficial puede costar hasta un 50% más que pedirlo por la App Grab (ej. 600 THB vs 400 THB).",
     "LATLON": "13.6899, 100.7501",
-    "Image": "Link",
+    "Image": "https://eaqxr36k8gu.exactdn.com/wp-content/uploads/2023/01/como-llegar-bangkok-desde-suvarnabhumi-taxi.jpg",
     "lat": 13.6899,
     "lon": 100.7501,
-    "imageUrl": "/thumbs/transporte.svg",
+    "imageUrl": "/img/activities/bangkok-taxi-publico-aeropuerto-suvarnabhumi.jpg",
     "shortDescription": "Servicio de taxis oficiales controlados por sistema de tickets."
   },
   {
@@ -1857,10 +1857,10 @@
     "Detalle": "Más chico/auténtico. Chequear día/horario (suele moverse por finde). Ideal para quienes quieren evitar el turismo masivo.",
     "NotaIA": "Fuente: video (reels). Coords web.",
     "LATLON": "13.54815, 99.93604",
-    "Image": "",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/30/4e/29/e1/caption.jpg",
     "lat": 13.54815,
     "lon": 99.93604,
-    "imageUrl": "/thumbs/mercado.svg",
+    "imageUrl": "/img/activities/bangkok-excursion-tha-kha-floating-market.jpg",
     "shortDescription": "Mercado flotante más local y tranquilo (alternativa)."
   },
   {
@@ -1876,11 +1876,11 @@
     "Detalle": "Cerca de Makro Lamai. Buen café + brunch. Ideal para mañana tranquila.",
     "NotaIA": "Fuente: video (reels). Dirección en Lamai; faltan coords exactas en esta pasada.",
     "LATLON": "-",
-    "Image": "",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/dc/30/d1/healthy-can-be-delicious.jpg",
     "lat": 13.756331,
     "lon": 100.501762,
     "approxLocation": true,
-    "imageUrl": "/thumbs/comida.svg",
+    "imageUrl": "/img/activities/koh-samui-lamai-the-secret-brunch-koh-samui-lamai.jpg",
     "shortDescription": "Brunch/café con opciones vegetarianas/vegan (zona Lamai)."
   },
   {
@@ -1896,10 +1896,10 @@
     "Detalle": "Ideal para desayuno/brunch antes de tours. Buena opción “occidental” + café. Puede haber espera en temporada alta.",
     "NotaIA": "Fuente: video (reels). Coords web.",
     "LATLON": "8.036787, 98.81916",
-    "Image": "",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/30/4d/04/86/caption.jpg",
     "lat": 8.036787,
     "lon": 98.81916,
-    "imageUrl": "/thumbs/comida.svg",
+    "imageUrl": "/img/activities/krabi-ao-nang-the-verandah-cafe-ao-nang.jpg",
     "shortDescription": "Café/brunch popular en Ao Nang."
   },
   {
@@ -1915,10 +1915,10 @@
     "Detalle": "Ubicado en el edificio T-One. Famoso en TikTok por sus medusas de luz. Se requiere vestimenta casual-elegante.",
     "NotaIA": "Suele haber mucha fila; intenta ir justo cuando abren (17:00h).",
     "LATLON": "13.7230, 100.5794",
-    "Image": "Link",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/0d/96/be/tichuca-rooftop-bar.jpg",
     "lat": 13.723,
     "lon": 100.5794,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/bangkok-tichuca-rooftop-bar.jpg",
     "shortDescription": "Bar en las alturas con un \"árbol\" de luces LED gigante."
   },
   {
@@ -1934,10 +1934,10 @@
     "Detalle": "Ubicación: 82/2 Moo 10 Soi Yot Sane 1, Chalong, Phuket 83130. Horario aprox.: 09:00–18:00. Experiencia típica: interacción/fotos (15 min) con tigres por tamaño (restricciones de edad/altura según tamaño). Tip: ir temprano para menos filas; leer reglas de seguridad y evitar flash. Transporte: taxi/Grab desde Patong/Kata/Karon ~30–60 min (según tráfico).",
     "NotaIA": "Turismo con fauna silvestre en cautiverio suele tener riesgos de bienestar animal. Si decidís ir priorizá lugares con prácticas transparentes y manejo profesional; considerá alternativas sin contacto.",
     "LATLON": "7.8319351, 98.3242214",
-    "Image": "Link",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/11/31/ac/img-2531-largejpg.jpg",
     "lat": 7.8319351,
     "lon": 98.3242214,
-    "imageUrl": "/thumbs/experiencia.svg",
+    "imageUrl": "/img/activities/phuket-tiger-park-phuket.jpg",
     "shortDescription": "Parque para fotos/interacción con tigres (actividad polémica)."
   },
   {
@@ -1953,10 +1953,10 @@
     "Detalle": "Salida desde estación Hua Lamphong o Krung Thep Aphiwat. El tren local es una experiencia muy auténtica.",
     "NotaIA": "En Ayutthaya alquila una bici o tuk-tuk para ver los templos.",
     "LATLON": "14.3472, 100.5847",
-    "Image": "Link",
+    "Image": "https://media.tacdn.com/media/attractions-splice-spp-674x446/09/1e/4f/9c.jpg",
     "lat": 14.3472,
     "lon": 100.5847,
-    "imageUrl": "/thumbs/consejo.svg",
+    "imageUrl": "/img/activities/transporte-tren-a-ayutthaya.jpg",
     "shortDescription": "El viaje más barato de Bangkok a las ruinas antiguas."
   },
   {
@@ -1972,10 +1972,10 @@
     "Detalle": "El tren número 9 es el más moderno. Incluye cama, sábanas limpias y cena. El aire acondicionado es muy fuerte.",
     "NotaIA": "Tip Crucial: Reserva la cama de abajo; es más ancha y tiene ventana. Lleva abrigo.",
     "LATLON": "13.8043, 100.5402",
-    "Image": "Link",
+    "Image": "https://wanderlustmemories.com/wp-content/uploads/2017/02/tren_chiang_mai_alex.jpg",
     "lat": 13.8043,
     "lon": 100.5402,
-    "imageUrl": "/thumbs/transporte.svg",
+    "imageUrl": "/img/activities/bkk-chiang-mai-tren-nocturno-n-9.jpg",
     "shortDescription": "El mejor tren nocturno para ir al norte del país."
   },
   {
@@ -1991,10 +1991,10 @@
     "Detalle": "Ubicado a pasos de la Tha Phae Gate. Ideal para recorrer el casco antiguo a pie y cerca del mercado de los domingos.",
     "NotaIA": "Al estar tan céntrico, puedes volver a descansar un rato al mediodía para evitar el pico de calor.",
     "LATLON": "18.7875, 98.9935",
-    "Image": "Link",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/c3/cd/4f/viang-thapae-resort.jpg",
     "lat": 18.7875,
     "lon": 98.9935,
-    "imageUrl": "/thumbs/hotel.svg",
+    "imageUrl": "/img/activities/chiang-mai-vieng-thapae-resort.jpg",
     "shortDescription": "Resort estilo colonial Lanna cerca de la muralla."
   },
   {
@@ -2010,10 +2010,10 @@
     "Detalle": "Salida 24/02 08:50. Air Asia FD4100.",
     "NotaIA": "Traslado al hotel en CNX estimado en 40-60 min por tráfico. Valida el peso de cabina; Air Asia es estricto con los 7kg.",
     "LATLON": "13.6899, 100.7501",
-    "Image": "Link",
+    "Image": "https://cdn.istanbultouristpass.com/banner/doc/istanbul%20layover%20what%20to%20do%20in%205%20hours%20(2).jpg",
     "lat": 13.6899,
     "lon": 100.7501,
-    "imageUrl": "/thumbs/vuelo.svg",
+    "imageUrl": "/img/activities/bangkok-vuelo-bkk-cnx.jpg",
     "shortDescription": "Vuelo local a Chiang Mai."
   },
   {
@@ -2029,10 +2029,10 @@
     "Detalle": "Salida 09/03 23:45. Thai Airways TG900.",
     "NotaIA": "Estrategia: Deja maletas en Hotel Column y ve al aeropuerto a las 20:30.",
     "LATLON": "13.6899, 100.7501",
-    "Image": "Link",
+    "Image": "https://cdn.istanbultouristpass.com/banner/doc/istanbul%20layover%20what%20to%20do%20in%205%20hours%20(2).jpg",
     "lat": 13.6899,
     "lon": 100.7501,
-    "imageUrl": "/thumbs/vuelo.svg",
+    "imageUrl": "/img/activities/bangkok-vuelo-bkk-ist.jpg",
     "shortDescription": "Inicio del regreso a casa."
   },
   {
@@ -2048,10 +2048,10 @@
     "Detalle": "Salida 28/02 11:40. Air Asia FD8165.",
     "NotaIA": "Ojo: El traslado a Kamala/Patong es de 45-60 min, no 10 min [Recomendación IA].",
     "LATLON": "18.7753, 98.9675",
-    "Image": "Link",
+    "Image": "https://cdn.istanbultouristpass.com/banner/doc/istanbul%20layover%20what%20to%20do%20in%205%20hours%20(2).jpg",
     "lat": 18.7753,
     "lon": 98.9675,
-    "imageUrl": "/thumbs/vuelo.svg",
+    "imageUrl": "/img/activities/chiang-mai-vuelo-cnx-hkt.jpg",
     "shortDescription": "Vuelo directo al paraíso (Phuket)."
   },
   {
@@ -2067,10 +2067,10 @@
     "Detalle": "Salida 16/02 23:55. Turkish TK15.",
     "NotaIA": "Escala técnica corta de 1h 40m. No suele requerir bajar del avión.",
     "LATLON": "-34.8150, -58.5348",
-    "Image": "Link",
+    "Image": "https://cdn.istanbultouristpass.com/banner/doc/istanbul%20layover%20what%20to%20do%20in%205%20hours%20(2).jpg",
     "lat": -34.815,
     "lon": -58.5348,
-    "imageUrl": "/thumbs/vuelo.svg",
+    "imageUrl": "/img/activities/buenos-aires-vuelo-eze-gru.jpg",
     "shortDescription": "Inicio del viaje: Tramo Buenos Aires a San Pablo."
   },
   {
@@ -2086,10 +2086,10 @@
     "Detalle": "Salida 10/03 19:20. Llegada a EZE 22:25.",
     "NotaIA": "Escala técnica de 1h 35m en San Pablo.",
     "LATLON": "-23.4356, -46.4731",
-    "Image": "Link",
+    "Image": "https://cdn.istanbultouristpass.com/banner/doc/istanbul%20layover%20what%20to%20do%20in%205%20hours%20(2).jpg",
     "lat": -23.4356,
     "lon": -46.4731,
-    "imageUrl": "/thumbs/vuelo.svg",
+    "imageUrl": "/img/activities/san-pablo-vuelo-gru-eze.jpg",
     "shortDescription": "Último tramo a casa."
   },
   {
@@ -2105,10 +2105,10 @@
     "Detalle": "Salida 17/02 04:10. Llegada a IST a las 22:35.",
     "NotaIA": "Prepárate para una escala larga de 16h 55m en Estambul.",
     "LATLON": "-23.4356, -46.4731",
-    "Image": "Link",
+    "Image": "https://cdn.istanbultouristpass.com/banner/doc/istanbul%20layover%20what%20to%20do%20in%205%20hours%20(2).jpg",
     "lat": -23.4356,
     "lon": -46.4731,
-    "imageUrl": "/thumbs/vuelo.svg",
+    "imageUrl": "/img/activities/san-pablo-vuelo-gru-ist.jpg",
     "shortDescription": "Tramo largo hacia Estambul."
   },
   {
@@ -2124,10 +2124,10 @@
     "Detalle": "Salida 07/03 10:00. Air Asia FD4125.",
     "NotaIA": "Traslado al hotel Column BKK estimado en 35-50 min.",
     "LATLON": "8.1132, 98.3076",
-    "Image": "Link",
+    "Image": "https://cdn.istanbultouristpass.com/banner/doc/istanbul%20layover%20what%20to%20do%20in%205%20hours%20(2).jpg",
     "lat": 8.1132,
     "lon": 98.3076,
-    "imageUrl": "/thumbs/vuelo.svg",
+    "imageUrl": "/img/activities/phuket-vuelo-hkt-bkk.jpg",
     "shortDescription": "Regreso a la capital para el cierre."
   },
   {
@@ -2143,10 +2143,10 @@
     "Detalle": "Salida 18/02 15:30. Llegada a BKK el 19/02 04:20 AM.",
     "NotaIA": "Llegarás temprano a Bangkok; coordina con el hotel el \"Early Check-in\".",
     "LATLON": "13.6899, 100.7501",
-    "Image": "Link",
+    "Image": "https://cdn.istanbultouristpass.com/banner/doc/istanbul%20layover%20what%20to%20do%20in%205%20hours%20(2).jpg",
     "lat": 13.6899,
     "lon": 100.7501,
-    "imageUrl": "/thumbs/vuelo.svg",
+    "imageUrl": "/img/activities/estambul-vuelo-ist-bkk.jpg",
     "shortDescription": "Tramo final Estambul a Bangkok."
   },
   {
@@ -2162,10 +2162,10 @@
     "Detalle": "Salida 10/03 10:00. Turkish TK15. Escala en IST de 3h 55m.",
     "NotaIA": "Pide en BKK que etiqueten el equipaje hasta Buenos Aires (EZE).",
     "LATLON": "41.2752, 28.7519",
-    "Image": "Link",
+    "Image": "https://cdn.istanbultouristpass.com/banner/doc/istanbul%20layover%20what%20to%20do%20in%205%20hours%20(2).jpg",
     "lat": 41.2752,
     "lon": 28.7519,
-    "imageUrl": "/thumbs/vuelo.svg",
+    "imageUrl": "/img/activities/estambul-vuelo-ist-gru.jpg",
     "shortDescription": "Tramo largo de regreso."
   },
   {
@@ -2181,10 +2181,10 @@
     "Detalle": "Salida 09/03/2026 a las 23:45 hs.",
     "NotaIA": "Pide en el counter que etiqueten tu maleta hasta EZE (Buenos Aires).",
     "LATLON": "13.6899, 100.7501",
-    "Image": "Link",
+    "Image": "https://cdn.istanbultouristpass.com/banner/doc/istanbul%20layover%20what%20to%20do%20in%205%20hours%20(2).jpg",
     "lat": 13.6899,
     "lon": 100.7501,
-    "imageUrl": "/thumbs/vuelo.svg",
+    "imageUrl": "/img/activities/bkk-ist-vuelo-tg900-thai.jpg",
     "shortDescription": "Vuelo de regreso Bangkok a Estambul."
   },
   {
@@ -2200,10 +2200,10 @@
     "Detalle": "Cruza el río desde Wat Pho en el ferry público (5 THB). La subida a las torres es empinada. Atardecer increíble desde la orilla opuesta.",
     "NotaIA": "De noche se ilumina y es una de las fotos más famosas de Bangkok.",
     "LATLON": "13.7437, 100.4889",
-    "Image": "Link",
+    "Image": "https://media.tacdn.com/media/attractions-splice-spp-674x446/0e/e4/99/ab.jpg",
     "lat": 13.7437,
     "lon": 100.4889,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/bangkok-wat-arun.jpg",
     "shortDescription": "El Templo del Amanecer, icónico por su torre central decorada con porcelana."
   },
   {
@@ -2219,10 +2219,10 @@
     "Detalle": "El más fotogénico de Ayutthaya. La luz del atardecer es espectacular sobre sus ruinas.",
     "NotaIA": "No se permite subir a las torres centrales por preservación.",
     "LATLON": "14.3435, 100.5418",
-    "Image": "Link",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/01/09/4d/59/farview-of-wat-chaiwatthanaram.jpg",
     "lat": 14.3435,
     "lon": 100.5418,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/ayutthaya-wat-chaiwatthanaram.jpg",
     "shortDescription": "Templo de estilo Khmer junto al río."
   },
   {
@@ -2238,10 +2238,10 @@
     "Detalle": "Ir fuera de horas pico. Vestimenta respetuosa. Suele estar abierto aprox. 08:00–17:00.",
     "NotaIA": "Buen complemento si hacés tour por el sur (Big Buddha/Promthep).",
     "LATLON": "7.846389, 98.336944",
-    "Image": "Link",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/0b/77/c9/chaithararam-temple-wat.jpg",
     "lat": 7.846389,
     "lon": 98.336944,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/phuket-wat-chalong-wat-chaiyathararam.jpg",
     "shortDescription": "Templo más importante de Phuket: arquitectura y detalles interiores muy fotogénicos."
   },
   {
@@ -2257,10 +2257,10 @@
     "Detalle": "Conviene temprano. Combina bien con paseo por el Old City y cafés cercanos.",
     "NotaIA": "Si vas un domingo, mirá si coincide con mercados/eventos alrededor del Old City.",
     "LATLON": "-",
-    "Image": "Link",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/f3/be/75/restored-ruin-of-the.jpg",
     "lat": 18.787007,
     "lon": 98.986489,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/chiang-mai-wat-chedi-luang.jpg",
     "shortDescription": "Templo clave del casco antiguo de Chiang Mai, con gran chedi histórico."
   },
   {
@@ -2276,10 +2276,10 @@
     "Detalle": "El punto más icónico. Hay que agacharse para la foto (tu cabeza no puede estar más alta que la de Buda).",
     "NotaIA": "Ir muy temprano para evitar las hordas de buses de tour.",
     "LATLON": "14.3570, 100.5675",
-    "Image": "Link",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/34/cc/17/a-mountain-range-of-pagodas.jpg",
     "lat": 14.357,
     "lon": 100.5675,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/ayutthaya-wat-mahathat.jpg",
     "shortDescription": "Famoso por la cabeza de Buda entre raíces."
   },
   {
@@ -2295,10 +2295,10 @@
     "Detalle": "Toma el metro (MRT Blue Line) hasta la estación Bang Phai. Camina 10 min o toma un mototaxi por 20 bahts.",
     "NotaIA": "Es la mejor opción para evitar los barcos caros.",
     "LATLON": "13.7206, 100.4727",
-    "Image": "Link",
+    "Image": "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/13/e0/bf/8e.jpg",
     "lat": 13.7206,
     "lon": 100.4727,
-    "imageUrl": "/thumbs/transporte.svg",
+    "imageUrl": "/img/activities/bangkok-wat-paknam-mrt.jpg",
     "shortDescription": "Cómo llegar al Gran Buda de forma fácil y barata."
   },
   {
@@ -2314,10 +2314,10 @@
     "Detalle": "Si lo hacés caminando: zapatillas + agua. Puede haber tramos resbaladizos si llovió.",
     "NotaIA": "Es un ‘templo sorpresa’: menos turismo, más naturaleza. Ideal si ya fuiste a Doi Suthep.",
     "LATLON": "18.799137, 98.933975",
-    "Image": "Link",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/27/41/d9/0d/temple.jpg",
     "lat": 18.799137,
     "lon": 98.933975,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/chiang-mai-wat-pha-lat-hidden-temple.jpg",
     "shortDescription": "Templo escondido en la selva en la ladera de Doi Suthep, accesible por caminata (Monks Trail) o taxi."
   },
   {
@@ -2333,10 +2333,10 @@
     "Detalle": "Famoso por sus pies de nácar y por ser la cuna del masaje tradicional. Está a pasos del Gran Palacio.",
     "NotaIA": "Si tienes tiempo, hazte un masaje aquí; es la escuela oficial del país.",
     "LATLON": "13.7465, 100.4933",
-    "Image": "Link",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/6a/2a/21/po-prostu-piekna-swiatynia.jpg",
     "lat": 13.7465,
     "lon": 100.4933,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/bangkok-wat-pho.jpg",
     "shortDescription": "Templo del Buda Reclinado más grande de Tailandia (46m)."
   },
   {
@@ -2352,10 +2352,10 @@
     "Detalle": "Ideal en circuito Old City. Vestimenta respetuosa (hombros/rodillas).",
     "NotaIA": "Si te gustan templos “bien cuidados”, este suele impresionar.",
     "LATLON": "18.788750, 98.9812139",
-    "Image": "Link",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/b3/9e/8b/c360-2018-12-09-16-47.jpg",
     "lat": 18.78875,
     "lon": 98.9812139,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/chiang-mai-wat-phra-singh.jpg",
     "shortDescription": "Uno de los templos más importantes de Chiang Mai, famoso por su sala principal y detalles Lanna."
   },
   {
@@ -2371,10 +2371,10 @@
     "Detalle": "306 escalones o funicular. Vista 360 de la ciudad.",
     "NotaIA": "Ir al atardecer para ver la ciudad iluminada.",
     "LATLON": "18.8050, 98.9215",
-    "Image": "Link",
+    "Image": "https://media.tacdn.com/media/attractions-splice-spp-674x446/06/96/8d/41.jpg",
     "lat": 18.805,
     "lon": 98.9215,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/chiang-mai-wat-phra-that-doi-suthep.jpg",
     "shortDescription": "Templo sagrado en la montaña."
   },
   {
@@ -2390,10 +2390,10 @@
     "Detalle": "Blanco puro con espejos. Símbolo de Chiang Rai. Representa el ciclo de la vida y la muerte. No es un templo antiguo, sino una obra del artista Chalermchai.",
     "NotaIA": "Está a 3h de Chiang Mai; se suele hacer como excursión de día. Prohibido fotos dentro del edificio principal.",
     "LATLON": "19.8242, 99.7630",
-    "Image": "Link",
+    "Image": "https://i2.wp.com/tuguiaentailandia.com/wp-content/uploads/2024/08/Entrada-del-El-Templo-Blanco-Wat-Rong-Khun-de-Chiang-Rai-1024x768.jpeg",
     "lat": 19.8242,
     "lon": 99.763,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/chiang-rai-wat-rong-khun-blanco.jpeg",
     "shortDescription": "Obra de arte moderna en forma de templo."
   },
   {
@@ -2409,10 +2409,10 @@
     "Detalle": "Obra del discípulo del creador del Templo Blanco. El Buda blanco interior es impresionante.",
     "NotaIA": "Al ser gratis y visual, se llena rápido; ve temprano.",
     "LATLON": "19.9231, 99.8415",
-    "Image": "Link",
+    "Image": "https://phantom-elmundo.unidadeditorial.es/28878ba9269ccf8f99efddb759a7be68/resize/640/assets/multimedia/imagenes/2019/12/30/15777034301650.jpg",
     "lat": 19.9231,
     "lon": 99.8415,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/chiang-rai-wat-rong-suea-ten-azul.jpg",
     "shortDescription": "Templo moderno con un azul eléctrico vibrante."
   },
   {
@@ -2428,10 +2428,10 @@
     "Detalle": "Debes subir 300 escalones suaves rodeados de fuentes y vegetación. Arriba hay una estupa dorada icónica.",
     "NotaIA": "Ideal para ir justo antes del atardecer para ver caer el sol sobre Bangkok.",
     "LATLON": "13.7538, 100.5066",
-    "Image": "Link",
+    "Image": "https://i0.wp.com/tuguiaentailandia.com/wp-content/uploads/2023/01/el-templo-wat-saket-bangkok-1024x678.png",
     "lat": 13.7538,
     "lon": 100.5066,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/bangkok-wat-saket-golden-mount.png",
     "shortDescription": "Templo en una colina con vista 360° de la ciudad vieja."
   },
   {
@@ -2447,10 +2447,10 @@
     "Detalle": "Puedes caminar por el interior del túnel que es el cuerpo del dragón para llegar a la cima. Es un templo menos turístico y muy visual para fotos.",
     "NotaIA": "Está a 1 hora de Bangkok; combina bien con el mercado de Maeklong.",
     "LATLON": "13.7348, 100.2173",
-    "Image": "Link",
+    "Image": "https://cdn-67ebd632c1ac1810207eacb0.closte.com/wp-content/uploads/2017/02/Wat-samphran1.jpg",
     "lat": 13.7348,
     "lon": 100.2173,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/nakhon-pathom-wat-samphran-dragon.jpg",
     "shortDescription": "Torre de 17 pisos con un dragón gigante que la rodea."
   },
   {
@@ -2466,10 +2466,10 @@
     "Detalle": "Pesa 5.5 toneladas. Es la puerta de entrada ideal para caminar luego hacia Chinatown.",
     "NotaIA": "Vestimenta respetuosa requerida.",
     "LATLON": "13.7377, 100.5134",
-    "Image": "Link",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/56/84/2e/caption.jpg",
     "lat": 13.7377,
     "lon": 100.5134,
-    "imageUrl": "/thumbs/visita.svg",
+    "imageUrl": "/img/activities/bangkok-wat-traimit-buda-de-oro.jpg",
     "shortDescription": "Estatua de oro macizo más grande del mundo."
   },
   {
@@ -2485,10 +2485,10 @@
     "Detalle": "Ir de noche para ver los neones y comer en los puestos callejeros. Muy concurrido y caótico.",
     "NotaIA": "No te pierdas los bollos de crema (Bun) y la sopa de noodles de pimienta.",
     "LATLON": "13.7412, 100.5081",
-    "Image": "Link",
+    "Image": "https://thumbs.dreamstime.com/b/noche-en-el-camino-de-yaowarat-es-una-calle-principal-chinatown-bangkok-la-comida-famosa-tailandia-muchos-turistas-est%C3%A1n-149086336.jpg",
     "lat": 13.7412,
     "lon": 100.5081,
-    "imageUrl": "/thumbs/comida.svg",
+    "imageUrl": "/img/activities/bangkok-yaowarat-chinatown.jpg",
     "shortDescription": "El corazón gastronómico callejero de Bangkok."
   },
   {
@@ -2504,10 +2504,10 @@
     "Detalle": "Punto de encuentro de viajeros. Música variada y mucha gente joven.",
     "NotaIA": "Cierra relativamente temprano (00:00 - 01:00) por normativas locales.",
     "LATLON": "18.7905, 98.9902",
-    "Image": "Link",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/a3/80/0a/songkran2018.jpg",
     "lat": 18.7905,
     "lon": 98.9902,
-    "imageUrl": "/thumbs/vida-nocturna.svg",
+    "imageUrl": "/img/activities/chiang-mai-zoe-in-yellow.jpg",
     "shortDescription": "El bar más famoso del casco antiguo."
   },
   {
@@ -2523,10 +2523,10 @@
     "Detalle": "Plan recomendado: 22:35 llegar y quedarte en airside (IGA Lounge si tenés Priority Pass/DragonPass o pagás en puerta; Nap Zone + duchas + buffet 24h). 06:00–06:30 salir de la lounge, ir a migraciones y presentarte en Hotel Desk antes de 07:30. Alternativa: IGA Sleepod (cápsulas por hora, más privado pero sin comida/duchas). Si pagás lounge, evaluar YOTEL Airside (a veces precio similar por cama real).",
     "NotaIA": "Reglas de acceso y precios varían por temporada/estatus. Confirmar en sitio oficial (Touristanbul + lounges) el día previo.",
     "LATLON": "41.275278,28.751944",
-    "Image": "Link",
+    "Image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/23/42/ec/51/turkish-airlines-business.jpg",
     "lat": 41.275278,
     "lon": 28.751944,
-    "imageUrl": "/thumbs/actividad.svg",
+    "imageUrl": "/img/activities/estambul-ist-estambul-lounge.jpg",
     "shortDescription": "Para hacer Touristanbul tenés que salir de airside: pasar migraciones y presentarte en el 'Hotel Desk' (zona…"
   },
   {
@@ -2542,10 +2542,10 @@
     "Detalle": "Itinerario típico: salida en bus, vistas Murallas de Constantinopla, Eminönü + Puente de Gálata, parada fotos Cuerno de Oro, vistas Torre de Gálata y Palacio Dolmabahçe, regreso al aeropuerto ~11:30. Tips: llevar abrigo liviano, agua; calculá margen para security al volver.",
     "NotaIA": "Confirmar elegibilidad (conexión, horarios, cupos) y día de operación del tour en Touristanbul. Llegar temprano al Hotel Desk.",
     "LATLON": "41.275278,28.751944",
-    "Image": "Link",
+    "Image": "https://media.tacdn.com/media/attractions-splice-spp-674x446/16/05/d2/a7.jpg",
     "lat": 41.275278,
     "lon": 28.751944,
-    "imageUrl": "/thumbs/experiencia.svg",
+    "imageUrl": "/img/activities/estambul-ist-estambul-tour.jpg",
     "shortDescription": "Tour panorámico para conexiones con vuelo al mediodía/tarde. Punto de encuentro: Hotel Desk (llegadas) a las…"
   }
 ]
