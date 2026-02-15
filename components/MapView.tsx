@@ -606,11 +606,11 @@ export function MapView({ items, onVisibleIdsChange, onSelect, selectedId, focus
 
     if (typeof navigator !== 'undefined' && !navigator.onLine) {
       // Offline: usar un estilo local (sin depender de tiles/estilos remotos).
-      setBasemap('raster_osm')
-      setStatus('Offline: el mapa base no está disponible, pero los puntos sí.')
+      setBasemap('blank')
+      setStatus('Sin conexión: mostrando puntos (sin mapa base).')
     }
 
-    const initialBasemap: Basemap = typeof navigator !== 'undefined' && !navigator.onLine ? 'raster_osm' : basemap
+    const initialBasemap: Basemap = typeof navigator !== 'undefined' && !navigator.onLine ? 'blank' : basemap
     lastAppliedBasemapRef.current = initialBasemap
 
     const map = new maplibregl.Map({
@@ -676,7 +676,7 @@ export function MapView({ items, onVisibleIdsChange, onSelect, selectedId, focus
       const looksNetwork = /Failed to fetch|NetworkError|Load failed|fetch/i.test(String(msg))
       const remoteBasemap = last === 'openfreemap_liberty' || last === 'openfreemap_positron'
       if (looksNetwork && remoteBasemap) {
-        setBasemap('raster_osm')
+        setBasemap('blank')
         setStatus('Mapa base no disponible (sin conexión). Mostrando puntos.')
         return
       }

@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { PrintButton } from '@/components/PrintButton'
 import { ReadingProgress } from '@/components/datos/ReadingProgress'
 import { AutoOfflineWarmup } from '@/components/pwa/AutoOfflineWarmup'
 
@@ -7,44 +6,37 @@ export const dynamic = 'force-static'
 
 export default function DatosLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="h-dvh bg-zinc-50">
-      <div className="flex h-dvh min-h-0 flex-col">
-        <header className="sticky top-0 z-10 border-b border-zinc-200 bg-white/90 backdrop-blur" data-print-hide="1">
-          <div className="mx-auto flex max-w-[860px] items-center justify-between gap-3 px-4 py-3">
-            <div className="flex items-center gap-2">
-              <Link href="/" className="text-sm font-semibold tracking-tight">
-                nv-tailandia
-              </Link>
-              <span className="text-xs text-zinc-500">/ datos</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Link
-                href="/datos"
-                className="rounded-lg border border-zinc-200 bg-white px-3 py-2 text-xs font-semibold text-zinc-900 shadow-sm hover:bg-zinc-100"
-              >
-                Índice
-              </Link>
-              <Link
-                href="/datos/vuelo"
-                className="rounded-lg border border-zinc-200 bg-white px-3 py-2 text-xs font-semibold text-zinc-900 shadow-sm hover:bg-zinc-100"
-              >
-                Modo vuelo
-              </Link>
-              <PrintButton />
-            </div>
+    <div className="min-h-dvh bg-white text-zinc-900">
+      <ReadingProgress />
+      <header className="sticky top-0 z-40 border-b border-zinc-200 bg-white/80 backdrop-blur">
+        <div className="mx-auto flex max-w-3xl items-center justify-between gap-3 px-4 py-2">
+          <div className="flex items-center gap-2 text-xs text-zinc-500">
+            <Link href="/" className="hover:text-zinc-800">
+              nv-tailandia
+            </Link>
+            <span>/</span>
+            <span className="text-zinc-800">datos</span>
           </div>
-        </header>
 
-        <div data-datos-scroll className="min-h-0 flex-1 overflow-auto overscroll-contain">
-          <div className="mx-auto max-w-[860px] px-4 py-6">
-            <div className="mb-3 flex items-center justify-between gap-2">
-            <ReadingProgress />
-            <AutoOfflineWarmup />
-          </div>
-            {children}
-          </div>
+          <nav className="flex items-center gap-2">
+            <Link
+              href="/datos"
+              className="rounded-lg border border-zinc-200 bg-white px-2 py-1 text-xs text-zinc-800 shadow-sm hover:bg-zinc-50"
+            >
+              Índice
+            </Link>
+            <Link
+              href="/datos/vuelo"
+              className="rounded-lg border border-zinc-200 bg-white px-2 py-1 text-xs text-zinc-800 shadow-sm hover:bg-zinc-50"
+            >
+              Modo vuelo
+            </Link>
+            <AutoOfflineWarmup compact />
+          </nav>
         </div>
-      </div>
+      </header>
+
+      <main className="mx-auto w-full max-w-3xl px-4 py-4 pb-16">{children}</main>
     </div>
   )
 }

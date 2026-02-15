@@ -1,220 +1,273 @@
-/* nv-tailandia SW (PWA offline)
-   Goal: /datos should be readable 100% offline after ONE online visit.
-   Notes:
-   - Cache strategies are conservative for storage.
-   - Cross-origin images (activity photos, map tiles) are cached opportunistically once fetched online.
+/* nv-tailandia Service Worker (v13e)
+   Objetivo: offline real para /datos/** + /data/activities.json + imágenes.
+   Nota: NO devolver nunca null/undefined en respondWith (Chrome muestra "Response is null").
 */
-
-const VERSION = 'v13d2'
-const STATIC_CACHE = `nv-static-${VERSION}`
-const PAGE_CACHE = `nv-pages-${VERSION}`
-const ASSET_CACHE = `nv-assets-${VERSION}`
-const IMAGE_CACHE = `nv-images-${VERSION}`
+const VERSION = 'v13e1';
+const CORE_CACHE = `nv-core-${VERSION}`;
+const PAGE_CACHE = `nv-pages-${VERSION}`;
+const ASSET_CACHE = `nv-assets-${VERSION}`;
+const IMAGE_CACHE = `nv-images-${VERSION}`;
 
 const CORE_ASSETS = [
   '/offline.html',
   '/manifest.webmanifest',
+  '/favicon.ico',
   '/apple-touch-icon.png',
+  '/og.png',
+  '/tiles/blank.png',
+  '/thumbs/actividad.svg',
+  '/thumbs/vuelo.svg',
   '/icons/icon-192.png',
-  '/icons/icon-192-maskable.png',
   '/icons/icon-512.png',
+  '/icons/icon-192-maskable.png',
   '/icons/icon-512-maskable.png',
-  '/data/activities.json'
-]
+  '/data/activities.json',
+];
 
-async function precacheCore() {
-  const cache = await caches.open(STATIC_CACHE)
-  await cache.addAll(CORE_ASSETS)
+// /datos routes base (se completa con /pwa/datos-routes si está disponible)
+const DATOS_ROUTES_FALLBACK = [
+  '/datos',
+  '/datos/vuelo',
+  '/datos/wats',
+  '/datos/budismo',
+  '/datos/cultura',
+  '/datos/consejos',
+  '/datos/7-eleven',
+];
+
+function isSameOrigin(url) {
+  return url.origin === self.location.origin;
 }
 
-async function precacheDatosPages() {
-  const pageCache = await caches.open(PAGE_CACHE)
-  const assetCache = await caches.open(ASSET_CACHE)
+function isDatosPath(pathname) {
+  return pathname === '/datos' || pathname.startsWith('/datos/');
+}
 
-  // Minimal known routes + expanded list from /pwa/datos-routes
-  const routes = new Set(['/datos', '/datos/vuelo', '/datos/wats'])
+function looksLikeMapTileHost(hostname) {
+  return (
+    hostname.includes('tile.openstreetmap.org') ||
+    hostname.includes('tiles.openfreemap.org') ||
+    hostname.includes('openfreemap.org') ||
+    hostname.includes('maptiler.com') ||
+    hostname.includes('cartocdn.com')
+  );
+}
+
+async function getFallbackResponse(fallbackUrl, contentType = 'text/plain', body = 'Offline') {
+  try {
+    const cached = await caches.match(fallbackUrl);
+    if (cached) return cached;
+  } catch {}
+  return new Response(body, { status: 503, headers: { 'Content-Type': contentType } });
+}
+
+async function imageFallback(urlObj) {
+  // Tiles: devolver tile en blanco (no “rompe” MapLibre). Actividades: placeholder svg.
+  const fallback = looksLikeMapTileHost(urlObj.hostname) ? '/tiles/blank.png' : '/thumbs/actividad.svg';
+  return getFallbackResponse(fallback, looksLikeMapTileHost(urlObj.hostname) ? 'image/png' : 'image/svg+xml', '');
+}
+
+async function cachePut(cacheName, req, res) {
+  try {
+    const cache = await caches.open(cacheName);
+    await cache.put(req, res);
+  } catch {
+    // ignore
+  }
+}
+
+async function cacheFirst(req, cacheName, fallbackFn) {
+  try {
+    const cached = await caches.match(req);
+    if (cached) return cached;
+
+    const res = await fetch(req);
+    // Opaque responses (no-cors) also cache ok.
+    if (res) cachePut(cacheName, req, res.clone());
+    return res || (await fallbackFn());
+  } catch {
+    const cached = await caches.match(req);
+    if (cached) return cached;
+    return await fallbackFn();
+  }
+}
+
+async function networkFirst(req, cacheName, fallbackFn) {
+  try {
+    const res = await fetch(req);
+    if (res) cachePut(cacheName, req, res.clone());
+    return res || (await fallbackFn());
+  } catch {
+    const cached = await caches.match(req);
+    if (cached) return cached;
+    return await fallbackFn();
+  }
+}
+
+// --- Precaching de /datos (HTML + assets) ---
+function getStaticAssetsFromHtml(htmlText) {
+  const out = new Set();
+
+  // naive: href/src="/..."
+  const re = /\b(?:href|src)=["'](\/[^"']+)["']/g;
+  let m;
+  while ((m = re.exec(htmlText))) {
+    const u = m[1];
+    if (!u) continue;
+    // Evitar pre-cachear endpoints dinámicos
+    if (u.startsWith('/api/')) continue;
+    out.add(u);
+  }
+  return Array.from(out);
+}
+
+async function precacheOneRoute(routePath) {
+  // Normalizar: sin trailing slash excepto "/"
+  const path = routePath === '/' ? '/' : String(routePath).replace(/\/+$/, '');
+  const req = new Request(path, { cache: 'reload' });
 
   try {
-    const res = await fetch('/pwa/datos-routes', { cache: 'no-store' })
-    if (res.ok) {
-      const json = await res.json()
-      const extra = Array.isArray(json?.routes) ? json.routes : []
-      for (const r of extra) {
-        if (typeof r === 'string' && r.startsWith('/datos')) routes.add(r)
+    const res = await fetch(req);
+    if (!res) return;
+    // Cachear el HTML aunque sea opaque/ok.
+    await cachePut(PAGE_CACHE, req, res.clone());
+
+    // Extraer assets del HTML y cachearlos
+    const ct = (res.headers && res.headers.get && res.headers.get('content-type')) || '';
+    if (!ct.includes('text/html')) return;
+
+    const html = await res.clone().text();
+    const assets = getStaticAssetsFromHtml(html);
+
+    const assetCache = await caches.open(ASSET_CACHE);
+    for (const a of assets) {
+      try {
+        // Evitar cachear rutas /datos como assets aquí; se manejan como páginas.
+        if (isDatosPath(a)) continue;
+        await assetCache.add(new Request(a, { cache: 'reload' }));
+      } catch {
+        // ignore
       }
     }
   } catch {
     // ignore
   }
+}
 
-  // Parse asset links out of HTML to pre-cache the JS/CSS needed offline.
-  const assets = new Set()
-  const assetRe = /\/(?:_next\/static\/[^"'\s>]+|_next\/image\?[^"'\s>]+|data\/[^"'\s>]+|icons\/[^"'\s>]+|thumbs\/[^"'\s>]+|apple-touch-icon\.png)/g
-
-  const precacheOne = async (path) => {
-    try {
-      const req = new Request(path, { cache: 'reload' })
-      const res = await fetch(req)
-      if (!res || !res.ok) return
-      await pageCache.put(req, res.clone())
-      const html = await res.clone().text()
-      const matches = html.match(assetRe) || []
-      for (const a of matches) assets.add(a)
-    } catch {
-      // ignore
-    }
-  }
-
-  // Cache HTML for each /datos route
-  for (const r of routes) {
-    await precacheOne(r)
-  }
-
-  // Cache referenced assets (JS/CSS/images)
-  for (const a of Array.from(assets)) {
-    try {
-      await assetCache.add(new Request(a, { cache: 'reload' }))
-    } catch {
-      // ignore
-    }
+async function getDatosRoutesFromServer() {
+  try {
+    const res = await fetch('/pwa/datos-routes', { cache: 'no-store' });
+    if (!res || !res.ok) return [];
+    const json = await res.json();
+    const routes = Array.isArray(json && json.routes) ? json.routes : [];
+    return routes.filter((x) => typeof x === 'string' && x.startsWith('/datos'));
+  } catch {
+    return [];
   }
 }
 
+async function precacheDatos() {
+  const fromApi = await getDatosRoutesFromServer();
+  const all = Array.from(new Set([...DATOS_ROUTES_FALLBACK, ...fromApi]));
+  for (const r of all) {
+    // Secuencial para no saturar móviles
+    await precacheOneRoute(r);
+  }
+}
+
+// --- Lifecycle ---
 self.addEventListener('install', (event) => {
   event.waitUntil(
     (async () => {
-      await precacheCore()
-      // Precache /datos immediately – no UI button needed.
-      await precacheDatosPages()
-      self.skipWaiting()
+      const core = await caches.open(CORE_CACHE);
+      await core.addAll(CORE_ASSETS);
+      // Precache /datos para que "modo avión" funcione sin tocar botones
+      await precacheDatos();
+      self.skipWaiting();
     })()
-  )
-})
+  );
+});
 
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     (async () => {
-      const keys = await caches.keys()
+      const keys = await caches.keys();
+      const keep = new Set([CORE_CACHE, PAGE_CACHE, ASSET_CACHE, IMAGE_CACHE]);
       await Promise.all(
         keys.map((k) => {
-          if (k.startsWith('nv-') && !k.endsWith(VERSION)) return caches.delete(k)
-          return Promise.resolve(false)
+          if (k.startsWith('nv-') && !keep.has(k)) return caches.delete(k);
+          return Promise.resolve(false);
         })
-      )
-      await self.clients.claim()
+      );
+      await self.clients.claim();
     })()
-  )
-})
+  );
+});
 
 self.addEventListener('message', (event) => {
-  const data = event.data || {}
-  if (data.type === 'SKIP_WAITING') {
-    self.skipWaiting()
-    return
-  }
-  if (data.type === 'PRECACHE_DATOS') {
-    event.waitUntil(precacheDatosPages())
-  }
-})
+  const msg = event && event.data;
+  if (!msg || typeof msg !== 'object') return;
 
-async function cacheFirstSafe(req, cacheName, fallbackUrl = '/offline.html') {
-  const cache = await caches.open(cacheName)
-  const cached = await cache.match(req)
-  if (cached) return cached
-  try {
-    const res = await fetch(req)
-    // Cache OK responses + opaque (cross-origin images).
-    if (res && (res.ok || res.type === 'opaque')) {
-      cache.put(req, res.clone()).catch(() => {})
-    }
-    return res
-  } catch {
-    return cache.match(fallbackUrl) || caches.match(fallbackUrl)
+  if (msg.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+    return;
   }
-}
 
-async function networkFirst(req, cacheName, fallbackUrl = '/offline.html') {
-  const cache = await caches.open(cacheName)
-  try {
-    const res = await fetch(req)
-    if (res && (res.ok || res.type === 'opaque')) cache.put(req, res.clone()).catch(() => {})
-    return res
-  } catch {
-    const cached = await cache.match(req)
-    if (cached) return cached
-    return cache.match(fallbackUrl) || caches.match(fallbackUrl)
+  if (msg.type === 'PRECACHE_DATOS') {
+    event.waitUntil(precacheDatos());
+    return;
   }
-}
+});
 
-// Normalize Next App Router RSC requests so cache hits survive the random _rsc query param.
-function normalizeRscUrl(url) {
-  try {
-    const u = new URL(url)
-    if (!u.searchParams.has('_rsc')) return null
-    u.searchParams.set('_rsc', '1')
-    return u.toString()
-  } catch {
-    return null
-  }
-}
-
+// --- Fetch routing ---
 self.addEventListener('fetch', (event) => {
-  const req = event.request
-  if (req.method !== 'GET') return
+  const req = event.request;
+  if (!req || req.method !== 'GET') return;
 
-  const url = new URL(req.url)
-  const path = url.pathname
+  const url = new URL(req.url);
 
-  // 1) Images (ANY origin): cache-first.
-  // This covers activity photos and map tiles opportunistically.
+  // Images (incluye tiles remotos): cache-first + fallback.
   if (req.destination === 'image') {
-    event.respondWith(cacheFirstSafe(req, IMAGE_CACHE, '/thumbs/actividad.svg'))
-    return
+    event.respondWith(cacheFirst(req, IMAGE_CACHE, () => imageFallback(url)));
+    return;
   }
 
-  // 2) Navigations.
+  // Navigations
   if (req.mode === 'navigate') {
-    if (path.startsWith('/datos')) {
-      event.respondWith(cacheFirstSafe(req, PAGE_CACHE))
-      return
+    if (isDatosPath(url.pathname)) {
+      // Offline-first para /datos/**
+      event.respondWith(
+        cacheFirst(req, PAGE_CACHE, async () => getFallbackResponse('/offline.html', 'text/html', 'Offline'))
+      );
+      return;
     }
-    event.respondWith(networkFirst(req, PAGE_CACHE))
-    return
+    // Resto: network-first con offline.html
+    event.respondWith(networkFirst(req, PAGE_CACHE, async () => getFallbackResponse('/offline.html', 'text/html', 'Offline')));
+    return;
   }
 
-  // 3) Next assets (JS/CSS/fonts/media) – cache-first.
-  if (path.startsWith('/_next/')) {
-    event.respondWith(cacheFirstSafe(req, ASSET_CACHE))
-    return
-  }
-
-  // 4) /datos RSC fetches (App Router) – cache-first with normalized key.
-  if (path.startsWith('/datos')) {
-    const normalized = normalizeRscUrl(req.url)
-    if (normalized) {
-      const cacheReq = new Request(normalized, {
-        headers: req.headers,
-        method: 'GET',
-        mode: req.mode,
-        credentials: req.credentials,
-        redirect: req.redirect,
-        referrer: req.referrer,
-        referrerPolicy: req.referrerPolicy,
-        integrity: req.integrity
-      })
-      event.respondWith(cacheFirstSafe(cacheReq, PAGE_CACHE))
-      return
+  // Same-origin assets
+  if (isSameOrigin(url)) {
+    // Datos JSON (map/list)
+    if (url.pathname === '/data/activities.json') {
+      event.respondWith(
+        cacheFirst(req, ASSET_CACHE, async () => getFallbackResponse('/data/activities.json', 'application/json', '[]'))
+      );
+      return;
     }
-    event.respondWith(cacheFirstSafe(req, PAGE_CACHE))
-    return
+
+    // /datos flight payloads + assets (cache-first)
+    if (isDatosPath(url.pathname)) {
+      event.respondWith(cacheFirst(req, ASSET_CACHE, async () => getFallbackResponse('/offline.html', 'text/html', 'Offline')));
+      return;
+    }
+
+    // Next static assets
+    if (url.pathname.startsWith('/_next/') || url.pathname.startsWith('/thumbs/') || url.pathname.startsWith('/icons/') || url.pathname.startsWith('/tiles/')) {
+      event.respondWith(cacheFirst(req, ASSET_CACHE, async () => new Response('', { status: 504 })));
+      return;
+    }
   }
 
-  // 5) Public assets (same origin)
-  if (path.startsWith('/icons/') || path.startsWith('/thumbs/') || path.startsWith('/data/')) {
-    event.respondWith(cacheFirstSafe(req, STATIC_CACHE))
-    return
-  }
-
-  // Default
-  event.respondWith(networkFirst(req, ASSET_CACHE))
-})
+  // Default: passthrough (no intercept)
+});
